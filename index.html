@@ -38,7 +38,7 @@
     .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
 
-    /* HERO VIDEO */
+    /* HERO: SISTEMA DE CAPAS BLINDADO */
     .hero {
       position: relative;
       height: 80vh; min-height: 600px;
@@ -48,19 +48,25 @@
       margin-bottom: 2rem;
       border-radius: 0 0 30px 30px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-      background: #0f172a; 
-      /* Poster CSS de seguridad: URL Wikimedia Commons estable */
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Catedral_de_Leon_de_noche.jpg/1280px-Catedral_de_Leon_de_noche.jpg');
-      background-size: cover;
-      background-position: center;
+      /* Capa 1: Color de fondo (seguridad máxima) */
+      background-color: #0f172a; 
     }
 
+    /* Capa 2: Imagen de fondo (Poster) - Catedral de Noche */
+    .hero-poster {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Catedral_de_Leon_de_noche.jpg/1280px-Catedral_de_Leon_de_noche.jpg');
+      background-size: cover; background-position: center;
+      z-index: 0;
+    }
+
+    /* Capa 3: Video */
     .hero-video {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: 0; filter: brightness(0.4);
+      object-fit: cover; z-index: 1; filter: brightness(0.4);
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
 
     .hero h1 { 
       font-size: clamp(3rem, 6vw, 5rem); 
@@ -194,10 +200,13 @@
 
 <body>
 
-  <!-- HERO VIDEO -->
-  <!-- Poster actualizado: URL Wikimedia Commons (Catedral de Noche) -->
+  <!-- HERO VIDEO + POSTER (SISTEMA BLINDADO) -->
   <header class="hero">
-    <video class="hero-video" autoplay loop muted playsinline poster="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Catedral_de_Leon_de_noche.jpg/1280px-Catedral_de_Leon_de_noche.jpg">
+    <!-- Capa Imagen Fija (Catedral de Noche - Wikimedia) -->
+    <div class="hero-poster"></div>
+
+    <!-- Capa Vídeo (Pexels - Brindis) -->
+    <video class="hero-video" autoplay loop muted playsinline>
        <source src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4">
        <source src="https://videos.pexels.com/video-files/4253322/4253322-hd_1920_1080_30fps.mp4" type="video/mp4">
     </video>
@@ -422,9 +431,13 @@
        <table>
         <thead><tr><th>Día</th><th>Lugar</th></tr></thead>
         <tbody>
-          <tr><td>Lunes</td><td>Boñar, Valderas</td></tr>
-          <tr><td>Martes</td><td>Astorga</td></tr>
-          <tr><td>Domingo</td><td>El Rastro (León)</td></tr>
+          <tr><td>Lunes</td><td>Boñar, Valderas, Villamañán</td></tr>
+          <tr><td>Martes</td><td>Astorga, Bembibre, Laguna de Negrillos</td></tr>
+          <tr><td>Miércoles</td><td>León (Plaza Mayor), Sahagún, Valencia de Don Juan</td></tr>
+          <tr><td>Jueves</td><td>Benavides, Cistierna, Santa María del Páramo</td></tr>
+          <tr><td>Viernes</td><td>León (Papalaguinda), Mansilla de las Mulas</td></tr>
+          <tr><td>Sábado</td><td>León (Plaza Mayor), La Bañeza, Ponferrada</td></tr>
+          <tr><td>Domingo</td><td>El Rastro (León), Santa María del Páramo</td></tr>
         </tbody>
        </table>
     </div>
@@ -436,7 +449,7 @@
     <div id="sanmarcos" class="view-section"><article class="card"><img src="assets/sanmarcos1.jpg"><h3>San Marcos</h3><p>Parador</p><a href="https://www.google.com/maps/search/Parador+San+Marcos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
     <div id="musac" class="view-section"><article class="card"><img src="assets/musac1.jpg"><h3>MUSAC</h3><p>Arte</p><a href="https://www.google.com/maps/search/MUSAC+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
 
-    <!-- SEMANA SANTA DETALLE -->
+    <!-- SEMANA SANTA DETALLE (Completa) -->
     <div id="procesiones" class="view-section">
       <h2 style="color:var(--purple)">🟣 Historia y Procesiones</h2>
       <article>
@@ -512,3 +525,4 @@
 
 </body>
 </html>
+
