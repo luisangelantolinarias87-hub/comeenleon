@@ -3,864 +3,506 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Guía completa de León: los mejores restaurantes, ruta de tapas por el Barrio Húmedo, eventos y lugares imprescindibles como la Catedral, San Isidoro, Casa Botines, San Marcos y MUSAC."/>
+  <meta name="description" content="Guía Oficial de Turismo León 2026: Tapas, Semana Santa, Cofradías, Agenda y Gastronomía."/>
+  <meta name="robots" content="index, follow" />
 
-<meta property="og:title" content="Come en León | Guía de Restaurantes, Eventos y Qué Ver en León" />
-<meta property="og:description" content="Guía completa de León: restaurantes, Barrio Húmedo, eventos y qué visitar (Catedral, San Isidoro, Casa Botines, San Marcos y MUSAC)." />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="es_ES" />
-<meta property="og:image" content="assets/leon.jpg" />
+  <title>Come en León | Guía Definitiva 2026</title>
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Come en León | Guía de Restaurantes, Eventos y Qué Ver en León" />
-<meta name="twitter:description" content="Guía completa de León: restaurantes, Barrio Húmedo, eventos y qué visitar (Catedral, San Isidoro, Casa Botines, San Marcos y MUSAC)." />
-<meta name="twitter:image" content="assets/leon.jpg" />
-<title>Come en León | Guía de Restaurantes, Eventos y Qué Ver en León</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#0b1020;
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --border:rgba(255,255,255,.12);
-      --card:rgba(255,255,255,.06);
-      --shadow:0 18px 55px rgba(0,0,0,.45);
-      --radius:18px;
-      --max:1120px;
-      --wine:#8B0000;
-      --gold:rgba(204,170,43,.9);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
-
-    /* HERO */
-    .hero{
-      position:relative;
-      margin:18px auto 0;
-      border:1px solid var(--border);
-      border-radius: calc(var(--radius) + 10px);
-      overflow:hidden;
-      min-height:520px;
-      box-shadow: var(--shadow);
-      background:url("assets/leon.jpg") center/cover no-repeat;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(11,16,32,.20) 0%, rgba(11,16,32,.70) 55%, rgba(11,16,32,.92) 100%);
-    }
-    .hero-content{position:relative;padding:46px 22px;max-width:900px}
-    .hero h1{margin:10px 0 8px;font-size:clamp(36px,5vw,60px);line-height:1.02}
-    .hero p{margin:0 0 12px;color:var(--muted)}
-    .hero-links a{
-      display:inline-block;margin:10px 10px 0 0;padding:10px 14px;border-radius:999px;
-      border:1px solid var(--border);background: rgba(255,255,255,.08);font-weight:800;
-    }
-    .hero-links a:hover{background:rgba(255,255,255,.12)}
-
-    /* SECCIONES */
-    section.block{padding:54px 0 10px}
-    h2{margin:0 0 6px;font-size:1.7rem}
-    .subtitle{margin:0 0 14px;color:var(--muted)}
-
-    /* GRID BASE */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    @media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
-    @media (max-width: 640px){ .grid{grid-template-columns:1fr} }
-
-    .card{
-      background: var(--card);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      padding:16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.25);
-      transition: transform .15s ease, background .15s ease;
-    }
-    .card:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
-    .card h3{margin:0 0 6px}
-    .card p{margin:0;color:var(--muted)}
-    .link{
-      display:inline-block;margin-top:10px;padding:9px 12px;border-radius:999px;border:1px solid var(--border);
-      background: rgba(255,255,255,.06);font-weight:900;color: var(--text);
-    }
-    .link:hover{background:rgba(255,255,255,.10)}
-
-    /* ====== VISTAS (GUÍAS) ====== */
-    .lg-wrap{padding:60px 0 10px}
-    .lg-boxwrap{
-      border:1px solid var(--border);
-      background: var(--card);
-      border-radius: calc(var(--radius) + 6px);
-      padding: 18px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.25);
-    }
-    .lg-back{
-      display:inline-block;
-      margin-bottom:12px;
-      padding:10px 12px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      font-weight:900;
-      cursor:pointer;
-      color: var(--text);
-    }
-    .lg-back:hover{background:rgba(255,255,255,.10)}
-    .lg-title{margin:0 0 10px;font-size:1.9rem}
-    .lg-intro{margin:0 0 16px;color:var(--muted)}
-    .lg-sep{margin:22px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--border);font-size:1.25rem}
-
-    .lg-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:12px}
-    .lg-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background: rgba(255,255,255,.06);}
-    .lg-card-head{padding:14px;background: rgba(139,0,0,.85);color:white;text-align:center;font-weight:900}
-    .lg-card-head h3{margin:0;font-size:1.15rem}
-    .lg-card img{width:100%;height:210px;object-fit:cover;display:block}
-    .lg-card-body{padding:14px}
-    .lg-pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background: rgba(255,255,255,.08);font-weight:900;font-size:.86rem;margin-bottom:10px}
-    .lg-desc{margin:0;color:var(--muted)}
-    .lg-maps{display:inline-block;margin-top:12px;padding:10px 12px;border-radius:10px;background: rgba(139,0,0,.92);color:white;font-weight:900}
-    .lg-maps:hover{filter:brightness(1.08)}
-    .lg-box{margin-top:12px;padding:14px 16px;border-radius:14px;border:1px solid var(--border);background: rgba(255,255,255,.06);color: rgba(255,255,255,.86);}
-    .lg-box ol,.lg-box ul{margin:10px 0 0 18px}
-    .lg-box li{margin:8px 0}
-
-    .lg-rec{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
-    .lg-rec li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;border-radius:14px;border:1px solid var(--border);background: rgba(255,255,255,.06);border-right: 4px solid var(--gold);}
-    .lg-rec h5{margin:0;font-size:1.05rem}
-    .lg-rec span{color:var(--muted);font-style:italic}
-    .lg-badge{padding:6px 10px;border-radius:10px;border:1px solid var(--border);background: rgba(255,255,255,.10);font-weight:900;font-size:.82rem;white-space:nowrap}
-
-    /* tablas */
-    .event-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:14px;border:1px solid var(--border);}
-    .event-table th,.event-table td{padding:12px 12px;vertical-align:top;border-bottom:1px solid var(--border);}
-    .event-table th{background:rgba(255,255,255,.07);text-align:left}
-    .event-table tr:last-child td{border-bottom:none}
-    .event-table td{color:rgba(255,255,255,.86)}
-
-    footer{padding:40px 0;color:var(--muted);border-top:1px solid var(--border);margin-top:40px}
-
-    /* VISTAS */
-    .view{display:none;}
-    .view.is-active{display:block;}
-    main.is-guide-mode .main-home{display:none;}
-    main.is-guide-mode .view.is-active{display:block;}
-  
-    .lg-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
-    .lg-gallery img{width:100%;height:220px;object-fit:cover;display:block;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.04)}
-
-  
-    /* Botón flotante de contacto */
-    .float-contact{
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 9999;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: .2px;
-      border: 1px solid rgba(204,170,43,.35);
-      background: rgba(15, 22, 44, .85);
-      color: #fff;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.35);
-      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
-    }
-    .float-contact:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(0,0,0,.45);
-    }
-    .float-contact:active{
-      transform: translateY(0px);
-      opacity: .95;
-    }
-    .float-contact .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ccaa2b;
-      box-shadow: 0 0 0 6px rgba(204,170,43,.15);
-      flex: 0 0 auto;
-    }
-    .float-contact small{
-      font-weight: 600;
-      opacity: .9;
-    }
-    @media (max-width: 520px){
-      .float-contact{
-        right: 14px;
-        bottom: 14px;
-        padding: 12px;
-      }
-      .float-contact span{
-        display:none;
-      }
+    :root {
+      --bg: #f8fafc;       
+      --card: #ffffff;     
+      --text: #1e293b;     
+      --muted: #64748b;    
+      --accent: #e11d48;   
+      --accent-light: #ffe4e6; 
+      --purple: #7e22ce;   /* Color Semana Santa */
+      --purple-light: #f3e8ff;
+      --gold: #d97706;     
+      --border: #e2e8f0;   
+      --radius: 16px;      
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
 
-</style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+    ul { list-style: none; }
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristInformationCenter",
-  "name": "Come en León",
-  "description": "Guía de restaurantes, eventos y qué visitar en León (España).",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "León",
-    "addressRegion": "Castilla y León",
-    "addressCountry": "ES"
-  }
-}
-</script>
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
 
+    /* HERO VIDEO */
+    .hero {
+      position: relative;
+      height: 80vh; min-height: 600px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; color: white;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      background: #0f172a; 
+    }
+
+    .hero-video {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0; filter: brightness(0.4);
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
+
+    .hero h1 { 
+      font-size: clamp(3rem, 6vw, 5rem); 
+      margin-bottom: 1rem; line-height: 1.1; font-weight: 800; 
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5); letter-spacing: -1px;
+    }
+    .hero p { 
+      font-size: 1.3rem; color: rgba(255,255,255,0.9); 
+      margin: 0 auto 2.5rem; text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+
+    /* Nav */
+    .nav-pills { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .nav-btn {
+      padding: 12px 24px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px); border-radius: 50px; color: white; font-weight: 700; cursor: pointer; transition: all 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-btn:hover { background: white; color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+    .btn-semana { border-color: rgba(168, 85, 247, 0.5); }
+    .btn-semana:hover { color: var(--purple) !important; }
+
+    h2 { font-size: 2rem; color: var(--text); margin-bottom: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+
+    /* Cards */
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+      overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow);
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: var(--accent); }
+    .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; background: #e2e8f0; }
+    .card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text); font-weight: 700; }
+    .card p { color: var(--muted); font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5; }
+
+    .card-btn {
+      align-self: flex-start; padding: 8px 16px; background: var(--accent-light); 
+      border-radius: 50px; font-size: 0.9rem; font-weight: bold; color: var(--accent); border: none; transition: background 0.2s;
+    }
+    .card:hover .card-btn { background: var(--accent); color: white; }
+
+    .rating { display: inline-flex; align-items: center; gap: 5px; font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 10px; background: #f1f5f9; padding: 4px 10px; border-radius: 6px; }
+    .star { color: #fbbf24; }
+
+    .card-semana:hover { border-color: var(--purple); }
+    .card-semana .card-btn { background: var(--purple-light); color: var(--purple); }
+    .card-semana:hover .card-btn { background: var(--purple); color: white; }
+
+    /* Estilos extra para texto historia */
+    .history-text { font-size: 1.1rem; color: var(--muted); margin-bottom: 2rem; max-width: 800px; }
+    .highlight { color: var(--purple); font-weight: bold; }
+
+    /* Lista Cofradías */
+    .cofradias-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+    .cofradia-item { background: #fff; padding: 15px; border-radius: 10px; border-left: 5px solid var(--purple); box-shadow: var(--shadow); font-weight: 600; color: var(--text); transition: transform 0.2s; }
+    .cofradia-item:hover { transform: translateX(5px); background: #fdf4ff; }
+
+    /* Construcción */
+    .construction-box {
+      text-align: center; padding: 4rem 2rem; background: #f8fafc; 
+      border: 2px dashed #cbd5e1; border-radius: 20px; margin-top: 2rem;
+    }
+    .construction-icon { font-size: 4rem; margin-bottom: 1rem; display: block; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 10px; background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
+    th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #f1f5f9; color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    td strong { color: var(--text); font-weight: 600; }
+
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-red { background: #fee2e2; color: #ef4444; } 
+    .badge-gold { background: #fef3c7; color: #d97706; } 
+
+    .view-section { display: none; padding-top: 20px; animation: fadeUp 0.4s ease-out; }
+    .view-section.active { display: block; }
+
+    .back-float {
+      position: fixed; bottom: 80px; right: 30px; z-index: 100;
+      background: var(--text); color: white; padding: 14px 24px; border-radius: 50px;
+      font-weight: bold; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
+      cursor: pointer; display: none; border: none; transition: transform 0.2s;
+    }
+    .back-float:hover { transform: scale(1.05); background: var(--accent); }
+    .view-section.active:not(#home) ~ .back-float { display: block; }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+    footer { text-align: center; padding: 4rem 0; color: var(--muted); border-top: 1px solid var(--border); margin-top: 4rem; background: #fff; }
+    .icon { margin-right: 8px; font-style: normal; }
+
+    .business-card {
+      background: linear-gradient(135deg, #1e293b, #0f172a); 
+      color: white; border: 1px solid rgba(255,255,255,0.1);
+      text-align: center; padding: 3rem 2rem;
+    }
+    .business-card h3 { color: white; margin-bottom: 10px; }
+    .business-card p { color: #cbd5e1; margin-bottom: 20px; font-size: 1.1rem; }
+    .business-btn {
+      background: #fbbf24; color: #1e293b; padding: 12px 30px; border-radius: 50px; 
+      font-weight: 800; display: inline-block; box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+      transition: transform 0.2s;
+    }
+    .business-btn:hover { transform: scale(1.05); color: #000; }
+
+    .platform-links { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem; }
+    .platform-btn {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 20px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
+      transition: transform 0.2s; text-align: center; color: white;
+    }
+    .platform-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+    .btn-booking { background: #003580; box-shadow: 0 4px 15px rgba(0, 53, 128, 0.3); }
+    .btn-airbnb { background: #ff5a5f; box-shadow: 0 4px 15px rgba(255, 90, 95, 0.3); }
+
+    @media(max-width: 600px){ .platform-links { grid-template-columns: 1fr; } }
+
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: white; padding: 15px 20px;
+      display: flex; justify-content: space-between; align-items: center; z-index: 9999;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.2); transform: translateY(100%); transition: transform 0.3s;
+    }
+    #cookie-banner.show { transform: translateY(0); }
+    .cookie-btn { background: var(--accent); border: none; padding: 8px 20px; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; }
+  </style>
 </head>
 
 <body>
-  <div id="top" class="hero wrap">
+
+  <!-- HERO VIDEO -->
+  <header class="hero">
+    <video class="hero-video" autoplay loop muted playsinline>
+       <source src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+
     <div class="hero-content">
-      <h1>Come en León — Guía de Restaurantes, Eventos y Qué Visitar</h1>
-      <p>Guía de restaurantes, rutas de tapas por el Barrio Húmedo, eventos y lugares imprescindibles de León como la Catedral, San Isidoro, Casa Botines y MUSAC.</p>
-      <div class="hero-links">
-        <a href="#restaurantes" data-home>Restaurantes</a>
-        <a href="#eventos" data-home>Eventos</a>
-        <a href="#visitar" data-home>Qué visitar</a>
-        <a href="#contacto" data-home>Aparecer en la guía</a>
+      <h1>Come en León</h1>
+      <p>La Guía Definitiva: Tapas, Cultura y Secretos Locales (2026)</p>
+
+      <div class="nav-pills">
+        <button class="nav-btn" onclick="scrollToSection('home')">🏠 Inicio</button>
+        <button class="nav-btn" onclick="scrollToSection('sec-comer')">🍽️ Comer</button>
+        <button class="nav-btn" onclick="scrollToSection('sec-dormir')">🛏️ Dormir</button>
+        <button class="nav-btn btn-semana" onclick="scrollToSection('sec-semana')">🟣 Semana Santa</button>
+        <button class="nav-btn" onclick="scrollToSection('sec-visitar')">📍 Visitar</button>
       </div>
     </div>
-  </div>
+  </header>
 
   <main class="wrap">
-    <!-- PORTADA -->
-    <div class="main-home">
 
-      <!-- RESTAURANTES -->
-      <section id="restaurantes" class="block">
-        <h2>🍽️ Los mejores restaurantes en León</h2>
-        <p class="subtitle">Las mejores zonas para comer, tapear y disfrutar de la gastronomía leonesa.</p>
+    <div id="home" class="view-section active">
 
+      <section id="sec-comer">
+        <h2>🍽️ Experiencias Gastronómicas</h2>
         <div class="grid">
-          <a href="#barrio-humedo" data-guide="barrio-humedo">
-            <div class="card">
-              <h3>Barrio Húmedo</h3>
-              <p>Ruta de tapas por el centro histórico.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#cocina-tradicional" data-guide="cocina-tradicional">
-            <div class="card">
-              <h3>Cocina tradicional leonesa</h3>
-              <p>Cocido maragato, botillo y cecina.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#cocina-autor" data-guide="cocina-autor">
-            <div class="card">
-              <h3>🍽️ Selección de Cocina de Autor (León 2026)</h3>
-              <p>Estrella Michelin, Bib Gourmand y opciones modernas.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#restaurantes-modernos" data-guide="restaurantes-modernos">
-            <div class="card">
-              <h3>Restaurantes modernos</h3>
-              <p>Cocina de autor y propuestas actuales.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
+          <div class="card" onclick="showView('tapas')" style="cursor:pointer">
+            <h3><span class="icon">🍷</span> Barrio Húmedo (Tapas)</h3>
+            <p>La ruta sagrada. Dónde te ponen la tapa más grande gratis.</p>
+            <span class="card-btn">Ver Ruta de Tapas →</span>
+          </div>
+          <div class="card" onclick="showView('cocido')" style="cursor:pointer">
+            <h3><span class="icon">🍲</span> Cocido Maragato</h3>
+            <p>Se come al revés. Los templos del cocido.</p>
+            <span class="card-btn">Mejores Restaurantes →</span>
+          </div>
+          <div class="card" onclick="showView('autor')" style="cursor:pointer">
+            <h3><span class="icon">⭐</span> Alta Cocina (Michelin)</h3>
+            <p>Restaurante Pablo y Cocinandos.</p>
+            <span class="card-btn">Ver Selección →</span>
+          </div>
+          <div class="card" onclick="showView('modernos')" style="cursor:pointer">
+            <h3><span class="icon">🍽️</span> Nuevas Tendencias</h3>
+            <p>Kamín, Marcela, niMÚ... Los sitios de moda.</p>
+            <span class="card-btn">Ver Lista →</span>
+          </div>
         </div>
       </section>
 
-      <!-- EVENTOS -->
-      <section id="eventos" class="block">
-        <h2>🎉 Eventos en León (Provincia y Capital)</h2>
-        <p class="subtitle">Ferias gastronómicas (provincia), conciertos/cultura (capital) y más eventos.</p>
-
+      <!-- SECCIÓN SEMANA SANTA -->
+      <section id="sec-semana">
+        <h2 style="color: var(--purple)">🟣 Semana Santa de León</h2>
+        <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--muted)">
+          Declarada de Interés Turístico Internacional. 
+        </p>
         <div class="grid">
-          <a href="#ferias-provincia" data-guide="ferias-provincia">
-            <div class="card">
-              <h3>Ferias Gastronómicas y Tradiciones (Provincia)</h3>
-              <p>Calendario febrero 2026.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#conciertos-capital" data-guide="conciertos-capital">
-            <div class="card">
-              <h3>🎸 Conciertos y Cultura (León Capital)</h3>
-              <p>Recintos principales · febrero 2026.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#mas-eventos" data-guide="mas-eventos">
-            <div class="card">
-              <h3>Más eventos</h3>
-              <p>Semana Santa, fiestas locales, mercados…</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
+          <div class="card card-semana" onclick="showView('procesiones')" style="cursor:pointer">
+            <h3><span class="icon">🎺</span> Procesiones y Recorridos</h3>
+            <p>Historia, curiosidades y horarios para 2026.</p>
+            <span class="card-btn">Ver Detalle →</span>
+          </div>
+          <div class="card card-semana" onclick="showView('listacofradias')" style="cursor:pointer">
+            <h3><span class="icon">🛐</span> Cofradías y Hermandades</h3>
+            <p>Conoce las 16 cofradías penitenciales.</p>
+            <span class="card-btn">Ver Listado Completo →</span>
+          </div>
         </div>
       </section>
 
-      <!-- VISITAR -->
-      <section id="visitar" class="block">
-        <h2>📍 Qué visitar en León</h2>
-        <p class="subtitle">Lugares imprescindibles con guías completas.</p>
-
+      <section id="sec-dormir">
+        <h2>🛏️ Dónde Dormir</h2>
         <div class="grid">
-          <a href="#catedral" data-guide="catedral">
-            <div class="card">
-              <h3>Catedral de León (La Pulchra Leonina)</h3>
-              <p>1.800 m² de vidrieras medievales.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#san-isidoro" data-guide="san-isidoro">
-            <div class="card">
-              <h3>Real Colegiata de San Isidoro</h3>
-              <p>La “Capilla Sixtina del Románico”.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#botines" data-guide="botines">
-            <div class="card">
-              <h3>Casa Botines (Gaudí)</h3>
-              <p>Obra de Gaudí fuera de Cataluña.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#san-marcos" data-guide="san-marcos">
-            <div class="card">
-              <h3>Convento de San Marcos</h3>
-              <p>Joya del plateresco y Museo de León.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
-
-          <a href="#musac" data-guide="musac">
-            <div class="card">
-              <h3>MUSAC</h3>
-              <p>Museo de Arte Contemporáneo de Castilla y León.</p>
-              <span class="link">Ver guía completa</span>
-            </div>
-          </a>
+           <article class="card">
+             <img src="assets/sanmarcos1.jpg" alt="Parador">
+             <h3>Parador de San Marcos</h3>
+             <div class="rating"><span class="star">★</span> 4.7</div>
+             <p>Dormir en un museo vivo.</p>
+             <a href="https://www.booking.com/hotel/es/parador-de-leon.es.html" target="_blank" class="card-btn">🏨 Ver Precios</a>
+           </article>
+           <article class="card">
+             <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/49586145.jpg?k=33c644d6512140d048d087962451456565166416664" alt="NH Collection">
+             <h3>NH Collection</h3>
+             <div class="rating"><span class="star">★</span> 4.5</div>
+             <p>En plena Plaza Mayor.</p>
+             <a href="https://www.booking.com/hotel/es/nh-plaza-mayor.es.html" target="_blank" class="card-btn">🏨 Ver Precios</a>
+           </article>
+           <article class="card">
+             <img src="assets/sanisidoro1.jpg" alt="Real Colegiata">
+             <h3>Hotel Real Colegiata</h3>
+             <div class="rating"><span class="star">★</span> 4.6</div>
+             <p>Duerme en la muralla.</p>
+             <a href="https://www.booking.com/hotel/es/real-colegiata-san-isidoro.es.html" target="_blank" class="card-btn">🏨 Ver Precios</a>
+           </article>
+        </div>
+        <h3 style="margin-top:3rem; margin-bottom:1rem; font-size:1.5rem">🔎 Buscar más alojamiento</h3>
+        <div class="platform-links">
+          <a href="https://www.booking.com/city/es/leon.es.html" target="_blank" class="platform-btn btn-booking">Booking.com</a>
+          <a href="https://www.airbnb.es/s/León--España/homes" target="_blank" class="platform-btn btn-airbnb">Airbnb</a>
         </div>
       </section>
 
-      <footer>© Come en León</footer>
+      <section id="sec-agenda">
+        <h2>🎉 Agenda Cultural</h2>
+        <div class="grid">
+          <div class="card" onclick="showView('conciertos')" style="cursor:pointer">
+            <h3><span class="icon">🎸</span> Conciertos</h3>
+            <p>Música en directo.</p>
+          </div>
+          <div class="card" onclick="showView('ferias')" style="cursor:pointer">
+            <h3><span class="icon">🥘</span> Ferias</h3>
+            <p>Botillo y tradiciones.</p>
+          </div>
+          <div class="card" onclick="showView('mercados')" style="cursor:pointer">
+            <h3><span class="icon">🧺</span> Mercadillos</h3>
+            <p>El Rastro y mercados.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sec-visitar">
+        <h2>📍 Monumentos</h2>
+        <div class="grid">
+          <div class="card" onclick="showView('catedral')" style="cursor:pointer">
+            <h3>Catedral de León</h3>
+            <p>La Pulchra Leonina.</p>
+          </div>
+          <div class="card" onclick="showView('sanisidoro')" style="cursor:pointer">
+            <h3>San Isidoro</h3>
+            <p>Panteón Real.</p>
+          </div>
+          <div class="card" onclick="showView('botines')" style="cursor:pointer">
+            <h3>Casa Botines</h3>
+            <p>Museo Gaudí.</p>
+          </div>
+          <div class="card" onclick="showView('sanmarcos')" style="cursor:pointer">
+             <h3>San Marcos</h3>
+             <p>Parador y Museo.</p>
+          </div>
+          <div class="card" onclick="showView('musac')" style="cursor:pointer">
+             <h3>MUSAC</h3>
+             <p>Arte Contemporáneo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sec-contacto">
+        <div class="card business-card">
+          <h3>🚀 ¿Tienes un negocio en León?</h3>
+          <p>Escríbenos para incluirte en la guía.</p>
+          <a href="mailto:comeenleon@gmail.com" class="business-btn">📩 Contactar Ahora</a>
+        </div>
+      </section>
     </div>
 
-    <!-- ===================== -->
-    <!-- VISTAS: RESTAURANTES -->
-    <!-- ===================== -->
-
-    <section id="barrio-humedo" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Restaurantes</button>
-        <h2 class="lg-title">🍷 Guía de Tapeo por el Barrio Húmedo</h2>
-        <p class="lg-intro"><strong>El Húmedo no se visita, se sobrevive.</strong> La tapa suele venir gratis con la bebida.</p>
-
-        <h3 class="lg-sep">📍 Los imprescindibles</h3>
-        <div class="lg-grid">
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>La Bicha</h3></div>
-            <img src="assets/bicha.jpg" alt="La Bicha - Morcilla de León">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Morcilla de León</span>
-              <p class="lg-desc">Probablemente la mejor morcilla del mundo. Crujiente por fuera, cremosa por dentro.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=La%20Bicha%2C%20Plaza%20San%20Mart%C3%ADn%205%2C%2024003%20Le%C3%B3n">📍 Ver en Google Maps</a>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>El Rebote</h3></div>
-            <img src="assets/rebote.jpg" alt="El Rebote - Croquetas">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Croquetas Variadas</span>
-              <p class="lg-desc">Croquetas de mil sabores (cecina, pizza, jalapeños…).</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=El%20Rebote%2C%20Plaza%20San%20Mart%C3%ADn%209%2C%2024003%20Le%C3%B3n">📍 Ver en Google Maps</a>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>La Competencia</h3></div>
-            <img src="assets/competencia.jpg" alt="La Competencia - Pizza">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Pizza</span>
-              <p class="lg-desc">Clásico de pizza al corte con orégano.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Pizzer%C3%ADa%20La%20Competencia%2C%20Calle%20Matasiete%209%2C%2024003%20Le%C3%B3n">📍 Ver en Google Maps</a>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>El Flechazo</h3></div>
-            <img src="assets/flechazo.jpg" alt="El Flechazo - Patatas">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Patatas fritas</span>
-              <p class="lg-desc">Patatas finas y artesanas con un punto de pimentón.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Bar%20Flechazo%2C%20Calle%20de%20las%20Plater%C3%ADas%2C%2024003%20Le%C3%B3n">📍 Ver en Google Maps</a>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Los Cazurros</h3></div>
-            <img src="assets/cazurros.jpg" alt="Los Cazurros - Patatas con queso">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Patatas con queso</span>
-              <p class="lg-desc">Raciones generosas y ambiente leonés.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Tabierna%20Los%20Cazurros%2C%20Le%C3%B3n">📍 Ver en Google Maps</a>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="lg-sep">🗺️ Ruta rápida</h3>
-        <div class="lg-box">
-          <ol>
-            <li><strong>Calle Ancha → Varillas</strong> (entrada al Húmedo).</li>
-            <li><strong>Plaza de San Martín</strong> (epicentro del tapeo).</li>
-            <li><strong>Calle Misericordia</strong> (desvío con bares clásicos).</li>
-            <li><strong>Plaza Mayor</strong> (última caña tranquila).</li>
-          </ol>
-        </div>
+    <!-- TAPAS COMPLETAS -->
+    <div id="tapas" class="view-section">
+      <h2>🍷 Ruta de Tapas: Barrio Húmedo</h2>
+      <div class="grid">
+        <article class="card"><img src="assets/bicha.jpg"><h3>La Bicha</h3><div class="rating">★ 4.4</div><p>Morcilla.</p><a href="https://maps.app.goo.gl/uXjGq5v7j8bQ9t4P8" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/rebote.jpg"><h3>El Rebote</h3><div class="rating">★ 4.5</div><p>Croquetas.</p><a href="https://maps.app.goo.gl/9Z8Z9Z8Z9Z8Z9Z8Z9" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/competencia.jpg"><h3>La Competencia</h3><div class="rating">★ 4.3</div><p>Pizza.</p><a href="https://maps.app.goo.gl/wY5wY5wY5wY5wY5wY" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/flechazo.jpg"><h3>El Flechazo</h3><div class="rating">★ 4.6</div><p>Patatas.</p><a href="https://maps.app.goo.gl/xX4xX4xX4xX4xX4xX" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/cazurros.jpg"><h3>Los Cazurros</h3><div class="rating">★ 4.2</div><p>Patatas cabrales.</p><a href="https://www.google.com/maps/search/los+cazurros+leon" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
-    </section>
+    </div>
 
-    <section id="cocina-tradicional" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Restaurantes</button>
-        <h2 class="lg-title">🍲 Cocina Tradicional Leonesa</h2>
-        <p class="lg-intro">Cocido maragato, botillo del Bierzo y cecina de León.</p>
-
-        <h3 class="lg-sep">🥘 Platos imprescindibles</h3>
-        <div class="lg-grid">
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Cocido Maragato</h3></div>
-            <img src="assets/cocido.jpg" alt="Cocido maragato">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Maragatería</span>
-              <p class="lg-desc">Se come al revés: carnes → garbanzos → sopa.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Cocido%20maragato%20Astorga%20Le%C3%B3n">📍 Buscar en Google Maps</a>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Botillo del Bierzo</h3></div>
-            <img src="assets/botillo.jpg" alt="Botillo del Bierzo">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ Bierzo</span>
-              <p class="lg-desc">Embutido ahumado con repollo y patatas.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Botillo%20del%20Bierzo">📍 Buscar en Google Maps</a>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Cecina de León</h3></div>
-            <img src="assets/cecina.jpg" alt="Cecina de León">
-            <div class="lg-card-body">
-              <span class="lg-pill">⭐ IGP</span>
-              <p class="lg-desc">Carne curada y ahumada. Ideal con pan y aceite.</p>
-              <a class="lg-maps" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Cecina%20de%20Le%C3%B3n">📍 Buscar en Google Maps</a>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="lg-sep">⭐ Recomendados</h3>
-        <ul class="lg-rec">
-          <li><div><h5>Restaurante Las Termas</h5><span>Astorga, León</span></div><div class="lg-badge">EL MEJOR COCIDO</div></li>
-          <li><div><h5>Bodega El Capricho</h5><span>Jiménez de Jamuz</span></div><div class="lg-badge">CECINA DE BUEY</div></li>
-          <li><div><h5>Restaurante Ezequiel</h5><span>Calle Ancha, León</span></div><div class="lg-badge">EMBUTIDO DE MONTAÑA</div></li>
-        </ul>
+    <!-- COCINA TRADICIONAL COMPLETA -->
+    <div id="cocido" class="view-section">
+      <h2>🍲 Cocina Tradicional</h2>
+      <div class="grid">
+        <article class="card"><img src="assets/cocido.jpg"><h3>Cocido Maragato</h3><p>Casa Maragata, Castrillo.</p><a href="https://www.google.com/maps/search/cocido+maragato+leon" target="_blank" class="card-btn">📍 Buscar</a></article>
+        <article class="card"><img src="assets/botillo.jpg"><h3>Botillo del Bierzo</h3><p>El rey del embutido.</p></article>
+        <article class="card"><img src="assets/cecina.jpg"><h3>Cecina de León</h3><p>Imprescindible.</p></article>
       </div>
-    </section>
+    </div>
 
-    <section id="cocina-autor" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Restaurantes</button>
-        <h2 class="lg-title">🍽️ Selección de Cocina de Autor (León 2026)</h2>
-        <p class="lg-intro">Selección top de cocina de autor en León.</p>
-
-        <div class="lg-grid">
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Restaurante Pablo (Estrella Michelin)</h3></div>
-            <img src="assets/pablo.jpg" alt="Restaurante Pablo">
-            <div class="lg-card-body">
-              <span class="lg-pill">🏅 Estrella Michelin</span>
-              <p class="lg-desc">Cocina vanguardista que respeta el producto leonés y lo transforma.</p>
-              <div class="lg-box">
-                <p style="margin:0"><strong>Ubicación:</strong> Avenida de los Cubos, 8 (vistas a la muralla).</p>
-                <p style="margin:8px 0 0"><strong>Tip:</strong> “Ideal para ocasiones especiales con vistas a la historia de León”.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Cocinandos (Estrella Michelin)</h3></div>
-            <img src="assets/cocinandos.jpg" alt="Cocinandos">
-            <div class="lg-card-body">
-              <span class="lg-pill">🏅 Estrella Michelin</span>
-              <p class="lg-desc">Menú único que cambia semanalmente según el mercado. Cocina a la vista.</p>
-              <div class="lg-box">
-                <p style="margin:0"><strong>Ubicación:</strong> Plaza de San Marcos, 5 (Casa del Peregrino).</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>Carea Bistró (Mención Especial)</h3></div>
-            <img src="assets/carea.jpg" alt="Carea Bistró">
-            <div class="lg-card-body">
-              <span class="lg-pill">✨ Tendencia</span>
-              <p class="lg-desc">“Cocina con alma de trotamundos”. Muy instagrameable.</p>
-              <div class="lg-box"><p style="margin:0"><strong>Ubicación:</strong> Avenida de los Cubos, 48.</p></div>
-            </div>
-          </article>
-
-          <article class="lg-card">
-            <div class="lg-card-head"><h3>ConMimo (Bib Gourmand)</h3></div>
-            <img src="assets/conmimo.jpg" alt="ConMimo">
-            <div class="lg-card-body">
-              <span class="lg-pill">🍷 Bib Gourmand</span>
-              <p class="lg-desc">Cocina de autor en ambiente relajado, gran relación calidad-precio.</p>
-              <div class="lg-box"><p style="margin:0"><strong>Ubicación:</strong> Plaza de San Marcelo, 5.</p></div>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="lg-sep">🛠️ Cómo maquetarlo en WordPress (Elementor)</h3>
-        <div class="lg-box">
-          <ul>
-            <li><strong>Widget:</strong> “Cards” (recomendado), o “Price List”.</li>
-            <li><strong>Título:</strong> fuente elegante (ej. Cormorant Garamond).</li>
-            <li><strong>Badges:</strong> [Estrella Michelin] dorado, [Bib Gourmand] rojo, [Tendencia] púrpura.</li>
-          </ul>
-        </div>
+    <!-- AUTOR COMPLETO -->
+    <div id="autor" class="view-section">
+      <h2>⭐ Cocina Michelin</h2>
+      <div class="grid">
+        <article class="card"><img src="assets/pablo.jpg"><h3>Pablo</h3><p>1 Estrella Michelin.</p><a href="https://maps.app.goo.gl/P1P1P1P1P1P1P1P1" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/cocinandos.jpg"><h3>Cocinandos</h3><p>1 Estrella Michelin.</p><a href="https://maps.app.goo.gl/C2C2C2C2C2C2C2C2" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/carea.jpg"><h3>Carea Bistró</h3><p>Bib Gourmand.</p></article>
       </div>
-    </section>
+    </div>
 
-    <section id="restaurantes-modernos" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Restaurantes</button>
-        <h2 class="lg-title">🍽️ Restaurantes modernos</h2>
-        <p class="lg-intro">Cocina de autor y propuestas actuales. (Aquí añadiremos tu lista cuando la pases.)</p>
-        <div class="lg-box">
-          <ul>
-            <li>Lista de restaurantes modernos</li>
-            <li>Platos recomendados</li>
-            <li>Mapa / ubicaciones</li>
-          </ul>
-        </div>
+    <!-- MODERNOS COMPLETOS -->
+    <div id="modernos" class="view-section">
+      <h2>🍽️ Restaurantes Modernos</h2>
+      <div class="grid">
+        <article class="card"><img src="assets/kamin.jpg"><h3>Kamín</h3><div class="rating">★ 4.8</div><a href="https://maps.app.goo.gl/K3K3K3K3K3K3K3K3" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/marcela.jpg"><h3>Marcela</h3><div class="rating">★ 4.4</div><a href="https://maps.app.goo.gl/M4M4M4M4M4M4M4M4" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/nimu.jpg"><h3>niMÚ Azotea</h3><div class="rating">★ 4.2</div><a href="https://maps.app.goo.gl/N5N5N5N5N5N5N5N5" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
-    </section>
+    </div>
 
-    <!-- ================= -->
-    <!-- VISTAS: EVENTOS   -->
-    <!-- ================= -->
+    <!-- AGENDA COMPLETAS -->
+    <div id="ferias" class="view-section">
+      <h2>🥘 Ferias Gastronómicas</h2>
+      <table>
+        <thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>7 Feb</td><td>Festival del Botillo</td><td>Bembibre</td></tr>
+          <tr><td>6-8 Feb</td><td>Feria Agroalimentaria</td><td>Bembibre</td></tr>
+          <tr><td>1 Feb</td><td>Feria de San Blas</td><td>Gradefes</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <section id="ferias-provincia" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Eventos</button>
-        <h2 class="lg-title">🥘 Ferias Gastronómicas y Tradiciones (Provincia) · 2026</h2>
-        <p class="lg-intro">Evento, lugar, fecha y detalles.</p>
+    <div id="conciertos" class="view-section">
+      <h2>🎸 Conciertos</h2>
+      <table>
+        <tbody>
+          <tr><td>14 Feb</td><td>Miguel Ríos</td><td><span class="badge badge-red">AGOTADO</span></td></tr>
+          <tr><td>07 Feb</td><td>La M.O.D.A.</td><td><span class="badge badge-red">ÚLTIMAS</span></td></tr>
+          <tr><td>21 Feb</td><td>Pulsar To Floyd</td><td>Auditorio</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-        <div class="lg-box">
-          <table class="event-table">
-            <thead>
-              <tr><th>Evento</th><th>Lugar</th><th>Fecha 2026</th><th>Detalles para la web</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Festival Nacional del Botillo</strong></td><td>Bembibre</td><td>7 de febrero</td><td>El evento gastronómico del año. Cena de gala y exaltación del embutido rey.</td></tr>
-              <tr><td><strong>XXVI Feria Agroalimentaria</strong></td><td>Bembibre Arena</td><td>6 al 8 de febrero</td><td>Más de 30 expositores, degustaciones de botillo y productos del Bierzo.</td></tr>
-              <tr><td><strong>Feria de San Blas</strong></td><td>Gradefes</td><td>1 de febrero</td><td>Tradicional feria agroalimentaria y de maquinaria.</td></tr>
-              <tr><td><strong>Feria de Febrero</strong></td><td>Valencia de Don Juan</td><td>19 al 21 de febrero</td><td>Una de las ferias de maquinaria agrícola más importantes del noroeste.</td></tr>
-              <tr><td><strong>Jornadas de la Matanza</strong></td><td>Diversos puntos</td><td>Todo febrero</td><td>Fiestas de interés turístico con menús tradicionales (morcilla, jijas, lomo).</td></tr>
-            </tbody>
-          </table>
+    <div id="mercados" class="view-section">
+       <h2>🧺 Mercadillos</h2>
+       <table>
+        <thead><tr><th>Día</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>Lunes</td><td>Boñar, Valderas</td></tr>
+          <tr><td>Martes</td><td>Astorga</td></tr>
+          <tr><td>Domingo</td><td>El Rastro (León)</td></tr>
+        </tbody>
+       </table>
+    </div>
+
+    <!-- MONUMENTOS COMPLETOS -->
+    <div id="catedral" class="view-section"><article class="card"><img src="assets/catedral1.jpg"><h3>Catedral</h3><p>Entrada 7€</p><a href="https://maps.app.goo.gl/CatedralLeon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="sanisidoro" class="view-section"><article class="card"><img src="assets/sanisidoro1.jpg"><h3>San Isidoro</h3><p>Museo 5€</p><a href="https://maps.app.goo.gl/SanIsidoro" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="botines" class="view-section"><article class="card"><img src="assets/botines1.jpg"><h3>Botines</h3><p>Gaudí</p><a href="https://maps.app.goo.gl/Botines" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="sanmarcos" class="view-section"><article class="card"><img src="assets/sanmarcos1.jpg"><h3>San Marcos</h3><p>Parador</p><a href="https://maps.app.goo.gl/SanMarcos" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="musac" class="view-section"><article class="card"><img src="assets/musac1.jpg"><h3>MUSAC</h3><p>Arte</p><a href="https://maps.app.goo.gl/MUSAC" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+
+    <!-- SEMANA SANTA DETALLE -->
+    <div id="procesiones" class="view-section">
+      <h2 style="color:var(--purple)">🟣 Historia y Procesiones</h2>
+      <article>
+        <p class="history-text">La Semana Santa de León no se cuenta, se vive. Declarada de <span class="highlight">Interés Turístico Internacional</span>.</p>
+        <div class="grid" style="margin-bottom:3rem;">
+           <div class="card" style="cursor:default; border-color:var(--purple-light)"><h3>Los Papones</h3><p>Más de 16.000 cofrades.</p></div>
+           <div class="card" style="cursor:default; border-color:var(--purple-light)"><h3>La Limonada</h3><p>Vino, azúcar y canela.</p></div>
+           <div class="card" style="cursor:default; border-color:var(--purple-light)"><h3>Genarín</h3><p>Entierro pagano Jueves Santo.</p></div>
         </div>
+      </article>
+      <div class="construction-box">
+        <span class="construction-icon">🚧</span>
+        <h3>Horarios 2026 en Proceso</h3>
+        <p>Próximamente: Mapa interactivo.</p>
+        <br>
+        <button class="nav-btn" style="background:#cbd5e1; color:#475569; border:none; cursor:default">Disponible Marzo 2026</button>
       </div>
-    </section>
+    </div>
 
-    <section id="conciertos-capital" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Eventos</button>
-        <h2 class="lg-title">🎸 Conciertos y Cultura (León Capital) · 2026</h2>
-
-        <h3 class="lg-sep">Palacio de Congresos y Exposiciones</h3>
-        <div class="lg-box">
-          <ul>
-            <li><strong>14 de Febrero:</strong> Miguel Ríos – Gira “El último vals”. El plan perfecto de San Valentín para los amantes del rock.</li>
-            <li><strong>7 de Febrero:</strong> La M.O.D.A. (La Maravillosa Orquesta del Alcohol).</li>
-          </ul>
-        </div>
-
-        <h3 class="lg-sep">Auditorio Ciudad de León</h3>
-        <div class="lg-box">
-          <ul>
-            <li><strong>5 de Febrero:</strong> Ciclo de Maestros Internacionales (Música clásica/Acordeón).</li>
-            <li><strong>21 de Febrero:</strong> Pulsar To Floyd (Tributo a Pink Floyd).</li>
-            <li><strong>26 y 27 de Febrero:</strong> Teatro: “La Barraca”.</li>
-          </ul>
-        </div>
-
-        <h3 class="lg-sep">Museos y Otros</h3>
-        <div class="lg-box">
-          <ul>
-            <li><strong>MUSAC:</strong> Exposición “Gaudí y el trencadís” (Inauguración el 6 de febrero).</li>
-            <li><strong>Espacio Vías:</strong> Concierto de La Fuga (28 de febrero).</li>
-            <li><strong>Ponferrada:</strong> Mercado de Temporada de Invierno (27 y 28 de febrero).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="mas-eventos" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Eventos</button>
-        <h2 class="lg-title">🗓️ Más eventos</h2>
-        <p class="lg-intro">De momento: Mercados (con tabla). Luego añadimos Semana Santa y fiestas locales.</p>
-
-        <h3 class="lg-sep">🧺 Mercados</h3>
-        <div class="lg-box">
-          <p style="margin:0 0 12px"><strong>Horario habitual:</strong> 9:00 a 14:00 aprox.</p>
-          <table class="event-table">
-            <thead><tr><th>Día</th><th>Localidades / Mercado</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Lunes</strong></td><td>Boñar, Carrizo de la Rivera, Valderas.</td></tr>
-              <tr><td><strong>Martes</strong></td><td>Astorga (muy tradicional), Villafranca del Bierzo, Mansilla de las Mulas, Laguna de Negrillos. En León capital: Mercado de Colón.</td></tr>
-              <tr><td><strong>Miércoles</strong></td><td>León capital (Plaza Mayor - Frutas y verduras), Ponferrada, San Andrés del Rabanedo, Navatejera, Villamañán.</td></tr>
-              <tr><td><strong>Jueves</strong></td><td>Valencia de Don Juan, Bembibre, Cistierna, Benavides de Órbigo, Trobajo del Camino.</td></tr>
-              <tr><td><strong>Viernes</strong></td><td>La Robla, Villablino, Veguellina de Órbigo. En León capital: Mercado de Colón.</td></tr>
-              <tr><td><strong>Sábado</strong></td><td>León capital (Plaza Mayor), Ponferrada (C/ Huertas), La Bañeza, Sahagún, Villaobispo.</td></tr>
-              <tr><td><strong>Domingo</strong></td><td>El Rastro de León (Paseo de Papalaguinda - el más grande), Santa María del Páramo (muy famoso por sus productos agrícolas).</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= -->
-    <!-- VISTAS: VISITAR   -->
-    <!-- ================= -->
-
-    <section id="catedral" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Qué visitar</button>
-        <h2 class="lg-title">Catedral de León (La Pulchra Leonina)</h2>
-        <div class="lg-gallery" aria-label="Fotos de la Catedral de León">
-          <img src="assets/catedral1.jpg" alt="Catedral de León (La Pulchra Leonina) - fachada al atardecer" loading="lazy" />
-          <img src="assets/catedral2.jpg" alt="Catedral de León - vista panorámica y entorno histórico" loading="lazy" />
-          <img src="assets/catedral3.jpg" alt="Interior de la Catedral de León - vidrieras góticas" loading="lazy" />
-        </div>
-
-        <div class="lg-box">
-          <ul>
-            <li><strong>Famosa por:</strong> 1.800 m² de vidrieras medievales.</li>
-            <li><strong>Horario de Invierno:</strong> L–S: 9:30–13:30 y 16:00–19:00. Domingos: 9:30–14:00 (visita limitada por culto).</li>
-            <li><strong>Entrada:</strong> General 6 € (audioguía). Reducida 5 €. Menores de 12: Gratis.</li>
-            <li><strong>Combinada:</strong> Claustro + Museo + Catedral ~12 €.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="san-isidoro" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Qué visitar</button>
-        <h2 class="lg-title">Real Colegiata de San Isidoro</h2>
-        <div class="lg-gallery" aria-label="Galería">
-          <img src="assets/sanisidoro1.jpg" alt="Real Colegiata de San Isidoro en León - fachada" loading="lazy" />
-          <img src="assets/sanisidoro2.jpg" alt="Panteón Real de San Isidoro - frescos románicos (León)" loading="lazy" />
-          <img src="assets/sanisidoro3.jpg" alt="Museo de San Isidoro - Sala del Tesoro (León)" loading="lazy" />
-        </div>
-
-        <div class="lg-box">
-          <ul>
-            <li>Considerada la “Capilla Sixtina del Románico” por sus frescos en el Panteón Real.</li>
-            <li><strong>Horario Museo:</strong> Mar–Sáb 10:00–14:00 y 16:00–19:00. Domingos 10:00–14:00. Lunes cerrado.</li>
-            <li><strong>Entrada Museo:</strong> General 5 €. Menores de 12: Gratis.</li>
-            <li><strong>Aviso:</strong> Basílica (10:00–21:00) gratuita; Panteón y Cáliz requieren entrada.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="botines" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Qué visitar</button>
-        <h2 class="lg-title">Casa Botines (Gaudí)</h2>
-        <div class="lg-gallery" aria-label="Galería">
-          <img src="assets/botines1.jpg" alt="Casa Botines de Gaudí en León - vista nocturna" loading="lazy" />
-          <img src="assets/botines2.jpg" alt="Casa Botines (Gaudí) - fachada en León" loading="lazy" />
-          <img src="assets/botines3.jpg" alt="Museo Casa Botines Gaudí - interior (León)" loading="lazy" />
-        </div>
-
-        <div class="lg-box">
-          <ul>
-            <li>Una de las pocas obras de Antoni Gaudí fuera de Cataluña.</li>
-            <li><strong>Horario Febrero:</strong> Jue–Lun 10:00–19:00. Vie–Sáb 10:00–20:00. Mié 15:00–19:00. Martes cerrado.</li>
-            <li><strong>Entrada:</strong> Visita libre 9 €. Visita guiada 12 €.</li>
-            <li><strong>Gratis:</strong> Planta noble los miércoles (no festivos) con reserva previa.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="san-marcos" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Qué visitar</button>
-        <h2 class="lg-title">Convento de San Marcos (Museo de León)</h2>
-        <div class="lg-gallery" aria-label="Galería">
-          <img src="assets/sanmarcos1.jpg" alt="Convento de San Marcos en León - fachada plateresca (Parador)" loading="lazy" />
-          <img src="assets/sanmarcos2.jpg" alt="Convento de San Marcos - exterior en León" loading="lazy" />
-          <img src="assets/sanmarcos3.jpg" alt="Fachada plateresca del Convento de San Marcos (León)" loading="lazy" />
-        </div>
-
-        <div class="lg-box">
-          <ul>
-            <li>Joya del plateresco español. Actualmente Parador Nacional y sede del Museo de León.</li>
-            <li><strong>Horario Museo:</strong> Mar–Sáb 10:00–14:00 y 16:00–19:00. Domingos 10:00–14:00.</li>
-            <li><strong>Entrada:</strong> Gratuita.</li>
-            <li><strong>Nota:</strong> Solo se visita Iglesia y Claustro del Museo. La parte del Parador es privada.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="musac" class="lg-wrap view">
-      <div class="lg-boxwrap">
-        <button class="lg-back js-back-home" type="button">← Volver a Qué visitar</button>
-        <h2 class="lg-title">MUSAC (Museo de Arte Contemporáneo)</h2>
-        <div class="lg-gallery" aria-label="Galería MUSAC">
-          <img src="assets/musac1.jpg" alt="MUSAC León - fachada colorida inspirada en vidrieras" loading="lazy" />
-          <img src="assets/musac2.jpg" alt="MUSAC León - vista exterior del edificio" loading="lazy" />
-          <img src="assets/musac3.jpg" alt="MUSAC León - sala de exposiciones de arte contemporáneo" loading="lazy" />
-        </div>
-
-        <div class="lg-box">
-          <ul>
-            <li>Famoso por su fachada que imita las vidrieras de la Catedral.</li>
-            <li><strong>Horario:</strong> Mar–Dom 11:00–14:00 y 17:00–20:00.</li>
-            <li><strong>Entrada:</strong> General 3 €. Reducida 2 €.</li>
-            <li><strong>Gratis:</strong> Domingos 17:00–21:00 y Mar–Jue 19:00–20:00.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div id="listacofradias" class="view-section">
+      <h2 style="color:var(--purple)">🛐 Cofradías de León</h2>
+      <ul class="cofradias-list">
+        <li class="cofradia-item">Angustias y Soledad</li>
+        <li class="cofradia-item">Dulce Nombre de Jesús Nazareno</li>
+        <li class="cofradia-item">Minerva y Veracruz</li>
+        <li class="cofradia-item">Santa Marta</li>
+        <li class="cofradia-item">Jesús Divino Obrero</li>
+        <li class="cofradia-item">Siete Palabras</li>
+        <li class="cofradia-item">Cristo del Perdón</li>
+        <li class="cofradia-item">Jesús de la Redención</li>
+        <li class="cofradia-item">Cristo de la Expiración</li>
+        <li class="cofradia-item">María del Dulce Nombre</li>
+        <li class="cofradia-item">Santísimo Sacramento</li>
+        <li class="cofradia-item">Jesús de la Misericordia</li>
+        <li class="cofradia-item">Santo Sepulcro</li>
+        <li class="cofradia-item">Agonía de Nuestro Señor</li>
+        <li class="cofradia-item">Cristo del Gran Poder</li>
+        <li class="cofradia-item">Desenclavo</li>
+      </ul>
+    </div>
 
   </main>
 
+  <button class="back-float" onclick="showView('home')">← Volver al Menú</button>
+
+  <div id="cookie-banner">
+    <span>Usamos cookies. 🍪</span>
+    <button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Come en León. <a href="mailto:comeenleon@gmail.com">comeenleon@gmail.com</a></p>
+  </footer>
+
   <script>
-    function openGuide(id){
-      const main = document.querySelector("main");
-      document.querySelectorAll(".view").forEach(v => v.classList.remove("is-active"));
+    function showView(id) {
+      document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
       const target = document.getElementById(id);
-      if (!target) return;
-
-      main.classList.add("is-guide-mode");
-      target.classList.add("is-active");
-      window.scrollTo(0, 0);
-      history.pushState(null, "", "#" + id);
+      if(target) { target.classList.add('active'); window.scrollTo(0,0); }
     }
-
-    function backHome(targetSectionId){
-      const main = document.querySelector("main");
-      document.querySelectorAll(".view").forEach(v => v.classList.remove("is-active"));
-      main.classList.remove("is-guide-mode");
-
-      const el = document.getElementById(targetSectionId || "restaurantes") || document.getElementById("top");
-      if (el) el.scrollIntoView({behavior:"auto", block:"start"});
+    function scrollToSection(sectionId) {
+      showView('home');
+      setTimeout(() => document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }), 100);
     }
-
-    // Abrir guías desde tarjetas
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest("a[data-guide]");
-      if (!a) return;
-      e.preventDefault();
-      const id = a.getAttribute("data-guide");
-      openGuide(id);
-    });
-
-    // Botón volver: decide a qué sección volver según el ID de la vista abierta
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest(".js-back-home");
-      if (!btn) return;
-
-      const active = document.querySelector(".view.is-active");
-      const activeId = active ? active.id : "";
-
-      if (["ferias-provincia","conciertos-capital","mas-eventos"].includes(activeId)) {
-        backHome("eventos");
-      } else if (["catedral","san-isidoro","botines","san-marcos","musac"].includes(activeId)) {
-        backHome("visitar");
-      } else {
-        backHome("restaurantes");
-      }
-    });
-
-    // Menú del hero: si estás dentro de una guía, vuelve a portada y salta a sección
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest("a[data-home]");
-      if (!a) return;
-
-      const targetId = (a.getAttribute("href") || "").replace("#","");
-      const main = document.querySelector("main");
-
-      if (main.classList.contains("is-guide-mode")) {
-        e.preventDefault();
-        backHome(targetId);
-      }
-    });
-
-    // Si entras con hash directo a guía
-    window.addEventListener("load", () => {
-      const id = (location.hash || "").replace("#","");
-      const allowed = [
-        "barrio-humedo","cocina-tradicional","cocina-autor","restaurantes-modernos",
-        "ferias-provincia","conciertos-capital","mas-eventos",
-        "catedral","san-isidoro","botines","san-marcos","musac"
-      ];
-      if (allowed.includes(id)) openGuide(id);
+    function acceptCookies() {
+      document.getElementById('cookie-banner').classList.remove('show');
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+    window.addEventListener('load', () => {
+      if(!localStorage.getItem('cookiesAccepted')) setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1000);
     });
   </script>
-
-<!-- CONTACTO -->
-<section id="contacto" class="block">
-  <h2>📩 ¿Quieres aparecer en la guía?</h2>
-  <p class="subtitle">
-    Si quieres aparecer en la guía, escribe a:
-    <strong><a href="mailto:contacto.comeenleon@gmail.com" style="color:#ccaa2b;font-weight:800">contacto.comeenleon@gmail.com</a><br>
-    Cuéntanos qué quieres añadir y, con la mayor brevedad posible, lo publicaremos.
-  </p>
-</section>
-
-
-<!-- Botón flotante -->
-<a class="float-contact" href="#contacto" aria-label="Contactar">
-  <span class="dot" aria-hidden="true"></span>
-  <span>Contactar</span>
-  <small>✉️</small>
-</a>
 
 </body>
 </html>
