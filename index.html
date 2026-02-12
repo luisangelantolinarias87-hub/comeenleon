@@ -1,45 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Come en León 2026: guía local con ruta de tapas del Barrio Húmedo, restaurantes, hoteles, monumentos (Catedral, San Isidoro, Casa Botines, MUSAC) y Semana Santa."/>
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Come en León" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-
-  <title>Come en León 2026 | Tapas, Restaurantes, Hoteles, Monumentos y Semana Santa</title>
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://comeenleon.es/" />
-
-  <!-- Favicon (sin archivo, evita 404) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%BD%EF%B8%8F%3C/text%3E%3C/svg%3E">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Come en León 2026 | Guía local definitiva" />
-  <meta property="og:description" content="Tapas del Húmedo, restaurantes, hoteles, qué ver y Semana Santa de León. Guía práctica con mapas." />
-  <meta property="og:image" content="https://comeenleon.es/assets/leon.jpg" />
-  <meta property="og:url" content="https://comeenleon.es/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_ES" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Come en León 2026 | Guía local definitiva" />
-  <meta name="twitter:description" content="Tapas, restaurantes, hoteles, monumentos y Semana Santa en León." />
-  <meta name="twitter:image" content="https://comeenleon.es/assets/leon.jpg" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Hint al navegador: la imagen principal es crítica (mejora LCP) -->
-  <link rel="preload" as="image" href="assets/leon.jpg" imagesrcset="assets/leon.jpg" imagesizes="100vw">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Come en León 2026: guía local con ruta de tapas del Barrio Húmedo, restaurantes, hoteles, monumentos (Catedral, San Isidoro, Casa Botines, MUSAC) y Semana Santa." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Come en León" name="author"/>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<title>Come en León 2026 | Tapas, Restaurantes, Hoteles, Monumentos y Semana Santa</title>
+<!-- Canonical -->
+<link href="https://comeenleon.es/" rel="canonical"/>
+<!-- Favicon (sin archivo, evita 404) -->
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8D%BD%EF%B8%8F%3C/text%3E%3C/svg%3E" rel="icon"/>
+<!-- Open Graph -->
+<meta content="Come en León 2026 | Guía local definitiva" property="og:title"/>
+<meta content="Tapas del Húmedo, restaurantes, hoteles, qué ver y Semana Santa de León. Guía práctica con mapas." property="og:description"/>
+<meta content="https://comeenleon.es/assets/leon.jpg" property="og:image"/>
+<meta content="https://comeenleon.es/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="es_ES" property="og:locale"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Come en León 2026 | Guía local definitiva" name="twitter:title"/>
+<meta content="Tapas, restaurantes, hoteles, monumentos y Semana Santa en León." name="twitter:description"/>
+<meta content="https://comeenleon.es/assets/leon.jpg" name="twitter:image"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<!-- Hint al navegador: la imagen principal es crítica (mejora LCP) -->
+<link as="image" href="assets/leon.jpg" imagesizes="100vw" imagesrcset="assets/leon.jpg" rel="preload"/>
+<style>
     :root{
       --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#64748b;
       --accent:#e11d48; --accent-light:#ffe4e6;
@@ -263,6 +256,9 @@
     .ss-video small{display:block;color:#cbd5e1;padding:10px 12px}
 
     .cof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px}
+    .cof-grid .card.cof-active{border-color:var(--purple);box-shadow:0 18px 25px -5px rgba(126,34,206,.18),0 10px 12px -6px rgba(0,0,0,.08);transform:translateY(-4px)}
+    .cof-grid .card.cof-active .card-btn{background:var(--purple);color:#fff}
+
     .cof-item{display:flex;gap:12px;align-items:flex-start}
     .cof-logo{
       width:54px;height:54px;flex:0 0 54px;
@@ -290,9 +286,13 @@
 .cofradia-accordion .cof-logo{background:#f1f5f9}
 .cof-highlight{outline:2px solid var(--purple);outline-offset:4px}
 
-</style>
 
-  <!-- Schema.org (SEO): WebSite + Organization + TouristDestination + Entidades + FAQ -->
+/* Cofradías: fichas pro */
+.cof-facts{margin:12px 0 0; padding-left:18px}
+.cof-facts li{margin:8px 0; line-height:1.35}
+.cof-facts strong{font-weight:800}
+</style>
+<!-- Schema.org (SEO): WebSite + Organization + TouristDestination + Entidades + FAQ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -414,11 +414,9 @@
   ]
 }
 </script>
-<script type="application/ld+json" id="breadcrumb-jsonld">{}</script>
-
-
-  <!-- Schema.org: Semana Santa (EventSeries) -->
-  <script type="application/ld+json" id="semana-santa-jsonld">
+<script id="breadcrumb-jsonld" type="application/ld+json">{}</script>
+<!-- Schema.org: Semana Santa (EventSeries) -->
+<script id="semana-santa-jsonld" type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"EventSeries",
@@ -435,1072 +433,867 @@
     "description":"Guía práctica de Semana Santa en León: procesiones, cofradías, tradiciones y recursos oficiales."
   }
   </script>
-
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
-
-  <header class="hero" aria-label="Portada">
-    <img class="hero-img" src="assets/leon.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
-    <!-- Vídeo (externo). En móvil se oculta por CSS -->
-    <video class="hero-video" autoplay loop muted playsinline preload="none" aria-hidden="true">
-      <source src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/4253322/4253322-hd_1920_1080_30fps.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-content">
-      <h1>Qué ver y dónde comer en León en 2026</h1>
-      <p><strong>Come en León</strong> · Tapas, restaurantes, hoteles, monumentos y Semana Santa</p>
-
-      <nav class="nav-pills" aria-label="Menú principal">
-        <button class="nav-btn" onclick="scrollToSection('home')">🏠 Inicio</button>
-        <button class="nav-btn" onclick="scrollToSection('sec-comer')">🍽️ Comer</button>
-        <button class="nav-btn" onclick="scrollToSection('sec-dormir')">🛏️ Dormir</button>
-        <button class="nav-btn btn-semana" onclick="scrollToSection('sec-semana')">🟣 Semana Santa</button>
-        <button class="nav-btn" onclick="scrollToSection('sec-visitar')">📍 Visitar</button>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="wrap">
-    <!-- HOME -->
-    <div id="home" class="view-section active">
-
-
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header aria-label="Portada" class="hero">
+<img alt="" aria-hidden="true" class="hero-img" decoding="async" fetchpriority="high" src="assets/leon.jpg"/>
+<!-- Vídeo (externo). En móvil se oculta por CSS -->
+<video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" preload="none">
+<source src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4"/>
+<source src="https://videos.pexels.com/video-files/4253322/4253322-hd_1920_1080_30fps.mp4" type="video/mp4"/>
+</video>
+<div class="hero-content">
+<h1>Qué ver y dónde comer en León en 2026</h1>
+<p><strong>Come en León</strong> · Tapas, restaurantes, hoteles, monumentos y Semana Santa</p>
+<nav aria-label="Menú principal" class="nav-pills">
+<button class="nav-btn" onclick="scrollToSection('home')">🏠 Inicio</button>
+<button class="nav-btn" onclick="scrollToSection('sec-comer')">🍽️ Comer</button>
+<button class="nav-btn" onclick="scrollToSection('sec-dormir')">🛏️ Dormir</button>
+<button class="nav-btn btn-semana" onclick="scrollToSection('sec-semana')">🟣 Semana Santa</button>
+<button class="nav-btn" onclick="scrollToSection('sec-visitar')">📍 Visitar</button>
+</nav>
+</div>
+</header>
+<main class="wrap" id="main">
+<!-- HOME -->
+<div class="view-section active" id="home">
 <!-- INTRO SEO (contexto + intención de búsqueda) -->
-<section id="sec-guia" class="seo-box" aria-label="Guía rápida de León">
-  <h2>📌 Guía local de León (2026): tapas, cultura y planes</h2>
-  <p>
-    <strong>Come en León</strong> es una guía práctica para organizar tu visita: <em>dónde ir de tapas</em> (Barrio Húmedo),
+<section aria-label="Guía rápida de León" class="seo-box" id="sec-guia">
+<h2>📌 Guía local de León (2026): tapas, cultura y planes</h2>
+<p>
+<strong>Come en León</strong> es una guía práctica para organizar tu visita: <em>dónde ir de tapas</em> (Barrio Húmedo),
     restaurantes tradicionales y modernos, <em>hoteles céntricos</em>, y los imprescindibles de la ciudad como la
     <strong>Catedral de León</strong>, <strong>San Isidoro</strong>, la <strong>Casa Botines</strong> de Gaudí y el <strong>MUSAC</strong>.
     También tienes un apartado especial para la <strong>Semana Santa de León</strong> (procesiones y cofradías) y una agenda rápida de eventos.
   </p>
-  <ul>
-    <li>Si es tu primera vez, empieza por <strong>Qué ver</strong> y luego remata con <strong>ruta de tapas</strong>.</li>
-    <li>¿Fin de semana? Añade un plan de interior (MUSAC) por si llueve.</li>
-    <li>En festivos y Semana Santa: reserva con margen (alojamiento y visitas).</li>
-  </ul>
-  <div class="quick-links" role="group" aria-label="Accesos rápidos">
-    <button onclick="scrollToSection('sec-visitar')">📍 Qué ver</button>
-    <button onclick="showView('tapas')">🍷 Ruta de tapas</button>
-    <button onclick="scrollToSection('sec-dormir')">🛏️ Hoteles</button>
-    <button onclick="scrollToSection('sec-semana')">🟣 Semana Santa</button>
-    <button onclick="scrollToSection('sec-agenda')">🎉 Agenda</button>
-  </div>
-  <p class="hint" style="margin-top:12px">Última revisión editorial: <strong>12 febrero 2026</strong>.</p>
-</section>
-
-      <section id="sec-comer">
-        <h2>🍽️ Experiencias gastronómicas</h2>
-        <div class="grid">
-          <div class="card" role="button" tabindex="0" onclick="showView('tapas')" onkeydown="handleEnter(event, 'tapas')">
-            <h3>🍷 Barrio Húmedo (tapas)</h3>
-            <p>La ruta sagrada. Sitios con tapa potente y ambiente a tope.</p>
-            <span class="card-btn">Ver ruta →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('cocido')" onkeydown="handleEnter(event, 'cocido')">
-            <h3>🍲 Cocido maragato</h3>
-            <p>El cocido que se come al revés. Dónde probarlo bien.</p>
-            <span class="card-btn">Ver lista →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('autor')" onkeydown="handleEnter(event, 'autor')">
-            <h3>⭐ Alta cocina (Michelin)</h3>
-            <p>Pablo y Cocinandos. Para celebraciones de verdad.</p>
-            <span class="card-btn">Ver selección →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('modernos')" onkeydown="handleEnter(event, 'modernos')">
-            <h3>🍽️ Nuevas tendencias</h3>
-            <p>Kamín, Marcela, niMÚ… los sitios de moda.</p>
-            <span class="card-btn">Ver modernos →</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="sec-semana">
-        <h2 style="color:var(--purple)">🟣 Semana Santa de León</h2>
-        <p class="hint">Interés Turístico Internacional. Historia, cofradías y lo imprescindible.</p>
-        <div class="grid">
-          <div class="card card-semana" role="button" tabindex="0" onclick="showView('procesiones')" onkeydown="handleEnter(event, 'procesiones')">
-            <h3>🎺 Procesiones y recorridos</h3>
-            <p>Guía rápida: Genarín, tradiciones y claves para vivirla.</p>
-            <span class="card-btn">Ver detalle →</span>
-          </div>
-          <div class="card card-semana" role="button" tabindex="0" onclick="showView('listacofradias')" onkeydown="handleEnter(event, 'listacofradias')">
-            <h3>🛐 Cofradías</h3>
-            <p>Listado completo de hermandades penitenciales.</p>
-            <span class="card-btn">Ver listado →</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="sec-dormir">
-        <h2>🛏️ Dónde dormir</h2>
-        <div class="grid">
-          <article class="card">
-            <img src="assets/sanmarcos1.jpg" alt="Parador de San Marcos en León" loading="lazy" decoding="async" width="1200" height="800">
-            <h3>Parador de San Marcos</h3>
-            <div class="rating" aria-label="Valoración 4.7 de 5"><span class="star">★</span> 4.7</div>
-            <p>Dormir en un museo vivo. Ubicación top y edificio histórico.</p>
-            <a href="https://www.booking.com/hotel/es/parador-de-leon.es.html" target="_blank" rel="noopener noreferrer" class="card-btn">Ver precios</a>
-          </article>
-
-          <article class="card">
-            <img src="assets/nhcollection.jpg" alt="NH Collection Plaza Mayor en León" loading="lazy" decoding="async" width="1200" height="800">
-            <h3>NH Collection (Plaza Mayor)</h3>
-            <div class="rating" aria-label="Valoración 4.5 de 5"><span class="star">★</span> 4.5</div>
-            <p>En plena Plaza Mayor. Perfecto para ir andando a todo.</p>
-            <a href="https://www.booking.com/hotel/es/nh-plaza-mayor.es.html" target="_blank" rel="noopener noreferrer" class="card-btn">Ver precios</a>
-          </article>
-
-          <article class="card">
-            <img src="assets/sanisidoro1.jpg" alt="Hotel Real Colegiata de San Isidoro en León" loading="lazy" decoding="async" width="1200" height="800">
-            <h3>Hotel Real Colegiata</h3>
-            <div class="rating" aria-label="Valoración 4.6 de 5"><span class="star">★</span> 4.6</div>
-            <p>Duerme al lado de la historia. Súper céntrico.</p>
-            <a href="https://www.booking.com/hotel/es/real-colegiata-san-isidoro.es.html" target="_blank" rel="noopener noreferrer" class="card-btn">Ver precios</a>
-          </article>
-        </div>
-
-        <h3 style="margin-top:2.4rem;font-size:1.35rem;font-weight:900">🔎 Buscar más alojamiento</h3>
-        <div class="platform-links">
-          <a href="https://www.booking.com/city/es/leon.es.html" target="_blank" rel="noopener noreferrer" class="platform-btn btn-booking">Booking.com</a>
-          <a href="https://www.airbnb.es/s/León--España/homes" target="_blank" rel="noopener noreferrer" class="platform-btn btn-airbnb">Airbnb</a>
-        </div>
-      </section>
-
-      <section id="sec-visitar">
-        <h2>📍 Qué ver en León</h2>
-        <div class="grid">
-          <div class="card" role="button" tabindex="0" onclick="showView('catedral')" onkeydown="handleEnter(event, 'catedral')">
-            <h3>Catedral de León</h3>
-            <p>La Pulchra Leonina. Vidrieras que te dejan loco.</p>
-            <span class="card-btn">Horarios y precios →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('sanisidoro')" onkeydown="handleEnter(event, 'sanisidoro')">
-            <h3>San Isidoro</h3>
-            <p>Panteón Real: la “Capilla Sixtina del románico”.</p>
-            <span class="card-btn">Horarios y precios →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('botines')" onkeydown="handleEnter(event, 'botines')">
-            <h3>Casa Botines (Gaudí)</h3>
-            <p>Arquitectura única. Museo + exposiciones.</p>
-            <span class="card-btn">Horarios y precios →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('sanmarcos')" onkeydown="handleEnter(event, 'sanmarcos')">
-            <h3>San Marcos</h3>
-            <p>Historia, fachada impresionante y entorno del río.</p>
-            <span class="card-btn">Cómo llegar →</span>
-          </div>
-
-          <div class="card" role="button" tabindex="0" onclick="showView('musac')" onkeydown="handleEnter(event, 'musac')">
-            <h3>MUSAC</h3>
-            <p>Arte contemporáneo y planazo si llueve.</p>
-            <span class="card-btn">Horarios y precios →</span>
-          </div>
-        </div>
-      </section>
-
-
-<section id="sec-itinerarios">
-  <h2>🗺️ Itinerarios recomendados</h2>
-  <div class="grid">
-    <article class="card">
-      <h3>León en 1 día (imprescindibles)</h3>
-      <p><strong>Mañana:</strong> Catedral → casco histórico. <strong>Mediodía:</strong> tapas por el Barrio Húmedo. <strong>Tarde:</strong> San Isidoro / Casa Botines. <strong>Noche:</strong> cena moderna o tradicional.</p>
-      <div class="related">
-        <div class="chips">
-          <button onclick="showView('catedral')">Catedral</button>
-          <button onclick="showView('tapas')">Tapas</button>
-          <button onclick="showView('sanisidoro')">San Isidoro</button>
-          <button onclick="showView('botines')">Casa Botines</button>
-        </div>
-      </div>
-    </article>
-    <article class="card">
-      <h3>León en 2 días (con plan B si llueve)</h3>
-      <p><strong>Día 1:</strong> centro histórico + tapas. <strong>Día 2:</strong> San Marcos + paseo junto al río y <strong>MUSAC</strong> (perfecto si llueve).</p>
-      <div class="related">
-        <div class="chips">
-          <button onclick="showView('sanmarcos')">San Marcos</button>
-          <button onclick="showView('musac')">MUSAC</button>
-          <button onclick="showView('modernos')">Restaurantes modernos</button>
-          <button onclick="scrollToSection('sec-dormir')">Hoteles</button>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-      <section id="sec-agenda">
-        <h2>🎉 Agenda rápida</h2>
-        <div class="grid">
-          <div class="card" role="button" tabindex="0" onclick="showView('conciertos')" onkeydown="handleEnter(event, 'conciertos')">
-            <h3>🎸 Conciertos</h3>
-            <p>Música en directo (ejemplos). Actualiza cuando quieras.</p>
-            <span class="card-btn">Ver tabla →</span>
-          </div>
-          <div class="card" role="button" tabindex="0" onclick="showView('ferias')" onkeydown="handleEnter(event, 'ferias')">
-            <h3>🥘 Ferias</h3>
-            <p>Botillo, agroalimentaria, etc.</p>
-            <span class="card-btn">Ver tabla →</span>
-          </div>
-          <div class="card" role="button" tabindex="0" onclick="showView('mercados')" onkeydown="handleEnter(event, 'mercados')">
-            <h3>🧺 Mercadillos</h3>
-            <p>Qué hay cada día por la provincia.</p>
-            <span class="card-btn">Ver tabla →</span>
-          </div>
-        </div>
-      </section>
-
-      
-<section id="sec-faq">
-  <h2>❓ Preguntas frecuentes</h2>
-  <div class="faq">
-    <details>
-      <summary>¿Dónde ir de tapas en León?</summary>
-      <p>Para una primera ruta fiable, empieza por el <strong>Barrio Húmedo</strong> y combina 4–6 paradas. En esta guía tienes una selección corta de bares con tapa potente y ambiente.</p>
-    </details>
-    <details>
-      <summary>¿Qué monumentos son imprescindibles?</summary>
-      <p>Si vas justo de tiempo: <strong>Catedral</strong>, <strong>San Isidoro</strong> (Panteón Real) y la <strong>Casa Botines</strong>. Si te apetece plan alternativo, añade <strong>MUSAC</strong>.</p>
-    </details>
-    <details>
-      <summary>¿Semana Santa de León: qué no me puedo perder?</summary>
-      <p>Además de las procesiones, hay tradiciones muy locales (como <strong>Genarín</strong>) y un tejido cofrade enorme: aquí tienes guía rápida y listado completo de cofradías.</p>
-    </details>
-    <details>
-      <summary>¿Dónde dormir para ir andando a todo?</summary>
-      <p>Lo más cómodo es alojarse en el centro (Plaza Mayor / casco histórico) o cerca de San Marcos si te encaja. Tienes 3 opciones destacadas y enlaces directos para comparar.</p>
-    </details>
-  </div>
-</section>
-
-      <section id="sec-contacto">
-        <div class="card" style="background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border:1px solid rgba(255,255,255,.1);text-align:center;padding:3rem 2rem">
-          <h3 style="color:#fff;margin-bottom:10px;font-size:1.6rem">🚀 ¿Tienes un negocio en León?</h3>
-          <p style="color:#cbd5e1;margin-bottom:18px;font-size:1.05rem">Escríbenos para incluirte en la guía.</p>
-          <a href="mailto:contacto.comeenleon@gmail.com" class="card-btn" style="background:#fbbf24;color:#0f172a">📩 Contactar</a>
-        </div>
-      </section>
-    </div>
-
-    <!-- VISTAS: COMER -->
-    <div id="tapas" class="view-section">
-      <h2>🍷 Ruta de tapas: Barrio Húmedo</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span class="current" aria-current="page">Tapas: Barrio Húmedo</span></nav>
-      <p class="hint">En León, la tapa suele ir con la consumición. Aquí tienes una ruta corta y fiable.</p>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/bicha.jpg" alt="La Bicha (morcilla) en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>La Bicha</h3>
-          <div class="rating"><span class="star">★</span> 4.4</div>
-          <p>Mítica por la morcilla. Muy céntrica.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Bar+La+Bicha+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/rebote.jpg" alt="El Rebote (croquetas) en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>El Rebote</h3>
-          <div class="rating"><span class="star">★</span> 4.5</div>
-          <p>Croquetas y ambientazo.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Bar+El+Rebote+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/competencia.jpg" alt="La Competencia (pizza) en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>La Competencia</h3>
-          <div class="rating"><span class="star">★</span> 4.3</div>
-          <p>La famosa “pizza” con la consumición.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Pizzeria+La+Competencia+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/flechazo.jpg" alt="El Flechazo (patatas) en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>El Flechazo</h3>
-          <div class="rating"><span class="star">★</span> 4.6</div>
-          <p>Patatas de tapa, sin fallos.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Bar+El+Flechazo+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/cazurros.jpg" alt="Los Cazurros (patatas cabrales) en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Los Cazurros</h3>
-          <div class="rating"><span class="star">★</span> 4.2</div>
-          <p>Patatas con cabrales y otras clásicas.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Bar+Los+Cazurros+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-
-<div class="related" aria-label="Enlaces relacionados">
-  <h3>Relacionado</h3>
-  <div class="chips">
-      <button onclick="scrollToSection('sec-comer')">Volver a Comer</button>
-      <button onclick="showView('cocido')">Cocina tradicional</button>
-      <button onclick="showView('autor')">Michelin</button>
-      <button onclick="showView('modernos')">Restaurantes modernos</button>
-  </div>
+<ul>
+<li>Si es tu primera vez, empieza por <strong>Qué ver</strong> y luego remata con <strong>ruta de tapas</strong>.</li>
+<li>¿Fin de semana? Añade un plan de interior (MUSAC) por si llueve.</li>
+<li>En festivos y Semana Santa: reserva con margen (alojamiento y visitas).</li>
+</ul>
+<div aria-label="Accesos rápidos" class="quick-links" role="group">
+<button onclick="scrollToSection('sec-visitar')">📍 Qué ver</button>
+<button onclick="showView('tapas')">🍷 Ruta de tapas</button>
+<button onclick="scrollToSection('sec-dormir')">🛏️ Hoteles</button>
+<button onclick="scrollToSection('sec-semana')">🟣 Semana Santa</button>
+<button onclick="scrollToSection('sec-agenda')">🎉 Agenda</button>
 </div>
-      </div>
-    </div>
-
-    <div id="cocido" class="view-section">
-      <h2>🍲 Cocina tradicional</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span class="current" aria-current="page">Cocina tradicional</span></nav>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/cocido.jpg" alt="Cocido maragato tradicional" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Cocido maragato</h3>
-          <p>El “al revés”: carnes → garbanzos → sopa.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Casa+Maragata+Castrillo+de+los+Polvazares" target="_blank" rel="noopener noreferrer">📍 Buscar</a>
-        </article>
-        <article class="card">
-          <img src="assets/botillo.jpg" alt="Botillo del Bierzo" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Botillo del Bierzo</h3>
-          <p>Rey del invierno. Perfecto con cachelos.</p>
-        </article>
-        <article class="card">
-          <img src="assets/cecina.jpg" alt="Cecina de León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Cecina de León</h3>
-          <p>Imprescindible: con AOVE y escamas de sal.</p>
-        </article>
-      </div>
-    </div>
-
-    <div id="autor" class="view-section">
-      <h2>⭐ Cocina Michelin</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span class="current" aria-current="page">Cocina Michelin</span></nav>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/pablo.jpg" alt="Restaurante Pablo en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Pablo</h3>
-          <p>1 Estrella Michelin.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Pablo+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/cocinandos.jpg" alt="Restaurante Cocinandos en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Cocinandos</h3>
-          <p>1 Estrella Michelin.</p>
-          <a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Cocinandos+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/carea.jpg" alt="Carea Bistró en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Carea Bistró</h3>
-          <p>Bib Gourmand.</p>
-        </article>
-      </div>
-    </div>
-
-    <div id="modernos" class="view-section">
-      <h2>🍽️ Restaurantes modernos</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span class="current" aria-current="page">Restaurantes modernos</span></nav>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/kamin.jpg" alt="Restaurante Kamín en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Kamín</h3>
-          <div class="rating"><span class="star">★</span> 4.8</div>
-          <a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Kamin+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/marcela.jpg" alt="Restaurante Marcela en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>Marcela</h3>
-          <div class="rating"><span class="star">★</span> 4.4</div>
-          <a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Marcela+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-        <article class="card">
-          <img src="assets/nimu.jpg" alt="niMÚ Azotea en León" loading="lazy" decoding="async" width="1200" height="800">
-          <h3>niMÚ Azotea</h3>
-          <div class="rating"><span class="star">★</span> 4.2</div>
-          <a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Nimu+Azotea+Leon" target="_blank" rel="noopener noreferrer">📍 Mapa</a>
-        </article>
-      </div>
-    </div>
-
-    <!-- VISTAS: AGENDA -->
-    <div id="ferias" class="view-section">
-      <h2>🥘 Ferias gastronómicas</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-agenda')">Agenda</button><span class="sep">›</span><span class="current" aria-current="page">Ferias</span></nav>
-      <table>
-        <thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th></tr></thead>
-        <tbody>
-          <tr><td>7 Feb</td><td>Festival del Botillo</td><td>Bembibre</td></tr>
-          <tr><td>6–8 Feb</td><td>Feria Agroalimentaria</td><td>Bembibre</td></tr>
-          <tr><td>1 Feb</td><td>Feria de San Blas</td><td>Gradefes</td></tr>
-        </tbody>
-      </table>
-      <p class="hint" style="margin-top:12px">Tip: cuando tengas fechas oficiales, actualiza esta tabla y listo.</p>
-    </div>
-
-    <div id="conciertos" class="view-section">
-      <h2>🎸 Conciertos</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-agenda')">Agenda</button><span class="sep">›</span><span class="current" aria-current="page">Conciertos</span></nav>
-      <table>
-        <tbody>
-          <tr><th>14 Feb</th><td>Miguel Ríos</td><td><span style="font-weight:900;color:#ef4444">AGOTADO</span></td></tr>
-          <tr><th>07 Feb</th><td>La M.O.D.A.</td><td><span style="font-weight:900;color:#ef4444">ÚLTIMAS</span></td></tr>
-          <tr><th>21 Feb</th><td>Pulsar To Floyd</td><td>Auditorio</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div id="mercados" class="view-section">
-      <h2>🧺 Mercadillos</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-agenda')">Agenda</button><span class="sep">›</span><span class="current" aria-current="page">Mercadillos</span></nav>
-      <table>
-        <thead><tr><th>Día</th><th>Lugares</th></tr></thead>
-        <tbody>
-          <tr><td>Lunes</td><td>Boñar, Valderas, Villamañán</td></tr>
-          <tr><td>Martes</td><td>Astorga, Bembibre, Laguna de Negrillos</td></tr>
-          <tr><td>Miércoles</td><td>León (Plaza Mayor), Sahagún, Valencia de Don Juan</td></tr>
-          <tr><td>Jueves</td><td>Benavides, Cistierna, Santa María del Páramo</td></tr>
-          <tr><td>Viernes</td><td>León (Papalaguinda), Mansilla de las Mulas</td></tr>
-          <tr><td>Sábado</td><td>León (Plaza Mayor), La Bañeza, Ponferrada</td></tr>
-          <tr><td>Domingo</td><td>El Rastro (León), Santa María del Páramo</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- VISTAS: SEMANA SANTA -->
-    <div id="procesiones" class="view-section">
-      <h2 style="color:var(--purple)">🟣 Semana Santa: guía rápida</h2>
-
-      <div class="ss-hero" aria-label="Semana Santa 2026: cartel, folleto y guía rápida">
-        <div>
-          <div class="ss-badges">
-            <span class="badge purple">🟣 Interés Turístico Internacional</span>
-            <span class="badge">🎺 Procesiones · Cofradías · Tradiciones</span>
-          </div>
-
-          <h3 style="margin-bottom:8px">Semana Santa de León 2026: guía práctica</h3>
-          <p class="hint">
+<p class="hint" style="margin-top:12px">Última revisión editorial: <strong>12 febrero 2026</strong>.</p>
+</section>
+<section id="sec-comer">
+<h2>🍽️ Experiencias gastronómicas</h2>
+<div class="grid">
+<div class="card" onclick="showView('tapas')" onkeydown="handleEnter(event, 'tapas')" role="button" tabindex="0">
+<h3>🍷 Barrio Húmedo (tapas)</h3>
+<p>La ruta sagrada. Sitios con tapa potente y ambiente a tope.</p>
+<span class="card-btn">Ver ruta →</span>
+</div>
+<div class="card" onclick="showView('cocido')" onkeydown="handleEnter(event, 'cocido')" role="button" tabindex="0">
+<h3>🍲 Cocido maragato</h3>
+<p>El cocido que se come al revés. Dónde probarlo bien.</p>
+<span class="card-btn">Ver lista →</span>
+</div>
+<div class="card" onclick="showView('autor')" onkeydown="handleEnter(event, 'autor')" role="button" tabindex="0">
+<h3>⭐ Alta cocina (Michelin)</h3>
+<p>Pablo y Cocinandos. Para celebraciones de verdad.</p>
+<span class="card-btn">Ver selección →</span>
+</div>
+<div class="card" onclick="showView('modernos')" onkeydown="handleEnter(event, 'modernos')" role="button" tabindex="0">
+<h3>🍽️ Nuevas tendencias</h3>
+<p>Kamín, Marcela, niMÚ… los sitios de moda.</p>
+<span class="card-btn">Ver modernos →</span>
+</div>
+</div>
+</section>
+<section id="sec-semana">
+<h2 style="color:var(--purple)">🟣 Semana Santa de León</h2>
+<p class="hint">Interés Turístico Internacional. Historia, cofradías y lo imprescindible.</p>
+<div class="grid">
+<div class="card card-semana" onclick="showView('procesiones')" onkeydown="handleEnter(event, 'procesiones')" role="button" tabindex="0">
+<h3>🎺 Procesiones y recorridos</h3>
+<p>Guía rápida: Genarín, tradiciones y claves para vivirla.</p>
+<span class="card-btn">Ver detalle →</span>
+</div>
+<div class="card card-semana" onclick="showView('listacofradias')" onkeydown="handleEnter(event, 'listacofradias')" role="button" tabindex="0">
+<h3>🛐 Cofradías</h3>
+<p>Listado completo de hermandades penitenciales.</p>
+<span class="card-btn">Ver listado →</span>
+</div>
+</div>
+</section>
+<section id="sec-dormir">
+<h2>🛏️ Dónde dormir</h2>
+<div class="grid">
+<article class="card">
+<img alt="Parador de San Marcos en León" decoding="async" height="800" loading="lazy" src="assets/sanmarcos1.jpg" width="1200"/>
+<h3>Parador de San Marcos</h3>
+<div aria-label="Valoración 4.7 de 5" class="rating"><span class="star">★</span> 4.7</div>
+<p>Dormir en un museo vivo. Ubicación top y edificio histórico.</p>
+<a class="card-btn" href="https://www.booking.com/hotel/es/parador-de-leon.es.html" rel="noopener noreferrer" target="_blank">Ver precios</a>
+</article>
+<article class="card">
+<img alt="NH Collection Plaza Mayor en León" decoding="async" height="800" loading="lazy" src="assets/nhcollection.jpg" width="1200"/>
+<h3>NH Collection (Plaza Mayor)</h3>
+<div aria-label="Valoración 4.5 de 5" class="rating"><span class="star">★</span> 4.5</div>
+<p>En plena Plaza Mayor. Perfecto para ir andando a todo.</p>
+<a class="card-btn" href="https://www.booking.com/hotel/es/nh-plaza-mayor.es.html" rel="noopener noreferrer" target="_blank">Ver precios</a>
+</article>
+<article class="card">
+<img alt="Hotel Real Colegiata de San Isidoro en León" decoding="async" height="800" loading="lazy" src="assets/sanisidoro1.jpg" width="1200"/>
+<h3>Hotel Real Colegiata</h3>
+<div aria-label="Valoración 4.6 de 5" class="rating"><span class="star">★</span> 4.6</div>
+<p>Duerme al lado de la historia. Súper céntrico.</p>
+<a class="card-btn" href="https://www.booking.com/hotel/es/real-colegiata-san-isidoro.es.html" rel="noopener noreferrer" target="_blank">Ver precios</a>
+</article>
+</div>
+<h3 style="margin-top:2.4rem;font-size:1.35rem;font-weight:900">🔎 Buscar más alojamiento</h3>
+<div class="platform-links">
+<a class="platform-btn btn-booking" href="https://www.booking.com/city/es/leon.es.html" rel="noopener noreferrer" target="_blank">Booking.com</a>
+<a class="platform-btn btn-airbnb" href="https://www.airbnb.es/s/León--España/homes" rel="noopener noreferrer" target="_blank">Airbnb</a>
+</div>
+</section>
+<section id="sec-visitar">
+<h2>📍 Qué ver en León</h2>
+<div class="grid">
+<div class="card" onclick="showView('catedral')" onkeydown="handleEnter(event, 'catedral')" role="button" tabindex="0">
+<h3>Catedral de León</h3>
+<p>La Pulchra Leonina. Vidrieras que te dejan loco.</p>
+<span class="card-btn">Horarios y precios →</span>
+</div>
+<div class="card" onclick="showView('sanisidoro')" onkeydown="handleEnter(event, 'sanisidoro')" role="button" tabindex="0">
+<h3>San Isidoro</h3>
+<p>Panteón Real: la “Capilla Sixtina del románico”.</p>
+<span class="card-btn">Horarios y precios →</span>
+</div>
+<div class="card" onclick="showView('botines')" onkeydown="handleEnter(event, 'botines')" role="button" tabindex="0">
+<h3>Casa Botines (Gaudí)</h3>
+<p>Arquitectura única. Museo + exposiciones.</p>
+<span class="card-btn">Horarios y precios →</span>
+</div>
+<div class="card" onclick="showView('sanmarcos')" onkeydown="handleEnter(event, 'sanmarcos')" role="button" tabindex="0">
+<h3>San Marcos</h3>
+<p>Historia, fachada impresionante y entorno del río.</p>
+<span class="card-btn">Cómo llegar →</span>
+</div>
+<div class="card" onclick="showView('musac')" onkeydown="handleEnter(event, 'musac')" role="button" tabindex="0">
+<h3>MUSAC</h3>
+<p>Arte contemporáneo y planazo si llueve.</p>
+<span class="card-btn">Horarios y precios →</span>
+</div>
+</div>
+</section>
+<section id="sec-itinerarios">
+<h2>🗺️ Itinerarios recomendados</h2>
+<div class="grid">
+<article class="card">
+<h3>León en 1 día (imprescindibles)</h3>
+<p><strong>Mañana:</strong> Catedral → casco histórico. <strong>Mediodía:</strong> tapas por el Barrio Húmedo. <strong>Tarde:</strong> San Isidoro / Casa Botines. <strong>Noche:</strong> cena moderna o tradicional.</p>
+<div class="related">
+<div class="chips">
+<button onclick="showView('catedral')">Catedral</button>
+<button onclick="showView('tapas')">Tapas</button>
+<button onclick="showView('sanisidoro')">San Isidoro</button>
+<button onclick="showView('botines')">Casa Botines</button>
+</div>
+</div>
+</article>
+<article class="card">
+<h3>León en 2 días (con plan B si llueve)</h3>
+<p><strong>Día 1:</strong> centro histórico + tapas. <strong>Día 2:</strong> San Marcos + paseo junto al río y <strong>MUSAC</strong> (perfecto si llueve).</p>
+<div class="related">
+<div class="chips">
+<button onclick="showView('sanmarcos')">San Marcos</button>
+<button onclick="showView('musac')">MUSAC</button>
+<button onclick="showView('modernos')">Restaurantes modernos</button>
+<button onclick="scrollToSection('sec-dormir')">Hoteles</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section id="sec-agenda">
+<h2>🎉 Agenda rápida</h2>
+<div class="grid">
+<div class="card" onclick="showView('conciertos')" onkeydown="handleEnter(event, 'conciertos')" role="button" tabindex="0">
+<h3>🎸 Conciertos</h3>
+<p>Música en directo (ejemplos). Actualiza cuando quieras.</p>
+<span class="card-btn">Ver tabla →</span>
+</div>
+<div class="card" onclick="showView('ferias')" onkeydown="handleEnter(event, 'ferias')" role="button" tabindex="0">
+<h3>🥘 Ferias</h3>
+<p>Botillo, agroalimentaria, etc.</p>
+<span class="card-btn">Ver tabla →</span>
+</div>
+<div class="card" onclick="showView('mercados')" onkeydown="handleEnter(event, 'mercados')" role="button" tabindex="0">
+<h3>🧺 Mercadillos</h3>
+<p>Qué hay cada día por la provincia.</p>
+<span class="card-btn">Ver tabla →</span>
+</div>
+</div>
+</section>
+<section id="sec-faq">
+<h2>❓ Preguntas frecuentes</h2>
+<div class="faq">
+<details>
+<summary>¿Dónde ir de tapas en León?</summary>
+<p>Para una primera ruta fiable, empieza por el <strong>Barrio Húmedo</strong> y combina 4–6 paradas. En esta guía tienes una selección corta de bares con tapa potente y ambiente.</p>
+</details>
+<details>
+<summary>¿Qué monumentos son imprescindibles?</summary>
+<p>Si vas justo de tiempo: <strong>Catedral</strong>, <strong>San Isidoro</strong> (Panteón Real) y la <strong>Casa Botines</strong>. Si te apetece plan alternativo, añade <strong>MUSAC</strong>.</p>
+</details>
+<details>
+<summary>¿Semana Santa de León: qué no me puedo perder?</summary>
+<p>Además de las procesiones, hay tradiciones muy locales (como <strong>Genarín</strong>) y un tejido cofrade enorme: aquí tienes guía rápida y listado completo de cofradías.</p>
+</details>
+<details>
+<summary>¿Dónde dormir para ir andando a todo?</summary>
+<p>Lo más cómodo es alojarse en el centro (Plaza Mayor / casco histórico) o cerca de San Marcos si te encaja. Tienes 3 opciones destacadas y enlaces directos para comparar.</p>
+</details>
+</div>
+</section>
+<section id="sec-contacto">
+<div class="card" style="background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border:1px solid rgba(255,255,255,.1);text-align:center;padding:3rem 2rem">
+<h3 style="color:#fff;margin-bottom:10px;font-size:1.6rem">🚀 ¿Tienes un negocio en León?</h3>
+<p style="color:#cbd5e1;margin-bottom:18px;font-size:1.05rem">Escríbenos para incluirte en la guía.</p>
+<a class="card-btn" href="mailto:contacto.comeenleon@gmail.com" style="background:#fbbf24;color:#0f172a">📩 Contactar</a>
+</div>
+</section>
+</div>
+<!-- VISTAS: COMER -->
+<div class="view-section" id="tapas">
+<h2>🍷 Ruta de tapas: Barrio Húmedo</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span aria-current="page" class="current">Tapas: Barrio Húmedo</span></nav>
+<p class="hint">En León, la tapa suele ir con la consumición. Aquí tienes una ruta corta y fiable.</p>
+<div class="grid">
+<article class="card">
+<img alt="La Bicha (morcilla) en León" decoding="async" height="800" loading="lazy" src="assets/bicha.jpg" width="1200"/>
+<h3>La Bicha</h3>
+<div class="rating"><span class="star">★</span> 4.4</div>
+<p>Mítica por la morcilla. Muy céntrica.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Bar+La+Bicha+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="El Rebote (croquetas) en León" decoding="async" height="800" loading="lazy" src="assets/rebote.jpg" width="1200"/>
+<h3>El Rebote</h3>
+<div class="rating"><span class="star">★</span> 4.5</div>
+<p>Croquetas y ambientazo.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Bar+El+Rebote+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="La Competencia (pizza) en León" decoding="async" height="800" loading="lazy" src="assets/competencia.jpg" width="1200"/>
+<h3>La Competencia</h3>
+<div class="rating"><span class="star">★</span> 4.3</div>
+<p>La famosa “pizza” con la consumición.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Pizzeria+La+Competencia+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="El Flechazo (patatas) en León" decoding="async" height="800" loading="lazy" src="assets/flechazo.jpg" width="1200"/>
+<h3>El Flechazo</h3>
+<div class="rating"><span class="star">★</span> 4.6</div>
+<p>Patatas de tapa, sin fallos.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Bar+El+Flechazo+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Los Cazurros (patatas cabrales) en León" decoding="async" height="800" loading="lazy" src="assets/cazurros.jpg" width="1200"/>
+<h3>Los Cazurros</h3>
+<div class="rating"><span class="star">★</span> 4.2</div>
+<p>Patatas con cabrales y otras clásicas.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Bar+Los+Cazurros+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>Relacionado</h3>
+<div class="chips">
+<button onclick="scrollToSection('sec-comer')">Volver a Comer</button>
+<button onclick="showView('cocido')">Cocina tradicional</button>
+<button onclick="showView('autor')">Michelin</button>
+<button onclick="showView('modernos')">Restaurantes modernos</button>
+</div>
+</div>
+</div>
+</div>
+<div class="view-section" id="cocido">
+<h2>🍲 Cocina tradicional</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span aria-current="page" class="current">Cocina tradicional</span></nav>
+<div class="grid">
+<article class="card">
+<img alt="Cocido maragato tradicional" decoding="async" height="800" loading="lazy" src="assets/cocido.jpg" width="1200"/>
+<h3>Cocido maragato</h3>
+<p>El “al revés”: carnes → garbanzos → sopa.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Casa+Maragata+Castrillo+de+los+Polvazares" rel="noopener noreferrer" target="_blank">📍 Buscar</a>
+</article>
+<article class="card">
+<img alt="Botillo del Bierzo" decoding="async" height="800" loading="lazy" src="assets/botillo.jpg" width="1200"/>
+<h3>Botillo del Bierzo</h3>
+<p>Rey del invierno. Perfecto con cachelos.</p>
+</article>
+<article class="card">
+<img alt="Cecina de León" decoding="async" height="800" loading="lazy" src="assets/cecina.jpg" width="1200"/>
+<h3>Cecina de León</h3>
+<p>Imprescindible: con AOVE y escamas de sal.</p>
+</article>
+</div>
+</div>
+<div class="view-section" id="autor">
+<h2>⭐ Cocina Michelin</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span aria-current="page" class="current">Cocina Michelin</span></nav>
+<div class="grid">
+<article class="card">
+<img alt="Restaurante Pablo en León" decoding="async" height="800" loading="lazy" src="assets/pablo.jpg" width="1200"/>
+<h3>Pablo</h3>
+<p>1 Estrella Michelin.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Pablo+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Restaurante Cocinandos en León" decoding="async" height="800" loading="lazy" src="assets/cocinandos.jpg" width="1200"/>
+<h3>Cocinandos</h3>
+<p>1 Estrella Michelin.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Cocinandos+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Carea Bistró en León" decoding="async" height="800" loading="lazy" src="assets/carea.jpg" width="1200"/>
+<h3>Carea Bistró</h3>
+<p>Bib Gourmand.</p>
+</article>
+</div>
+</div>
+<div class="view-section" id="modernos">
+<h2>🍽️ Restaurantes modernos</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-comer')">Comer</button><span class="sep">›</span><span aria-current="page" class="current">Restaurantes modernos</span></nav>
+<div class="grid">
+<article class="card">
+<img alt="Restaurante Kamín en León" decoding="async" height="800" loading="lazy" src="assets/kamin.jpg" width="1200"/>
+<h3>Kamín</h3>
+<div class="rating"><span class="star">★</span> 4.8</div>
+<a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Kamin+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Restaurante Marcela en León" decoding="async" height="800" loading="lazy" src="assets/marcela.jpg" width="1200"/>
+<h3>Marcela</h3>
+<div class="rating"><span class="star">★</span> 4.4</div>
+<a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Marcela+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="niMÚ Azotea en León" decoding="async" height="800" loading="lazy" src="assets/nimu.jpg" width="1200"/>
+<h3>niMÚ Azotea</h3>
+<div class="rating"><span class="star">★</span> 4.2</div>
+<a class="card-btn" href="https://www.google.com/maps/search/Restaurante+Nimu+Azotea+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+</div>
+</div>
+<!-- VISTAS: AGENDA -->
+<div class="view-section" id="ferias">
+<h2>🥘 Ferias gastronómicas</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-agenda')">Agenda</button><span class="sep">›</span><span aria-current="page" class="current">Ferias</span></nav>
+<table>
+<thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th></tr></thead>
+<tbody>
+<tr><td>7 Feb</td><td>Festival del Botillo</td><td>Bembibre</td></tr>
+<tr><td>6–8 Feb</td><td>Feria Agroalimentaria</td><td>Bembibre</td></tr>
+<tr><td>1 Feb</td><td>Feria de San Blas</td><td>Gradefes</td></tr>
+</tbody>
+</table>
+<p class="hint" style="margin-top:12px">Tip: cuando tengas fechas oficiales, actualiza esta tabla y listo.</p>
+</div>
+<div class="view-section" id="conciertos">
+<h2>🎸 Conciertos</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-agenda')">Agenda</button><span class="sep">›</span><span aria-current="page" class="current">Conciertos</span></nav>
+<table>
+<tbody>
+<tr><th>14 Feb</th><td>Miguel Ríos</td><td><span style="font-weight:900;color:#ef4444">AGOTADO</span></td></tr>
+<tr><th>07 Feb</th><td>La M.O.D.A.</td><td><span style="font-weight:900;color:#ef4444">ÚLTIMAS</span></td></tr>
+<tr><th>21 Feb</th><td>Pulsar To Floyd</td><td>Auditorio</td></tr>
+</tbody>
+</table>
+</div>
+<div class="view-section" id="mercados">
+<h2>🧺 Mercadillos</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-agenda')">Agenda</button><span class="sep">›</span><span aria-current="page" class="current">Mercadillos</span></nav>
+<table>
+<thead><tr><th>Día</th><th>Lugares</th></tr></thead>
+<tbody>
+<tr><td>Lunes</td><td>Boñar, Valderas, Villamañán</td></tr>
+<tr><td>Martes</td><td>Astorga, Bembibre, Laguna de Negrillos</td></tr>
+<tr><td>Miércoles</td><td>León (Plaza Mayor), Sahagún, Valencia de Don Juan</td></tr>
+<tr><td>Jueves</td><td>Benavides, Cistierna, Santa María del Páramo</td></tr>
+<tr><td>Viernes</td><td>León (Papalaguinda), Mansilla de las Mulas</td></tr>
+<tr><td>Sábado</td><td>León (Plaza Mayor), La Bañeza, Ponferrada</td></tr>
+<tr><td>Domingo</td><td>El Rastro (León), Santa María del Páramo</td></tr>
+</tbody>
+</table>
+</div>
+<!-- VISTAS: SEMANA SANTA -->
+<div class="view-section" id="procesiones">
+<h2 style="color:var(--purple)">🟣 Semana Santa: guía rápida</h2>
+<div aria-label="Semana Santa 2026: cartel, folleto y guía rápida" class="ss-hero">
+<div>
+<div class="ss-badges">
+<span class="badge purple">🟣 Interés Turístico Internacional</span>
+<span class="badge">🎺 Procesiones · Cofradías · Tradiciones</span>
+</div>
+<h3 style="margin-bottom:8px">Semana Santa de León 2026: guía práctica</h3>
+<p class="hint">
             Entre el <strong>Viernes de Dolores</strong> y el <strong>Domingo de Resurrección</strong>, León vive días intensos de tradición cofrade,
             patrimonio artístico e imaginería, y mucho ambiente en la calle.
           </p>
-
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-            <button class="card-btn" onclick="showView('listacofradias')">🛐 Ver cofradías</button>
-            <a class="card-btn" href="assets/folleto-semana-santa-2026.pdf" target="_blank" rel="noopener noreferrer">📘 Descargar folleto oficial (PDF)</a>
-            <a class="card-btn" href="https://www.semanasantaleon.org/" target="_blank" rel="noopener noreferrer">🌐 Web oficial</a>
-          </div>
-
-          <p class="source-line">
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+<button class="card-btn" onclick="showView('listacofradias')">🛐 Ver cofradías</button>
+<a class="card-btn" href="assets/folleto-semana-santa-2026.pdf" rel="noopener noreferrer" target="_blank">📘 Descargar folleto oficial (PDF)</a>
+<a class="card-btn" href="https://www.semanasantaleon.org/" rel="noopener noreferrer" target="_blank">🌐 Web oficial</a>
+</div>
+<p class="source-line">
             Fuente institucional: Junta Mayor de Cofradías y Hermandades de León (folleto y contenidos oficiales).
           </p>
-        </div>
-
-        <div>
-          <img src="assets/cartel-semana-santa-2026.jpg"
-               alt="Cartel oficial de la Semana Santa de León 2026"
-               loading="lazy" decoding="async" width="1200" height="1600">
-          <p class="hint" style="margin-top:10px">
+</div>
+<div>
+<img alt="Cartel oficial de la Semana Santa de León 2026" decoding="async" height="1600" loading="lazy" src="assets/cartel-semana-santa-2026.jpg" width="1200"/>
+<p class="hint" style="margin-top:10px">
             Nota: añade créditos del cartel (autor/a y año) cuando lo confirmes desde la fuente oficial.
           </p>
-        </div>
-      </div>
-
-      <div class="ss-split">
-        <div class="ss-note">
-          <h3>🔥 Qué no perderse</h3>
-          <ul style="margin-top:8px;display:grid;gap:8px;list-style:disc;padding-left:18px">
-            <li><strong>Genarín</strong> (Jueves Santo): tradición única y muy leonesa.</li>
-            <li><strong>Ambiente papón</strong>: túnicas, bandas y pasos a hombros.</li>
-            <li><strong>Limonada leonesa</strong> + tapeo: plan perfecto antes o después.</li>
-            <li>Si vas justo de tiempo: mira una procesión y remata con <a href="#tapas" onclick="showView('tapas')">ruta de tapas</a>.</li>
-          </ul>
-          <p class="hint" style="margin-top:10px">
+</div>
+</div>
+<div class="ss-split">
+<div class="ss-note">
+<h3>🔥 Qué no perderse</h3>
+<ul style="margin-top:8px;display:grid;gap:8px;list-style:disc;padding-left:18px">
+<li><strong>Genarín</strong> (Jueves Santo): tradición única y muy leonesa.</li>
+<li><strong>Ambiente papón</strong>: túnicas, bandas y pasos a hombros.</li>
+<li><strong>Limonada leonesa</strong> + tapeo: plan perfecto antes o después.</li>
+<li>Si vas justo de tiempo: mira una procesión y remata con <a href="#tapas" onclick="showView('tapas')">ruta de tapas</a>.</li>
+</ul>
+<p class="hint" style="margin-top:10px">
             Cuando salgan los horarios oficiales, los añadimos en una tabla y queda “guía definitiva”.
           </p>
-        </div>
-
-        <div class="ss-video" id="ss-video">
-          <div class="ss-video-inner" id="ss-video-inner">
-            <button type="button" onclick="loadYouTube('__tEsce9QgY','ss-video-inner')">
-              <div style="font-size:1.15rem;font-weight:900">▶ Ver vídeo</div>
-              <span>Cargar YouTube (modo privacidad)</span>
-            </button>
-          </div>
-          <small>Al reproducir se cargan recursos de YouTube. Usamos <strong>youtube-nocookie</strong> y solo se carga al clicar.</small>
-        </div>
-      </div>
-
-      <div class="ss-note" style="margin-top:18px">
-        <h3>📜 Un poco de historia (resumen)</h3>
-        <p>
+</div>
+<div class="ss-video" id="ss-video">
+<div class="ss-video-inner" id="ss-video-inner">
+<button onclick="loadYouTube('__tEsce9QgY','ss-video-inner')" type="button">
+<div style="font-size:1.15rem;font-weight:900">▶ Ver vídeo</div>
+<span>Cargar YouTube (modo privacidad)</span>
+</button>
+</div>
+<small>Al reproducir se cargan recursos de YouTube. Usamos <strong>youtube-nocookie</strong> y solo se carga al clicar.</small>
+</div>
+</div>
+<div class="ss-note" style="margin-top:18px">
+<h3>📜 Un poco de historia (resumen)</h3>
+<p>
           La Semana Santa de León hunde sus raíces en el <strong>siglo XVI</strong> y hoy reúne <strong>16 cofradías</strong>,
           más de <strong>30 actos procesionales</strong> y cerca de un centenar de pasos en la calle. (Resumen adaptado del folleto institucional.)
         </p>
-      </div>
-      <div class="card" style="margin-top:18px">
-        <h3 style="color:var(--purple)">🎺 Procesiones destacadas</h3>
-        <p class="hint">
+</div>
+<div class="card" style="margin-top:18px">
+<h3 style="color:var(--purple)">🎺 Procesiones destacadas</h3>
+<p class="hint">
           Dentro de las procesiones de Semana Santa de León hay dos que destacan: <strong>La Ronda</strong> y la <strong>Procesión de los Pasos</strong>,
           con mención especial en la Declaración de Interés Turístico Internacional.
         </p>
-        <div class="grid" style="margin-top:14px">
-          <div class="card" style="border-color:var(--purple-light)">
-            <h3>La Ronda</h3>
-            <p>Ambiente nocturno y tradición en el casco histórico. Ideal para vivir la ciudad “a pie” y con tiempo.</p>
-          </div>
-          <div class="card" style="border-color:var(--purple-light)">
-            <h3>Procesión de los Pasos</h3>
-            <p>Una de las más emblemáticas: pasos, papones y un recorrido que concentra lo esencial de la Semana Santa leonesa.</p>
-          </div>
-        </div>
-        <p class="hint" style="margin-top:10px">
+<div class="grid" style="margin-top:14px">
+<div class="card" style="border-color:var(--purple-light)">
+<h3>La Ronda</h3>
+<p>Ambiente nocturno y tradición en el casco histórico. Ideal para vivir la ciudad “a pie” y con tiempo.</p>
+</div>
+<div class="card" style="border-color:var(--purple-light)">
+<h3>Procesión de los Pasos</h3>
+<p>Una de las más emblemáticas: pasos, papones y un recorrido que concentra lo esencial de la Semana Santa leonesa.</p>
+</div>
+</div>
+<p class="hint" style="margin-top:10px">
           Nota: cuando salgan horarios oficiales 2026, añadimos fecha y hora aquí para dejarlo definitivo.
         </p>
-      </div>
-
-
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span><span class="current" aria-current="page">Procesiones</span></nav>
-      <p class="hint">Pendiente de horarios oficiales 2026 (cuando salgan, los metemos aquí en una tabla).</p>
-      <div class="grid" style="margin-top:16px">
-        <div class="card" style="border-color:var(--purple-light)">
-          <h3>Los Papones</h3>
-          <p>Tradición cofrade muy viva en la ciudad.</p>
-
-<div class="related" aria-label="Enlaces relacionados">
-  <h3>Relacionado</h3>
-  <div class="chips">
-      <button onclick="showView('listacofradias')">Cofradías</button>
-      <button onclick="scrollToSection('sec-semana')">Volver a Semana Santa</button>
-      <button onclick="showView('tapas')">Tapas</button>
-  </div>
 </div>
-        </div>
-        <div class="card" style="border-color:var(--purple-light)">
-          <h3>La Limonada</h3>
-          <p>Vino con azúcar y canela. Clásico de estas fechas.</p>
-        </div>
-        <div class="card" style="border-color:var(--purple-light)">
-          <h3>Genarín</h3>
-          <p>El entierro pagano del Jueves Santo.</p>
-        </div>
-      </div>
-      <div class="card" style="margin-top:18px">
-        <h3>📌 Consejo práctico</h3>
-        <p>Llega con tiempo al centro (Tráfico + gente). Si vienes con peques, mejor ver una procesión “tranquila” y luego tapeo.</p>
-      </div>
-    </div>
-
-    <div id="listacofradias" class="view-section">
-  <h2 style="color:var(--purple)">🛐 Cofradías de la Semana Santa de León</h2>
-
-  <nav class="breadcrumbs" aria-label="Ruta de navegación">
-    <button onclick="showView('home')">Inicio</button><span class="sep">›</span>
-    <button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span>
-    <span class="current" aria-current="page">Cofradías</span>
-  </nav>
-
-  <p class="hint">
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span><span aria-current="page" class="current">Procesiones</span></nav>
+<p class="hint">Pendiente de horarios oficiales 2026 (cuando salgan, los metemos aquí en una tabla).</p>
+<div class="grid" style="margin-top:16px">
+<div class="card" style="border-color:var(--purple-light)">
+<h3>Los Papones</h3>
+<p>Tradición cofrade muy viva en la ciudad.</p>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>Relacionado</h3>
+<div class="chips">
+<button onclick="showView('listacofradias')">Cofradías</button>
+<button onclick="scrollToSection('sec-semana')">Volver a Semana Santa</button>
+<button onclick="showView('tapas')">Tapas</button>
+</div>
+</div>
+</div>
+<div class="card" style="border-color:var(--purple-light)">
+<h3>La Limonada</h3>
+<p>Vino con azúcar y canela. Clásico de estas fechas.</p>
+</div>
+<div class="card" style="border-color:var(--purple-light)">
+<h3>Genarín</h3>
+<p>El entierro pagano del Jueves Santo.</p>
+</div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>📌 Consejo práctico</h3>
+<p>Llega con tiempo al centro (Tráfico + gente). Si vienes con peques, mejor ver una procesión “tranquila” y luego tapeo.</p>
+</div>
+</div>
+<div class="view-section" id="listacofradias">
+<h2 style="color:var(--purple)">🛐 Cofradías de la Semana Santa de León</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs">
+<button onclick="showView('home')">Inicio</button><span class="sep">›</span>
+<button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span>
+<span aria-current="page" class="current">Cofradías</span>
+</nav>
+<p class="hint">
     Selección y estructura propia (sin copiar textos extensos). Si quieres contrastar detalles, dejamos la <strong>fuente opcional</strong> en cada ficha.
   </p>
-
-  <!-- GRID: clicable -> abre su ficha en el acordeón -->
-  <div class="cof-grid" aria-label="Cofradías (clic para abrir ficha)">
-    <div class="card" role="button" tabindex="0" data-cof="angustias-soledad">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/angustias-soledad.png" alt="Escudo Angustias y Soledad" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Angustias y Soledad</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="dulce-nombre-jesus-nazareno">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/dulce-nombre-jesus-nazareno.png" alt="Escudo Dulce Nombre de Jesús Nazareno" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="minerva-veracruz">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/minerva-veracruz.png" alt="Escudo Minerva y Veracruz" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Minerva y Veracruz</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="santa-marta">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/santa-marta.png" alt="Escudo Santa Marta" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Santa Marta</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="jesus-divino-obrero">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/jesus-divino-obrero.png" alt="Escudo Jesús Divino Obrero" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Jesús Divino Obrero</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="siete-palabras">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/siete-palabras.png" alt="Escudo Siete Palabras" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Siete Palabras</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="cristo-del-perdon">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/cristo-del-perdon.png" alt="Escudo Cristo del Perdón" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Cristo del Perdón</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="jesus-de-la-redencion">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/jesus-de-la-redencion.png" alt="Escudo Jesús de la Redención" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Jesús de la Redención</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="cristo-de-la-expiracion">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/cristo-de-la-expiracion.png" alt="Escudo Cristo de la Expiración" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Cristo de la Expiración</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="maria-del-dulce-nombre">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/maria-del-dulce-nombre.png" alt="Escudo María del Dulce Nombre" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">María del Dulce Nombre</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="santisimo-sacramento">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/santisimo-sacramento.png" alt="Escudo Santísimo Sacramento" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Santísimo Sacramento</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="jesus-de-la-misericordia">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/jesus-de-la-misericordia.png" alt="Escudo Jesús de la Misericordia" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Jesús de la Misericordia</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="santo-sepulcro">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/santo-sepulcro.png" alt="Escudo Santo Sepulcro" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Santo Sepulcro</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="agonia-de-nuestro-senor">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/agonia-de-nuestro-senor.png" alt="Escudo Agonía de Nuestro Señor" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Agonía de Nuestro Señor</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="cristo-del-gran-poder">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/cristo-del-gran-poder.png" alt="Escudo Cristo del Gran Poder" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Cristo del Gran Poder</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-    <div class="card" role="button" tabindex="0" data-cof="desenclavo">
-      <div class="cof-item">
-        <div class="cof-logo"><img src="assets/cofradias/desenclavo.png" alt="Escudo Desenclavo" loading="lazy" decoding="async"></div>
-        <div>
-          <h3 style="margin:0">Desenclavo</h3>
-          <div class="cof-meta">Pulsa para ver ficha</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h3 style="margin-top:34px">📜 Historia y datos (acordeón)</h3>
-  <div class="cofradia-accordion" aria-label="Fichas de cofradías">
-    <details class="card" id="cof-angustias-soledad">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/angustias-soledad.png" alt="Escudo Angustias y Soledad" loading="lazy" decoding="async"></span>
-        <span>Angustias y Soledad</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/angustias-y-soledad/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-dulce-nombre-jesus-nazareno">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/dulce-nombre-jesus-nazareno.png" alt="Escudo Dulce Nombre de Jesús Nazareno" loading="lazy" decoding="async"></span>
-        <span>Dulce Nombre de Jesús Nazareno</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/dulce-nombre-2/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-minerva-veracruz">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/minerva-veracruz.png" alt="Escudo Minerva y Veracruz" loading="lazy" decoding="async"></span>
-        <span>Minerva y Veracruz</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-santa-marta">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/santa-marta.png" alt="Escudo Santa Marta" loading="lazy" decoding="async"></span>
-        <span>Santa Marta</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/hermandad-de-santa-marta-y-sagrada-cena/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-jesus-divino-obrero">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/jesus-divino-obrero.png" alt="Escudo Jesús Divino Obrero" loading="lazy" decoding="async"></span>
-        <span>Jesús Divino Obrero</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-
-    </details>
-
-    <details class="card" id="cof-siete-palabras">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/siete-palabras.png" alt="Escudo Siete Palabras" loading="lazy" decoding="async"></span>
-        <span>Siete Palabras</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-
-    </details>
-
-    <details class="card" id="cof-cristo-del-perdon">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/cristo-del-perdon.png" alt="Escudo Cristo del Perdón" loading="lazy" decoding="async"></span>
-        <span>Cristo del Perdón</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-perdon/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-jesus-de-la-redencion">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/jesus-de-la-redencion.png" alt="Escudo Jesús de la Redención" loading="lazy" decoding="async"></span>
-        <span>Jesús de la Redención</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-nuestro-senor-jesus-de-la-redencion/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-cristo-de-la-expiracion">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/cristo-de-la-expiracion.png" alt="Escudo Cristo de la Expiración" loading="lazy" decoding="async"></span>
-        <span>Cristo de la Expiración</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-santisimo-cristo-de-la-expiracion-y-del-silencio/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-maria-del-dulce-nombre">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/maria-del-dulce-nombre.png" alt="Escudo María del Dulce Nombre" loading="lazy" decoding="async"></span>
-        <span>María del Dulce Nombre</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-maria-del-dulce-nombre/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-santisimo-sacramento">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/santisimo-sacramento.png" alt="Escudo Santísimo Sacramento" loading="lazy" decoding="async"></span>
-        <span>Santísimo Sacramento</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-
-    </details>
-
-    <details class="card" id="cof-jesus-de-la-misericordia">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/jesus-de-la-misericordia.png" alt="Escudo Jesús de la Misericordia" loading="lazy" decoding="async"></span>
-        <span>Jesús de la Misericordia</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-
-    </details>
-
-    <details class="card" id="cof-santo-sepulcro">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/santo-sepulcro.png" alt="Escudo Santo Sepulcro" loading="lazy" decoding="async"></span>
-        <span>Santo Sepulcro</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-sepulcro-esperanza-de-la-vida/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-agonia-de-nuestro-senor">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/agonia-de-nuestro-senor.png" alt="Escudo Agonía de Nuestro Señor" loading="lazy" decoding="async"></span>
-        <span>Agonía de Nuestro Señor</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-agonia-de-nuestro-senor/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-cristo-del-gran-poder">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/cristo-del-gran-poder.png" alt="Escudo Cristo del Gran Poder" loading="lazy" decoding="async"></span>
-        <span>Cristo del Gran Poder</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-cristo-del-gran-poder/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-
-    <details class="card" id="cof-desenclavo">
-      <summary>
-        <span class="cof-logo"><img src="assets/cofradias/desenclavo.png" alt="Escudo Desenclavo" loading="lazy" decoding="async"></span>
-        <span>Desenclavo</span>
-      </summary>
-      <p class="hint" style="margin-top:10px">
-        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
-      </p>
-      <p class="hint" style="margin-top:10px">
-        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-desenclavo/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
-      </p>
-    </details>
-  </div>
+<!-- GRID: clicable -> abre su ficha en el acordeón -->
+<div aria-label="Cofradías (clic para abrir ficha)" class="cof-grid">
+<div class="card" data-cof="angustias-soledad" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias-soledad.png"/></div>
+<div>
+<h3 style="margin:0">Angustias y Soledad</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
 </div>
-
-    <!-- VISTAS: MONUMENTOS (con horarios/precios) -->
-    <div id="catedral" class="view-section">
-      <h2>⛪ Catedral de León</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span class="current" aria-current="page">Catedral de León</span></nav>
-      <article class="card" style="max-width:900px;margin:0 auto">
-        <img src="assets/catedral1.jpg" alt="Catedral de León" loading="lazy" decoding="async" width="1200" height="800">
-        <h3>La Pulchra Leonina</h3>
-        <p>Una de las catedrales góticas más impresionantes de España, famosa por sus vidrieras.</p>
-        <table aria-label="Horarios y precios de la Catedral de León">
-          <thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Horarios</strong></td><td>Los horarios cambian por temporada. Consulta la web oficial para el horario actualizado.</td></tr>
-            <tr><td><strong>Entradas</strong></td><td>Los precios varían por tipo de entrada (general/reducida). Consulta la web oficial para tarifas actualizadas.</td></tr>
-            <tr><td><strong>Mapa</strong></td><td><a href="https://www.google.com/maps/search/Catedral+de+Leon" target="_blank" rel="noopener noreferrer" class="card-btn">📍 Ver en Google Maps</a></td></tr>
-            <tr><td><strong>Web oficial</strong></td><td><a href="https://www.catedraldeleon.org/" target="_blank" rel="noopener noreferrer" class="card-btn">Ir a catedraldeleon.org</a></td></tr>
-          </tbody>
-        </table>
-        <p class="hint" style="margin-top:10px">Consejo: compra online si vas en festivos.</p>
-      </article>
-
-<div class="related" aria-label="Enlaces relacionados">
-  <h3>Relacionado</h3>
-  <div class="chips">
-      <button onclick="showView('sanisidoro')">San Isidoro</button>
-      <button onclick="showView('botines')">Casa Botines</button>
-      <button onclick="showView('tapas')">Tapas</button>
-      <button onclick="scrollToSection('sec-dormir')">Hoteles</button>
-  </div>
 </div>
-    </div>
-
-    <div id="sanisidoro" class="view-section">
-      <h2>🕯️ Basílica y Museo de San Isidoro</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span class="current" aria-current="page">San Isidoro</span></nav>
-      <article class="card" style="max-width:900px;margin:0 auto">
-        <img src="assets/sanisidoro1.jpg" alt="San Isidoro en León" loading="lazy" decoding="async" width="1200" height="800">
-        <h3>Panteón Real</h3>
-        <p>El conjunto románico más emblemático de León. El Panteón Real es conocido como la “Capilla Sixtina del románico”.</p>
-        <table aria-label="Horarios y precios de San Isidoro">
-          <thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Horarios</strong></td><td>Varían por temporada. Recomendación: confirmar antes de ir.</td></tr>
-            <tr><td><strong>Entradas</strong></td><td>Tarifas según visita y descuentos. Confirmar en su web oficial.</td></tr>
-            <tr><td><strong>Mapa</strong></td><td><a href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Le%C3%B3n" target="_blank" rel="noopener noreferrer" class="card-btn">📍 Ver en Google Maps</a></td></tr>
-          </tbody>
-        </table>
-        <p class="hint" style="margin-top:10px">Si te interesa el románico, reserva con margen: se disfruta mucho con visita guiada.</p>
-      </article>
-
-<div class="related" aria-label="Enlaces relacionados">
-  <h3>Relacionado</h3>
-  <div class="chips">
-      <button onclick="showView('catedral')">Catedral</button>
-      <button onclick="showView('botines')">Casa Botines</button>
-      <button onclick="showView('tapas')">Tapas</button>
-      <button onclick="scrollToSection('sec-agenda')">Agenda</button>
-  </div>
 </div>
-    </div>
-
-    <div id="botines" class="view-section">
-      <h2>🏛️ Museo Casa Botines Gaudí</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span class="current" aria-current="page">Casa Botines</span></nav>
-      <article class="card" style="max-width:900px;margin:0 auto">
-        <img src="assets/botines1.jpg" alt="Casa Botines de Gaudí en León" loading="lazy" decoding="async" width="1200" height="800">
-        <h3>Gaudí en León</h3>
-        <p>Edificio modernista único. Dentro: museo, exposiciones y tienda.</p>
-        <table aria-label="Horarios y precios de Casa Botines">
-          <thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Horario</strong></td><td>Miércoles a lunes (martes cerrado). Consulta temporada y pases en la web oficial.</td></tr>
-            <tr><td><strong>Tarifas orientativas</strong></td><td>Entrada general y reducida. Ver tarifas y actividades en la web oficial.</td></tr>
-            <tr><td><strong>Mapa</strong></td><td><a href="https://www.google.com/maps/search/Casa+Botines+Le%C3%B3n" target="_blank" rel="noopener noreferrer" class="card-btn">📍 Google Maps</a></td></tr>
-            <tr><td><strong>Web oficial</strong></td><td><a href="https://www.casabotines.es/visitar/" target="_blank" rel="noopener noreferrer" class="card-btn">Ir a casabotines.es</a></td></tr>
-          </tbody>
-        </table>
-      </article>
-
-<div class="related" aria-label="Enlaces relacionados">
-  <h3>Relacionado</h3>
-  <div class="chips">
-      <button onclick="showView('catedral')">Catedral</button>
-      <button onclick="showView('sanisidoro')">San Isidoro</button>
-      <button onclick="showView('tapas')">Tapas</button>
-      <button onclick="showView('musac')">MUSAC</button>
-  </div>
+<div class="card" data-cof="dulce-nombre-jesus-nazareno" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulce-nombre-jesus-nazareno.png"/></div>
+<div>
+<h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
 </div>
-    </div>
-
-    <div id="sanmarcos" class="view-section">
-      <h2>🏰 San Marcos</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span class="current" aria-current="page">San Marcos</span></nav>
-      <article class="card" style="max-width:900px;margin:0 auto">
-        <img src="assets/sanmarcos1.jpg" alt="San Marcos en León" loading="lazy" decoding="async" width="1200" height="800">
-        <h3>Icono de la ciudad</h3>
-        <p>Una de las fachadas más reconocibles de León. Paseo perfecto por la zona del río.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-          <a class="card-btn" href="https://www.google.com/maps/search/Parador+San+Marcos+Le%C3%B3n" target="_blank" rel="noopener noreferrer">📍 Ver en Maps</a>
-          <a class="card-btn" href="https://paradores.es/es/parador-de-leon" target="_blank" rel="noopener noreferrer">Web Parador</a>
-        </div>
-        <p class="hint" style="margin-top:10px">Si solo quieres ver exterior, es gratis. Para servicios del Parador, consulta disponibilidad.</p>
-      </article>
-    </div>
-
-    <div id="musac" class="view-section">
-      <h2>🧩 MUSAC</h2>
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span class="current" aria-current="page">MUSAC</span></nav>
-      <article class="card" style="max-width:900px;margin:0 auto">
-        <img src="assets/musac1.jpg" alt="MUSAC León" loading="lazy" decoding="async" width="1200" height="800">
-        <h3>Arte contemporáneo</h3>
-        <p>Ideal para un plan diferente. Exposiciones temporales + colección.</p>
-        <table aria-label="Horarios y precios de MUSAC">
-          <thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Horarios</strong></td><td>Varían por temporada. Consulta antes de ir.</td></tr>
-            <tr><td><strong>Entrada</strong></td><td>General 3€ / Reducida 2€ (según información pública; puede cambiar).</td></tr>
-            <tr><td><strong>Mapa</strong></td><td><a href="https://www.google.com/maps/search/MUSAC+Le%C3%B3n" target="_blank" rel="noopener noreferrer" class="card-btn">📍 Google Maps</a></td></tr>
-            <tr><td><strong>Web</strong></td><td><a href="https://musac.es/" target="_blank" rel="noopener noreferrer" class="card-btn">Ir a musac.es</a></td></tr>
-          </tbody>
-        </table>
-        <p class="hint" style="margin-top:10px">Suele haber franjas gratuitas algunos días/horas según programación.</p>
-      </article>
-
-<div class="related" aria-label="Enlaces relacionados">
-  <h3>Relacionado</h3>
-  <div class="chips">
-      <button onclick="scrollToSection('sec-itinerarios')">Plan 2 días</button>
-      <button onclick="showView('sanmarcos')">San Marcos</button>
-      <button onclick="showView('tapas')">Tapas</button>
-      <button onclick="scrollToSection('sec-dormir')">Hoteles</button>
-  </div>
 </div>
-    </div>
-
-  </main>
-
-  <button class="back-float" onclick="showView('home')" aria-label="Volver al menú">← Volver</button>
-
-  <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-    <span>🍪 Usamos cookies para mejorar tu experiencia.</span>
-    <button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
-  </div>
-
-  
+</div>
+<div class="card" data-cof="minerva-veracruz" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/minerva-veracruz.png"/></div>
+<div>
+<h3 style="margin:0">Minerva y Veracruz</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="santa-marta" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santa-marta.png"/></div>
+<div>
+<h3 style="margin:0">Santa Marta</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="jesus-divino-obrero" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/jesus-divino-obrero.png"/></div>
+<div>
+<h3 style="margin:0">Jesús Divino Obrero</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="siete-palabras" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete-palabras.png"/></div>
+<div>
+<h3 style="margin:0">Siete Palabras</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="cristo-del-perdon" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/cristo-del-perdon.png"/></div>
+<div>
+<h3 style="margin:0">Cristo del Perdón</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="jesus-de-la-redencion" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Jesús de la Redención" decoding="async" loading="lazy" src="assets/cofradias/jesus-de-la-redencion.png"/></div>
+<div>
+<h3 style="margin:0">Jesús de la Redención</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="cristo-de-la-expiracion" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/cristo-de-la-expiracion.png"/></div>
+<div>
+<h3 style="margin:0">Cristo de la Expiración</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="maria-del-dulce-nombre" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/maria-del-dulce-nombre.png"/></div>
+<div>
+<h3 style="margin:0">María del Dulce Nombre</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="santisimo-sacramento" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/santisimo-sacramento.png"/></div>
+<div>
+<h3 style="margin:0">Santísimo Sacramento</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="jesus-de-la-misericordia" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/jesus-de-la-misericordia.png"/></div>
+<div>
+<h3 style="margin:0">Jesús de la Misericordia</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="santo-sepulcro" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/santo-sepulcro.png"/></div>
+<div>
+<h3 style="margin:0">Santo Sepulcro</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="agonia-de-nuestro-senor" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia-de-nuestro-senor.png"/></div>
+<div>
+<h3 style="margin:0">Agonía de Nuestro Señor</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="cristo-del-gran-poder" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/cristo-del-gran-poder.png"/></div>
+<div>
+<h3 style="margin:0">Cristo del Gran Poder</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+<div class="card" data-cof="desenclavo" role="button" tabindex="0">
+<div class="cof-item">
+<div class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.png"/></div>
+<div>
+<h3 style="margin:0">Desenclavo</h3>
+<div class="cof-meta">Pulsa para ver ficha</div>
+</div>
+</div>
+</div>
+</div>
+<h3 style="margin-top:34px">📜 Historia y datos (acordeón)</h3>
+<div aria-label="Fichas de cofradías" class="cofradia-accordion">
+<details class="card" id="cof-angustias-soledad"><summary>
+<span class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias-soledad.png"/></span>
+<span>Angustias y Soledad</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> Siglo XVI</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 3.600</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo; capillo, guantes, cíngulo y zapatos negros. Bocamangas con cordón amarillo; camisa blanca, corbata, pantalón y calcetines negros.</li><li><strong>🎺 Procesiones:</strong> Participa en el corazón de la Semana Santa leonesa con desfiles penitenciales por el centro histórico.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/angustias-y-soledad/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-dulce-nombre-jesus-nazareno"><summary>
+<span class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulce-nombre-jesus-nazareno.png"/></span>
+<span>Dulce Nombre de Jesús Nazareno</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 4 de febrero de 1611</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 4.487</li><li><strong>👕 Hábito:</strong> Túnica de tablón de sarga negra con cintas de raso negro (cuello, bocamangas y vivos). Capillo negro con cinta en el borde inferior. Cíngulo negro con caída a la izquierda.</li><li><strong>🎺 Procesiones:</strong> Procesión de las Palmas (Domingo de Ramos), Procesión de la Pasión (Lunes Santo) y Ronda/Procesión de los Pasos (Viernes Santo).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/dulce-nombre-2/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-minerva-veracruz"><summary>
+<span class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/minerva-veracruz.png"/></span>
+<span>Minerva y Veracruz</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo con bocamangas de terciopelo morado. Camisa blanca; guantes, pantalón, calcetines y zapatos negros. (Gobierno/abades: capirote de terciopelo morado).</li><li><strong>🎺 Procesiones:</strong> Cofradía histórica con presencia destacada en varios actos y procesiones de la Semana Santa de León.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-santa-marta"><summary>
+<span class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santa-marta.png"/></span>
+<span>Santa Marta</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1945</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.000</li><li><strong>👕 Hábito:</strong> Túnica de lana blanca con cuellos, bocamangas y botones en terciopelo rojo sangre. Fajín rojo sangre. Capirote alto rojo sangre (braceros: capillo bajo). Guantes blancos; calcetín y zapatos negros; camisa blanca, corbata negra y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vinculada a la Sagrada Cena y a actos centrales del calendario leonés.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/hermandad-de-santa-marta-y-sagrada-cena/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-jesus-divino-obrero"><summary>
+<span class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/jesus-divino-obrero.png"/></span>
+<span>Jesús Divino Obrero</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1955</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Jesús Divino Obrero</li><li><strong>👥 Hermanos:</strong> ≈ 1.200</li><li><strong>👕 Hábito:</strong> Túnica blanco‑hueso; ceñidor y cordón (blanco‑hueso y morado entrelazados). Bocamangas y botonadura en terciopelo morado. Capa de raso morado con vistas del color de la túnica. Guantes blancos; camisa blanca, corbata negra; pantalón oscuro y calzado negro. (Braceros: capillo morado; pueden ir sin capa).</li><li><strong>🎺 Procesiones:</strong> Procesión de Hermandad (Sábado de Dolores, cada 2 años), Procesión de la Soledad (Sábado Santo) y Procesión del Encuentro (Domingo de Resurrección).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/real-hermandad-de-jesus-divino-obrero/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-siete-palabras"><summary>
+<span class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete-palabras.png"/></span>
+<span>Siete Palabras</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1962</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.350</li><li><strong>👕 Hábito:</strong> Túnica de terciopelo rojo sangre (estilo monacal) con bocamangas anchas. Capirote alto blanco; capa de raso negro con vistas blancas. Cíngulo negro doble con borlas a la izquierda. Guantes y calcetines blancos; zapato negro y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vía Crucis (madrugada del Miércoles al Jueves Santo), Pregón a caballo (Jueves Santo) y Sermón/Procesión de las Siete Palabras (Viernes Santo).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-las-siete-palabras-de-jesus-en-la-cruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-cristo-del-perdon"><summary>
+<span class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/cristo-del-perdon.png"/></span>
+<span>Cristo del Perdón</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1964</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Francisco de la Vega</li><li><strong>👥 Hermanos:</strong> ≈ 900</li><li><strong>👕 Hábito:</strong> Hábito marrón de sarga de lana, con tablilla delantera y trasera. Fajín de lana blanca anudado al lado derecho. Capirote alto (45 cm) del mismo tejido. (Completa con indumentaria oscura y calzado negro).</li><li><strong>🎺 Procesiones:</strong> Cofradía penitencial con presencia destacada en el calendario leonés.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-perdon/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-jesus-de-la-redencion"><summary>
+<span class="cof-logo"><img alt="Escudo Jesús de la Redención" decoding="async" loading="lazy" src="assets/cofradias/jesus-de-la-redencion.png"/></span>
+<span>Jesús de la Redención</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 600</li><li><strong>👕 Hábito:</strong> Túnica negra sencilla. Emblema rojo cosido a la altura del corazón (lado izquierdo). Bocamangas y capillo rojos. Cíngulo rojo sin borlas. Guantes, calcetines y zapatos negros; pantalón oscuro, camisa blanca y corbata negra.</li><li><strong>🎺 Procesiones:</strong> Besapié (Sábado de Pasión), Procesión de la Redención (Domingo de Ramos) y Vía Crucis (Lunes Santo).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-nuestro-senor-jesus-de-la-redencion/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-cristo-de-la-expiracion"><summary>
+<span class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/cristo-de-la-expiracion.png"/></span>
+<span>Cristo de la Expiración</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Convento de San Francisco</li><li><strong>👥 Hermanos:</strong> ≈ 100</li><li><strong>👕 Hábito:</strong> Túnica morada penitencial (tipo “Medinaceli”) con pequeños botones blancos. Cíngulo blanco a la derecha (tres nudos). Capirote blanco de raso.</li><li><strong>🎺 Procesiones:</strong> Cofradía de carácter solemne y recogido, muy ligada a los ambientes de silencio.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-santisimo-cristo-de-la-expiracion-y-del-silencio/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-maria-del-dulce-nombre"><summary>
+<span class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/maria-del-dulce-nombre.png"/></span>
+<span>María del Dulce Nombre</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.400</li><li><strong>👕 Hábito:</strong> Túnica negra de tablón sencillo con capillo, bocamangas y cíngulo verdes. Camisa blanca; pantalón, guantes, calcetín y zapato negro. (Junta de Seises: capa de raso negro con vistas en terciopelo verde).</li><li><strong>🎺 Procesiones:</strong> Devoción mariana con participación activa en el calendario procesional.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-maria-del-dulce-nombre/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-santisimo-sacramento"><summary>
+<span class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/santisimo-sacramento.png"/></span>
+<span>Santísimo Sacramento</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Misma cofradía que Minerva y Vera Cruz (nombre completo). Túnica negra con bocamangas de terciopelo morado; indumentaria negra y camisa blanca.</li><li><strong>🎺 Procesiones:</strong> Participación destacada en actos eucarísticos y en procesiones históricas.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-jesus-de-la-misericordia"><summary>
+<span class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/jesus-de-la-misericordia.png"/></span>
+<span>Jesús de la Misericordia</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> —</li><li><strong>📍 Sede/Templo:</strong> Vinculado a la Cofradía de Nuestro Señor Jesús de la Redención</li><li><strong>👕 Hábito:</strong> Los papones de la Redención visten túnica negra con capillo, bocamangas y cíngulo rojos.</li><li><strong>🎺 Procesiones:</strong> Imagen de Ntro. Padre Jesús de la Misericordia (atrib. Pedro de Mena, s. XVII), presente en los actos de la Cofradía de la Redención.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-nuestro-senor-jesus-de-la-redencion/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-santo-sepulcro"><summary>
+<span class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/santo-sepulcro.png"/></span>
+<span>Santo Sepulcro</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Froilán</li><li><strong>👕 Hábito:</strong> Túnica negra y capillo/capirote alto blanco con babero y cola; cíngulo, camisa y guantes blancos. Calzado e indumentaria inferior en negro. (Junta: capa blanca).</li><li><strong>🎺 Procesiones:</strong> Lunes Santo (Adoración Procesional de las Llagas de Cristo) y Sábado Santo (Procesión Camino de la Luz).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://www.semanasantaleon.org/cofradia-santo-sepulcro-esperanza-de-vida" rel="nofollow noopener noreferrer" target="_blank">www.semanasantaleon.org</a></p></details>
+<details class="card" id="cof-agonia-de-nuestro-senor"><summary>
+<span class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia-de-nuestro-senor.png"/></span>
+<span>Agonía de Nuestro Señor</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1993</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 200</li><li><strong>👕 Hábito:</strong> Túnica morada con bocamangas doradas. Capillo y cíngulo dorados. Guantes, calcetines y zapatos negros. (Junta de Seises: capa morada con ribetes dorados).</li><li><strong>🎺 Procesiones:</strong> Cofradía penitencial con actos de gran recogimiento.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-agonia-de-nuestro-senor/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-cristo-del-gran-poder"><summary>
+<span class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/cristo-del-gran-poder.png"/></span>
+<span>Cristo del Gran Poder</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1994</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Lorenzo</li><li><strong>👥 Hermanos:</strong> ≈ 1.080</li><li><strong>👕 Hábito:</strong> Túnica negra sencilla con emblema al lado del corazón. Capillo negro. Bocamangas y cíngulo plateados (ribeteados con cordón plateado). Indumentaria negra y camisa blanca; guantes negros.</li><li><strong>🎺 Procesiones:</strong> Cofradía de fuerte carácter penitencial, integrada en el calendario tradicional leonés.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-cristo-del-gran-poder/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+<details class="card" id="cof-desenclavo"><summary>
+<span class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.png"/></span>
+<span>Desenclavo</span>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 500</li><li><strong>👕 Hábito:</strong> Túnica de sarga púrpura lisa con bocamangas y capirote negros; cíngulo negro con caídas a la izquierda. Emblema en el babero. Camisa blanca y guantes; pantalón, calcetines y zapato bajo negros.</li><li><strong>🎺 Procesiones:</strong> Procesión de la Pasión (Lunes Santo), Procesión del Dolor de Nuestra Madre (Martes Santo) y Procesión Oficial del Santo Entierro (Viernes Santo, años pares).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-desenclavo/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</div>
+</div>
+<!-- VISTAS: MONUMENTOS (con horarios/precios) -->
+<div class="view-section" id="catedral">
+<h2>⛪ Catedral de León</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span aria-current="page" class="current">Catedral de León</span></nav>
+<article class="card" style="max-width:900px;margin:0 auto">
+<img alt="Catedral de León" decoding="async" height="800" loading="lazy" src="assets/catedral1.jpg" width="1200"/>
+<h3>La Pulchra Leonina</h3>
+<p>Una de las catedrales góticas más impresionantes de España, famosa por sus vidrieras.</p>
+<table aria-label="Horarios y precios de la Catedral de León">
+<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
+<tbody>
+<tr><td><strong>Horarios</strong></td><td>Los horarios cambian por temporada. Consulta la web oficial para el horario actualizado.</td></tr>
+<tr><td><strong>Entradas</strong></td><td>Los precios varían por tipo de entrada (general/reducida). Consulta la web oficial para tarifas actualizadas.</td></tr>
+<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/Catedral+de+Leon" rel="noopener noreferrer" target="_blank">📍 Ver en Google Maps</a></td></tr>
+<tr><td><strong>Web oficial</strong></td><td><a class="card-btn" href="https://www.catedraldeleon.org/" rel="noopener noreferrer" target="_blank">Ir a catedraldeleon.org</a></td></tr>
+</tbody>
+</table>
+<p class="hint" style="margin-top:10px">Consejo: compra online si vas en festivos.</p>
+</article>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>Relacionado</h3>
+<div class="chips">
+<button onclick="showView('sanisidoro')">San Isidoro</button>
+<button onclick="showView('botines')">Casa Botines</button>
+<button onclick="showView('tapas')">Tapas</button>
+<button onclick="scrollToSection('sec-dormir')">Hoteles</button>
+</div>
+</div>
+</div>
+<div class="view-section" id="sanisidoro">
+<h2>🕯️ Basílica y Museo de San Isidoro</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span aria-current="page" class="current">San Isidoro</span></nav>
+<article class="card" style="max-width:900px;margin:0 auto">
+<img alt="San Isidoro en León" decoding="async" height="800" loading="lazy" src="assets/sanisidoro1.jpg" width="1200"/>
+<h3>Panteón Real</h3>
+<p>El conjunto románico más emblemático de León. El Panteón Real es conocido como la “Capilla Sixtina del románico”.</p>
+<table aria-label="Horarios y precios de San Isidoro">
+<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
+<tbody>
+<tr><td><strong>Horarios</strong></td><td>Varían por temporada. Recomendación: confirmar antes de ir.</td></tr>
+<tr><td><strong>Entradas</strong></td><td>Tarifas según visita y descuentos. Confirmar en su web oficial.</td></tr>
+<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver en Google Maps</a></td></tr>
+</tbody>
+</table>
+<p class="hint" style="margin-top:10px">Si te interesa el románico, reserva con margen: se disfruta mucho con visita guiada.</p>
+</article>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>Relacionado</h3>
+<div class="chips">
+<button onclick="showView('catedral')">Catedral</button>
+<button onclick="showView('botines')">Casa Botines</button>
+<button onclick="showView('tapas')">Tapas</button>
+<button onclick="scrollToSection('sec-agenda')">Agenda</button>
+</div>
+</div>
+</div>
+<div class="view-section" id="botines">
+<h2>🏛️ Museo Casa Botines Gaudí</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span aria-current="page" class="current">Casa Botines</span></nav>
+<article class="card" style="max-width:900px;margin:0 auto">
+<img alt="Casa Botines de Gaudí en León" decoding="async" height="800" loading="lazy" src="assets/botines1.jpg" width="1200"/>
+<h3>Gaudí en León</h3>
+<p>Edificio modernista único. Dentro: museo, exposiciones y tienda.</p>
+<table aria-label="Horarios y precios de Casa Botines">
+<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
+<tbody>
+<tr><td><strong>Horario</strong></td><td>Miércoles a lunes (martes cerrado). Consulta temporada y pases en la web oficial.</td></tr>
+<tr><td><strong>Tarifas orientativas</strong></td><td>Entrada general y reducida. Ver tarifas y actividades en la web oficial.</td></tr>
+<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/Casa+Botines+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Google Maps</a></td></tr>
+<tr><td><strong>Web oficial</strong></td><td><a class="card-btn" href="https://www.casabotines.es/visitar/" rel="noopener noreferrer" target="_blank">Ir a casabotines.es</a></td></tr>
+</tbody>
+</table>
+</article>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>Relacionado</h3>
+<div class="chips">
+<button onclick="showView('catedral')">Catedral</button>
+<button onclick="showView('sanisidoro')">San Isidoro</button>
+<button onclick="showView('tapas')">Tapas</button>
+<button onclick="showView('musac')">MUSAC</button>
+</div>
+</div>
+</div>
+<div class="view-section" id="sanmarcos">
+<h2>🏰 San Marcos</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span aria-current="page" class="current">San Marcos</span></nav>
+<article class="card" style="max-width:900px;margin:0 auto">
+<img alt="San Marcos en León" decoding="async" height="800" loading="lazy" src="assets/sanmarcos1.jpg" width="1200"/>
+<h3>Icono de la ciudad</h3>
+<p>Una de las fachadas más reconocibles de León. Paseo perfecto por la zona del río.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+<a class="card-btn" href="https://www.google.com/maps/search/Parador+San+Marcos+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver en Maps</a>
+<a class="card-btn" href="https://paradores.es/es/parador-de-leon" rel="noopener noreferrer" target="_blank">Web Parador</a>
+</div>
+<p class="hint" style="margin-top:10px">Si solo quieres ver exterior, es gratis. Para servicios del Parador, consulta disponibilidad.</p>
+</article>
+</div>
+<div class="view-section" id="musac">
+<h2>🧩 MUSAC</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-visitar')">Visitar</button><span class="sep">›</span><span aria-current="page" class="current">MUSAC</span></nav>
+<article class="card" style="max-width:900px;margin:0 auto">
+<img alt="MUSAC León" decoding="async" height="800" loading="lazy" src="assets/musac1.jpg" width="1200"/>
+<h3>Arte contemporáneo</h3>
+<p>Ideal para un plan diferente. Exposiciones temporales + colección.</p>
+<table aria-label="Horarios y precios de MUSAC">
+<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
+<tbody>
+<tr><td><strong>Horarios</strong></td><td>Varían por temporada. Consulta antes de ir.</td></tr>
+<tr><td><strong>Entrada</strong></td><td>General 3€ / Reducida 2€ (según información pública; puede cambiar).</td></tr>
+<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/MUSAC+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Google Maps</a></td></tr>
+<tr><td><strong>Web</strong></td><td><a class="card-btn" href="https://musac.es/" rel="noopener noreferrer" target="_blank">Ir a musac.es</a></td></tr>
+</tbody>
+</table>
+<p class="hint" style="margin-top:10px">Suele haber franjas gratuitas algunos días/horas según programación.</p>
+</article>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>Relacionado</h3>
+<div class="chips">
+<button onclick="scrollToSection('sec-itinerarios')">Plan 2 días</button>
+<button onclick="showView('sanmarcos')">San Marcos</button>
+<button onclick="showView('tapas')">Tapas</button>
+<button onclick="scrollToSection('sec-dormir')">Hoteles</button>
+</div>
+</div>
+</div>
+</main>
+<button aria-label="Volver al menú" class="back-float" onclick="showView('home')">← Volver</button>
+<div aria-label="Aviso de cookies" aria-live="polite" id="cookie-banner" role="dialog">
+<span>🍪 Usamos cookies para mejorar tu experiencia.</span>
+<button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
+</div>
 <footer>
-  <p><strong>Come en León</strong> · Guía local independiente.</p>
-  <p class="hint">Última actualización del contenido: <strong>12 febrero 2026</strong>.</p>
-  <p class="hint">&copy; 2026 · Contacto: <a href="mailto:contacto.comeenleon@gmail.com">contacto.comeenleon@gmail.com</a></p>
+<p><strong>Come en León</strong> · Guía local independiente.</p>
+<p class="hint">Última actualización del contenido: <strong>12 febrero 2026</strong>.</p>
+<p class="hint">© 2026 · Contacto: <a href="mailto:contacto.comeenleon@gmail.com">contacto.comeenleon@gmail.com</a></p>
 </footer>
-
-  <script>
+<script>
     
 function showView(id){
   document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
@@ -1568,45 +1361,28 @@ function updateBreadcrumbJsonLd(viewId){
   });
 }
 
+function handleEnter(e, viewId){
+  if(e.key === 'Enter' || e.key === ' '){
+    e.preventDefault();
+    showView(viewId);
+  }
+}
+
+
 function scrollToSection(sectionId){
-      showView('home');
-      setTimeout(() => {
-        const el = document.getElementById(sectionId);
-        if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
-    }
+  // Siempre volvemos a HOME antes de hacer scroll a una sección del home
+  showView('home');
 
-    function handleEnter(e, viewId){
-      if(e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        showView(viewId);
-      }
-    }
-
-    function acceptCookies(){
-      document.getElementById('cookie-banner').classList.remove('show');
-      localStorage.setItem('cookiesAccepted','true');
-    }
-
-    
-
-
-
-function loadYouTube(videoId, containerId){
-  const container = document.getElementById(containerId);
-  if(!container) return;
-
-  const iframe = document.createElement('iframe');
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1";
-  iframe.title = "YouTube video player";
-  iframe.frameBorder = "0";
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-  iframe.allowFullscreen = true;
-
-  container.innerHTML = "";
-  container.appendChild(iframe);
+  // Esperamos a que el DOM pinte la vista (más robusto que un timeout fijo)
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const el = document.getElementById(sectionId);
+      if(!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Mantén el hash limpio para compartir (solo secciones del home)
+      history.replaceState(null, '', '#' + sectionId);
+    });
+  });
 }
 
 window.addEventListener('load', () => {
@@ -1635,11 +1411,30 @@ window.addEventListener('load', () => {
 });
   
 
+function setActiveCof(slug){
+  const cards = document.querySelectorAll('#listacofradias .cof-grid .card[data-cof]');
+  cards.forEach(c => {
+    const isActive = c.getAttribute('data-cof') === slug;
+    c.classList.toggle('cof-active', isActive);
+    if(isActive) c.setAttribute('aria-current','true');
+    else c.removeAttribute('aria-current');
+  });
+}
+
 function openCofradia(slug){
   showView('listacofradias');
   setTimeout(() => {
     const el = document.getElementById('cof-' + slug);
     if(!el) return;
+
+
+    setActiveCof(slug);
+
+    // Acordeón PRO: deja solo una ficha abierta
+    document.querySelectorAll('#listacofradias details.card[open]').forEach(d => {
+      if(d !== el) d.open = false;
+    });
+
     el.open = true;
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     el.classList.add('cof-highlight');
@@ -1648,6 +1443,7 @@ function openCofradia(slug){
 }
 
 function bindCofradiaGrid(){
+  // Grid -> abre ficha
   document.querySelectorAll('#listacofradias [data-cof]').forEach(card => {
     const slug = card.getAttribute('data-cof');
     if(!slug) return;
@@ -1659,10 +1455,27 @@ function bindCofradiaGrid(){
       }
     });
   });
+
+  // Si el usuario abre una ficha manualmente, cerramos las demás
+  document.querySelectorAll('#listacofradias details.card').forEach(det => {
+    det.addEventListener('toggle', () => {
+      if(det.open){
+        // Acordeón PRO: solo una abierta
+        document.querySelectorAll('#listacofradias details.card[open]').forEach(other => {
+          if(other !== det) other.open = false;
+        });
+        // Marca card activa si el usuario abrió manualmente
+        const slug = (det.id || '').replace(/^cof-/, '');
+        if(slug) setActiveCof(slug);
+      } else {
+        // Si se cierra y no queda ninguna abierta, limpiamos selección
+        const anyOpen = document.querySelector('#listacofradias details.card[open]');
+        if(!anyOpen) setActiveCof('');
+      }
+    });
+  });
 }
 
 </script>
 </body>
 </html>
-
-
