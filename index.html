@@ -4,9 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Guía Oficial de Turismo León 2026: Tapas, Semana Santa, Cofradías, Agenda y Gastronomía."/>
-  <meta name="robots" content="index, follow" />
+  
+  <!-- SEO avanzado -->
+  <meta name="keywords" content="León España turismo, qué ver en León, restaurantes León, tapas León, hoteles León, Semana Santa León, guía León">
+  <meta name="author" content="Come en León">
+  <meta name="theme-color" content="#1e293b">
 
-  <title>Come en León | Guía Definitiva 2026</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Come en León | Guía Definitiva 2026">
+  <meta property="og:description" content="Tapas, restaurantes, hoteles, monumentos y Semana Santa de León. La guía local más completa.">
+  <meta property="og:image" content="https://comeenleon.es/assets/leon.jpg">
+  <meta property="og:url" content="https://comeenleon.es/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Come en León | Guía Definitiva">
+  <meta name="twitter:description" content="Descubre León como un local. Restaurantes, hoteles y monumentos.">
+  <meta name="twitter:image" content="https://comeenleon.es/assets/leon.jpg">
+
+<meta name="robots" content="index, follow" />
+
+  <title>Qué ver en León + Mejores Restaurantes y Hoteles | Come en León</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,6 +215,29 @@
     #cookie-banner.show { transform: translateY(0); }
     .cookie-btn { background: var(--accent); border: none; padding: 8px 20px; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; }
   </style>
+
+  <link rel="canonical" href="https://comeenleon.es/" />
+
+
+  <link rel="icon" href="/assets/favicon.png" />
+
+
+  <!-- Datos estructurados (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelGuide",
+    "name": "Come en León",
+    "description": "Guía turística de León con restaurantes, hoteles, monumentos y eventos.",
+    "url": "https://comeenleon.es/",
+    "author": { "@type": "Organization", "name": "Come en León" },
+    "areaServed": { "@type": "City", "name": "León", "addressCountry": "ES" }
+  }
+  </script>
+
+
+  <link rel="preload" as="image" href="assets/leon.jpg" />
+
 </head>
 
 <body>
@@ -279,21 +321,21 @@
         <h2>🛏️ Dónde Dormir</h2>
         <div class="grid">
            <article class="card">
-             <img src="assets/sanmarcos1.jpg" alt="Parador">
+             <img src="assets/sanmarcos1.jpg" alt="Parador" loading="lazy">
              <h3>Parador de San Marcos</h3>
              <div class="rating"><span class="star">★</span> 4.7</div>
              <p>Dormir en un museo vivo.</p>
              <a href="https://www.booking.com/hotel/es/parador-de-leon.es.html" target="_blank" class="card-btn">🏨 Ver Precios</a>
            </article>
            <article class="card">
-             <img src="assets/nhcollection.jpg" alt="NH Collection" loading="lazy">
+             <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/49586145.jpg?k=33c644d6512140d048d087962451456565166416664" alt="NH Collection" loading="lazy">
              <h3>NH Collection</h3>
              <div class="rating"><span class="star">★</span> 4.5</div>
              <p>En plena Plaza Mayor.</p>
              <a href="https://www.booking.com/hotel/es/nh-plaza-mayor.es.html" target="_blank" class="card-btn">🏨 Ver Precios</a>
            </article>
            <article class="card">
-             <img src="assets/sanisidoro1.jpg" alt="Real Colegiata">
+             <img src="assets/sanisidoro1.jpg" alt="Real Colegiata" loading="lazy">
              <h3>Hotel Real Colegiata</h3>
              <div class="rating"><span class="star">★</span> 4.6</div>
              <p>Duerme en la muralla.</p>
@@ -364,11 +406,11 @@
     <div id="tapas" class="view-section">
       <h2>🍷 Ruta de Tapas: Barrio Húmedo</h2>
       <div class="grid">
-        <article class="card"><img src="assets/bicha.jpg"><h3>La Bicha</h3><div class="rating">★ 4.4</div><p>Morcilla.</p><a href="https://www.google.com/maps/search/Bar+La+Bicha+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/rebote.jpg"><h3>El Rebote</h3><div class="rating">★ 4.5</div><p>Croquetas.</p><a href="https://www.google.com/maps/search/Bar+El+Rebote+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/competencia.jpg"><h3>La Competencia</h3><div class="rating">★ 4.3</div><p>Pizza.</p><a href="https://www.google.com/maps/search/Pizzeria+La+Competencia+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/flechazo.jpg"><h3>El Flechazo</h3><div class="rating">★ 4.6</div><p>Patatas.</p><a href="https://www.google.com/maps/search/Bar+El+Flechazo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/cazurros.jpg"><h3>Los Cazurros</h3><div class="rating">★ 4.2</div><p>Patatas cabrales.</p><a href="https://www.google.com/maps/search/Bar+Los+Cazurros+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: bicha" src="assets/bicha.jpg" loading="lazy"><h3>La Bicha</h3><div class="rating">★ 4.4</div><p>Morcilla.</p><a href="https://www.google.com/maps/search/Bar+La+Bicha+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: rebote" src="assets/rebote.jpg" loading="lazy"><h3>El Rebote</h3><div class="rating">★ 4.5</div><p>Croquetas.</p><a href="https://www.google.com/maps/search/Bar+El+Rebote+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: competencia" src="assets/competencia.jpg" loading="lazy"><h3>La Competencia</h3><div class="rating">★ 4.3</div><p>Pizza.</p><a href="https://www.google.com/maps/search/Pizzeria+La+Competencia+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: flechazo" src="assets/flechazo.jpg" loading="lazy"><h3>El Flechazo</h3><div class="rating">★ 4.6</div><p>Patatas.</p><a href="https://www.google.com/maps/search/Bar+El+Flechazo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: cazurros" src="assets/cazurros.jpg" loading="lazy"><h3>Los Cazurros</h3><div class="rating">★ 4.2</div><p>Patatas cabrales.</p><a href="https://www.google.com/maps/search/Bar+Los+Cazurros+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
     </div>
 
@@ -376,9 +418,9 @@
     <div id="cocido" class="view-section">
       <h2>🍲 Cocina Tradicional</h2>
       <div class="grid">
-        <article class="card"><img src="assets/cocido.jpg"><h3>Cocido Maragato</h3><p>Casa Maragata, Castrillo.</p><a href="https://www.google.com/maps/search/Casa+Maragata+Castrillo+de+los+Polvazares" target="_blank" class="card-btn">📍 Buscar</a></article>
-        <article class="card"><img src="assets/botillo.jpg"><h3>Botillo del Bierzo</h3><p>El rey del embutido.</p></article>
-        <article class="card"><img src="assets/cecina.jpg"><h3>Cecina de León</h3><p>Imprescindible.</p></article>
+        <article class="card"><img alt="Imagen: cocido" src="assets/cocido.jpg" loading="lazy"><h3>Cocido Maragato</h3><p>Casa Maragata, Castrillo.</p><a href="https://www.google.com/maps/search/Casa+Maragata+Castrillo+de+los+Polvazares" target="_blank" class="card-btn">📍 Buscar</a></article>
+        <article class="card"><img alt="Imagen: botillo" src="assets/botillo.jpg" loading="lazy"><h3>Botillo del Bierzo</h3><p>El rey del embutido.</p></article>
+        <article class="card"><img alt="Imagen: cecina" src="assets/cecina.jpg" loading="lazy"><h3>Cecina de León</h3><p>Imprescindible.</p></article>
       </div>
     </div>
 
@@ -386,9 +428,9 @@
     <div id="autor" class="view-section">
       <h2>⭐ Cocina Michelin</h2>
       <div class="grid">
-        <article class="card"><img src="assets/pablo.jpg"><h3>Pablo</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Pablo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/cocinandos.jpg"><h3>Cocinandos</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Cocinandos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/carea.jpg"><h3>Carea Bistró</h3><p>Bib Gourmand.</p></article>
+        <article class="card"><img alt="Imagen: pablo" src="assets/pablo.jpg" loading="lazy"><h3>Pablo</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Pablo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: cocinandos" src="assets/cocinandos.jpg" loading="lazy"><h3>Cocinandos</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Cocinandos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Imagen: carea" src="assets/carea.jpg" loading="lazy"><h3>Carea Bistró</h3><p>Bib Gourmand.</p></article>
       </div>
     </div>
 
@@ -396,9 +438,9 @@
     <div id="modernos" class="view-section">
       <h2>🍽️ Restaurantes Modernos</h2>
       <div class="grid">
-        <article class="card"><img src="assets/kamin.jpg"><h3>Kamín</h3><div class="rating">★ 4.8</div><a href="https://www.google.com/maps/search/Restaurante+Kamin+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/marcela.jpg"><h3>Marcela</h3><div class="rating">★ 4.4</div><a href="https://www.google.com/maps/search/Restaurante+Marcela+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><img src="assets/nimu.jpg"><h3>niMÚ Azotea</h3><div class="rating">★ 4.2</div><a href="https://www.google.com/maps/search/Restaurante+Nimu+Azotea+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Restaurante Kamín en León" src="assets/kamin.jpg" loading="lazy"><h3>Kamín</h3><div class="rating">★ 4.8</div><a href="https://www.google.com/maps/search/Restaurante+Kamin+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="Restaurante Marcela en León" src="assets/marcela.jpg" loading="lazy"><h3>Marcela</h3><div class="rating">★ 4.4</div><a href="https://www.google.com/maps/search/Restaurante+Marcela+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img alt="niMÚ Azotea en León" src="assets/nimu.jpg" loading="lazy"><h3>niMÚ Azotea</h3><div class="rating">★ 4.2</div><a href="https://www.google.com/maps/search/Restaurante+Nimu+Azotea+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
     </div>
 
@@ -443,11 +485,11 @@
     </div>
 
     <!-- MONUMENTOS COMPLETOS -->
-    <div id="catedral" class="view-section"><article class="card"><img src="assets/catedral1.jpg"><h3>Catedral</h3><p>Entrada 7€</p><a href="https://www.google.com/maps/search/Catedral+de+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
-    <div id="sanisidoro" class="view-section"><article class="card"><img src="assets/sanisidoro1.jpg"><h3>San Isidoro</h3><p>Museo 5€</p><a href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
-    <div id="botines" class="view-section"><article class="card"><img src="assets/botines1.jpg"><h3>Botines</h3><p>Gaudí</p><a href="https://www.google.com/maps/search/Casa+Botines+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
-    <div id="sanmarcos" class="view-section"><article class="card"><img src="assets/sanmarcos1.jpg"><h3>San Marcos</h3><p>Parador</p><a href="https://www.google.com/maps/search/Parador+San+Marcos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
-    <div id="musac" class="view-section"><article class="card"><img src="assets/musac1.jpg"><h3>MUSAC</h3><p>Arte</p><a href="https://www.google.com/maps/search/MUSAC+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="catedral" class="view-section"><article class="card"><img alt="Catedral de León" src="assets/catedral1.jpg" loading="lazy"><h3>Catedral</h3><p>Entrada 7€</p><a href="https://www.google.com/maps/search/Catedral+de+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="sanisidoro" class="view-section"><article class="card"><img alt="Hotel Real Colegiata de San Isidoro (León)" src="assets/sanisidoro1.jpg" loading="lazy"><h3>San Isidoro</h3><p>Museo 5€</p><a href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="botines" class="view-section"><article class="card"><img alt="Casa Botines (Gaudí) en León" src="assets/botines1.jpg" loading="lazy"><h3>Botines</h3><p>Gaudí</p><a href="https://www.google.com/maps/search/Casa+Botines+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="sanmarcos" class="view-section"><article class="card"><img alt="Parador de San Marcos (León)" src="assets/sanmarcos1.jpg" loading="lazy"><h3>San Marcos</h3><p>Parador</p><a href="https://www.google.com/maps/search/Parador+San+Marcos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
+    <div id="musac" class="view-section"><article class="card"><img alt="MUSAC (Museo de Arte Contemporáneo de Castilla y León)" src="assets/musac1.jpg" loading="lazy"><h3>MUSAC</h3><p>Arte</p><a href="https://www.google.com/maps/search/MUSAC+Leon" target="_blank" class="card-btn">📍 Mapa</a></article></div>
 
     <!-- SEMANA SANTA DETALLE (Completa) -->
     <div id="procesiones" class="view-section">
@@ -500,7 +542,9 @@
     <button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
   </div>
 
-  <footer>
+  
+  <p style="display:none">Guía turística de León España con restaurantes recomendados, tapas del Barrio Húmedo, hoteles céntricos, monumentos históricos y agenda cultural actualizada.</p>
+<footer>
     <p>&copy; 2026 Come en León. <a href="mailto:comeenleon@gmail.com">comeenleon@gmail.com</a></p>
   </footer>
 
