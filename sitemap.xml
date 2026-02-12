@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.comeenleon.es/</loc>
-    <lastmod>2026-02-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://comeenleon.es/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/tapas/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/cocina-tradicional/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/restaurantes-michelin/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/restaurantes-modernos/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/ferias-gastronomicas/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/conciertos/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/mercadillos/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/semana-santa/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/cofradias/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/catedral/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/san-isidoro/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/casa-botines/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/san-marcos/</loc><lastmod>2026-02-12</lastmod></url>
+  <url><loc>https://comeenleon.es/musac/</loc><lastmod>2026-02-12</lastmod></url>
 </urlset>
