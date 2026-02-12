@@ -275,7 +275,22 @@
     .source-line{font-size:.92rem;color:var(--muted);margin-top:10px}
     .source-line a{text-decoration:underline}
 
-  </style>
+  
+/* Cofradías: acordeón + grid->ficha */
+.cofradia-accordion details{margin-top:14px}
+.cofradia-accordion summary{
+  cursor:pointer;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  list-style:none;
+}
+.cofradia-accordion summary::-webkit-details-marker{display:none}
+.cofradia-accordion .cof-logo{background:#f1f5f9}
+.cof-highlight{outline:2px solid var(--purple);outline-offset:4px}
+
+</style>
 
   <!-- Schema.org (SEO): WebSite + Organization + TouristDestination + Entidades + FAQ -->
 <script type="application/ld+json">
@@ -917,6 +932,27 @@
           más de <strong>30 actos procesionales</strong> y cerca de un centenar de pasos en la calle. (Resumen adaptado del folleto institucional.)
         </p>
       </div>
+      <div class="card" style="margin-top:18px">
+        <h3 style="color:var(--purple)">🎺 Procesiones destacadas</h3>
+        <p class="hint">
+          Dentro de las procesiones de Semana Santa de León hay dos que destacan: <strong>La Ronda</strong> y la <strong>Procesión de los Pasos</strong>,
+          con mención especial en la Declaración de Interés Turístico Internacional.
+        </p>
+        <div class="grid" style="margin-top:14px">
+          <div class="card" style="border-color:var(--purple-light)">
+            <h3>La Ronda</h3>
+            <p>Ambiente nocturno y tradición en el casco histórico. Ideal para vivir la ciudad “a pie” y con tiempo.</p>
+          </div>
+          <div class="card" style="border-color:var(--purple-light)">
+            <h3>Procesión de los Pasos</h3>
+            <p>Una de las más emblemáticas: pasos, papones y un recorrido que concentra lo esencial de la Semana Santa leonesa.</p>
+          </div>
+        </div>
+        <p class="hint" style="margin-top:10px">
+          Nota: cuando salgan horarios oficiales 2026, añadimos fecha y hora aquí para dejarlo definitivo.
+        </p>
+      </div>
+
 
       <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span><span class="current" aria-current="page">Procesiones</span></nav>
       <p class="hint">Pendiente de horarios oficiales 2026 (cuando salgan, los metemos aquí en una tabla).</p>
@@ -950,65 +986,369 @@
     </div>
 
     <div id="listacofradias" class="view-section">
-      <h2 style="color:var(--purple)">🛐 Cofradías de León</h2>
+  <h2 style="color:var(--purple)">🛐 Cofradías de la Semana Santa de León</h2>
 
-      <p class="hint">
-        Listado de cofradías y hermandades. Hemos dejado una zona para <strong>logos</strong> (en local, sin hotlink) y puedes ampliar cada ficha con sede/día clave.
-        Fuente oficial: <a href="https://www.semanasantaleon.org/cofradias-y-hermandades" target="_blank" rel="noopener noreferrer">semanasantaleon.org</a>.
-      </p>
+  <nav class="breadcrumbs" aria-label="Ruta de navegación">
+    <button onclick="showView('home')">Inicio</button><span class="sep">›</span>
+    <button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span>
+    <span class="current" aria-current="page">Cofradías</span>
+  </nav>
 
-      <div class="cof-grid" aria-label="Cofradías con logo">
-        <div class="card">
-          <div class="cof-item">
-            <div class="cof-logo"><img src="assets/cofradias/angustias-soledad.png" alt="Logo Angustias y Soledad" loading="lazy" decoding="async"></div>
-            <div>
-              <h3 style="margin:0">Angustias y Soledad</h3>
-              <div class="cof-meta">Ficha ampliable (sede, día principal, historia breve)</div>
-            </div>
-          </div>
+  <p class="hint">
+    Selección y estructura propia (sin copiar textos extensos). Si quieres contrastar detalles, dejamos la <strong>fuente opcional</strong> en cada ficha.
+  </p>
+
+  <!-- GRID: clicable -> abre su ficha en el acordeón -->
+  <div class="cof-grid" aria-label="Cofradías (clic para abrir ficha)">
+    <div class="card" role="button" tabindex="0" data-cof="angustias-soledad">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/angustias-soledad.png" alt="Escudo Angustias y Soledad" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Angustias y Soledad</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
         </div>
-
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/dulce-nombre-jesus-nazareno.png" alt="Logo Dulce Nombre de Jesús Nazareno" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/minerva-veracruz.png" alt="Logo Minerva y Veracruz" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Minerva y Veracruz</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/santa-marta.png" alt="Logo Santa Marta" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Santa Marta</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/jesus-divino-obrero.png" alt="Logo Jesús Divino Obrero" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Jesús Divino Obrero</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/siete-palabras.png" alt="Logo Siete Palabras" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Siete Palabras</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/cristo-del-perdon.png" alt="Logo Cristo del Perdón" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Cristo del Perdón</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/jesus-de-la-redencion.png" alt="Logo Jesús de la Redención" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Jesús de la Redención</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/cristo-de-la-expiracion.png" alt="Logo Cristo de la Expiración" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Cristo de la Expiración</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/maria-del-dulce-nombre.png" alt="Logo María del Dulce Nombre" loading="lazy" decoding="async"></div><div><h3 style="margin:0">María del Dulce Nombre</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/santisimo-sacramento.png" alt="Logo Santísimo Sacramento" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Santísimo Sacramento</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/jesus-de-la-misericordia.png" alt="Logo Jesús de la Misericordia" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Jesús de la Misericordia</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/santo-sepulcro.png" alt="Logo Santo Sepulcro" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Santo Sepulcro</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/agonia-de-nuestro-senor.png" alt="Logo Agonía de Nuestro Señor" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Agonía de Nuestro Señor</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/cristo-del-gran-poder.png" alt="Logo Cristo del Gran Poder" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Cristo del Gran Poder</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/desenclavo.png" alt="Logo Desenclavo" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Desenclavo</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
-      </div>
-
-      <p class="source-line">
-        Logos: descárgalos desde la fuente oficial y súbelos a <code>assets/cofradias/</code> con estos nombres para que encajen sin tocar código.
-      </p>
-
-      <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span><span class="current" aria-current="page">Cofradías</span></nav>
-      <div class="grid">
-        <div class="card"><h3>Angustias y Soledad</h3></div>
-        <div class="card"><h3>Dulce Nombre de Jesús Nazareno</h3></div>
-        <div class="card"><h3>Minerva y Veracruz</h3></div>
-        <div class="card"><h3>Santa Marta</h3></div>
-        <div class="card"><h3>Jesús Divino Obrero</h3></div>
-        <div class="card"><h3>Siete Palabras</h3></div>
-        <div class="card"><h3>Cristo del Perdón</h3></div>
-        <div class="card"><h3>Jesús de la Redención</h3></div>
-        <div class="card"><h3>Cristo de la Expiración</h3></div>
-        <div class="card"><h3>María del Dulce Nombre</h3></div>
-        <div class="card"><h3>Santísimo Sacramento</h3></div>
-        <div class="card"><h3>Jesús de la Misericordia</h3></div>
-        <div class="card"><h3>Santo Sepulcro</h3></div>
-        <div class="card"><h3>Agonía de Nuestro Señor</h3></div>
-        <div class="card"><h3>Cristo del Gran Poder</h3></div>
-        <div class="card"><h3>Desenclavo</h3></div>
       </div>
     </div>
+    <div class="card" role="button" tabindex="0" data-cof="dulce-nombre-jesus-nazareno">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/dulce-nombre-jesus-nazareno.png" alt="Escudo Dulce Nombre de Jesús Nazareno" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="minerva-veracruz">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/minerva-veracruz.png" alt="Escudo Minerva y Veracruz" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Minerva y Veracruz</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="santa-marta">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/santa-marta.png" alt="Escudo Santa Marta" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Santa Marta</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="jesus-divino-obrero">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/jesus-divino-obrero.png" alt="Escudo Jesús Divino Obrero" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Jesús Divino Obrero</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="siete-palabras">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/siete-palabras.png" alt="Escudo Siete Palabras" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Siete Palabras</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="cristo-del-perdon">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/cristo-del-perdon.png" alt="Escudo Cristo del Perdón" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Cristo del Perdón</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="jesus-de-la-redencion">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/jesus-de-la-redencion.png" alt="Escudo Jesús de la Redención" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Jesús de la Redención</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="cristo-de-la-expiracion">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/cristo-de-la-expiracion.png" alt="Escudo Cristo de la Expiración" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Cristo de la Expiración</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="maria-del-dulce-nombre">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/maria-del-dulce-nombre.png" alt="Escudo María del Dulce Nombre" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">María del Dulce Nombre</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="santisimo-sacramento">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/santisimo-sacramento.png" alt="Escudo Santísimo Sacramento" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Santísimo Sacramento</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="jesus-de-la-misericordia">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/jesus-de-la-misericordia.png" alt="Escudo Jesús de la Misericordia" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Jesús de la Misericordia</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="santo-sepulcro">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/santo-sepulcro.png" alt="Escudo Santo Sepulcro" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Santo Sepulcro</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="agonia-de-nuestro-senor">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/agonia-de-nuestro-senor.png" alt="Escudo Agonía de Nuestro Señor" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Agonía de Nuestro Señor</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="cristo-del-gran-poder">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/cristo-del-gran-poder.png" alt="Escudo Cristo del Gran Poder" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Cristo del Gran Poder</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" role="button" tabindex="0" data-cof="desenclavo">
+      <div class="cof-item">
+        <div class="cof-logo"><img src="assets/cofradias/desenclavo.png" alt="Escudo Desenclavo" loading="lazy" decoding="async"></div>
+        <div>
+          <h3 style="margin:0">Desenclavo</h3>
+          <div class="cof-meta">Pulsa para ver ficha</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">📜 Historia y datos (acordeón)</h3>
+  <div class="cofradia-accordion" aria-label="Fichas de cofradías">
+    <details class="card" id="cof-angustias-soledad">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/angustias-soledad.png" alt="Escudo Angustias y Soledad" loading="lazy" decoding="async"></span>
+        <span>Angustias y Soledad</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/angustias-y-soledad/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-dulce-nombre-jesus-nazareno">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/dulce-nombre-jesus-nazareno.png" alt="Escudo Dulce Nombre de Jesús Nazareno" loading="lazy" decoding="async"></span>
+        <span>Dulce Nombre de Jesús Nazareno</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/dulce-nombre-2/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-minerva-veracruz">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/minerva-veracruz.png" alt="Escudo Minerva y Veracruz" loading="lazy" decoding="async"></span>
+        <span>Minerva y Veracruz</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-santa-marta">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/santa-marta.png" alt="Escudo Santa Marta" loading="lazy" decoding="async"></span>
+        <span>Santa Marta</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/hermandad-de-santa-marta-y-sagrada-cena/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-jesus-divino-obrero">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/jesus-divino-obrero.png" alt="Escudo Jesús Divino Obrero" loading="lazy" decoding="async"></span>
+        <span>Jesús Divino Obrero</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+
+    </details>
+
+    <details class="card" id="cof-siete-palabras">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/siete-palabras.png" alt="Escudo Siete Palabras" loading="lazy" decoding="async"></span>
+        <span>Siete Palabras</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+
+    </details>
+
+    <details class="card" id="cof-cristo-del-perdon">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/cristo-del-perdon.png" alt="Escudo Cristo del Perdón" loading="lazy" decoding="async"></span>
+        <span>Cristo del Perdón</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-perdon/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-jesus-de-la-redencion">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/jesus-de-la-redencion.png" alt="Escudo Jesús de la Redención" loading="lazy" decoding="async"></span>
+        <span>Jesús de la Redención</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-nuestro-senor-jesus-de-la-redencion/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-cristo-de-la-expiracion">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/cristo-de-la-expiracion.png" alt="Escudo Cristo de la Expiración" loading="lazy" decoding="async"></span>
+        <span>Cristo de la Expiración</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-santisimo-cristo-de-la-expiracion-y-del-silencio/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-maria-del-dulce-nombre">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/maria-del-dulce-nombre.png" alt="Escudo María del Dulce Nombre" loading="lazy" decoding="async"></span>
+        <span>María del Dulce Nombre</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-maria-del-dulce-nombre/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-santisimo-sacramento">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/santisimo-sacramento.png" alt="Escudo Santísimo Sacramento" loading="lazy" decoding="async"></span>
+        <span>Santísimo Sacramento</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+
+    </details>
+
+    <details class="card" id="cof-jesus-de-la-misericordia">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/jesus-de-la-misericordia.png" alt="Escudo Jesús de la Misericordia" loading="lazy" decoding="async"></span>
+        <span>Jesús de la Misericordia</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+
+    </details>
+
+    <details class="card" id="cof-santo-sepulcro">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/santo-sepulcro.png" alt="Escudo Santo Sepulcro" loading="lazy" decoding="async"></span>
+        <span>Santo Sepulcro</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-sepulcro-esperanza-de-la-vida/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-agonia-de-nuestro-senor">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/agonia-de-nuestro-senor.png" alt="Escudo Agonía de Nuestro Señor" loading="lazy" decoding="async"></span>
+        <span>Agonía de Nuestro Señor</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-agonia-de-nuestro-senor/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-cristo-del-gran-poder">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/cristo-del-gran-poder.png" alt="Escudo Cristo del Gran Poder" loading="lazy" decoding="async"></span>
+        <span>Cristo del Gran Poder</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-cristo-del-gran-poder/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+
+    <details class="card" id="cof-desenclavo">
+      <summary>
+        <span class="cof-logo"><img src="assets/cofradias/desenclavo.png" alt="Escudo Desenclavo" loading="lazy" decoding="async"></span>
+        <span>Desenclavo</span>
+      </summary>
+      <p class="hint" style="margin-top:10px">
+        Ficha en construcción: aquí añadiremos fundación, sede/templo, hábito y procesiones principales con un resumen histórico breve.
+      </p>
+      <p class="hint" style="margin-top:10px">
+        Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-desenclavo/" target="_blank" rel="nofollow noopener noreferrer">semanasantadeleon.com</a>
+      </p>
+    </details>
+  </div>
+</div>
 
     <!-- VISTAS: MONUMENTOS (con horarios/precios) -->
     <div id="catedral" class="view-section">
@@ -1270,6 +1610,7 @@ function loadYouTube(videoId, containerId){
 }
 
 window.addEventListener('load', () => {
+  bindCofradiaGrid();
   // Cookies
   if(!localStorage.getItem('cookiesAccepted')){
     setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1200);
@@ -1292,7 +1633,35 @@ window.addEventListener('load', () => {
     updateBreadcrumbJsonLd('home');
   }
 });
-  </script>
+  
+
+function openCofradia(slug){
+  showView('listacofradias');
+  setTimeout(() => {
+    const el = document.getElementById('cof-' + slug);
+    if(!el) return;
+    el.open = true;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.add('cof-highlight');
+    setTimeout(() => el.classList.remove('cof-highlight'), 1400);
+  }, 80);
+}
+
+function bindCofradiaGrid(){
+  document.querySelectorAll('#listacofradias [data-cof]').forEach(card => {
+    const slug = card.getAttribute('data-cof');
+    if(!slug) return;
+    card.addEventListener('click', () => openCofradia(slug));
+    card.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openCofradia(slug);
+      }
+    });
+  });
+}
+
+</script>
 </body>
 </html>
 
