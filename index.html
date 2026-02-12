@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Guía Oficial de Turismo León 2026: Tapas, Semana Santa, Mercadillos y Gastronomía."/>
-  <title>Come en León | Guía Oficial 2026</title>
+  <title>Come en León | Guía Platinum 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,138 +33,137 @@
     .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     section { padding: 4rem 0; border-bottom: 1px solid #e2e8f0; }
 
-    /* HERO: EL CORAZÓN DE LA WEB */
+    /* HERO VISUAL SYSTEM (BLINDADO) */
     .hero {
       position: relative;
-      height: 85vh; min-height: 600px;
+      height: 80vh; min-height: 600px;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center; color: white;
       overflow: hidden;
       margin-bottom: 2rem;
       border-radius: 0 0 30px 30px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-      background: #0f172a; /* Fondo de seguridad */
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #4c1d95 0%, #be123c 100%);
     }
 
-    /* 1. POSTER: CATEDRAL DE LEÓN (REAL) */
-    .hero-poster {
+    .hero-img {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Catedral_de_Leon_de_noche.jpg/1280px-Catedral_de_Leon_de_noche.jpg');
-      background-size: cover; background-position: center;
-      z-index: 1;
+      object-fit: cover; z-index: 1; opacity: 0.8;
     }
 
-    /* 2. VIDEO: AMBIENTE TAPAS (BARRIO HÚMEDO VIBES) */
-    /* Se superpone suavemente con mezcla de capas */
     .hero-video {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: 2;
-      opacity: 0; /* Empieza invisible para no mostrar negro */
-      transition: opacity 2s ease-in-out;
-      mix-blend-mode: overlay; /* TRUCO: Se fusiona con la Catedral */
+      object-fit: cover; z-index: 2; opacity: 0; transition: opacity 1s ease-in;
     }
-
-    .hero-video.loaded { opacity: 0.4; } /* Solo se muestra al 40% para dejar ver la Catedral debajo */
 
     .hero-overlay {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
-      z-index: 3;
+      background: rgba(0,0,0,0.4); z-index: 3;
     }
 
-    .hero-content { position: relative; z-index: 4; max-width: 900px; padding: 0 20px; animation: slideUp 1s ease-out; }
-    @keyframes slideUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    .hero-content { position: relative; z-index: 4; max-width: 800px; padding: 0 20px; }
 
     .hero h1 { 
-      font-size: clamp(3.5rem, 7vw, 6rem); margin-bottom: 0.5rem; line-height: 1.1; font-weight: 800; 
-      text-shadow: 0 4px 30px rgba(0,0,0,0.5); letter-spacing: -2px;
+      font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 1rem; line-height: 1.1; font-weight: 800; 
+      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
     }
     .hero p { 
-      font-size: 1.4rem; color: rgba(255,255,255,0.9); margin: 0 auto 2.5rem; 
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5); max-width: 600px;
+      font-size: 1.3rem; color: rgba(255,255,255,0.95); margin: 0 auto 2.5rem; 
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
     }
 
-    /* Nav */
-    .nav-pills { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    /* Nav Buttons */
+    .nav-pills { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 2rem; }
     .nav-btn {
-      padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px); border-radius: 50px; color: white; font-weight: 700; 
-      cursor: pointer; transition: all 0.3s; font-size: 1rem;
+      padding: 12px 24px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(5px); border-radius: 50px; color: white; font-weight: 700; cursor: pointer; transition: all 0.2s;
     }
-    .nav-btn:hover { background: white; color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-    .btn-semana { background: rgba(126, 34, 206, 0.3); border-color: rgba(168, 85, 247, 0.4); }
-    .btn-semana:hover { background: var(--purple); color: white; }
+    .nav-btn:hover { background: white; color: var(--accent); transform: translateY(-2px); }
+    .btn-semana { border-color: #a855f7; }
 
     /* Cards */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .card {
       background: var(--card); border: 1px solid #e2e8f0; border-radius: var(--radius);
-      padding: 24px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column;
-      box-shadow: var(--shadow); position: relative; overflow: hidden;
+      padding: 24px; transition: transform 0.3s; display: flex; flex-direction: column;
+      box-shadow: var(--shadow);
     }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: var(--accent); }
-    .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 16px; background: #f1f5f9; }
-    .card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text); font-weight: 800; letter-spacing: -0.5px; }
+    .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+    .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; background: #eee; }
+    .card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text); font-weight: 700; }
     .card p { color: var(--muted); font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5; }
 
     .card-btn {
-      align-self: flex-start; padding: 10px 20px; background: var(--bg); 
-      border-radius: 50px; font-size: 0.9rem; font-weight: 700; color: var(--text); 
-      border: 1px solid #e2e8f0; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;
+      align-self: flex-start; padding: 8px 16px; background: var(--accent-light); 
+      border-radius: 50px; font-size: 0.9rem; font-weight: bold; color: var(--accent); 
+      border: none; text-decoration: none; display: inline-block; cursor: pointer;
     }
-    .card:hover .card-btn { background: var(--accent); color: white; border-color: var(--accent); }
-
-    .rating { position: absolute; top: 35px; right: 35px; background: white; padding: 4px 10px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .star { color: #fbbf24; }
+    .card:hover .card-btn { background: var(--accent); color: white; }
+    .rating { display: inline-flex; gap: 5px; font-weight: 600; color: var(--text); margin-bottom: 10px; background: #f1f5f9; padding: 4px 10px; border-radius: 6px; }
 
     /* Views */
-    .view-section { display: none; padding-top: 20px; animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1); padding-bottom: 6rem; }
+    .view-section { display: none; padding-top: 20px; animation: fadeUp 0.5s; padding-bottom: 4rem; }
     .view-section.active { display: block; }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-    /* Tablas */
-    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: var(--shadow); }
-    th, td { padding: 18px 24px; text-align: left; border-bottom: 1px solid #e2e8f0; }
-    th { background: #f8fafc; color: var(--muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; font-weight: 700; }
-    tr:last-child td { border-bottom: none; }
+    /* Tables & Lists */
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 10px; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; }
+    th, td { padding: 15px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f8fafc; color: var(--muted); text-transform: uppercase; font-size: 0.85rem; }
 
-    .cofradias-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-    .cofradia-item { background: #fff; padding: 18px; border-radius: 12px; border-left: 6px solid var(--purple); box-shadow: var(--shadow); font-weight: 600; display: flex; align-items: center; }
+    .cofradias-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+    .cofradia-item { background: #fff; padding: 15px; border-radius: 10px; border-left: 5px solid var(--purple); box-shadow: var(--shadow); font-weight: 600; }
 
-    /* Botón Volver */
-    .back-float {
-      position: fixed; bottom: 30px; right: 30px; background: var(--text); color: white; 
-      padding: 14px 28px; border-radius: 50px; font-weight: 800; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.3); 
-      cursor: pointer; display: none; border: none; z-index: 100; transition: transform 0.2s;
+    /* Business & Platform */
+    .business-card {
+      background: linear-gradient(135deg, #1e293b, #0f172a); 
+      color: white; border: 1px solid rgba(255,255,255,0.1); text-align: center; padding: 3rem 2rem;
     }
-    .back-float:hover { transform: scale(1.05); background: var(--accent); }
+    .business-card h3 { color: white; }
+    .business-card p { color: #cbd5e1; }
+    .business-btn { background: #fbbf24; color: #1e293b; padding: 12px 30px; border-radius: 50px; font-weight: 800; display: inline-block; }
 
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; background: #fee2e2; color: #ef4444; letter-spacing: 0.5px; text-transform: uppercase; }
+    .platform-links { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem; }
+    .platform-btn {
+      display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; border-radius: 12px; font-weight: 800; 
+      color: white; transition: transform 0.2s; text-align: center;
+    }
+    .btn-booking { background: #003580; }
+    .btn-airbnb { background: #ff5a5f; }
+
+    /* Floating Back Button */
+    .back-float {
+      position: fixed; bottom: 30px; right: 30px; background: #1e293b; color: white; 
+      padding: 12px 24px; border-radius: 50px; font-weight: bold; box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+      cursor: pointer; display: none; border: none; z-index: 100;
+    }
+
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; background: #fee2e2; color: #ef4444; }
+    .icon { margin-right: 5px; }
   </style>
 </head>
 
 <body>
 
   <header class="hero">
-    <!-- 1. POSTER (CATEDRAL) - SIEMPRE VISIBLE -->
-    <div class="hero-poster"></div>
+    <!-- Capa 2: Imagen (Catedral Noche) -->
+    <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Catedral_de_Leon_de_noche.jpg/1280px-Catedral_de_Leon_de_noche.jpg" alt="León Noche">
 
-    <!-- 2. VIDEO (AMBIENTE) - SE MEZCLA ENCIMA -->
+    <!-- Capa 3: Video (Script lo activará) -->
     <video id="bgVideo" class="hero-video" autoplay loop muted playsinline>
-       <!-- Video de gente brindando con vino (ambiente Barrio Húmedo/Tapas) -->
        <source src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4">
     </video>
 
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
       <h1>Come en León</h1>
-      <p>La Guía Definitiva 2026: Tapas, Cultura y Gastronomía</p>
+      <p>La Guía Definitiva: Tapas, Cultura y Secretos Locales (2026)</p>
 
       <div class="nav-pills">
+        <button class="nav-btn" onclick="scrollToId('home')">🏠 Inicio</button>
         <button class="nav-btn" onclick="scrollToId('sec-comer')">🍽️ Comer</button>
-        <button class="nav-btn btn-semana" onclick="scrollToId('sec-semana')">🟣 Semana Santa</button>
         <button class="nav-btn" onclick="scrollToId('sec-dormir')">🛏️ Dormir</button>
+        <button class="nav-btn btn-semana" onclick="scrollToId('sec-semana')">🟣 Semana Santa</button>
         <button class="nav-btn" onclick="scrollToId('sec-visitar')">📍 Visitar</button>
       </div>
     </div>
@@ -172,27 +171,31 @@
 
   <main class="wrap">
 
-    <!-- HOME SCREEN -->
+    <!-- HOME SCREEN (ESTRUCTURA COMPLETA RESTAURADA) -->
     <div id="home" class="view-section active">
 
       <section id="sec-comer">
-        <h2>🍽️ Gastronomía Leonesa</h2>
+        <h2>🍽️ Experiencias Gastronómicas</h2>
         <div class="grid">
           <div class="card" onclick="show('tapas')" style="cursor:pointer">
-            <img src="assets/tapas_cover.jpg" style="display:none" alt=""> <!-- Placeholder oculto -->
-            <h3>🍷 De Tapas (Húmedo)</h3>
-            <p>La Bicha, El Rebote, La Competencia. La guía de lo gratis.</p>
+            <h3><span class="icon">🍷</span> Barrio Húmedo (Tapas)</h3>
+            <p>La ruta sagrada. Dónde te ponen la tapa más grande gratis.</p>
             <span class="card-btn">Ver Ruta →</span>
           </div>
           <div class="card" onclick="show('cocido')" style="cursor:pointer">
-            <h3>🍲 Cocido Maragato</h3>
-            <p>Casa Maragata, Castrillo, Botillo del Bierzo.</p>
-            <span class="card-btn">Ver Restaurantes →</span>
+            <h3><span class="icon">🍲</span> Cocido Maragato</h3>
+            <p>Se come al revés. Los templos del cocido.</p>
+            <span class="card-btn">Ver Sitios →</span>
           </div>
           <div class="card" onclick="show('autor')" style="cursor:pointer">
-            <h3>⭐ Michelin y Modernos</h3>
-            <p>Pablo, Cocinandos, Kamín, niMÚ.</p>
+            <h3><span class="icon">⭐</span> Alta Cocina (Michelin)</h3>
+            <p>Restaurante Pablo y Cocinandos.</p>
             <span class="card-btn">Ver Selección →</span>
+          </div>
+          <div class="card" onclick="show('modernos')" style="cursor:pointer">
+            <h3><span class="icon">🍽️</span> Nuevas Tendencias</h3>
+            <p>Kamín, Marcela, niMÚ... Los sitios de moda.</p>
+            <span class="card-btn">Ver Lista →</span>
           </div>
         </div>
       </section>
@@ -200,53 +203,63 @@
       <section id="sec-semana">
         <h2 style="color:var(--purple)">🟣 Semana Santa</h2>
         <div class="grid">
-          <div class="card" onclick="show('procesiones')" style="cursor:pointer; border-left:4px solid var(--purple)">
-            <h3>🎺 Procesiones Clave</h3>
-            <p>Horarios, Genarín, El Encuentro y La Dolorosa.</p>
-            <span class="card-btn">Ver Agenda →</span>
+          <div class="card card-semana" onclick="show('procesiones')" style="cursor:pointer">
+            <h3><span class="icon">🎺</span> Procesiones</h3>
+            <p>Horarios, Genarín y El Encuentro.</p>
+            <span class="card-btn">Ver Guía →</span>
           </div>
-          <div class="card" onclick="show('cofradias')" style="cursor:pointer; border-left:4px solid var(--purple)">
-            <h3>🛐 Las 16 Cofradías</h3>
-            <p>Listado oficial de hermandades y sus colores.</p>
+          <div class="card card-semana" onclick="show('cofradias')" style="cursor:pointer">
+            <h3><span class="icon">🛐</span> Cofradías</h3>
+            <p>Listado completo de las 16 hermandades.</p>
             <span class="card-btn">Ver Lista →</span>
           </div>
         </div>
       </section>
 
       <section id="sec-dormir">
-        <h2>🛏️ Dónde Dormir</h2>
+        <h2>🛏️ Alojamiento</h2>
         <div class="grid">
           <article class="card">
+             <img src="assets/sanmarcos1.jpg" alt="Parador">
              <h3>Parador San Marcos</h3>
-             <div class="rating">★ 4.8</div>
-             <p>Dormir en un museo vivo.</p>
-             <a href="https://www.booking.com/hotel/es/parador-de-leon.es.html" target="_blank" class="card-btn">Reservar</a>
+             <div class="rating">★ 4.7</div>
+             <a href="https://www.booking.com/hotel/es/parador-de-leon.es.html" target="_blank" class="card-btn">Ver Precios</a>
           </article>
            <article class="card">
-             <h3>NH Collection Plaza Mayor</h3>
+             <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/49586145.jpg?k=33c644d6512140d048d087962451456565166416664" alt="NH">
+             <h3>NH Collection</h3>
              <div class="rating">★ 4.5</div>
-             <p>En el corazón del Húmedo.</p>
-             <a href="https://www.booking.com/hotel/es/nh-plaza-mayor.es.html" target="_blank" class="card-btn">Reservar</a>
+             <a href="https://www.booking.com/hotel/es/nh-plaza-mayor.es.html" target="_blank" class="card-btn">Ver Precios</a>
+          </article>
+           <article class="card">
+             <img src="assets/sanisidoro1.jpg" alt="Colegiata">
+             <h3>Real Colegiata</h3>
+             <div class="rating">★ 4.6</div>
+             <a href="https://www.booking.com/hotel/es/real-colegiata-san-isidoro.es.html" target="_blank" class="card-btn">Ver Precios</a>
           </article>
         </div>
-        <div class="platform-links" style="margin-top:20px; display:flex; gap:10px;">
-           <a href="https://www.booking.com/city/es/leon.es.html" target="_blank" class="card-btn" style="background:#003580; color:white; border:none">Booking.com</a>
-           <a href="https://www.airbnb.es/s/León--España/homes" target="_blank" class="card-btn" style="background:#ff5a5f; color:white; border:none">Airbnb</a>
+
+        <h3 style="margin-top:3rem; margin-bottom:1rem; font-size:1.5rem">🔎 Buscar más alojamiento</h3>
+        <div class="platform-links">
+          <a href="https://www.booking.com/city/es/leon.es.html" target="_blank" class="platform-btn btn-booking">Booking.com</a>
+          <a href="https://www.airbnb.es/s/León--España/homes" target="_blank" class="platform-btn btn-airbnb">Airbnb</a>
         </div>
       </section>
 
       <section id="sec-agenda">
-        <h2>📅 Agenda y Mercadillos</h2>
+        <h2>📅 Agenda Cultural</h2>
         <div class="grid">
-          <div class="card" onclick="show('mercados')" style="cursor:pointer">
-            <h3>🧺 Mercadillos</h3>
-            <p>León, Astorga, La Bañeza, Valencia de Don Juan...</p>
-            <span class="card-btn">Ver Días y Lugares →</span>
+          <div class="card" onclick="show('conciertos')" style="cursor:pointer">
+            <h3><span class="icon">🎸</span> Conciertos</h3>
+            <p>Música en directo.</p>
           </div>
           <div class="card" onclick="show('ferias')" style="cursor:pointer">
-            <h3>🎉 Ferias y Fiestas</h3>
-            <p>San Froilán, Ferias del Botillo.</p>
-            <span class="card-btn">Ver Calendario →</span>
+            <h3><span class="icon">🥘</span> Ferias</h3>
+            <p>Botillo y tradiciones.</p>
+          </div>
+          <div class="card" onclick="show('mercados')" style="cursor:pointer">
+            <h3><span class="icon">🧺</span> Mercadillos</h3>
+            <p>El Rastro y mercados.</p>
           </div>
         </div>
       </section>
@@ -255,48 +268,83 @@
         <h2>📍 Monumentos</h2>
         <div class="grid">
           <div class="card" onclick="show('monumentos')" style="cursor:pointer">
-             <h3>🏛️ Top Monumentos</h3>
-             <p>Catedral, San Isidoro, Botines, MUSAC.</p>
-             <span class="card-btn">Ver Guía Visual →</span>
+            <h3>Catedral de León</h3>
+            <p>La Pulchra Leonina.</p>
           </div>
+          <div class="card" onclick="show('monumentos')" style="cursor:pointer">
+            <h3>San Isidoro</h3>
+            <p>Panteón Real.</p>
+          </div>
+          <div class="card" onclick="show('monumentos')" style="cursor:pointer">
+            <h3>Casa Botines</h3>
+            <p>Museo Gaudí.</p>
+          </div>
+          <div class="card" onclick="show('monumentos')" style="cursor:pointer">
+             <h3>San Marcos</h3>
+             <p>Parador y Museo.</p>
+          </div>
+          <div class="card" onclick="show('monumentos')" style="cursor:pointer">
+             <h3>MUSAC</h3>
+             <p>Arte Contemporáneo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sec-contacto">
+        <div class="card business-card">
+          <h3>🚀 ¿Tienes un negocio en León?</h3>
+          <p>Escríbenos para incluirte en la guía.</p>
+          <a href="mailto:comeenleon@gmail.com" class="business-btn">📩 Contactar Ahora</a>
         </div>
       </section>
 
     </div>
 
-    <!-- PÁGINAS DE DETALLE (FULL CONTENT) -->
+    <!-- PÁGINAS DE DETALLE (TODO EL CONTENIDO RECUPERADO) -->
 
+    <!-- 1. TAPAS -->
     <div id="tapas" class="view-section">
       <h2>🍷 Ruta de Tapas: Barrio Húmedo</h2>
       <div class="grid">
-        <article class="card"><h3>La Bicha</h3><div class="rating">★ 4.4</div><p>La morcilla legendaria.</p><a href="https://www.google.com/maps/search/Bar+La+Bicha+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>El Rebote</h3><div class="rating">★ 4.5</div><p>Croquetas de pizza/jalapeños.</p><a href="https://www.google.com/maps/search/Bar+El+Rebote+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>La Competencia</h3><div class="rating">★ 4.3</div><p>Pizza fina y patatas.</p><a href="https://www.google.com/maps/search/Pizzeria+La+Competencia+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>El Flechazo</h3><div class="rating">★ 4.6</div><p>Patatas fritas picantes.</p><a href="https://www.google.com/maps/search/Bar+El+Flechazo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Los Cazurros</h3><div class="rating">★ 4.2</div><p>Patatas al cabrales.</p><a href="https://www.google.com/maps/search/Bar+Los+Cazurros+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/bicha.jpg"><h3>La Bicha</h3><div class="rating">★ 4.4</div><p>Morcilla.</p><a href="https://www.google.com/maps/search/Bar+La+Bicha+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/rebote.jpg"><h3>El Rebote</h3><div class="rating">★ 4.5</div><p>Croquetas.</p><a href="https://www.google.com/maps/search/Bar+El+Rebote+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/competencia.jpg"><h3>La Competencia</h3><div class="rating">★ 4.3</div><p>Pizza.</p><a href="https://www.google.com/maps/search/Pizzeria+La+Competencia+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/flechazo.jpg"><h3>El Flechazo</h3><div class="rating">★ 4.6</div><p>Patatas.</p><a href="https://www.google.com/maps/search/Bar+El+Flechazo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/cazurros.jpg"><h3>Los Cazurros</h3><div class="rating">★ 4.2</div><p>Patatas cabrales.</p><a href="https://www.google.com/maps/search/Bar+Los+Cazurros+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
     </div>
 
+    <!-- 2. COCIDO -->
     <div id="cocido" class="view-section">
-      <h2>🍲 Cocido y Tradición</h2>
+      <h2>🍲 Cocina Tradicional</h2>
       <div class="grid">
-        <article class="card"><h3>Casa Maragata</h3><p>En Castrillo de los Polvazares.</p><a href="https://www.google.com/maps/search/Casa+Maragata+Castrillo" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Restaurante Castrillo</h3><p>Tradición pura.</p><a href="https://www.google.com/maps/search/Restaurante+Castrillo" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Embutidos</h3><p>Botillo del Bierzo y Cecina.</p><a href="https://www.google.com/maps/search/Comprar+Cecina+Leon" target="_blank" class="card-btn">📍 Tiendas</a></article>
+        <article class="card"><img src="assets/cocido.jpg"><h3>Cocido Maragato</h3><p>Casa Maragata.</p><a href="https://www.google.com/maps/search/Casa+Maragata+Castrillo" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/botillo.jpg"><h3>Botillo del Bierzo</h3><p>Embutido rey.</p><a href="https://www.google.com/maps/search/Comprar+Botillo+Bierzo" target="_blank" class="card-btn">📍 Buscar</a></article>
+        <article class="card"><img src="assets/cecina.jpg"><h3>Cecina de León</h3><p>Imprescindible.</p><a href="https://www.google.com/maps/search/Comprar+Cecina+Leon" target="_blank" class="card-btn">📍 Buscar</a></article>
       </div>
     </div>
 
+    <!-- 3. AUTOR (MICHELIN) -->
     <div id="autor" class="view-section">
-      <h2>⭐ Alta Cocina y Modernos</h2>
+      <h2>⭐ Alta Cocina (Michelin)</h2>
       <div class="grid">
-        <article class="card"><h3>Restaurante Pablo</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Pablo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Cocinandos</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Cocinandos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Kamín</h3><p>Cocina atrevida.</p><a href="https://www.google.com/maps/search/Restaurante+Kamin+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Marcela</h3><p>Brasas y ambiente.</p><a href="https://www.google.com/maps/search/Restaurante+Marcela+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>niMÚ Azotea</h3><p>Vistas increíbles.</p><a href="https://www.google.com/maps/search/Restaurante+Nimu+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/pablo.jpg"><h3>Pablo</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Pablo+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/cocinandos.jpg"><h3>Cocinandos</h3><p>1 Estrella Michelin.</p><a href="https://www.google.com/maps/search/Restaurante+Cocinandos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/carea.jpg"><h3>Carea Bistró</h3><p>Bib Gourmand.</p><a href="https://www.google.com/maps/search/Restaurante+Carea+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
     </div>
 
+    <!-- 4. MODERNOS -->
+    <div id="modernos" class="view-section">
+      <h2>🍽️ Restaurantes Modernos</h2>
+      <div class="grid">
+        <article class="card"><img src="assets/kamin.jpg"><h3>Kamín</h3><p>Cocina atrevida.</p><a href="https://www.google.com/maps/search/Restaurante+Kamin+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/marcela.jpg"><h3>Marcela</h3><p>Brasas y ambiente.</p><a href="https://www.google.com/maps/search/Restaurante+Marcela+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/nimu.jpg"><h3>niMÚ Azotea</h3><p>Vistas espectaculares.</p><a href="https://www.google.com/maps/search/Restaurante+Nimu+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+      </div>
+    </div>
+
+    <!-- 5. MERCADILLOS (COMPLETO) -->
     <div id="mercados" class="view-section">
        <h2>🧺 Calendario de Mercadillos</h2>
        <table>
@@ -313,6 +361,7 @@
        </table>
     </div>
 
+    <!-- 6. FERIAS Y CONCIERTOS -->
     <div id="ferias" class="view-section">
       <h2>🎉 Agenda de Eventos</h2>
       <table>
@@ -326,17 +375,24 @@
       </table>
     </div>
 
+    <div id="conciertos" class="view-section">
+       <h2>🎸 Conciertos Destacados</h2>
+       <p>Mira la sección de agenda para más detalles.</p>
+    </div>
+
+    <!-- 7. MONUMENTOS (DETALLE) -->
     <div id="monumentos" class="view-section">
       <h2>🏛️ Monumentos Imprescindibles</h2>
       <div class="grid">
-        <article class="card"><h3>Catedral de León</h3><p>La Pulchra Leonina.</p><a href="https://www.google.com/maps/search/Catedral+de+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>San Isidoro</h3><p>Capilla Sixtina Románica.</p><a href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>Casa Botines</h3><p>Gaudí en León.</p><a href="https://www.google.com/maps/search/Casa+Botines+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>San Marcos</h3><p>Parador Nacional.</p><a href="https://www.google.com/maps/search/Parador+San+Marcos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
-        <article class="card"><h3>MUSAC</h3><p>Arte Contemporáneo.</p><a href="https://www.google.com/maps/search/MUSAC+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/catedral1.jpg"><h3>Catedral de León</h3><p>La Pulchra Leonina.</p><a href="https://www.google.com/maps/search/Catedral+de+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/sanisidoro1.jpg"><h3>San Isidoro</h3><p>La Capilla Sixtina del Románico.</p><a href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/botines1.jpg"><h3>Casa Botines</h3><p>Obra de Gaudí.</p><a href="https://www.google.com/maps/search/Casa+Botines+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/sanmarcos1.jpg"><h3>San Marcos</h3><p>Hostal y Museo.</p><a href="https://www.google.com/maps/search/Parador+San+Marcos+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
+        <article class="card"><img src="assets/musac1.jpg"><h3>MUSAC</h3><p>Arte Contemporáneo.</p><a href="https://www.google.com/maps/search/MUSAC+Leon" target="_blank" class="card-btn">📍 Mapa</a></article>
       </div>
     </div>
 
+    <!-- 8. SEMANA SANTA (COMPLETO) -->
     <div id="procesiones" class="view-section">
       <h2 style="color:var(--purple)">🎺 Procesiones Destacadas</h2>
       <table>
@@ -377,21 +433,13 @@
   <button id="backBtn" class="back-float" onclick="show('home')">← Volver</button>
 
   <script>
-    // SISTEMA VISUAL BLINDADO 3.0
-    // 1. Carga el poster de la Catedral inmediatamente (CSS).
-    // 2. Intenta cargar el video.
-    // 3. Solo si el video carga, le baja la opacidad para mezclarlo con la catedral.
-
+    // LÓGICA VISUAL BLINDADA
     const vid = document.getElementById('bgVideo');
     if(vid) {
-      vid.addEventListener('canplay', () => { 
-        vid.classList.add('loaded'); // Activa la clase que muestra el video suavemente
-      });
-      // Forzar carga en móviles
+      vid.addEventListener('canplay', () => { vid.style.opacity = '1'; });
       vid.load();
     }
 
-    // NAVEGACIÓN
     function show(id) {
       document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
       document.getElementById(id).classList.add('active');
