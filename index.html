@@ -211,6 +211,70 @@
 .faq details+details{margin-top:10px}
 .faq summary{cursor:pointer;font-weight:900}
 .faq p{margin-top:10px;color:var(--muted)}
+  
+    /* Semana Santa PRO */
+    .ss-hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:24px;
+      align-items:center;
+      margin:18px 0 26px;
+    }
+    .ss-hero img{
+      width:100%;
+      height:auto;
+      border-radius:16px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:#e2e8f0;
+    }
+    .ss-badges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;font-weight:900;font-size:.9rem;
+      border:1px solid var(--border);background:#fff;
+    }
+    .badge.purple{border-color:rgba(126,34,206,.25);background:var(--purple-light);color:var(--purple)}
+
+    .ss-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    @media (max-width:900px){ .ss-hero{grid-template-columns:1fr} .ss-split{grid-template-columns:1fr} }
+
+    .ss-note{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+    .ss-note h3{margin-bottom:8px}
+
+    .ss-video{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#0f172a;
+      box-shadow:var(--shadow);
+    }
+    .ss-video .ss-video-inner{position:relative;aspect-ratio:16/9}
+    .ss-video button{
+      position:absolute;inset:0;
+      width:100%;height:100%;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      gap:10px;
+      background:linear-gradient(180deg, rgba(15,23,42,.15), rgba(15,23,42,.75));
+      color:#fff;border:0;cursor:pointer;
+      font-weight:900;
+    }
+    .ss-video button span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:10px 14px;border-radius:999px}
+    .ss-video small{display:block;color:#cbd5e1;padding:10px 12px}
+
+    .cof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px}
+    .cof-item{display:flex;gap:12px;align-items:flex-start}
+    .cof-logo{
+      width:54px;height:54px;flex:0 0 54px;
+      border-radius:12px;border:1px solid var(--border);
+      background:#fff;display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+    }
+    .cof-logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+    .cof-meta{color:var(--muted);font-size:.95rem;margin-top:4px}
+    .source-line{font-size:.92rem;color:var(--muted);margin-top:10px}
+    .source-line a{text-decoration:underline}
+
   </style>
 
   <!-- Schema.org (SEO): WebSite + Organization + TouristDestination + Entidades + FAQ -->
@@ -336,6 +400,26 @@
 }
 </script>
 <script type="application/ld+json" id="breadcrumb-jsonld">{}</script>
+
+
+  <!-- Schema.org: Semana Santa (EventSeries) -->
+  <script type="application/ld+json" id="semana-santa-jsonld">
+  {
+    "@context":"https://schema.org",
+    "@type":"EventSeries",
+    "name":"Semana Santa de León 2026",
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "location":{
+      "@type":"Place",
+      "name":"León",
+      "address":{"@type":"PostalAddress","addressLocality":"León","addressCountry":"ES"}
+    },
+    "url":"https://comeenleon.es/#procesiones",
+    "inLanguage":"es-ES",
+    "description":"Guía práctica de Semana Santa en León: procesiones, cofradías, tradiciones y recursos oficiales."
+  }
+  </script>
 
 </head>
 
@@ -766,6 +850,74 @@
     <!-- VISTAS: SEMANA SANTA -->
     <div id="procesiones" class="view-section">
       <h2 style="color:var(--purple)">🟣 Semana Santa: guía rápida</h2>
+
+      <div class="ss-hero" aria-label="Semana Santa 2026: cartel, folleto y guía rápida">
+        <div>
+          <div class="ss-badges">
+            <span class="badge purple">🟣 Interés Turístico Internacional</span>
+            <span class="badge">🎺 Procesiones · Cofradías · Tradiciones</span>
+          </div>
+
+          <h3 style="margin-bottom:8px">Semana Santa de León 2026: guía práctica</h3>
+          <p class="hint">
+            Entre el <strong>Viernes de Dolores</strong> y el <strong>Domingo de Resurrección</strong>, León vive días intensos de tradición cofrade,
+            patrimonio artístico e imaginería, y mucho ambiente en la calle.
+          </p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+            <button class="card-btn" onclick="showView('listacofradias')">🛐 Ver cofradías</button>
+            <a class="card-btn" href="assets/folleto-semana-santa-2026.pdf" target="_blank" rel="noopener noreferrer">📘 Descargar folleto oficial (PDF)</a>
+            <a class="card-btn" href="https://www.semanasantaleon.org/" target="_blank" rel="noopener noreferrer">🌐 Web oficial</a>
+          </div>
+
+          <p class="source-line">
+            Fuente institucional: Junta Mayor de Cofradías y Hermandades de León (folleto y contenidos oficiales).
+          </p>
+        </div>
+
+        <div>
+          <img src="assets/cartel-semana-santa-2026.jpg"
+               alt="Cartel oficial de la Semana Santa de León 2026"
+               loading="lazy" decoding="async" width="1200" height="1600">
+          <p class="hint" style="margin-top:10px">
+            Nota: añade créditos del cartel (autor/a y año) cuando lo confirmes desde la fuente oficial.
+          </p>
+        </div>
+      </div>
+
+      <div class="ss-split">
+        <div class="ss-note">
+          <h3>🔥 Qué no perderse</h3>
+          <ul style="margin-top:8px;display:grid;gap:8px;list-style:disc;padding-left:18px">
+            <li><strong>Genarín</strong> (Jueves Santo): tradición única y muy leonesa.</li>
+            <li><strong>Ambiente papón</strong>: túnicas, bandas y pasos a hombros.</li>
+            <li><strong>Limonada leonesa</strong> + tapeo: plan perfecto antes o después.</li>
+            <li>Si vas justo de tiempo: mira una procesión y remata con <a href="#tapas" onclick="showView('tapas')">ruta de tapas</a>.</li>
+          </ul>
+          <p class="hint" style="margin-top:10px">
+            Cuando salgan los horarios oficiales, los añadimos en una tabla y queda “guía definitiva”.
+          </p>
+        </div>
+
+        <div class="ss-video" id="ss-video">
+          <div class="ss-video-inner" id="ss-video-inner">
+            <button type="button" onclick="loadYouTube('__tEsce9QgY','ss-video-inner')">
+              <div style="font-size:1.15rem;font-weight:900">▶ Ver vídeo</div>
+              <span>Cargar YouTube (modo privacidad)</span>
+            </button>
+          </div>
+          <small>Al reproducir se cargan recursos de YouTube. Usamos <strong>youtube-nocookie</strong> y solo se carga al clicar.</small>
+        </div>
+      </div>
+
+      <div class="ss-note" style="margin-top:18px">
+        <h3>📜 Un poco de historia (resumen)</h3>
+        <p>
+          La Semana Santa de León hunde sus raíces en el <strong>siglo XVI</strong> y hoy reúne <strong>16 cofradías</strong>,
+          más de <strong>30 actos procesionales</strong> y cerca de un centenar de pasos en la calle. (Resumen adaptado del folleto institucional.)
+        </p>
+      </div>
+
       <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span><span class="current" aria-current="page">Procesiones</span></nav>
       <p class="hint">Pendiente de horarios oficiales 2026 (cuando salgan, los metemos aquí en una tabla).</p>
       <div class="grid" style="margin-top:16px">
@@ -799,6 +951,44 @@
 
     <div id="listacofradias" class="view-section">
       <h2 style="color:var(--purple)">🛐 Cofradías de León</h2>
+
+      <p class="hint">
+        Listado de cofradías y hermandades. Hemos dejado una zona para <strong>logos</strong> (en local, sin hotlink) y puedes ampliar cada ficha con sede/día clave.
+        Fuente oficial: <a href="https://www.semanasantaleon.org/cofradias-y-hermandades" target="_blank" rel="noopener noreferrer">semanasantaleon.org</a>.
+      </p>
+
+      <div class="cof-grid" aria-label="Cofradías con logo">
+        <div class="card">
+          <div class="cof-item">
+            <div class="cof-logo"><img src="assets/cofradias/angustias-soledad.png" alt="Logo Angustias y Soledad" loading="lazy" decoding="async"></div>
+            <div>
+              <h3 style="margin:0">Angustias y Soledad</h3>
+              <div class="cof-meta">Ficha ampliable (sede, día principal, historia breve)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/dulce-nombre-jesus-nazareno.png" alt="Logo Dulce Nombre de Jesús Nazareno" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/minerva-veracruz.png" alt="Logo Minerva y Veracruz" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Minerva y Veracruz</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/santa-marta.png" alt="Logo Santa Marta" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Santa Marta</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/jesus-divino-obrero.png" alt="Logo Jesús Divino Obrero" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Jesús Divino Obrero</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/siete-palabras.png" alt="Logo Siete Palabras" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Siete Palabras</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/cristo-del-perdon.png" alt="Logo Cristo del Perdón" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Cristo del Perdón</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/jesus-de-la-redencion.png" alt="Logo Jesús de la Redención" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Jesús de la Redención</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/cristo-de-la-expiracion.png" alt="Logo Cristo de la Expiración" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Cristo de la Expiración</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/maria-del-dulce-nombre.png" alt="Logo María del Dulce Nombre" loading="lazy" decoding="async"></div><div><h3 style="margin:0">María del Dulce Nombre</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/santisimo-sacramento.png" alt="Logo Santísimo Sacramento" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Santísimo Sacramento</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/jesus-de-la-misericordia.png" alt="Logo Jesús de la Misericordia" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Jesús de la Misericordia</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/santo-sepulcro.png" alt="Logo Santo Sepulcro" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Santo Sepulcro</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/agonia-de-nuestro-senor.png" alt="Logo Agonía de Nuestro Señor" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Agonía de Nuestro Señor</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/cristo-del-gran-poder.png" alt="Logo Cristo del Gran Poder" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Cristo del Gran Poder</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+        <div class="card"><div class="cof-item"><div class="cof-logo"><img src="assets/cofradias/desenclavo.png" alt="Logo Desenclavo" loading="lazy" decoding="async"></div><div><h3 style="margin:0">Desenclavo</h3><div class="cof-meta">Ficha ampliable</div></div></div></div>
+      </div>
+
+      <p class="source-line">
+        Logos: descárgalos desde la fuente oficial y súbelos a <code>assets/cofradias/</code> con estos nombres para que encajen sin tocar código.
+      </p>
+
       <nav class="breadcrumbs" aria-label="Ruta de navegación"><button onclick="showView('home')">Inicio</button><span class="sep">›</span><button onclick="scrollToSection('sec-semana')">Semana Santa</button><span class="sep">›</span><span class="current" aria-current="page">Cofradías</span></nav>
       <div class="grid">
         <div class="card"><h3>Angustias y Soledad</h3></div>
@@ -1059,6 +1249,26 @@ function scrollToSection(sectionId){
     }
 
     
+
+
+
+function loadYouTube(videoId, containerId){
+  const container = document.getElementById(containerId);
+  if(!container) return;
+
+  const iframe = document.createElement('iframe');
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1";
+  iframe.title = "YouTube video player";
+  iframe.frameBorder = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.allowFullscreen = true;
+
+  container.innerHTML = "";
+  container.appendChild(iframe);
+}
+
 window.addEventListener('load', () => {
   // Cookies
   if(!localStorage.getItem('cookiesAccepted')){
