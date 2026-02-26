@@ -510,11 +510,14 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 <h1>Qué ver y dónde comer en León en 2026</h1>
 <p><strong>Come en León</strong> · Tapas, restaurantes, hoteles, monumentos y Semana Santa</p>
 <nav aria-label="Menú principal" class="nav-pills">
-<button class="nav-btn" onclick="scrollToSection('home')">🏠 Inicio</button>
-<button class="nav-btn" onclick="scrollToSection('sec-comer')">🍽️ Comer</button>
-<button class="nav-btn" onclick="scrollToSection('sec-dormir')">🛏️ Dormir</button>
+<button type="button" class="nav-btn" onclick="scrollToSection('home')">🏠 Inicio</button>
+<button type="button" class="nav-btn" onclick="scrollToSection('sec-comer')">🍽️ Comer</button>
+<button type="button" class="nav-btn" onclick="scrollToSection('sec-dormir')">🛏️ Dormir</button>
 <button class="nav-btn btn-semana" onclick="scrollToSection('sec-semana')">🟣 Semana Santa</button>
-<button class="nav-btn" onclick="scrollToSection('sec-visitar')">📍 Visitar</button>
+<button type="button" class="nav-btn" onclick="scrollToSection('sec-visitar')">📍 Visitar</button>
+
+<button type="button" class="nav-btn" onclick="scrollToSection('sec-itinerarios')">🗺️ Itinerarios</button>
+<button type="button" class="nav-btn" onclick="scrollToSection('sec-agenda')">🎉 Agenda</button>
 </nav>
 </div>
 </header>
@@ -2048,19 +2051,24 @@ function handleEnter(e, viewId){
 
 
 function scrollToSection(sectionId){
-  // Siempre volvemos a HOME antes de hacer scroll a una sección del home
-  showView('home');
+  // Volvemos a HOME antes de hacer scroll a una sección del home
+  // (push=false para evitar duplicar historial cuando solo queremos desplazarnos)
+  try { showView('home', false); } catch(e) { /* noop */ }
 
-  // Esperamos a que el DOM pinte la vista (más robusto que un timeout fijo)
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      const el = document.getElementById(sectionId);
-      if(!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Mantén el hash limpio para compartir (solo secciones del home)
-      history.replaceState(null, '', '#' + sectionId);
-    });
-  });
+  const doScroll = () => {
+    const el = document.getElementById(sectionId);
+    if(!el){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState({ view: 'home' }, '', '/');
+      return;
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Deja la URL lista para compartir (siempre desde /)
+    history.replaceState({ view: 'home' }, '', '/#' + sectionId);
+  };
+
+  // Más robusto que un timeout fijo: espera a que el DOM pinte la vista
+  requestAnimationFrame(() => requestAnimationFrame(doScroll));
 }
 
 window.addEventListener('load', () => {
