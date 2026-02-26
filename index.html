@@ -108,9 +108,7 @@
       padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;
       transition:all .25s cubic-bezier(.4,0,.2,1);position:relative;
     }
-    .card[data-view]{cursor:pointer}
-    button.card{appearance:none;-webkit-appearance:none;border:1px solid var(--border);text-align:left;width:100%}
-    button.card:disabled{opacity:.6;cursor:not-allowed}
+    .card[role="button"]{cursor:pointer}
     .card:hover,.card:focus-within{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}
     .card:focus{outline:2px solid var(--accent);outline-offset:4px}
     .card img{width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:16px;background:#e2e8f0}
@@ -159,25 +157,18 @@
     .btn-airbnb{background:#ff5a5f;box-shadow:0 4px 15px rgba(255,90,95,.3)}
     @media (max-width:600px){.platform-links{grid-template-columns:1fr}}
 
-    /* COOKIE (UE) */
+    /* COOKIE */
     #cookie-banner{
       position:fixed;left:0;right:0;bottom:0;z-index:9999;
-      display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;
+      display:flex;gap:14px;justify-content:space-between;align-items:center;
       background:#0f172a;color:#fff;padding:14px 18px;
       transform:translateY(110%);transition:transform .28s ease;
       box-shadow:0 -6px 22px rgba(0,0,0,.2)
     }
     #cookie-banner.show{transform:translateY(0)}
-    #cookie-banner a{color:#fff;text-decoration:underline}
-    .cookie-text{flex:1 1 520px}
-    .cookie-actions{display:flex;gap:10px;flex:0 0 auto}
-    .cookie-btn{
-      background:var(--accent);border:0;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;cursor:pointer
-    }
-    .cookie-btn.secondary{
-      background:transparent;border:1px solid rgba(255,255,255,.35)
-    }
-footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem;background:#fff}
+    .cookie-btn{background:var(--accent);border:0;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;cursor:pointer}
+
+    footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem;background:#fff}
     .hint{font-size:.95rem;color:var(--muted)}
 
 /* BREADCRUMBS + RELATED */
@@ -503,8 +494,8 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 <img alt="" aria-hidden="true" class="hero-img" decoding="async" fetchpriority="high" src="assets/leon.jpg"/>
 <!-- Vídeo (externo). En móvil se oculta por CSS -->
 <video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" preload="none">
-<source src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4"/>
-<source src="https://videos.pexels.com/video-files/4253322/4253322-hd_1920_1080_30fps.mp4" type="video/mp4"/>
+<source data-src="https://videos.pexels.com/video-files/3753768/3753768-hd_1920_1080_25fps.mp4" type="video/mp4"/>
+<source data-src="https://videos.pexels.com/video-files/4253322/4253322-hd_1920_1080_30fps.mp4" type="video/mp4"/>
 </video>
 <div class="hero-content">
 <h1>Qué ver y dónde comer en León en 2026</h1>
@@ -548,47 +539,47 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 <section id="sec-comer">
 <h2>🍽️ Experiencias gastronómicas</h2>
 <div class="grid">
-<button type="button" class="card" onclick="showView('tapas')" data-view="tapas">
+<div class="card" onclick="showView('tapas')" onkeydown="handleEnter(event, 'tapas')" role="button" tabindex="0">
 <h3>🍷 Barrio Húmedo (tapas)</h3>
 <p>La ruta sagrada. Sitios con tapa potente y ambiente a tope.</p>
 <span class="card-btn">Ver ruta →</span>
-</button>
-<button type="button" class="card" onclick="showView('romantico')" data-view="romantico">
+</div>
+<div class="card" onclick="showView('romantico')" onkeydown="handleEnter(event, 'romantico')" role="button" tabindex="0">
 <h3>🍽️ Barrio Romántico (tapas)</h3>
 <p>Alternativa más tranquila al Húmedo: tapeo más relajado junto a San Isidoro, Calle del Cid y Plaza del Cid.</p>
 <span class="card-btn">Ver guía →</span>
-</button>
-<button type="button" class="card" onclick="showView('cocido')" data-view="cocido">
+</div>
+<div class="card" onclick="showView('cocido')" onkeydown="handleEnter(event, 'cocido')" role="button" tabindex="0">
 <h3>🍲 Cocido maragato</h3>
 <p>El cocido que se come al revés. Dónde probarlo bien.</p>
 <span class="card-btn">Ver lista →</span>
-</button>
-<button type="button" class="card" onclick="showView('autor')" data-view="autor">
+</div>
+<div class="card" onclick="showView('autor')" onkeydown="handleEnter(event, 'autor')" role="button" tabindex="0">
 <h3>⭐ Alta cocina (Michelin)</h3>
 <p>Pablo y Cocinandos. Para celebraciones de verdad.</p>
 <span class="card-btn">Ver selección →</span>
-</button>
-<button type="button" class="card" onclick="showView('modernos')" data-view="modernos">
+</div>
+<div class="card" onclick="showView('modernos')" onkeydown="handleEnter(event, 'modernos')" role="button" tabindex="0">
 <h3>🍽️ Nuevas tendencias</h3>
 <p>Kamín, Marcela, niMÚ… los sitios de moda.</p>
 <span class="card-btn">Ver modernos →</span>
-</button>
+</div>
 </div>
 </section>
 <section id="sec-semana">
 <h2 style="color:var(--purple)">🟣 Semana Santa de León</h2>
 <p class="hint">Interés Turístico Internacional. Historia, cofradías y lo imprescindible.</p>
 <div class="grid">
-<button type="button" class="card card-semana" onclick="showView('procesiones')" data-view="procesiones">
+<div class="card card-semana" onclick="showView('procesiones')" onkeydown="handleEnter(event, 'procesiones')" role="button" tabindex="0">
 <h3>🎺 Procesiones y recorridos</h3>
 <p>Guía rápida: Genarín, tradiciones y claves para vivirla.</p>
 <span class="card-btn">Ver detalle →</span>
-</button>
-<button type="button" class="card card-semana" onclick="showView('listacofradias')" data-view="listacofradias">
+</div>
+<div class="card card-semana" onclick="showView('listacofradias')" onkeydown="handleEnter(event, 'listacofradias')" role="button" tabindex="0">
 <h3>🛐 Cofradías</h3>
 <p>Listado completo de hermandades penitenciales.</p>
 <span class="card-btn">Ver listado →</span>
-</button>
+</div>
 </div>
 </section>
 <section id="sec-dormir">
@@ -649,31 +640,31 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 <section id="sec-visitar">
 <h2>📍 Qué ver en León</h2>
 <div class="grid">
-<button type="button" class="card" onclick="showView('catedral')" data-view="catedral">
+<div class="card" onclick="showView('catedral')" onkeydown="handleEnter(event, 'catedral')" role="button" tabindex="0">
 <h3>Catedral de León</h3>
 <p>La Pulchra Leonina. Vidrieras que te dejan loco.</p>
 <span class="card-btn">Horarios y precios →</span>
-</button>
-<button type="button" class="card" onclick="showView('sanisidoro')" data-view="sanisidoro">
+</div>
+<div class="card" onclick="showView('sanisidoro')" onkeydown="handleEnter(event, 'sanisidoro')" role="button" tabindex="0">
 <h3>San Isidoro</h3>
 <p>Panteón Real: la “Capilla Sixtina del románico”.</p>
 <span class="card-btn">Horarios y precios →</span>
-</button>
-<button type="button" class="card" onclick="showView('botines')" data-view="botines">
+</div>
+<div class="card" onclick="showView('botines')" onkeydown="handleEnter(event, 'botines')" role="button" tabindex="0">
 <h3>Casa Botines (Gaudí)</h3>
 <p>Arquitectura única. Museo + exposiciones.</p>
 <span class="card-btn">Horarios y precios →</span>
-</button>
-<button type="button" class="card" onclick="showView('sanmarcos')" data-view="sanmarcos">
+</div>
+<div class="card" onclick="showView('sanmarcos')" onkeydown="handleEnter(event, 'sanmarcos')" role="button" tabindex="0">
 <h3>San Marcos</h3>
 <p>Historia, fachada impresionante y entorno del río.</p>
 <span class="card-btn">Cómo llegar →</span>
-</button>
-<button type="button" class="card" onclick="showView('musac')" data-view="musac">
+</div>
+<div class="card" onclick="showView('musac')" onkeydown="handleEnter(event, 'musac')" role="button" tabindex="0">
 <h3>MUSAC</h3>
 <p>Arte contemporáneo y planazo si llueve.</p>
 <span class="card-btn">Horarios y precios →</span>
-</button>
+</div>
 </div>
 </section>
 <section id="sec-itinerarios">
@@ -756,32 +747,32 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 <section id="sec-agenda">
 <h2>🎉 Agenda rápida</h2>
 <div class="grid">
-<button type="button" class="card" onclick="showView('mejor-tapa')" data-view="mejor-tapa">
-<h3>🏆 Marzo: Concurso “La Mejor Tapa de León”</h3>
+<div class="card" onclick="showView('mejor-tapa')" onkeydown="handleEnter(event, 'mejor-tapa')" role="button" tabindex="0">
+  <h3>🏆 Marzo: Concurso “La Mejor Tapa de León”</h3>
   <p>Qué es, cómo funciona y cómo aprovecharlo para una ruta por el Húmedo y el Romántico.</p>
   <span class="card-btn">Ver guía →</span>
-</button>
+</div>
 
-<button type="button" class="card" onclick="showView('conciertos')" data-view="conciertos">
+<div class="card" onclick="showView('conciertos')" onkeydown="handleEnter(event, 'conciertos')" role="button" tabindex="0">
 <h3>🎸 Conciertos</h3>
 <p>Música en directo (ejemplos). Actualiza cuando quieras.</p>
 <span class="card-btn">Ver tabla →</span>
-</button>
-<button type="button" class="card" onclick="showView('teatro')" data-view="teatro">
+</div>
+<div class="card" onclick="showView('teatro')" onkeydown="handleEnter(event, 'teatro')" role="button" tabindex="0">
 <h3>🎭 Teatro y Cultura</h3>
 <p>Obras, circo, cine y espectáculos de sala para el trimestre.</p>
 <span class="card-btn">Ver cartelera →</span>
-</button>
-<button type="button" class="card" onclick="showView('ferias')" data-view="ferias">
+</div>
+<div class="card" onclick="showView('ferias')" onkeydown="handleEnter(event, 'ferias')" role="button" tabindex="0">
 <h3>🥘 Ferias</h3>
 <p>Botillo, agroalimentaria, etc.</p>
 <span class="card-btn">Ver tabla →</span>
-</button>
-<button type="button" class="card" onclick="showView('mercados')" data-view="mercados">
+</div>
+<div class="card" onclick="showView('mercados')" onkeydown="handleEnter(event, 'mercados')" role="button" tabindex="0">
 <h3>🧺 Mercadillos</h3>
 <p>Qué hay cada día por la provincia.</p>
 <span class="card-btn">Ver tabla →</span>
-</button>
+</div>
 </div>
 </section>
 <section id="sec-faq">
@@ -1010,7 +1001,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
   </article>
 
   <article class="card">
-    <img alt="Ruta de tapas por el Barrio Romántico de León" decoding="async" height="800" loading="lazy" src="assets/el-clandestino.png" width="1200"/>
+    <img alt="Ruta de tapas por el Barrio Romántico de León" decoding="async" height="800" loading="lazy" src="assets/el-clandestino.png"" width="1200"/>
     <h3>El Clandestino</h3>
     <div class="rating"><span class="star">★</span> Recomendado</div>
     <p>Opción recurrente en rutas del Romántico.</p>
@@ -1539,160 +1530,144 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
   </p>
 <!-- GRID: clicable -> abre su ficha en el acordeón -->
 <div aria-label="Cofradías (clic para abrir ficha)" class="cof-grid">
-<button type="button" class="card" data-cof="angustias-soledad">
+<div class="card" data-cof="angustias-soledad" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias.jpg"/></div>
 <div>
 <h3 style="margin:0">Angustias y Soledad</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="dulce-nombre-jesus-nazareno">
+<div class="card" data-cof="dulce-nombre-jesus-nazareno" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulcenombre.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulcenombre.jpg"/></div>
 <div>
 <h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="minerva-veracruz">
+<div class="card" data-cof="minerva-veracruz" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/emblemaminerva.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/emblemaminerva.jpg"/></div>
 <div>
 <h3 style="margin:0">Minerva y Veracruz</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="santa-marta">
+<div class="card" data-cof="santa-marta" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santamarta.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santamarta.jpg"/></div>
 <div>
 <h3 style="margin:0">Santa Marta</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="jesus-divino-obrero">
+<div class="card" data-cof="jesus-divino-obrero" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/divinoobrero-1.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/divinoobrero-1.jpg"/></div>
 <div>
 <h3 style="margin:0">Jesús Divino Obrero</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="siete-palabras">
+<div class="card" data-cof="siete-palabras" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete.jpg"/></div>
 <div>
 <h3 style="margin:0">Siete Palabras</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="cristo-del-perdon">
+<div class="card" data-cof="cristo-del-perdon" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/perdon.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/perdon.jpg"/></div>
 <div>
 <h3 style="margin:0">Cristo del Perdón</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="jesus-de-la-redencion">
+<div class="card" data-cof="jesus-de-la-redencion" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Jesús de la Redención" decoding="async" loading="lazy" src="assets/cofradias/redencion.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Jesús de la Redención" decoding="async" loading="lazy" src="assets/cofradias/redencion.jpg"/></div>
 <div>
 <h3 style="margin:0">Jesús de la Redención</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="cristo-de-la-expiracion">
+<div class="card" data-cof="cristo-de-la-expiracion" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/silencio.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/silencio.jpg"/></div>
 <div>
 <h3 style="margin:0">Cristo de la Expiración</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="maria-del-dulce-nombre">
+<div class="card" data-cof="maria-del-dulce-nombre" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/mariadulce.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/mariadulce.jpg"/></div>
 <div>
 <h3 style="margin:0">María del Dulce Nombre</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="santisimo-sacramento">
+<div class="card" data-cof="santisimo-sacramento" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/sacramentado.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/sacramentado.jpg"/></div>
 <div>
 <h3 style="margin:0">Santísimo Sacramento</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="jesus-de-la-misericordia">
+<div class="card" data-cof="jesus-de-la-misericordia" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/bienaventuranza.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/bienaventuranza.jpg"/></div>
 <div>
 <h3 style="margin:0">Jesús de la Misericordia</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="santo-sepulcro">
+<div class="card" data-cof="santo-sepulcro" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/sepulcro.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/sepulcro.jpg"/></div>
 <div>
 <h3 style="margin:0">Santo Sepulcro</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="agonia-de-nuestro-senor">
+<div class="card" data-cof="agonia-de-nuestro-senor" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia.jpg"/></div>
 <div>
 <h3 style="margin:0">Agonía de Nuestro Señor</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="cristo-del-gran-poder">
+<div class="card" data-cof="cristo-del-gran-poder" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/granpoder.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/granpoder.jpg"/></div>
 <div>
 <h3 style="margin:0">Cristo del Gran Poder</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
 </div>
 </div>
 </div>
-<button type="button" class="card" data-cof="desenclavo">
+<div class="card" data-cof="desenclavo" role="button" tabindex="0">
 <div class="cof-item">
-<div class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.jpg"/>
-</button>
+<div class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.jpg"/></div>
 <div>
 <h3 style="margin:0">Desenclavo</h3>
 <div class="cof-meta">Pulsa para ver ficha</div>
@@ -1893,86 +1868,19 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 </div>
 </div>
 </div>
-
-<div class="view-section" id="cookies">
-  <h2>🍪 Política de cookies</h2>
-  <nav aria-label="Ruta de navegación" class="breadcrumbs">
-    <button type="button" onclick="showView('home')">Inicio</button><span class="sep">›</span>
-    <span aria-current="page" class="current">Política de cookies</span>
-  </nav>
-
-  <article class="card" style="max-width:900px;margin:0 auto">
-    <h3>Qué cookies usamos</h3>
-    <p class="hint">Última revisión: <strong>26 febrero 2026</strong>. Esta página se centra en el uso real de la web. Si añadimos analítica o publicidad en el futuro, actualizaremos esta política.</p>
-
-    <div class="seo-box" style="margin-top:14px">
-      <h2 style="font-size:1.3rem">1) Cookies técnicas (necesarias)</h2>
-      <p>Son imprescindibles para el funcionamiento básico de la web y no requieren consentimiento previo. Por ejemplo, recordar tu elección de cookies.</p>
-      <ul>
-        <li><strong>cookiesConsent</strong> (localStorage): guarda tu elección (“accepted” o “rejected”).</li>
-      </ul>
-    </div>
-
-    <div class="seo-box">
-      <h2 style="font-size:1.3rem">2) Cookies de análisis (opcionales)</h2>
-      <p>Solo se activarían si las aceptas. Actualmente no cargamos cookies de analítica de terceros por defecto.</p>
-    </div>
-
-    <div class="seo-box">
-      <h2 style="font-size:1.3rem">Cómo cambiar tu elección</h2>
-      <p>Puedes cambiar tu preferencia desde aquí:</p>
-      <div class="quick-links" role="group" aria-label="Cambiar preferencia de cookies">
-        <button type="button" onclick="acceptCookies(true)">Aceptar cookies</button>
-        <button type="button" onclick="rejectCookies(true)">Rechazar cookies</button>
-      </div>
-      <p class="hint" style="margin-top:10px">También puedes borrar los datos del navegador (almacenamiento local) para que el aviso vuelva a aparecer.</p>
-    </div>
-
-    <div class="seo-box">
-      <h2 style="font-size:1.3rem">Contacto</h2>
-      <p>Si tienes dudas sobre cookies o privacidad: <a href="mailto:contacto.comeenleon@gmail.com">contacto.comeenleon@gmail.com</a></p>
-    </div>
-  </article>
-</div>
-
 </main>
 <button aria-label="Volver al menú" class="back-float" onclick="showView('home')">← Volver</button>
 <div aria-label="Aviso de cookies" aria-live="polite" id="cookie-banner" role="dialog">
-  <div class="cookie-text">
-    🍪 Usamos cookies técnicas para que la web funcione correctamente. Solo activaremos cookies de análisis si las aceptas.
-    <a href="#cookies" onclick="event.preventDefault(); showView('cookies');">Política de cookies</a>.
-  </div>
-  <div class="cookie-actions" role="group" aria-label="Opciones de cookies">
-    <button class="cookie-btn secondary" type="button" onclick="rejectCookies()">Rechazar</button>
-    <button class="cookie-btn" type="button" onclick="acceptCookies()">Aceptar</button>
-  </div>
+<span>🍪 Usamos cookies para mejorar tu experiencia.</span>
+<button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
 </div>
 <footer>
 <p><strong>Come en León</strong> · Guía local independiente.</p>
 <p class="hint">Última actualización del contenido: <strong>12 febrero 2026</strong>.</p>
 <p class="hint">© 2026 · Contacto: <a href="mailto:contacto.comeenleon@gmail.com">contacto.comeenleon@gmail.com</a></p>
-<p class="hint"><a href="#cookies" onclick="event.preventDefault(); showView(\'cookies\')">Política de cookies</a></p>
 </footer>
 <script>
     
-function hideCookieBanner(){
-  const b = document.getElementById('cookie-banner');
-  if(b) b.classList.remove('show');
-}
-
-function acceptCookies(fromSettings){
-  localStorage.setItem('cookiesConsent','accepted');
-  hideCookieBanner();
-  // Aquí podrías cargar analítica SOLO tras aceptar (si la añades en el futuro).
-  if(fromSettings){ showView('home'); }
-}
-
-function rejectCookies(fromSettings){
-  localStorage.setItem('cookiesConsent','rejected');
-  hideCookieBanner();
-  if(fromSettings){ showView('home'); }
-}
-
 function showView(id){
   document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
   const target = document.getElementById(id);
@@ -2065,12 +1973,11 @@ function scrollToSection(sectionId){
 
 window.addEventListener('load', () => {
   bindCofradiaGrid();
-  // Cookies (UE): mostramos banner si no hay elección
-  const consent = localStorage.getItem('cookiesConsent');
-  if(!consent){
+  // Cookies
+  if(!localStorage.getItem('cookiesAccepted')){
     setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1200);
   }
-// Deep-link por hash (#catedral, #tapas, etc.)
+  // Deep-link por hash (#catedral, #tapas, etc.)
   const hash = (window.location.hash || '').replace('#','').trim();
   if(hash){
     const target = document.getElementById(hash);
@@ -2127,7 +2034,13 @@ function bindCofradiaGrid(){
     const slug = card.getAttribute('data-cof');
     if(!slug) return;
     card.addEventListener('click', () => openCofradia(slug));
-});
+    card.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openCofradia(slug);
+      }
+    });
+  });
 
   // Si el usuario abre una ficha manualmente, cerramos las demás
   document.querySelectorAll('#listacofradias details.card').forEach(det => {
@@ -2150,5 +2063,27 @@ function bindCofradiaGrid(){
 }
 
 </script>
+<script id="heroVideoLazyLoad_v1">
+(() => {
+  const isDesktop = window.matchMedia('(min-width: 769px)').matches;
+  const saveData = navigator.connection && navigator.connection.saveData;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!isDesktop || saveData || reduceMotion) return;
+
+  const video = document.querySelector('.hero-video');
+  if (!video) return;
+
+  video.querySelectorAll('source').forEach(s => {
+    if (!s.src && s.dataset.src) s.src = s.dataset.src;
+  });
+
+  video.load();
+
+  const p = video.play();
+  if (p && typeof p.catch === 'function') p.catch(() => {});
+})();
+</script>
+
 </body>
 </html>
