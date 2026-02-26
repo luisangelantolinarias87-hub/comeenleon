@@ -336,7 +336,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
     {
       "@type": "TouristAttraction",
       "name": "Catedral de León",
-      "url": "https://comeenleon.es/#catedral",
+      "url": "https://comeenleon.es/catedral",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "León",
@@ -346,7 +346,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
     {
       "@type": "TouristAttraction",
       "name": "Basílica y Museo de San Isidoro",
-      "url": "https://comeenleon.es/#sanisidoro",
+      "url": "https://comeenleon.es/sanisidoro",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "León",
@@ -356,7 +356,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
 {
   "@type": "TouristAttraction",
   "name": "Barrio Romántico de León",
-  "url": "https://comeenleon.es/#romantico",
+  "url": "https://comeenleon.es/romantico",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "León",
@@ -367,7 +367,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
     {
       "@type": "TouristAttraction",
       "name": "Museo Casa Botines Gaudí",
-      "url": "https://comeenleon.es/#botines",
+      "url": "https://comeenleon.es/botines",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "León",
@@ -377,7 +377,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
     {
       "@type": "TouristAttraction",
       "name": "San Marcos (León)",
-      "url": "https://comeenleon.es/#sanmarcos",
+      "url": "https://comeenleon.es/sanmarcos",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "León",
@@ -387,7 +387,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
     {
       "@type": "TouristAttraction",
       "name": "MUSAC (Museo de Arte Contemporáneo de Castilla y León)",
-      "url": "https://comeenleon.es/#musac",
+      "url": "https://comeenleon.es/musac",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "León",
@@ -491,7 +491,7 @@ footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px soli
       "name":"León",
       "address":{"@type":"PostalAddress","addressLocality":"León","addressCountry":"ES"}
     },
-    "url":"https://comeenleon.es/#procesiones",
+    "url":"https://comeenleon.es/procesiones",
     "inLanguage":"es-ES",
     "description":"Guía práctica de Semana Santa en León: procesiones, cofradías, tradiciones y recursos oficiales."
   }
@@ -1973,7 +1973,7 @@ function rejectCookies(fromSettings){
   if(fromSettings){ showView('home'); }
 }
 
-function showView(id){
+function _showViewInternal(id){
   document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
   const target = document.getElementById(id);
   if(target){
@@ -2019,10 +2019,10 @@ function updateBreadcrumbJsonLd(viewId){
     let item = "https://comeenleon.es/";
     if(!isLast && idx > 0){
       // Para hubs usamos la home; es una SPA (evitamos URLs falsas)
-      item = "https://comeenleon.es/#";
+      item = "https://comeenleon.es/";
     }
     if(isLast && viewId && viewId !== 'home'){
-      item = "https://comeenleon.es/#" + viewId;
+      item = "https://comeenleon.es/" + viewId;
     }
     return {
       "@type":"ListItem",
@@ -2150,6 +2150,63 @@ function bindCofradiaGrid(){
 }
 
 </script>
+<script id="spaRouting_v1">
+(() => {
+  const VIEWS = new Set(["home", "tapas", "romantico", "cocido", "autor", "modernos", "procesiones", "listacofradias", "catedral", "sanisidoro", "botines", "sanmarcos", "musac"]);
+
+  function normalizeView(raw) {
+    const v = (raw || '').toLowerCase().trim();
+    if (!v || v === 'index.html') return 'home';
+    return VIEWS.has(v) ? v : 'home';
+  }
+
+  // Wrapper that keeps existing behavior but adds real URLs.
+  window.showView = function(id, push = true) {
+    const view = normalizeView(id);
+
+    // Call the original view switcher (renamed).
+    if (typeof window._showViewInternal === 'function') {
+      window._showViewInternal(view);
+    } else {
+      // Fallback: if for some reason it doesn't exist, do nothing.
+      return;
+    }
+
+    if (!push) return;
+
+    const path = (view === 'home') ? '/' : '/' + view;
+    // Avoid pushing same path repeatedly
+    if (window.location.pathname !== path) {
+      history.pushState({ view }, '', path);
+    } else {
+      // ensure state exists for back/forward consistency
+      if (!history.state || history.state.view !== view) {
+        history.replaceState({ view }, '', path);
+      }
+    }
+  };
+
+  // Back/forward navigation
+  window.addEventListener('popstate', (e) => {
+    const view = normalizeView(e.state?.view || window.location.pathname.replace(/^\//, ''));
+    window.showView(view, false);
+  });
+
+  // On initial load: support direct /ruta and legacy #ruta
+  document.addEventListener('DOMContentLoaded', () => {
+    const pathView = normalizeView(window.location.pathname.replace(/^\//, ''));
+    const hashView = normalizeView(window.location.hash.replace(/^#/, ''));
+    const initial = (pathView !== 'home') ? pathView : (hashView !== 'home' ? hashView : 'home');
+
+    // Set initial state so Back works nicely
+    const initialPath = (initial === 'home') ? '/' : '/' + initial;
+    history.replaceState({ view: initial }, '', initialPath);
+
+    window.showView(initial, false);
+  });
+})();
+</script>
+
 <script id="heroVideoLazyLoad_v1">
 (() => {
   const isDesktop = window.matchMedia('(min-width: 769px)').matches;
