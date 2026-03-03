@@ -2081,109 +2081,54 @@ function bindCofradiaGrid(){
 (() => {
   const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "tapas", "teatro"]);
 
-  const LEGACY_SECTION_ROUTES = {
-    "semanasanta": "sec-semana",
-    "semana-santa": "sec-semana"
-  };
-
   function normalizeView(raw) {
-    const v = (raw || '').toLowerCase().trim().replace(/^\/+|\/+$/g, '');
+    const v = (raw || '').toLowerCase().trim();
     if (!v || v === 'index.html') return 'home';
     return VIEWS.has(v) ? v : 'home';
   }
 
-  function normalizeSlug(raw) {
-    return (raw || '').toLowerCase().trim().replace(/^\/+|\/+$/g, '');
-  }
-
-  function isSectionHash(hash) {
-    if (!hash) return false;
-    const el = document.getElementById(hash);
-    return !!(el && !el.classList.contains('view-section'));
-  }
-
-  function scrollToHomeSection(sectionId, behavior = 'auto') {
-    try { window.showView('home', false); } catch (e) {}
-
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      const el = document.getElementById(sectionId);
-      if (el) {
-        el.scrollIntoView({ behavior, block: 'start' });
-      } else {
-        window.scrollTo({ top: 0, behavior });
-      }
-    }));
-  }
-
+  // Wrapper that keeps existing behavior but adds real URLs.
   window.showView = function(id, push = true) {
     const view = normalizeView(id);
 
+    // Call the original view switcher (renamed).
     if (typeof window._showViewInternal === 'function') {
       window._showViewInternal(view);
     } else {
+      // Fallback: if for some reason it doesn't exist, do nothing.
       return;
     }
 
     if (!push) return;
 
     const path = (view === 'home') ? '/' : '/' + view;
-    if (window.location.pathname !== path || window.location.hash) {
+    // Avoid pushing same path repeatedly
+    if (window.location.pathname !== path) {
       history.pushState({ view }, '', path);
-    } else if (!history.state || history.state.view !== view) {
-      history.replaceState({ view }, '', path);
+    } else {
+      // ensure state exists for back/forward consistency
+      if (!history.state || history.state.view !== view) {
+        history.replaceState({ view }, '', path);
+      }
     }
   };
 
+  // Back/forward navigation
   window.addEventListener('popstate', (e) => {
-    const pathSlug = normalizeSlug(window.location.pathname);
-    const hash = normalizeSlug((window.location.hash || '').replace(/^#/, ''));
-    const legacySection = LEGACY_SECTION_ROUTES[pathSlug];
-
-    if (legacySection) {
-      history.replaceState({ view: 'home' }, '', '/#' + legacySection);
-      scrollToHomeSection(legacySection, 'auto');
-      return;
-    }
-
-    if (hash && isSectionHash(hash)) {
-      scrollToHomeSection(hash, 'auto');
-      return;
-    }
-
-    const view = normalizeView(e.state?.view || pathSlug || hash);
+    const view = normalizeView(e.state?.view || window.location.pathname.replace(/^\//, ''));
     window.showView(view, false);
   });
 
+  // On initial load: support direct /ruta and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
-    const pathSlug = normalizeSlug(window.location.pathname);
-    const hash = normalizeSlug((window.location.hash || '').replace(/^#/, ''));
-    const legacySection = LEGACY_SECTION_ROUTES[pathSlug];
+    const pathView = normalizeView(window.location.pathname.replace(/^\//, ''));
+    const hashView = normalizeView(window.location.hash.replace(/^#/, ''));
+    const initial = (pathView !== 'home') ? pathView : (hashView !== 'home' ? hashView : 'home');
 
-    if (legacySection) {
-      history.replaceState({ view: 'home' }, '', '/#' + legacySection);
-      window.showView('home', false);
-      return;
-    }
-
-    if (hash) {
-      const hashEl = document.getElementById(hash);
-
-      if (hashEl && hashEl.classList.contains('view-section')) {
-        const view = normalizeView(hash);
-        const initialPath = (view === 'home') ? '/' : '/' + view;
-        history.replaceState({ view }, '', initialPath);
-        window.showView(view, false);
-        return;
-      }
-
-      history.replaceState({ view: 'home' }, '', '/#' + hash);
-      window.showView('home', false);
-      return;
-    }
-
-    const initial = normalizeView(pathSlug);
+    // Set initial state so Back works nicely
     const initialPath = (initial === 'home') ? '/' : '/' + initial;
     history.replaceState({ view: initial }, '', initialPath);
+
     window.showView(initial, false);
   });
 })();
