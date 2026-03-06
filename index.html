@@ -447,6 +447,59 @@ footer{
 .cof-facts{margin:12px 0 0; padding-left:18px}
 .cof-facts li{margin:8px 0; line-height:1.35}
 .cof-facts strong{font-weight:800}
+
+/* === UX móvil: Accesos rápidos + barra sticky (sin romper SPA) === */
+.toc{padding:1.2rem 0 0}
+.toc-card{
+  background:var(--card);
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:20px;
+  padding:16px;
+  box-shadow:0 14px 34px rgba(15,23,42,.07);
+}
+.toc-card h2{margin:0 0 6px;font-size:1.15rem}
+.toc-sub{margin:0 0 12px;color:var(--muted);font-size:.98rem}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.toc-btn{
+  display:flex;align-items:center;justify-content:center;
+  padding:12px 10px;border-radius:14px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#fff;font-weight:900;
+}
+.toc-btn:active{transform:translateY(1px)}
+.toc-btn--hot{border-color:rgba(225,29,72,.35)}
+@media (min-width:900px){
+  .toc-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+
+/* Barra sticky SOLO móvil (abajo) */
+.mnav{
+  position:fixed;left:10px;right:10px;bottom:10px;
+  display:flex;gap:8px;align-items:center;
+  padding:10px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(15,23,42,.18);
+  backdrop-filter:blur(8px);
+  z-index:9998;
+}
+.mnav a{
+  flex:1;text-align:center;
+  padding:10px 8px;border-radius:14px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#fff;
+  font-weight:900;font-size:.95rem;
+}
+.mnav a:active{transform:translateY(1px)}
+.mnav-hot{border-color:rgba(225,29,72,.35)}
+/* Evita que la barra tape el final */
+body{padding-bottom:78px}
+@media (min-width:900px){
+  .mnav{display:none}
+  body{padding-bottom:0}
+}
+
 </style>
 <!-- Schema.org (SEO): WebSite + Organization + TouristDestination + Entidades + FAQ -->
 <script type="application/ld+json">
@@ -669,6 +722,22 @@ footer{
 <main class="wrap" id="main">
 <!-- HOME -->
 <div class="view-section active" id="home">
+
+<!-- UX móvil: Accesos rápidos (reduce fatiga de scroll) -->
+<section class="toc" aria-label="Accesos rápidos">
+  <div class="toc-card">
+    <h2>⚡ Accesos rápidos</h2>
+    <p class="toc-sub">En móvil, toca y salta directo a la sección.</p>
+
+    <div class="toc-grid" role="navigation" aria-label="Accesos rápidos a secciones">
+      <a class="toc-btn" href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas</a>
+      <a class="toc-btn" href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa</a>
+      <a class="toc-btn toc-btn--hot" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dónde dormir</a>
+      <a class="toc-btn" href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos</a>
+      <a class="toc-btn" href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🎉 Agenda</a>
+    </div>
+  </div>
+</section>
 <!-- INTRO SEO (contexto + intención de búsqueda) -->
 <section aria-label="Guía rápida de León" class="seo-box" id="sec-guia">
 <h2>📌 Guía local de León 2026: tapas, monumentos y planes</h2>
@@ -2178,6 +2247,15 @@ function loadYouTube(videoId, targetId){
   target.appendChild(iframe);
 }
 </script>
+
+
+<!-- Barra sticky móvil (acceso directo a secciones clave) -->
+<nav class="mnav" aria-label="Navegación rápida móvil">
+  <a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Tapas</a>
+  <a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">Semana</a>
+  <a class="mnav-hot" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Dormir</a>
+  <a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda</a>
+</nav>
 
 </body>
 </html>
