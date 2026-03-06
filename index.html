@@ -2079,7 +2079,10 @@ function bindCofradiaGrid(){
 </script>
 <script id="spaRouting_v1">
 (() => {
-  const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "tapas", "teatro"]);
+  
+  const cleanPath = () => window.location.pathname.replace(/^\/+|\/+$/g, '');
+
+const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "tapas", "teatro"]);
 
   function normalizeView(raw) {
     const v = (raw || '').toLowerCase().trim();
@@ -2115,13 +2118,13 @@ function bindCofradiaGrid(){
 
   // Back/forward navigation
   window.addEventListener('popstate', (e) => {
-    const view = normalizeView(e.state?.view || window.location.pathname.replace(/^\//, ''));
+    const view = normalizeView(e.state?.view || cleanPath());
     window.showView(view, false);
   });
 
   // On initial load: support direct /ruta and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
-    const pathView = normalizeView(window.location.pathname.replace(/^\//, ''));
+    const pathView = normalizeView(cleanPath());
     const hashView = normalizeView(window.location.hash.replace(/^#/, ''));
     const initial = (pathView !== 'home') ? pathView : (hashView !== 'home' ? hashView : 'home');
 
