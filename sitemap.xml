@@ -2,58 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://comeenleon.es/</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comeenleon.es/semanasanta/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comeenleon.es/tapas/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/tapas</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/cocido/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/cocido</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/modernos/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/modernos</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/procesiones/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/procesiones</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/listacofradias/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/listacofradias</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/catedral/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/catedral</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/sanisidoro/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/sanisidoro</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/botines/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/botines</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/sanmarcos/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/sanmarcos</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/musac/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/musac</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/conciertos/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/conciertos</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/ferias/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
-    <loc>https://comeenleon.es/ferias</loc>
-    <lastmod>2026-03-03</lastmod>
-  </url>
-  <url>
-    <loc>https://comeenleon.es/mercados</loc>
-    <lastmod>2026-03-03</lastmod>
+    <loc>https://comeenleon.es/mercados/</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
 </urlset>
