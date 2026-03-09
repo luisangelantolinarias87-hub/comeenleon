@@ -2389,7 +2389,7 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
     window.showView(view, false);
   });
 
-  // On initial load: support direct /ruta and legacy #ruta
+  // On initial load: support direct /ruta, query fallback and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
     const queryView = normalizeView(getQueryView());
     const pathView = normalizeView(cleanPath());
