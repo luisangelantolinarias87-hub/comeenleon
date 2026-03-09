@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex,follow" />
   <script>
     (function () {
-      var path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+      var path = window.location.pathname.replace(/^\/+/,'').replace(/\/+$/,'').toLowerCase();
 
       var validRoutes = new Set([
         "tapas",
@@ -32,16 +32,16 @@
       ]);
 
       if (validRoutes.has(path)) {
-        window.location.href = '/?view=' + encodeURIComponent(path);
+        window.location.replace('/?view=' + encodeURIComponent(path));
       } else {
-        window.location.href = '/';
+        window.location.replace('/');
       }
     })();
   </script>
   <style>
     body{font-family:Arial,sans-serif;margin:0;min-height:100vh;display:grid;place-items:center;background:#f8fafc;color:#1e293b}
     .box{max-width:640px;padding:32px;text-align:center;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-    a{display:inline-block;margin-top:16px;color:#fff;background:#e11d48;text-decoration:none;padding:12px 18px;border-radius:10px}
+    a{display:inline-block;margin-top:16px;color:#fff;background:#e11d48;text-decoration:none;padding:12px 18px;border-radius:10px;text-decoration:none}
   </style>
 </head>
 <body>

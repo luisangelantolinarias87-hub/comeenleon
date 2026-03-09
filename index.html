@@ -2229,8 +2229,8 @@ function scrollToSection(sectionId){
       return;
     }
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Deja la URL lista para compartir (siempre desde /)
-    history.replaceState({ view: 'home' }, '', '/#' + sectionId);
+    // Mantiene HOME compartible pero sin interferir con las vistas SPA.
+    history.replaceState({ view: 'home' }, '', '/');
   };
 
   // Más robusto que un timeout fijo: espera a que el DOM pinte la vista
@@ -2335,14 +2335,24 @@ function bindCofradiaGrid(){
 </script>
 <script id="spaRouting_v1">
 (() => {
-  
   const cleanPath = () => window.location.pathname.replace(/^\/+|\/+$/g, '');
 
-const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "semanasanta", "tapas", "teatro"]);
+  function getQueryView() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('view') || params.get('route') || '';
+  }
+
+  const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "semanasanta", "tapas", "teatro"]);
 
   function normalizeView(raw) {
-    const v = (raw || '').toLowerCase().trim();
-    if (!v || v === 'index.html') return 'home';
+    const v = (raw || '')
+      .toLowerCase()
+      .trim()
+      .replace(/^\/+|\/+$/g, '')
+      .replace(/^#/, '')
+      .replace(/\.html$/, '');
+
+    if (!v || v === 'index') return 'home';
     return VIEWS.has(v) ? v : 'home';
   }
 
@@ -2350,7 +2360,6 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
     return (view === 'home') ? '/' : '/?view=' + encodeURIComponent(view);
   }
 
-  // Wrapper that keeps existing behavior but uses query routing on GitHub Pages.
   window.showView = function(id, push = true) {
     const view = normalizeView(id);
 
@@ -2372,13 +2381,11 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
     }
   };
 
-  // Back/forward navigation
   window.addEventListener('popstate', (e) => {
     const view = normalizeView(e.state?.view || getQueryView() || cleanPath());
     window.showView(view, false);
   });
 
-  // On initial load: support direct ?view=ruta, direct /ruta and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
     const queryView = normalizeView(getQueryView());
     const pathView = normalizeView(cleanPath());
@@ -2390,7 +2397,6 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
 
     const initialRoute = buildRoute(initial);
     history.replaceState({ view: initial }, '', initialRoute);
-
     window.showView(initial, false);
   });
 })();
