@@ -2338,59 +2338,47 @@ function bindCofradiaGrid(){
   
   const cleanPath = () => window.location.pathname.replace(/^\/+|\/+$/g, '');
 
-  function getQueryView() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('view') || '';
-  }
-
 const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "semanasanta", "tapas", "teatro"]);
 
   function normalizeView(raw) {
-    const v = (raw || '')
-      .toLowerCase()
-      .trim()
-      .replace(/^\/+|\/+$/g, '')
-      .replace(/^#/, '')
-      .replace(/\.html$/, '');
-
-    if (!v || v === 'index') return 'home';
+    const v = (raw || '').toLowerCase().trim();
+    if (!v || v === 'index.html') return 'home';
     return VIEWS.has(v) ? v : 'home';
   }
 
-  // Wrapper that keeps existing behavior but adds real URLs.
+  function buildRoute(view) {
+    return (view === 'home') ? '/' : '/?view=' + encodeURIComponent(view);
+  }
+
+  // Wrapper that keeps existing behavior but uses query routing on GitHub Pages.
   window.showView = function(id, push = true) {
     const view = normalizeView(id);
 
-    // Call the original view switcher (renamed).
     if (typeof window._showViewInternal === 'function') {
       window._showViewInternal(view);
     } else {
-      // Fallback: if for some reason it doesn't exist, do nothing.
       return;
     }
 
     if (!push) return;
 
-    const path = (view === 'home') ? '/' : '/?view=' + encodeURIComponent(view);
-    // Avoid pushing same path repeatedly
-    const currentQueryView = normalizeView(getQueryView());
-    if (window.location.pathname !== '/' || currentQueryView !== view) {
-      history.pushState({ view }, '', path);
-    } else {
-      // ensure state exists for back/forward consistency
-      if (!history.state || history.state.view !== view) {
-        history.replaceState({ view }, '', path);
-      }
+    const route = buildRoute(view);
+    const currentRoute = window.location.pathname + window.location.search;
+
+    if (currentRoute !== route) {
+      history.pushState({ view }, '', route);
+    } else if (!history.state || history.state.view !== view) {
+      history.replaceState({ view }, '', route);
     }
   };
 
   // Back/forward navigation
   window.addEventListener('popstate', (e) => {
-    const view = normalizeView(e.state?.view || cleanPath());
+    const view = normalizeView(e.state?.view || getQueryView() || cleanPath());
     window.showView(view, false);
   });
 
-  // On initial load: support direct /ruta and legacy #ruta
+  // On initial load: support direct ?view=ruta, direct /ruta and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
     const queryView = normalizeView(getQueryView());
     const pathView = normalizeView(cleanPath());
@@ -2400,9 +2388,8 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
       (pathView !== 'home') ? pathView :
       (hashView !== 'home') ? hashView : 'home';
 
-    // Set initial state so Back works nicely
-    const initialPath = (initial === 'home') ? '/' : '/' + initial;
-    history.replaceState({ view: initial }, '', initialPath);
+    const initialRoute = buildRoute(initial);
+    history.replaceState({ view: initial }, '', initialRoute);
 
     window.showView(initial, false);
   });
