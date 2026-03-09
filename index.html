@@ -2371,9 +2371,10 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
 
     if (!push) return;
 
-    const path = (view === 'home') ? '/' : '/' + view;
+    const path = (view === 'home') ? '/' : '/?view=' + encodeURIComponent(view);
     // Avoid pushing same path repeatedly
-    if (window.location.pathname !== path) {
+    const currentQueryView = normalizeView(getQueryView());
+    if (window.location.pathname !== '/' || currentQueryView !== view) {
       history.pushState({ view }, '', path);
     } else {
       // ensure state exists for back/forward consistency
@@ -2389,7 +2390,7 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
     window.showView(view, false);
   });
 
-  // On initial load: support direct /ruta, query fallback and legacy #ruta
+  // On initial load: support direct /ruta and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
     const queryView = normalizeView(getQueryView());
     const pathView = normalizeView(cleanPath());
