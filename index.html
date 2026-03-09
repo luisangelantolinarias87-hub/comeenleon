@@ -364,6 +364,38 @@ footer{
 .faq summary{cursor:pointer;font-weight:900}
 .faq p{margin-top:10px;color:var(--muted)}
   
+
+/* Bloques informativos añadidos en v3 */
+.info-list,.tips-list,.places-list{
+  list-style:disc;
+  margin:12px 0 0 20px;
+  color:var(--muted);
+}
+.info-list li,.tips-list li,.places-list li{margin:8px 0}
+.mini-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+.note-box{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+.note-box p{color:var(--muted)}
+.note-box h3{margin-bottom:8px}
+.photo-list{
+  list-style:decimal;
+  margin:12px 0 0 22px;
+  color:var(--muted);
+}
+.photo-list li{margin:10px 0}
+@media (min-width:900px){
+  .toc-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+
     /* Semana Santa PRO */
     .ss-hero{
       display:grid;
@@ -501,6 +533,81 @@ body{padding-bottom:78px}
 @media (min-width:900px){
   .mnav{display:none}
   body{padding-bottom:0}
+}
+
+
+/* Hub visual de navegación */
+.hub-nav{padding-top:1.4rem}
+.hub-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+}
+.hub-card{
+  position:relative;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 14px 34px rgba(15,23,42,.07);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+  min-height:128px;
+}
+.hub-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:0 18px 38px rgba(15,23,42,.10);
+}
+.hub-card h3{margin:0 0 6px;font-size:1.08rem;line-height:1.2}
+.hub-card p{margin:0;color:var(--muted);font-size:.92rem}
+.hub-card a{position:absolute;inset:0}
+.hub-card--accent{background:linear-gradient(180deg,#fff,#fff7f9)}
+.hub-card--purple{background:linear-gradient(180deg,#fff,#fcfaff)}
+.hub-card--purple:hover{border-color:var(--purple)}
+.hub-card--purple .hub-kicker{color:var(--purple)}
+.hub-kicker{display:inline-block;margin-bottom:8px;font-size:.78rem;font-weight:900;color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
+
+/* Bloque destacado street food */
+.feature-food{
+  margin-top:26px;
+  padding:24px;
+  border-radius:22px;
+  background:linear-gradient(180deg,#fffaf5,#ffffff);
+  border:1px solid rgba(234,88,12,.18);
+  box-shadow:0 18px 36px rgba(15,23,42,.08);
+}
+.feature-food h3{margin:0 0 10px;color:#c2410c}
+.feature-food p{color:var(--muted);margin:0 0 12px}
+.feature-food .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.feature-food .chips a{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:999px;border:1px solid rgba(15,23,42,.10);
+  background:#fff;font-weight:900;
+}
+.feature-food .chips a:hover{border-color:#ea580c;color:#c2410c;transform:translateY(-1px)}
+
+
+.itinerarios-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+@media (min-width:1100px){
+  .itinerarios-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+.burger-details{margin-top:12px}
+.burger-details summary{
+  list-style:none;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+}
+.burger-details summary::-webkit-details-marker{display:none}
+.burger-list{list-style:disc;margin:12px 0 0 20px;color:var(--muted)}
+.burger-list li{margin:10px 0}
+.burger-list a{
+  font-weight:800;
+  text-decoration:underline;
 }
 
 </style>
@@ -699,8 +806,21 @@ body{padding-bottom:78px}
     "description":"Guía práctica de Semana Santa en León: procesiones, cofradías, tradiciones y recursos oficiales."
   }
   </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MV7BHCDR');</script>
+<!-- End Google Tag Manager -->
+
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV7BHCDR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <a class="skip-link" href="#main">Saltar al contenido</a>
 <header aria-label="Portada" class="hero">
 <img alt="Catedral de León iluminada al atardecer" aria-hidden="true" class="hero-img" decoding="async" fetchpriority="high" height="900" loading="eager" src="catedral-leon-hero.png" width="1600"/>
@@ -709,85 +829,79 @@ body{padding-bottom:78px}
 <h1>Descubre el Alma de León</h1>
 <p class="hero-tagline">Tu guía local para disfrutar León en 2026: tapas, qué ver, hoteles, agenda y Semana Santa.</p>
 <p class="hero-meta">🕒 Última actualización: <strong>marzo 2026</strong></p>
-<div class="hero-actions" aria-label="Accesos destacados">
+<div aria-label="Accesos destacados" class="hero-actions">
 <a class="hero-cta primary" href="https://www.google.com/maps/search/?api=1&amp;query=Catedral+de+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Abrir León en Google Maps</a>
 </div>
 <nav aria-label="Menú principal" class="nav-pills">
-<a href="/" class="nav-btn" onclick="event.preventDefault(); showView('home')">🏠 Inicio</a>
-<a href="/#sec-comer" class="nav-btn" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas, comer e itinerarios gastronómicos</a>
-<a href="/#sec-semana" class="nav-btn btn-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa León 2026</a>
-<a href="/#sec-visitar" class="nav-btn" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos y cultura</a>
-<a href="/#sec-dormir" class="nav-btn" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dónde dormir</a>
-<a href="/#sec-agenda" class="nav-btn" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🎉 Agenda rápida</a>
+<a class="nav-btn" href="/" onclick="event.preventDefault(); showView('home')">🏠 Inicio</a>
+<a class="nav-btn" href="/#sec-como-llegar" onclick="event.preventDefault(); scrollToSection('sec-como-llegar')">🚆 Cómo llegar</a>
+<a class="nav-btn" href="/#sec-aparcar" onclick="event.preventDefault(); scrollToSection('sec-aparcar')">🚗 Aparcar</a>
+<a class="nav-btn" href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas</a>
+<a class="nav-btn btn-semana" href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa</a>
+<a class="nav-btn" href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos</a>
+<a class="nav-btn" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dormir</a>
+<a class="nav-btn" href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')">⛰️ Excursiones</a>
+<a class="nav-btn" href="/#sec-fiestas" onclick="event.preventDefault(); scrollToSection('sec-fiestas')">🎉 Fiestas</a>
+<a class="nav-btn" href="/#sec-miradores-fotos" onclick="event.preventDefault(); scrollToSection('sec-miradores-fotos')">📸 Fotos</a>
+<a class="nav-btn" href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🗓️ Agenda</a>
 </nav>
 </div>
 </header>
 <main class="wrap" id="main">
 <!-- HOME -->
 <div class="view-section active" id="home">
-
 <!-- UX móvil: Accesos rápidos (reduce fatiga de scroll) -->
-<section class="toc" aria-label="Accesos rápidos">
-  <div class="toc-card">
-    <h2>⚡ Accesos rápidos</h2>
-    <p class="toc-sub">En móvil, toca y salta directo a la sección.</p>
-
-    <div class="toc-grid" role="navigation" aria-label="Accesos rápidos a secciones">
-      <a class="toc-btn" href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas</a>
-      <a class="toc-btn" href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa</a>
-      <a class="toc-btn toc-btn--hot" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dónde dormir</a>
-      <a class="toc-btn" href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos</a>
-      <a class="toc-btn" href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🎉 Agenda</a>
-    </div>
-  </div>
+<section aria-label="Accesos rápidos" class="toc">
+<div class="toc-card">
+<h2>⚡ Accesos rápidos</h2>
+<p class="toc-sub">En móvil, toca y salta directo a la sección.</p>
+<div aria-label="Accesos rápidos a secciones" class="toc-grid" role="navigation">
+<a class="toc-btn" href="/#sec-como-llegar" onclick="event.preventDefault(); scrollToSection('sec-como-llegar')">🚆 Cómo llegar</a>
+<a class="toc-btn" href="/#sec-aparcar" onclick="event.preventDefault(); scrollToSection('sec-aparcar')">🚗 Aparcar</a>
+<a class="toc-btn" href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas</a>
+<a class="toc-btn" href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa</a>
+<a class="toc-btn" href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos</a>
+<a class="toc-btn toc-btn--hot" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dormir</a>
+<a class="toc-btn" href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')">⛰️ Excursiones</a>
+<a class="toc-btn" href="/#sec-fiestas" onclick="event.preventDefault(); scrollToSection('sec-fiestas')">🎉 Fiestas</a>
+<a class="toc-btn" href="/#sec-miradores-fotos" onclick="event.preventDefault(); scrollToSection('sec-miradores-fotos')">📸 Fotos</a>
+<a class="toc-btn" href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🗓️ Agenda</a>
+</div>
+</div>
 </section>
-
 <!-- Descargas: Postal + Itinerario -->
 <section class="card" id="sec-postal" style="margin-top:16px">
-  <h3 style="margin:0 0 8px">📦 Descargas de Come en León</h3>
-  <p class="hint" style="margin:0 0 16px">Guarda la postal o abre y descarga el itinerario de la Semana Santa de León 2026.</p>
-
-  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
-    <article class="card" style="padding:18px">
-      <h4 style="margin:0 0 8px;font-size:1.15rem">📮 Postal de Come en León</h4>
-      <p class="hint" style="margin:0 0 12px">Ideal para guardar en el móvil o compartir. Incluye QR para abrir la guía.</p>
-
-      <img
-        src="assets/postal/postal-comeenleon-2026-1080.webp"
-        alt="Postal Come en León 2026"
-        style="width:100%; border-radius:16px; border:1px solid rgba(15,23,42,.10)"
-        loading="lazy"
-      />
-
-      <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
-        <a class="card-btn" href="assets/postal/postal-comeenleon-2026.png" download>⬇️ Descargar postal</a>
-        <a class="card-btn" href="assets/postal/postal-comeenleon-2026.png" target="_blank" rel="noopener">👀 Ver en grande</a>
-      </div>
-    </article>
-
-    <article class="card" style="padding:18px">
-      <h4 style="margin:0 0 8px;font-size:1.15rem">🟣 Itinerario Semana Santa 2026</h4>
-      <p class="hint" style="margin:0 0 12px">Accede al itinerario completo con copyright de Come en León y guárdalo para llevarlo en el móvil.</p>
-
-      <div style="border:1px solid rgba(126,34,206,.14);background:#fcfaff;border-radius:16px;padding:16px;min-height:220px;display:flex;flex-direction:column;justify-content:center">
-        <p style="margin:0 0 10px;font-weight:800;color:#581c87">Incluye:</p>
-        <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.7">
-          <li>Recorridos y horarios</li>
-          <li>Procesiones y días clave</li>
-          <li>Formato cómodo para móvil</li>
-          <li>Copyright visible de Come en León</li>
-        </ul>
-      </div>
-
-      <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
-        <a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" target="_blank" rel="noopener">👀 Abrir itinerario</a>
-        <a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" download>⬇️ Descargar itinerario</a>
-      </div>
-    </article>
-  </div>
+<h3 style="margin:0 0 8px">📦 Descargas de Come en León</h3>
+<p class="hint" style="margin:0 0 16px">Guarda la postal o abre y descarga el itinerario de la Semana Santa de León 2026.</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+<article class="card" style="padding:18px">
+<h4 style="margin:0 0 8px;font-size:1.15rem">📮 Postal de Come en León</h4>
+<p class="hint" style="margin:0 0 12px">Ideal para guardar en el móvil o compartir. Incluye QR para abrir la guía.</p>
+<img alt="Postal Come en León 2026" loading="lazy" src="assets/postal/postal-comeenleon-2026-1080.webp" style="width:100%; border-radius:16px; border:1px solid rgba(15,23,42,.10)"/>
+<div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+<a class="card-btn" download="" href="assets/postal/postal-comeenleon-2026.png">⬇️ Descargar postal</a>
+<a class="card-btn" href="assets/postal/postal-comeenleon-2026.png" rel="noopener" target="_blank">👀 Ver en grande</a>
+</div>
+</article>
+<article class="card" style="padding:18px">
+<h4 style="margin:0 0 8px;font-size:1.15rem">🟣 Itinerario Semana Santa 2026</h4>
+<p class="hint" style="margin:0 0 12px">Accede al itinerario completo con copyright de Come en León y guárdalo para llevarlo en el móvil.</p>
+<div style="border:1px solid rgba(126,34,206,.14);background:#fcfaff;border-radius:16px;padding:16px;min-height:220px;display:flex;flex-direction:column;justify-content:center">
+<p style="margin:0 0 10px;font-weight:800;color:#581c87">Incluye:</p>
+<ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.7">
+<li>Recorridos y horarios</li>
+<li>Procesiones y días clave</li>
+<li>Formato cómodo para móvil</li>
+<li>Copyright visible de Come en León</li>
+</ul>
+</div>
+<div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+<a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener" target="_blank">👀 Abrir itinerario</a>
+<a class="card-btn" download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">⬇️ Descargar itinerario</a>
+</div>
+</article>
+</div>
 </section>
-
-
 <!-- INTRO SEO (contexto + intención de búsqueda) -->
 <section aria-label="Guía rápida de León" class="seo-box" id="sec-guia">
 <h2>📌 Guía local de León 2026: tapas, monumentos y planes</h2>
@@ -802,115 +916,193 @@ body{padding-bottom:78px}
 <li>¿Fin de semana? Añade un plan de interior (MUSAC) por si llueve.</li>
 <li>En festivos y Semana Santa: reserva con margen (alojamiento y visitas).</li>
 </ul>
-<div aria-label="Accesos rápidos" class="quick-links" role="group"><a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas, comer e itinerarios gastronómicos</a>
+<div aria-label="Accesos rápidos" class="quick-links" role="group"><a href="/#sec-como-llegar" onclick="event.preventDefault(); scrollToSection('sec-como-llegar')">🚆 Cómo llegar a León</a>
+<a href="/#sec-aparcar" onclick="event.preventDefault(); scrollToSection('sec-aparcar')">🚗 Dónde aparcar en León</a>
+<a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas y rutas gastronómicas</a>
 <a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa León 2026</a>
 <a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos y cultura</a>
 <a href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dónde dormir</a>
-<a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🎉 Agenda rápida</a>
+<a href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')">⛰️ Excursiones desde León</a>
+<a href="/#sec-fiestas" onclick="event.preventDefault(); scrollToSection('sec-fiestas')">🎉 Cuándo ir y fiestas</a>
+<a href="/#sec-miradores-fotos" onclick="event.preventDefault(); scrollToSection('sec-miradores-fotos')">📸 Mejores fotos</a>
+<a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🗓️ Agenda rápida</a>
 </div>
 <p class="hint" style="margin-top:12px">Última revisión editorial: <strong>marzo 2026</strong>.</p>
 </section>
-<section id="sec-comer">
-<h2>🍽️ Tapas, comer e itinerarios gastronómicos</h2>
-<p class="section-lead">Desde la ruta clásica por el Barrio Húmedo hasta cocina tradicional, restaurantes Michelin e itinerarios gastronómicos para comer muy bien en León.</p>
-<p>Si te preguntas <strong>dónde comer y tapear en León</strong>, el <strong>Barrio Húmedo</strong> y el <strong>Barrio Romántico</strong> son parada obligatoria. En León la <strong>tapa acompaña habitualmente a la consumición</strong>, ya sea un corto de cerveza o un vino Prieto Picudo. En esta guía tienes rutas fiables para probar desde la morcilla hasta croquetas, cocina tradicional y restaurantes para una cena más especial.</p>
-<div class="subsection-itinerarios" id="sec-itinerarios">
-<h3>🗺️ Itinerarios gastronómicos recomendados</h3>
-<p class="section-lead">Antes de elegir bares o restaurantes, empieza por estas rutas rápidas para comer muy bien en León y organizar mejor la visita.</p>
+<section aria-label="Hub de navegación" class="hub-nav" id="sec-hub-navegacion">
+<div class="hub-grid">
+<article class="hub-card hub-card--accent">
+<span class="hub-kicker">Ruta rápida</span>
+<h3>🍽️ Comer</h3>
+<p>Tapas, hamburguesas, cocina tradicional y planes para cenar bien.</p>
+<a aria-label="Ir a comer en León" href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')"></a>
+</article>
+<article class="hub-card">
+<span class="hub-kicker">Imprescindibles</span>
+<h3>🏛️ Qué ver</h3>
+<p>Catedral, San Isidoro, Casa Botines, MUSAC y paseo por San Marcos.</p>
+<a aria-label="Ir a monumentos y cultura" href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')"></a>
+</article>
+<article class="hub-card">
+<span class="hub-kicker">Moverse mejor</span>
+<h3>🚗 Logística</h3>
+<p>Cómo llegar, dónde aparcar y consejos para entrar al centro sin complicarte.</p>
+<a aria-label="Ir a cómo llegar y aparcar" href="/#sec-como-llegar" onclick="event.preventDefault(); scrollToSection('sec-como-llegar')"></a>
+</article>
+<article class="hub-card hub-card--purple">
+<span class="hub-kicker">Escapadas</span>
+<h3>🗺️ Rutas</h3>
+<p>Excursiones de un día desde León para completar el viaje con coche.</p>
+<a aria-label="Ir a excursiones desde León" href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')"></a>
+</article>
+</div>
+</section>
+<section id="sec-como-llegar">
+<h2>🚆 Cómo llegar a León: tren, autobús, avión y coche</h2>
+<p class="section-lead">León está muy bien conectada para una escapada de fin de semana o una visita de varios días. Antes de pensar en tapas, hoteles o monumentos, conviene saber cuál es la forma más cómoda de llegar según tu punto de origen.</p>
 <div class="grid">
 <article class="card">
-<h3>León en 1 día (imprescindibles)</h3>
-<p><strong>Mañana:</strong> Catedral → casco histórico. <strong>Mediodía:</strong> tapas por el Barrio Húmedo. <strong>Tarde:</strong> San Isidoro / Casa Botines. <strong>Noche:</strong> cena moderna o tradicional.</p>
+<h3>🚄 En tren</h3>
+<p>Para muchos viajeros, es la opción más cómoda para llegar al centro de León sin preocuparse por aparcamiento. La estación de tren queda a distancia razonable del casco histórico y conecta bien con Madrid y otras ciudades del norte.</p>
+<a class="card-btn" href="https://www.renfe.com/es/es/viajar/informacion-util/horarios" rel="noopener noreferrer" target="_blank">Consultar trenes →</a>
+</article>
+<article class="card">
+<h3>🚌 En autobús</h3>
+<p>Una alternativa práctica y normalmente más económica. La estación de autobuses está junto a la de tren, así que resulta cómoda para llegar y seguir andando o en taxi hasta el alojamiento.</p>
+<a class="card-btn" href="https://www.alsa.es/" rel="noopener noreferrer" target="_blank">Ver rutas de autobús →</a>
+</article>
+<article class="card">
+<h3>✈️ En avión</h3>
+<p>El aeropuerto de León (LEN) está muy cerca de la ciudad. Puede ser útil si encuentras vuelo directo desde tu origen, aunque la oferta de rutas suele ser más limitada que en otros aeropuertos grandes.</p>
+<a class="card-btn" href="https://www.aena.es/es/leon.html" rel="noopener noreferrer" target="_blank">Info del aeropuerto →</a>
+</article>
+<article class="card">
+<h3>🚗 En coche</h3>
+<p>Es buena opción si vas a combinar León capital con excursiones por la provincia. Si vienes al casco histórico, mira antes el aparcamiento: el centro tiene varias zonas peatonales y conviene entrar con parking claro para no dar vueltas de más.</p>
+<a class="card-btn" href="/#sec-aparcar" onclick="event.preventDefault(); scrollToSection('sec-aparcar')">Ver dónde aparcar →</a>
+</article>
+</div>
+<p class="hint" style="margin-top:14px">Consejo práctico: si tu plan es centrarte en <strong>Catedral, Barrio Húmedo, Barrio Romántico, San Isidoro y Casa Botines</strong>, lo más cómodo suele ser llegar sin coche o dejarlo aparcado al llegar y moverte luego a pie.</p>
+</section>
+<section id="sec-aparcar">
+<h2>🚗 Dónde aparcar en León: gratis, parkings y consejos útiles</h2>
+<p class="section-lead">León se disfruta mejor caminando, pero llegar en coche sin plan puede complicarte la visita. El casco histórico, el Barrio Húmedo y parte del centro tienen tráfico limitado o calles poco cómodas para buscar sitio improvisando.</p>
+<div class="grid">
+<article class="card">
+<h3>🆓 Opciones para aparcar gratis</h3>
+<p>Si no te importa caminar un poco, suele compensar dejar el coche en zonas más tranquilas y entrar andando al centro. Las áreas próximas a <strong>Eras de Renueva</strong> o más alejadas del casco histórico suelen ser la primera opción a mirar, sobre todo en fines de semana y fechas con mucha afluencia.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Eras+de+Renueva+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Abrir Eras de Renueva →</a>
+</article>
+<article class="card">
+<h3>🏢 Parkings céntricos</h3>
+<p>Si priorizas comodidad, los parkings del centro son la mejor baza para visitar <strong>Catedral</strong>, <strong>Barrio Húmedo</strong>, <strong>Barrio Romántico</strong> o <strong>Santo Domingo</strong> sin perder tiempo. Merece la pena especialmente si llegas con equipaje o en Semana Santa.</p>
+<div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Parking+Plaza+Mayor+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Plaza Mayor</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Parking+San+Pedro+Le%C3%B3n" rel="noopener noreferrer" target="_blank">San Pedro</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Parking+Santo+Domingo+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Santo Domingo</a>
+</div>
+</article>
+<article class="card">
+<h3>🅿️ Zona azul y centro histórico</h3>
+<p>En el centro de León conviene revisar siempre la señalización en calle, la zona ORA y las restricciones vigentes antes de aparcar. Los horarios, tarifas o condiciones pueden cambiar, así que lo más prudente es confirmarlo allí mismo o en la información municipal oficial.</p>
+<a class="card-btn" href="https://www.aytoleon.es/es/tu-ayuntamiento/normativas/Paginas/default.aspx" rel="noopener noreferrer" target="_blank">Consultar ORA →</a>
+</article>
+</div>
+<p class="hint" style="margin-top:14px">En días fuertes como <strong>Semana Santa</strong>, partidos, puentes o eventos grandes, lo más sensato suele ser dejar el coche fuera del núcleo más turístico y entrar andando.</p>
+</section>
+<section id="sec-comer">
+<h2>🍽️ Tapas, comer e itinerarios gastronómicos</h2>
+<p class="section-lead">Desde la ruta clásica por el Barrio Húmedo hasta cocina tradicional, street food, hamburguesas destacadas, restaurantes Michelin e itinerarios gastronómicos para comer muy bien en León.</p>
+<p>Si te preguntas <strong>dónde comer y tapear en León</strong>, el <strong>Barrio Húmedo</strong> y el <strong>Barrio Romántico</strong> son parada obligatoria. En León la <strong>tapa acompaña habitualmente a la consumición</strong>, ya sea un corto de cerveza o un vino Prieto Picudo. En esta guía tienes rutas fiables para probar desde la morcilla hasta croquetas, cocina tradicional y restaurantes para una cena más especial.</p>
+<div class="subsection-itinerarios" id="sec-itinerarios">
+<h3>🗺️ Itinerarios recomendados para comer y visitar León</h3>
+<p class="section-lead">Lo dejo más limpio y directo: <strong>cuatro planes</strong> muy claros para organizar la visita sin perder lo importante y sin repetir demasiado la misma idea.</p>
+<div class="itinerarios-grid">
+<article class="card">
+<h3>León en 1 día</h3>
+<p><strong>Plan exprés para una primera visita:</strong> Catedral, casco histórico, una ruta corta de tapas por el <strong>Barrio Húmedo</strong> y cierre con <strong>San Isidoro</strong> o <strong>Casa Botines</strong> antes de cenar en el centro.</p>
 <div class="related">
 <div class="chips">
 <a href="/catedral" onclick="event.preventDefault(); showView('catedral')">Catedral</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
+<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Barrio Húmedo</a>
 <a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">San Isidoro</a>
 <a href="/botines" onclick="event.preventDefault(); showView('botines')">Casa Botines</a>
 </div>
 </div>
 </article>
 <article class="card">
-<h3>León en 2 días (con plan B si llueve)</h3>
-<p><strong>Día 1:</strong> centro histórico + tapas. <strong>Día 2:</strong> San Marcos + paseo junto al río y <strong>MUSAC</strong> (perfecto si llueve).</p>
+<h3>León en 2 días</h3>
+<p><strong>Ideal para un fin de semana:</strong> primer día para centro histórico y tapeo; segundo día para <strong>Barrio Romántico</strong>, <strong>San Marcos</strong>, paseo junto al Bernesga y <strong>MUSAC</strong> si te apetece un plan cultural o hace mal tiempo.</p>
 <div class="related">
 <div class="chips">
+<a href="/romantico" onclick="event.preventDefault(); showView('romantico')">Barrio Romántico</a>
 <a href="/sanmarcos" onclick="event.preventDefault(); showView('sanmarcos')">San Marcos</a>
 <a href="/musac" onclick="event.preventDefault(); showView('musac')">MUSAC</a>
-<a href="/modernos" onclick="event.preventDefault(); showView('modernos')">Restaurantes modernos</a>
 <a href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Dónde dormir</a>
 </div>
 </div>
 </article>
 <article class="card">
-<h3>Barrio Romántico (patrimonio + tapeo)</h3>
-<p><strong>Mañana:</strong> Catedral + paseo por Calle Ancha hacia el centro. <strong>Mediodía:</strong> tapeo por San Isidoro / calle del Cid / Plaza del Cid. <strong>Tarde:</strong> Basílica de San Isidoro + descanso en el parque del Cid. <strong>Noche:</strong> últimas tapas o cena en el Romántico.</p>
-<div class="related">
-<div class="chips">
-<a href="/romantico" onclick="event.preventDefault(); showView('romantico')">Barrio Romántico</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Barrio Húmedo</a>
-<a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">San Isidoro</a>
-</div>
-</div>
-</article>
-<article class="card">
-<h3>Fin de semana gastronómico</h3>
-<p>
-<strong>Sábado mañana</strong> Catedral + Barrio Húmedo (ruta de tapas).
-    <strong>Sábado tarde</strong> Barrio Romántico + San Isidoro.
-    <strong>Sábado noche</strong> Cena en Kamín, Marcela o niM Azotea.
-    <strong>Domingo</strong> Excursión a Castrillo de los Polvazares: cocido maragato + Astorga.
-  </p>
+<h3>León en 3 días</h3>
+<p><strong>La versión más completa:</strong> un día para monumentos, otro para barrios y tapeo, y un tercer día para salir de León capital y rematar con <strong>Astorga</strong>, <strong>Castrillo de los Polvazares</strong> y un buen <strong>cocido maragato</strong>.</p>
 <div class="related">
 <div class="chips">
 <a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Barrio Húmedo</a>
 <a href="/romantico" onclick="event.preventDefault(); showView('romantico')">Barrio Romántico</a>
 <a href="/cocido" onclick="event.preventDefault(); showView('cocido')">Cocido maragato</a>
-<a href="/modernos" onclick="event.preventDefault(); showView('modernos')">Restaurantes modernos</a>
+<a href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')">Excursiones</a>
 </div>
 </div>
 </article>
 <article class="card">
-<h3>León en Semana Santa (3–4 días)</h3>
-<p>
-<strong>Día 1</strong> Llegada + tapas por el Barrio Húmedo.
-    <strong>Día 2</strong> Procesiones + ambiente cofrade + limonada leonesa.
-    <strong>Día 3</strong> San Isidoro + Barrio Romántico + Catedral.
-    <strong>Día 4</strong> Excursión a Astorga + cocido maragato de vuelta.
-  </p>
+<h3>🌳 Parques y aire libre</h3>
+<p>Si quieres intercalar monumentos con ratos de paseo o bajar revoluciones después de comer, hay tres apoyos muy cómodos: <strong>Parque de Quevedo</strong>, <strong>Paseo del Bernesga</strong> y <strong>La Candamia</strong> si vienes en coche y hace buen tiempo.</p>
 <div class="related">
 <div class="chips">
-<a href="/procesiones" onclick="event.preventDefault(); showView('procesiones')">Procesiones</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
-<a href="/cocido" onclick="event.preventDefault(); showView('cocido')">Cocido maragato</a>
-<a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">San Isidoro</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Parque+de+Quevedo+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Quevedo</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Paseo+del+Bernesga+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Bernesga</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Candamia+Le%C3%B3n" rel="noopener noreferrer" target="_blank">La Candamia</a>
+<a href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')">Más planes</a>
 </div>
 </div>
 </article>
 </div>
+<p class="hint" style="margin-top:14px">Para <strong>Semana Santa</strong>, mejor consultar la sección específica y el itinerario completo de procesiones, porque esos días la ciudad cambia bastante el ritmo.</p>
 </div>
 <div class="grid">
-<a href="/tapas" class="card" data-view="tapas" onclick="event.preventDefault(); showView('tapas')">
+<a class="card" data-view="tapas" href="/tapas" onclick="event.preventDefault(); showView('tapas')">
 <h3>🍷 Barrio Húmedo (tapas)</h3>
 <p>La ruta sagrada. Sitios con tapa potente y ambiente a tope.</p>
 <span class="card-btn">Ver ruta →</span>
 </a>
-<a href="/romantico" class="card" data-view="romantico" onclick="event.preventDefault(); showView('romantico')">
+<a class="card" data-view="romantico" href="/romantico" onclick="event.preventDefault(); showView('romantico')">
 <h3>🍽️ Barrio Romántico (tapas)</h3>
 <p>Alternativa más tranquila al Húmedo: tapeo más relajado junto a San Isidoro, Calle del Cid y Plaza del Cid.</p>
 <span class="card-btn">Ver guía →</span>
 </a>
-<a href="/cocido" class="card" data-view="cocido" onclick="event.preventDefault(); showView('cocido')">
+<a class="card" data-view="cocido" href="/cocido" onclick="event.preventDefault(); showView('cocido')">
 <h3>🍲 Cocido maragato</h3>
 <p>El cocido que se come al revés. Dónde probarlo bien.</p>
 <span class="card-btn">Ver lista →</span>
 </a>
-<a href="/autor" class="card" data-view="autor" onclick="event.preventDefault(); showView('autor')">
+<article class="card" id="street-food">
+<h3>🍔 Street food y hamburguesas en León</h3>
+<p>Plan informal para una comida o cena distinta en León, sin quitar protagonismo al <strong>Barrio Húmedo</strong>, al <strong>Barrio Romántico</strong> o al <strong>cocido maragato</strong>.</p>
+<details class="burger-details">
+<summary class="card-btn">Ver burgers →</summary>
+<ul class="burger-list">
+<li><strong>The Carnivan Superbar:</strong> la referencia más mediática del momento, ideal si quieres probar la burger que puso a León en el mapa nacional con la <strong>EM2</strong>. <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Carnivan+Superbar+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver ubicación</a></li>
+<li><strong>Duality Bar &amp; Food:</strong> una opción más creativa, con hamburguesas de perfil moderno y combinaciones más potentes para salir del tapeo clásico. <a href="https://www.google.com/maps/search/?api=1&amp;query=Duality+Bar+Food+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver ubicación</a></li>
+<li><strong>Burger Los Nogales:</strong> buena alternativa si te apetece una hamburguesa más casera y reconocible, en formato directo y sin complicaciones. <a href="https://www.google.com/maps/search/?api=1&amp;query=Burger+Los+Nogales+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver ubicación</a></li>
+</ul>
+</details>
+</article>
+<a class="card" data-view="autor" href="/autor" onclick="event.preventDefault(); showView('autor')">
 <h3>⭐ Alta cocina (Michelin)</h3>
 <p>Pablo y Cocinandos. Para celebraciones de verdad.</p>
 <span class="card-btn">Ver selección →</span>
 </a>
-<a href="/modernos" class="card" data-view="modernos" onclick="event.preventDefault(); showView('modernos')">
+<a class="card" data-view="modernos" href="/modernos" onclick="event.preventDefault(); showView('modernos')">
 <h3>🍽️ Nuevas tendencias</h3>
 <p>Kamín, Marcela, niMÚ… los sitios de moda.</p>
 <span class="card-btn">Ver modernos →</span>
@@ -923,17 +1115,17 @@ body{padding-bottom:78px}
 <p class="hint">Interés Turístico Internacional. Historia, cofradías y lo imprescindible.</p>
 <p><strong>¿Cuándo es la Semana Santa en León 2026?</strong> Se celebra del <strong>29 de marzo (Domingo de Ramos) al 5 de abril (Domingo de Resurrección)</strong>. Es uno de los momentos más importantes del año en la ciudad y mezcla procesiones históricas, tradiciones únicas como <em>La Ronda</em> y el ambiente de limonada leonesa en el Barrio Húmedo.</p>
 <div class="grid">
-<a href="/procesiones" class="card card-semana" data-view="procesiones" onclick="event.preventDefault(); showView('procesiones')">
+<a class="card card-semana" data-view="procesiones" href="/procesiones" onclick="event.preventDefault(); showView('procesiones')">
 <h3>🎺 Procesiones y recorridos</h3>
 <p>Guía rápida: Genarín, tradiciones y claves para vivirla.</p>
 <span class="card-btn">Ver detalle →</span>
 </a>
-<a href="/listacofradias" class="card card-semana" data-view="listacofradias" onclick="event.preventDefault(); showView('listacofradias')">
+<a class="card card-semana" data-view="listacofradias" href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">
 <h3>🛐 Cofradías</h3>
 <p>Listado completo de hermandades penitenciales.</p>
 <span class="card-btn">Ver listado →</span>
 </a>
-<a href="itinerarios-semana-santa-leon-2026/" class="card card-semana">
+<a class="card card-semana" href="itinerarios-semana-santa-leon-2026/">
 <h3>📍 Itinerarios Semana Santa León 2026</h3>
 <p>Horarios, recorridos y acceso directo al itinerario completo para consultar o descargar.</p>
 <span class="card-btn">Abrir itinerario →</span>
@@ -944,27 +1136,27 @@ body{padding-bottom:78px}
 <h2>🏛️ Monumentos y cultura</h2>
 <p class="section-lead">Una selección rápida de monumentos y planes imprescindibles: gótico, románico, Gaudí, arte contemporáneo y paseos con mucho encanto.</p>
 <div class="grid">
-<a href="/catedral" class="card" data-view="catedral" onclick="event.preventDefault(); showView('catedral')">
+<a class="card" data-view="catedral" href="/catedral" onclick="event.preventDefault(); showView('catedral')">
 <h3>Catedral de León</h3>
 <p>Obra cumbre del gótico en España, famosa por sus impresionantes vidrieras y por ser la gran imagen de la ciudad. Si visitas León por primera vez, es la parada imprescindible.</p>
 <span class="card-btn">Horarios y precios →</span>
 </a>
-<a href="/sanisidoro" class="card" data-view="sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">
+<a class="card" data-view="sanisidoro" href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">
 <h3>San Isidoro</h3>
 <p>Uno de los conjuntos románicos más valiosos de España. Su Panteón Real es conocido como la “Capilla Sixtina del románico” y merece la visita con calma.</p>
 <span class="card-btn">Horarios y precios →</span>
 </a>
-<a href="/botines" class="card" data-view="botines" onclick="event.preventDefault(); showView('botines')">
+<a class="card" data-view="botines" href="/botines" onclick="event.preventDefault(); showView('botines')">
 <h3>Casa Botines (Gaudí)</h3>
 <p>Uno de los pocos edificios que Gaudí construyó fuera de Cataluña. Hoy alberga un museo y es una de las visitas culturales más recomendables del centro.</p>
 <span class="card-btn">Horarios y precios →</span>
 </a>
-<a href="/sanmarcos" class="card" data-view="sanmarcos" onclick="event.preventDefault(); showView('sanmarcos')">
+<a class="card" data-view="sanmarcos" href="/sanmarcos" onclick="event.preventDefault(); showView('sanmarcos')">
 <h3>San Marcos</h3>
 <p>Uno de los edificios más emblemáticos de León. Su fachada plateresca, el entorno del río y el paseo hasta el centro lo convierten en una visita muy agradecida.</p>
 <span class="card-btn">Cómo llegar →</span>
 </a>
-<a href="/musac" class="card" data-view="musac" onclick="event.preventDefault(); showView('musac')">
+<a class="card" data-view="musac" href="/musac" onclick="event.preventDefault(); showView('musac')">
 <h3>MUSAC</h3>
 <p>El gran plan cultural alternativo de León: arte contemporáneo, exposiciones temporales y una visita perfecta para combinar con San Marcos o un día de lluvia.</p>
 <span class="card-btn">Horarios y precios →</span>
@@ -1003,56 +1195,145 @@ body{padding-bottom:78px}
 <a class="platform-btn btn-airbnb" href="https://www.airbnb.es/s/León--España/homes" rel="noopener noreferrer sponsored" target="_blank">Airbnb</a>
 </div>
 <p class="hint" style="margin-top:14px">Transparencia: los enlaces a Booking, Airbnb u otras plataformas llevan a sitios de terceros. Si en el futuro Come en León activa programas de afiliación, se indicará de forma clara en el <a href="/afiliacion.html">aviso de afiliación</a>.</p>
-<h3 style="margin-top:2.2rem;font-size:1.35rem;font-weight:900">⭐ Más alojamientos recomendados</h3>
-<div class="grid" style="margin-top:1rem">
+</section>
+<section id="sec-excursiones">
+<h2>⛰️ Más allá de la capital: excursiones y contrastes de la provincia</h2>
+<p class="section-lead">León capital funciona muy bien como <strong>campo base</strong> para una escapada de varios días. Desde aquí puedes montar planes de patrimonio, montaña, pueblos con encanto y gastronomía sin perder demasiado tiempo en carretera.</p>
+<div class="grid">
 <article class="card">
-<img alt="Hotel Alda Barrio Húmedo León" decoding="async" height="800" loading="lazy" src="assets/alda-barrio-húmedo.jpg" width="1200"/>
-<h3>Alda Barrio Húmedo</h3>
-<div aria-label="Valoración 4.3 de 5" class="rating"><span class="star">★</span> 4.3</div>
-<p>En el corazón del tapeo. Ubicación inmejorable para ir andando a todo. Precio medio ~60–90 €/noche.</p>
-<a class="card-btn" href="https://www.booking.com/hotel/es/alda-barrio-humedo.es.html" rel="noopener noreferrer" target="_blank">Ver precio</a>
+<h3>🏺 Astorga y Maragatería</h3>
+<p>La excursión más agradecida para casi todo el mundo: <strong>Astorga</strong> para ver catedral, Palacio Episcopal y ambiente monumental, y <strong>Castrillo de los Polvazares</strong> para rematar con calles de piedra, calma y un buen <strong>cocido maragato</strong>.</p>
+<div class="related"><div class="chips">
+<a href="/cocido" onclick="event.preventDefault(); showView('cocido')">Cocido maragato</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Astorga" rel="noopener noreferrer" target="_blank">Astorga</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Castrillo+de+los+Polvazares" rel="noopener noreferrer" target="_blank">Castrillo</a>
+</div></div>
 </article>
 <article class="card">
-<img alt="Colonial Palace León hotel boutique" decoding="async" height="800" loading="lazy" src="assets/colonial-palace.jpg" width="1200"/>
-<h3>Colonial Palace</h3>
-<div aria-label="Valoración 4.8 de 5" class="rating"><span class="star">★</span> 4.8</div>
-<p>Hotel boutique céntrico y muy bien valorado. Precio medio ~110–130 €/noche (orientativo).</p>
-<a class="card-btn" href="https://www.booking.com/hotel/es/colonial-palace-leon.es.html" rel="noopener noreferrer" target="_blank">Ver precio</a>
+<h3>⛏️ El Bierzo y Las Médulas</h3>
+<p>Si te apetece una salida más potente, <strong>Las Médulas</strong> son uno de los grandes paisajes de la provincia. Puedes completar el día con una parada en el <strong>mirador de Orellán</strong>, el <strong>Castillo de Ponferrada</strong> o el puente de <strong>Molinaseca</strong> antes de volver a León.</p>
+<div class="related"><div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Las+M%C3%A9dulas" rel="noopener noreferrer" target="_blank">Las Médulas</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Mirador+de+Orell%C3%A1n" rel="noopener noreferrer" target="_blank">Mirador de Orellán</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Ponferrada" rel="noopener noreferrer" target="_blank">Ponferrada</a>
+</div></div>
 </article>
 <article class="card">
-<img alt="Quartier León Jabalquinto Hostel" decoding="async" height="800" loading="lazy" src="assets/quartier-leon-hostel.jpg" width="1200"/>
-<h3>Quartier León (Hostel)</h3>
-<div aria-label="Valoración 4.5 de 5" class="rating"><span class="star">★</span> 4.5</div>
-<p>Buena opción para presupuesto ajustado. A 5 min del Barrio Húmedo. Desde ~18 €/noche (orientativo).</p>
-<a class="card-btn" href="https://www.booking.com/hotel/es/quartier-leon-jabalquinto.es.html" rel="noopener noreferrer" target="_blank">Ver precio</a>
+<h3>🏔️ Riaño, Valporquero y montaña leonesa</h3>
+<p>Cuando apetece salir del plan urbano, el norte cambia el viaje por completo. <strong>Riaño</strong>, las <strong>Cuevas de Valporquero</strong> y la vertiente leonesa de <strong>Picos de Europa</strong> son muy buena idea si buscas paisaje abierto, carretera bonita y aire puro.</p>
+<div class="related"><div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Ria%C3%B1o" rel="noopener noreferrer" target="_blank">Riaño</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Cuevas+de+Valporquero" rel="noopener noreferrer" target="_blank">Valporquero</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Oseja+de+Sajambre" rel="noopener noreferrer" target="_blank">Sajambre</a>
+</div></div>
 </article>
 </div>
+<p class="hint" style="margin-top:14px">Si tu escapada es de <strong>2 días</strong>, prioriza Astorga y Castrillo. Si es de <strong>3 o 4 días</strong>, ya compensa añadir Bierzo o montaña.</p>
+</section>
+<section id="sec-fiestas">
+<h2>🎉 Cuándo ir a León: fiestas y mejores fechas</h2>
+<p class="section-lead">León tiene ambiente todo el año, pero hay momentos en los que la ciudad cambia por completo. Si puedes elegir fecha, estas celebraciones te ayudan a decidir cuándo venir.</p>
+<div class="grid">
+<article class="card">
+<h3>🟣 Semana Santa</h3>
+<p>Es una de las citas clave de la ciudad: procesiones, tradiciones locales, ambiente cofrade y mucha vida en el centro. Perfecta si buscas historia, identidad local y un viaje con mucho ambiente en calle.</p>
+<a class="card-btn" href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">Ver Semana Santa →</a>
+</article>
+<article class="card">
+<h3>☀️ San Juan y San Pedro</h3>
+<p>Las grandes fiestas de verano: conciertos, casetas, recinto ferial, fuegos y ambiente muy animado. Muy buena fecha si prefieres León con días largos y plan más festivo que religioso.</p>
+</article>
+<article class="card">
+<h3>🏳️ San Froilán</h3>
+<p>Una época fantástica para ver tradición leonesa de verdad: pendones, carros engalanados, gastronomía y un ambiente muy nuestro. Si buscas una visita con sabor local, es una fecha muy buena.</p>
+</article>
+</div>
+</section>
+<section id="sec-ocio-nocturno">
+<h2>🪩 Tardeo, café torero y noche leonesa</h2>
+<p class="section-lead">En León la fiesta suele arrancar antes que en muchas ciudades. Entre el <strong>café torero</strong>, el <strong>tardeo</strong> y las copas del centro, puedes enlazar terraza, cena y pubs sin depender demasiado del coche.</p>
+<div class="grid">
+<article class="card">
+<h3>🍷 El tardeo por el centro</h3>
+<p>Lo más agradecido es empezar por el <strong>Barrio Romántico</strong>, <strong>Calle Ancha</strong> o <strong>Plaza Mayor</strong> y dejar que la tarde vaya enlazando vermús, copas y cena. Es el plan más cómodo si quieres ambiente sin complicarte.</p>
+<a class="card-btn" href="/romantico" onclick="event.preventDefault(); showView('romantico')">Ver Barrio Romántico →</a>
+</article>
+<article class="card">
+<h3>🎶 De pub en pub por el Húmedo</h3>
+<p>Cuando cae la noche, el <strong>Barrio Húmedo</strong> sigue siendo la referencia. Lo bueno de León es que puedes ir saltando de local en local a pie, entre música comercial, pop español, remember y ambiente universitario.</p>
+<a class="card-btn" href="/humedo" onclick="event.preventDefault(); showView('humedo')">Ver Barrio Húmedo →</a>
+</article>
+<article class="card">
+<h3>🥳 Grupos, despedidas y dónde dormir</h3>
+<p>León funciona muy bien para grupos porque casi todo queda cerca, se come bien y hay bastante ambiente en fines de semana. Si priorizas dormir tranquilo, conviene mirar bien la zona del alojamiento antes de reservar.</p>
+<a class="card-btn" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Elegir zona para dormir →</a>
+</article>
+</div>
+</section>
+<section id="sec-miradores-fotos">
+<h2>📸 Atardeceres, miradores y fotos bonitas en León</h2>
+<p class="section-lead">León tiene una luz muy agradecida cuando cae la tarde. No hace falta perseguir veinte sitios distintos: con unos pocos puntos bien elegidos puedes llevarte la foto clásica, una vista abierta y un rincón con mucho encanto.</p>
+<div class="grid">
+<article class="card">
+<h3>🌄 La Candamia y Las Lomas</h3>
+<p>Si te apetece una vista más abierta, el entorno de <strong>La Candamia</strong> y las subidas hacia <strong>Las Lomas</strong> te regalan una panorámica tranquila de León y un atardecer menos urbano que el del centro.</p>
+<div class="related"><div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Candamia+Le%C3%B3n" rel="noopener noreferrer" target="_blank">La Candamia</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Las+Lomas+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Las Lomas</a>
+</div></div>
+</article>
+<article class="card">
+<h3>⛪ El reflejo de la Catedral</h3>
+<p><strong>Plaza de Regla</strong> sigue siendo la gran postal de León. Si el suelo refleja después de lluvia o limpieza, la fachada gótica y las vidrieras exteriores dejan una de las fotos más reconocibles de la ciudad.</p>
+<div class="related"><div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Plaza+de+Regla+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Plaza de Regla</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Catedral+de+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Catedral</a>
+</div></div>
+</article>
+<article class="card">
+<h3>🌇 Plaza del Grano al caer la tarde</h3>
+<p>Es uno de los rincones con más encanto de León: empedrado, cruz de piedra, iglesia y una luz dorada que funciona muy bien en foto. Si buscas una estampa más bohemia y menos monumental, aquí la tienes.</p>
+<div class="related"><div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Plaza+del+Grano+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Plaza del Grano</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Iglesia+del+Mercado+Le%C3%B3n" rel="noopener noreferrer" target="_blank">Iglesia del Mercado</a>
+</div></div>
+</article>
+<article class="card">
+<h3>🏛️ San Marcos y MUSAC</h3>
+<p>Para rematar, combina la foto clásica de <strong>San Marcos</strong> y las letras de <strong>LEÓN</strong> con la fachada multicolor del <strong>MUSAC</strong>. Es la mejor forma de llevarte en el mismo paseo la cara más histórica y la más moderna de la ciudad.</p>
+<div class="related"><div class="chips">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=San+Marcos+Le%C3%B3n" rel="noopener noreferrer" target="_blank">San Marcos</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=MUSAC+Le%C3%B3n" rel="noopener noreferrer" target="_blank">MUSAC</a>
+</div></div>
+</article>
+</div>
+<p class="hint" style="margin-top:14px">Si solo tienes una tarde, la combinación más agradecida suele ser <strong>Catedral + Plaza del Grano + San Isidoro + Barrio Húmedo al anochecer</strong>.</p>
 </section>
 <section id="sec-agenda">
 <h2>🎉 Agenda rápida</h2>
 <p class="section-lead">Concursos, conciertos, teatro, ferias y mercadillos para completar tu visita con planes culturales y gastronómicos.</p>
 <div class="grid">
-<a href="/mejor-tapa" class="card" data-view="mejor-tapa" onclick="event.preventDefault(); showView('mejor-tapa')">
+<a class="card" data-view="mejor-tapa" href="/mejor-tapa" onclick="event.preventDefault(); showView('mejor-tapa')">
 <h3>🏆 Marzo: Concurso “La Mejor Tapa de León”</h3>
 <p>Qué es, cómo funciona y cómo aprovecharlo para una ruta por el Húmedo y el Romántico.</p>
 <span class="card-btn">Ver guía →</span>
 </a>
-<a href="/conciertos" class="card" data-view="conciertos" onclick="event.preventDefault(); showView('conciertos')">
+<a class="card" data-view="conciertos" href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">
 <h3>🎸 Conciertos</h3>
 <p>Música en directo (ejemplos). Actualiza cuando quieras.</p>
 <span class="card-btn">Ver tabla →</span>
 </a>
-<a href="/teatro" class="card" data-view="teatro" onclick="event.preventDefault(); showView('teatro')">
+<a class="card" data-view="teatro" href="/teatro" onclick="event.preventDefault(); showView('teatro')">
 <h3>🎭 Teatro y Cultura</h3>
 <p>Obras, circo, cine y espectáculos de sala para el trimestre.</p>
 <span class="card-btn">Ver cartelera →</span>
 </a>
-<a href="/ferias" class="card" data-view="ferias" onclick="event.preventDefault(); showView('ferias')">
+<a class="card" data-view="ferias" href="/ferias" onclick="event.preventDefault(); showView('ferias')">
 <h3>🥘 Ferias</h3>
 <p>Botillo, agroalimentaria, etc.</p>
 <span class="card-btn">Ver tabla →</span>
 </a>
-<a href="/mercados" class="card" data-view="mercados" onclick="event.preventDefault(); showView('mercados')">
+<a class="card" data-view="mercados" href="/mercados" onclick="event.preventDefault(); showView('mercados')">
 <h3>🧺 Mercadillos</h3>
 <p>Qué hay cada día por la provincia.</p>
 <span class="card-btn">Ver tabla →</span>
@@ -1097,7 +1378,7 @@ body{padding-bottom:78px}
 </details>
 <details>
 <summary>🚗 ¿Dónde aparcar gratis o barato en el centro de León?</summary>
-<p>El casco histórico y el Barrio Húmedo tienen varias zonas peatonales o de acceso restringido. Para dejar el coche cerca del centro suelen funcionar bien los parkings de <strong>Santo Domingo</strong>, <strong>Ordoño II</strong> o <strong>San Francisco</strong>. Si buscas una opción más económica, conviene mirar zonas algo más alejadas y entrar andando; además, muchos hoteles del centro tienen convenio con parkings cercanos, así que merece la pena preguntarlo antes de reservar.</p>
+<p>El casco histórico y el Barrio Húmedo tienen varias zonas peatonales o de acceso restringido. Para una visita cómoda suelen funcionar mejor los parkings céntricos o dejar el coche algo más lejos y entrar andando. Tienes un resumen práctico en la sección <a href="/#sec-aparcar" onclick="event.preventDefault(); scrollToSection('sec-aparcar')">Dónde aparcar en León</a>.</p>
 </details>
 <details>
 <summary>¿Qué hacer en León si llueve?</summary>
@@ -1115,6 +1396,14 @@ body{padding-bottom:78px}
 <summary>¿El cocido maragato está en León ciudad?</summary>
 <p>El cocido maragato es típico de la <strong>Maragatería</strong>, a unos 50 km. Lo más habitual es comerlo en <strong>Castrillo de los Polvazares</strong> o <strong>Astorga</strong>, una excursión perfecta desde León.</p>
 </details>
+<details>
+<summary>¿Qué excursión merece más la pena desde León capital?</summary>
+<p>Si solo puedes hacer una, la más redonda suele ser <strong>Astorga + Castrillo de los Polvazares</strong>: patrimonio, paseo bonito y cocido maragato en el mismo día.</p>
+</details>
+<details>
+<summary>¿Cuándo es mejor visitar León además de Semana Santa?</summary>
+<p>Si buscas ambiente y calle, <strong>San Juan y San Pedro</strong> es una fecha muy buena. Si prefieres tradición local, <strong>San Froilán</strong> también merece mucho la pena.</p>
+</details>
 </div>
 </section>
 <section id="sec-contacto">
@@ -1130,29 +1419,18 @@ body{padding-bottom:78px}
 <h2>🍷 Ruta de tapas: Barrio Húmedo</h2>
 <nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Tapas y comer</a><span class="sep">›</span><span aria-current="page" class="current">Tapas: Barrio Húmedo</span></nav>
 <p class="hint">En León, la tapa suele ir con la consumición. Aquí tienes una ruta corta y fiable.</p>
-
 <div class="card" id="tapas-mapa" style="margin:12px 0">
-  <h3 style="margin:0 0 8px">🗺️ Mapa rápido: Barrio Húmedo</h3>
-  <p class="hint" style="margin:0 0 10px">Abre la zona o la <strong>ruta a pie</strong> con los locales principales de esta guía.</p>
-
-  <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(15,23,42,.10)">
-    <iframe
-      title="Mapa Barrio Húmedo"
-      src="https://www.google.com/maps?q=Barrio%20H%C3%BAmedo%20Le%C3%B3n&output=embed"
-      width="100%" height="280"
-      style="border:0"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-    <a class="card-btn" href="https://www.google.com/maps/search/?api=1&query=Barrio%20H%C3%BAmedo%20Le%C3%B3n" target="_blank" rel="noopener">📍 Ver zona en Maps</a>
-    <a class="card-btn" href="https://www.google.com/maps/dir/?api=1&origin=La%20Bicha%20Le%C3%B3n&destination=Jam%C3%B3n%20Jam%C3%B3n%20Le%C3%B3n&waypoints=El%20Rebote%20Le%C3%B3n|La%20Competencia%20Le%C3%B3n|El%20Flechazo%20Le%C3%B3n|Los%20Cazurros%20Le%C3%B3n|Bar%20Miche%20Le%C3%B3n&travelmode=walking" target="_blank" rel="noopener">🚶 Abrir ruta a pie</a>
-  </div>
+<h3 style="margin:0 0 8px">🗺️ Mapa rápido: Barrio Húmedo</h3>
+<p class="hint" style="margin:0 0 10px">Abre la zona o la <strong>ruta a pie</strong> con los locales principales de esta guía.</p>
+<div style="border-radius:16px; overflow:hidden; border:1px solid rgba(15,23,42,.10)">
+<iframe allowfullscreen="" height="280" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Barrio%20H%C3%BAmedo%20Le%C3%B3n&amp;output=embed" style="border:0" title="Mapa Barrio Húmedo" width="100%">
+</iframe>
 </div>
-
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+<a class="card-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Barrio%20H%C3%BAmedo%20Le%C3%B3n" rel="noopener" target="_blank">📍 Ver zona en Maps</a>
+<a class="card-btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=La%20Bicha%20Le%C3%B3n&amp;destination=Jam%C3%B3n%20Jam%C3%B3n%20Le%C3%B3n&amp;waypoints=El%20Rebote%20Le%C3%B3n|La%20Competencia%20Le%C3%B3n|El%20Flechazo%20Le%C3%B3n|Los%20Cazurros%20Le%C3%B3n|Bar%20Miche%20Le%C3%B3n&amp;travelmode=walking" rel="noopener" target="_blank">🚶 Abrir ruta a pie</a>
+</div>
+</div>
 <div class="grid">
 <article class="card">
 <img alt="La Bicha (morcilla) en León" decoding="async" height="800" loading="lazy" src="assets/bicha.jpg" width="1200"/>
@@ -1233,99 +1511,78 @@ body{padding-bottom:78px}
 </div>
 </div>
 <div class="view-section" id="romantico">
-  <h2>🍻 Ruta de tapas Barrio Romántico</h2>
-  <nav aria-label="Ruta de navegación" class="breadcrumbs">
-    <a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
-    <a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Tapas y comer</a><span class="sep">›</span>
-    <span aria-current="page" class="current">Tapas Barrio Romántico</span>
-  </nav>
-
-  <p class="hint">Zona céntrica vinculada a <strong>San Isidoro</strong>, la <strong>calle del Cid</strong> y la <strong>Plaza del Cid</strong>. Se considera la alternativa <em>más tranquila</em> al Húmedo, ideal para disfrutar de tapas más elaboradas, una ruta pausada y un ambiente muy cómodo a pocos minutos de la Catedral.</p>
-
+<h2>🍻 Ruta de tapas Barrio Romántico</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs">
+<a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
+<a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Tapas y comer</a><span class="sep">›</span>
+<span aria-current="page" class="current">Tapas Barrio Romántico</span>
+</nav>
+<p class="hint">Zona céntrica vinculada a <strong>San Isidoro</strong>, la <strong>calle del Cid</strong> y la <strong>Plaza del Cid</strong>. Se considera la alternativa <em>más tranquila</em> al Húmedo, ideal para disfrutar de tapas más elaboradas, una ruta pausada y un ambiente muy cómodo a pocos minutos de la Catedral.</p>
 <div class="card" id="romantico-mapa" style="margin:12px 0">
-  <h3 style="margin:0 0 8px">🗺️ Mapa rápido: Barrio Romántico</h3>
-  <p class="hint" style="margin:0 0 10px">Abre la zona o la <strong>ruta a pie</strong> con los locales principales de esta guía.</p>
-
-  <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(15,23,42,.10)">
-    <iframe
-      title="Mapa Barrio Romántico"
-      src="https://www.google.com/maps?q=Barrio%20Rom%C3%A1ntico%20Le%C3%B3n&output=embed"
-      width="100%" height="280"
-      style="border:0"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-    <a class="card-btn" href="https://www.google.com/maps/search/?api=1&query=Barrio%20Rom%C3%A1ntico%20Le%C3%B3n" target="_blank" rel="noopener">📍 Ver zona en Maps</a>
-    <a class="card-btn" href="https://www.google.com/maps/dir/?api=1&origin=La%20Tr%C3%A9bede%20Le%C3%B3n&destination=El%20Clandestino%20Le%C3%B3n&waypoints=El%20Patio%20Le%C3%B3n|Camarote%20Madrid%20Le%C3%B3n|Bar%20Correo%20Le%C3%B3n|Ezequiel%20Calle%20Ancha%20Le%C3%B3n&travelmode=walking" target="_blank" rel="noopener">🚶 Abrir ruta a pie</a>
-  </div>
+<h3 style="margin:0 0 8px">🗺️ Mapa rápido: Barrio Romántico</h3>
+<p class="hint" style="margin:0 0 10px">Abre la zona o la <strong>ruta a pie</strong> con los locales principales de esta guía.</p>
+<div style="border-radius:16px; overflow:hidden; border:1px solid rgba(15,23,42,.10)">
+<iframe allowfullscreen="" height="280" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Barrio%20Rom%C3%A1ntico%20Le%C3%B3n&amp;output=embed" style="border:0" title="Mapa Barrio Romántico" width="100%">
+</iframe>
 </div>
-
-
-  <div class="grid">
-
-    <article class="card">
-      <img alt="Tapeo en La Trébede Barrio Romántico de León" decoding="async" height="800" loading="lazy" src="assets/la trébede.JPG" width="1200"/>
-      <h3>La Trébede</h3>
-      <div class="rating"><span class="star">★</span> Recomendado</div>
-      <p>Un local con muchísimo encanto, decorado con aire de anticuario rural. Su tapa estrella es el <strong>picadillo de chorizo con patatas fritas</strong>, una parada muy reconocible para arrancar con fuerza la ruta por el Romántico.</p>
-      <a class="card-btn" href="https://www.google.com/maps/search/La+Trebede+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
-    </article>
-
-    <article class="card">
-      <img alt="Tapas en el entorno de San Isidoro Barrio Romántico - El Patio" decoding="async" height="800" loading="lazy" src="assets/el-patio.jpg" width="1200"/>
-      <h3>El Patio</h3>
-      <div class="rating"><span class="star">★</span> Recomendado</div>
-      <p>Local amplio con un patio interior muy agradable. Suele funcionar muy bien para una parada tranquila, con tapas generosas como <strong>mejillones en salsa, tigres o morcilla</strong>, perfectas para alternar con el resto de bares de la zona.</p>
-      <a class="card-btn" href="https://www.google.com/maps/search/El+Patio+Leon+tapas" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
-    </article>
-
-    <article class="card">
-      <img alt="Bares del Barrio Romántico en León - Camarote Madrid" decoding="async" height="800" loading="lazy" src="assets/camarote-madrid.jpg" width="1200"/>
-      <h3>Camarote Madrid</h3>
-      <div class="rating"><span class="star">★</span> Recomendado</div>
-      <p>Pura solera leonesa y uno de los locales más bonitos del centro. Es muy famoso por su <strong>sopa de ajo, la paella o su salmorejo</strong>, con servicio rápido en barra incluso cuando está concurrido.</p>
-      <a class="card-btn" href="https://www.google.com/maps/search/Camarote+Madrid+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
-    </article>
-
-    <article class="card">
-      <img alt="Tapeo tranquilo en el Barrio Romántico de León - Bar Correo" decoding="async" height="800" loading="lazy" src="assets/el-romántico.jpg" width="1200"/>
-      <h3>Bar Correo</h3>
-      <div class="rating"><span class="star">★</span> Recomendado</div>
-      <p>Bar muy conocido en la zona para hacer una parada corta y efectiva. En la barra suelen funcionar muy bien propuestas como el <strong>burrito de jamón y queso caliente</strong> o la cecina con membrillo.</p>
-      <a class="card-btn" href="https://www.google.com/maps/search/Bar+Correo+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
-    </article>
-
-    <article class="card">
-      <img alt="Tapas cerca de Calle Ancha León - Ezequiel" decoding="async" height="800" loading="lazy" src="assets/ezequiel-calle-ancha.jpg" width="1200"/>
-      <h3>Ezequiel Calle Ancha</h3>
-      <div class="rating"><span class="star">★</span> Recomendado</div>
-      <p>Conexión perfecta entre la Catedral y el Romántico. Si te apetece embutido leonés, aquí es fácil acertar con <strong>chorizo, salchichón y cecina</strong> en una parada muy cómoda de la ruta.</p>
-      <a class="card-btn" href="https://www.google.com/maps/search/Ezequiel+Calle+Ancha+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
-    </article>
-
-    <article class="card">
-      <img alt="Ruta de tapas por el Barrio Romántico de León - El Clandestino" decoding="async" height="800" loading="lazy" src="assets/el-clandestino.png" width="1200"/>
-      <h3>El Clandestino</h3>
-      <div class="rating"><span class="star">★</span> Recomendado</div>
-      <p>Aporta el punto moderno al barrio. Suele sorprender con <strong>bocados creativos, mini hamburguesas o cremas de temporada</strong>, muy buena opción si quieres un tapeo algo más actual.</p>
-      <a class="card-btn" href="https://www.google.com/maps/search/El+Clandestino+Leon+bar" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
-    </article>
-
-  </div>
-
-  <div aria-label="Enlaces relacionados" class="related">
-    <h3>🔗 Relacionado</h3>
-    <div class="chips">
-      <a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Volver a Tapas y comer</a>
-      <a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Ruta Barrio Húmedo</a>
-      <a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">Monumento San Isidoro</a>
-      <a href="/#sec-itinerarios" onclick="event.preventDefault(); scrollToSection('sec-itinerarios')">Itinerarios gastronómicos</a>
-    </div>
-  </div>
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+<a class="card-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Barrio%20Rom%C3%A1ntico%20Le%C3%B3n" rel="noopener" target="_blank">📍 Ver zona en Maps</a>
+<a class="card-btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=La%20Tr%C3%A9bede%20Le%C3%B3n&amp;destination=El%20Clandestino%20Le%C3%B3n&amp;waypoints=El%20Patio%20Le%C3%B3n|Camarote%20Madrid%20Le%C3%B3n|Bar%20Correo%20Le%C3%B3n|Ezequiel%20Calle%20Ancha%20Le%C3%B3n&amp;travelmode=walking" rel="noopener" target="_blank">🚶 Abrir ruta a pie</a>
+</div>
+</div>
+<div class="grid">
+<article class="card">
+<img alt="Tapeo en La Trébede Barrio Romántico de León" decoding="async" height="800" loading="lazy" src="assets/la trébede.JPG" width="1200"/>
+<h3>La Trébede</h3>
+<div class="rating"><span class="star">★</span> Recomendado</div>
+<p>Un local con muchísimo encanto, decorado con aire de anticuario rural. Su tapa estrella es el <strong>picadillo de chorizo con patatas fritas</strong>, una parada muy reconocible para arrancar con fuerza la ruta por el Romántico.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/La+Trebede+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Tapas en el entorno de San Isidoro Barrio Romántico - El Patio" decoding="async" height="800" loading="lazy" src="assets/el-patio.jpg" width="1200"/>
+<h3>El Patio</h3>
+<div class="rating"><span class="star">★</span> Recomendado</div>
+<p>Local amplio con un patio interior muy agradable. Suele funcionar muy bien para una parada tranquila, con tapas generosas como <strong>mejillones en salsa, tigres o morcilla</strong>, perfectas para alternar con el resto de bares de la zona.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/El+Patio+Leon+tapas" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Bares del Barrio Romántico en León - Camarote Madrid" decoding="async" height="800" loading="lazy" src="assets/camarote-madrid.jpg" width="1200"/>
+<h3>Camarote Madrid</h3>
+<div class="rating"><span class="star">★</span> Recomendado</div>
+<p>Pura solera leonesa y uno de los locales más bonitos del centro. Es muy famoso por su <strong>sopa de ajo, la paella o su salmorejo</strong>, con servicio rápido en barra incluso cuando está concurrido.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Camarote+Madrid+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Tapeo tranquilo en el Barrio Romántico de León - Bar Correo" decoding="async" height="800" loading="lazy" src="assets/el-romántico.jpg" width="1200"/>
+<h3>Bar Correo</h3>
+<div class="rating"><span class="star">★</span> Recomendado</div>
+<p>Bar muy conocido en la zona para hacer una parada corta y efectiva. En la barra suelen funcionar muy bien propuestas como el <strong>burrito de jamón y queso caliente</strong> o la cecina con membrillo.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Bar+Correo+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Tapas cerca de Calle Ancha León - Ezequiel" decoding="async" height="800" loading="lazy" src="assets/ezequiel-calle-ancha.jpg" width="1200"/>
+<h3>Ezequiel Calle Ancha</h3>
+<div class="rating"><span class="star">★</span> Recomendado</div>
+<p>Conexión perfecta entre la Catedral y el Romántico. Si te apetece embutido leonés, aquí es fácil acertar con <strong>chorizo, salchichón y cecina</strong> en una parada muy cómoda de la ruta.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/Ezequiel+Calle+Ancha+Leon" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+<article class="card">
+<img alt="Ruta de tapas por el Barrio Romántico de León - El Clandestino" decoding="async" height="800" loading="lazy" src="assets/el-clandestino.png" width="1200"/>
+<h3>El Clandestino</h3>
+<div class="rating"><span class="star">★</span> Recomendado</div>
+<p>Aporta el punto moderno al barrio. Suele sorprender con <strong>bocados creativos, mini hamburguesas o cremas de temporada</strong>, muy buena opción si quieres un tapeo algo más actual.</p>
+<a class="card-btn" href="https://www.google.com/maps/search/El+Clandestino+Leon+bar" rel="noopener noreferrer" target="_blank">📍 Mapa</a>
+</article>
+</div>
+<div aria-label="Enlaces relacionados" class="related">
+<h3>🔗 Relacionado</h3>
+<div class="chips">
+<a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Volver a Tapas y comer</a>
+<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Ruta Barrio Húmedo</a>
+<a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">Monumento San Isidoro</a>
+<a href="/#sec-itinerarios" onclick="event.preventDefault(); scrollToSection('sec-itinerarios')">Itinerarios gastronómicos</a>
+</div>
+</div>
 </div>
 <div class="view-section" id="cocido">
 <h2>Cocina tradicional leonesa</h2>
@@ -1652,8 +1909,8 @@ body{padding-bottom:78px}
 <a href="/procesiones" onclick="event.preventDefault(); showView('procesiones')">🕯️ Ver guía y procesiones</a>
 <a href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
 <a href="itinerarios-semana-santa-leon-2026/">📍 Itinerarios 2026</a>
-<a href="assets/guia/itinerario-semana-santa-leon-2026.html" target="_blank" rel="noopener noreferrer">🗺️ Abrir itinerario</a>
-<a href="assets/guia/itinerario-semana-santa-leon-2026.html" download>⬇️ Descargar itinerario</a>
+<a href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener noreferrer" target="_blank">🗺️ Abrir itinerario</a>
+<a download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">⬇️ Descargar itinerario</a>
 <a href="assets/folleto-semana-santa-2026.pdf" rel="noopener noreferrer" target="_blank">📘 Folleto oficial PDF</a>
 <a href="https://www.semanasantaleon.org/" rel="noopener noreferrer" target="_blank">🌐 Web oficial</a>
 </div>
@@ -1685,13 +1942,13 @@ body{padding-bottom:78px}
             Entre el <strong>Viernes de Dolores</strong> y el <strong>Domingo de Resurrección</strong>, León vive días intensos de tradición cofrade,
             patrimonio artístico e imaginería, y mucho ambiente en la calle.
           </p>
-<div class="chips" style="margin-top:12px">
+<div class="chips" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:10px">
 <a href="itinerarios-semana-santa-leon-2026/">📍 Itinerarios 2026</a>
-<a href="assets/guia/itinerario-semana-santa-leon-2026.html" target="_blank" rel="noopener noreferrer">🗺️ Abrir itinerario</a>
-<a href="assets/guia/itinerario-semana-santa-leon-2026.html" download>⬇️ Descargar itinerario</a>
+<a href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener noreferrer" target="_blank">🗺️ Abrir itinerario</a>
+<a download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">⬇️ Descargar itinerario</a>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-<a href="/listacofradias" class="card-btn" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
+<a class="card-btn" href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
 <a class="card-btn" href="assets/folleto-semana-santa-2026.pdf" rel="noopener noreferrer" target="_blank">📘 Descargar folleto oficial (PDF)</a>
 <a class="card-btn" href="https://www.semanasantaleon.org/" rel="noopener noreferrer" target="_blank">🌐 Web oficial</a>
 </div>
@@ -1775,8 +2032,8 @@ body{padding-bottom:78px}
 <h3 style="color:var(--purple)">🗺️ Itinerario Semana Santa 2026</h3>
 <p class="hint">Aquí tienes el itinerario ampliado para consultar recorridos, procesiones y llevarlo en el móvil o descargarlo.</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-<a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" target="_blank" rel="noopener noreferrer">👀 Abrir itinerario</a>
-<a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" download>🗺️ Descargar itinerario</a>
+<a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener noreferrer" target="_blank">👀 Abrir itinerario</a>
+<a class="card-btn" download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">🗺️ Descargar itinerario</a>
 <a class="card-btn" href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
 </div>
 <div aria-label="Enlaces relacionados" class="related" style="margin-top:14px">
@@ -1827,19 +2084,19 @@ body{padding-bottom:78px}
 <details class="card" id="cof-angustias-soledad"><summary>
 <span class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias.jpg"/></span>
 <span>Angustias y Soledad</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> Siglo XVI</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 3.600</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo; capillo, guantes, cíngulo y zapatos negros. Bocamangas con cordón amarillo; camisa blanca, corbata, pantalón y calcetines negros.</li><li><strong>🎺 Procesiones:</strong> Participa en el corazón de la Semana Santa leonesa con desfiles penitenciales por el centro histórico.</li></ul><p><strong>Historia y sede:</strong> Fundada en <strong>1578</strong>, es una de las cofradías más antiguas y queridas de León. Tiene su sede en la <strong>Capilla de Santa Nonia</strong> y es una referencia imprescindible del centro histórico y de la Procesión del Santo Entierro.<br><strong>Cómo reconocerla:</strong> destaca por su <strong>túnica negra</strong>, caperuza negra y la sobriedad de su hábito penitencial.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/angustias-y-soledad/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> Siglo XVI</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 3.600</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo; capillo, guantes, cíngulo y zapatos negros. Bocamangas con cordón amarillo; camisa blanca, corbata, pantalón y calcetines negros.</li><li><strong>🎺 Procesiones:</strong> Participa en el corazón de la Semana Santa leonesa con desfiles penitenciales por el centro histórico.</li></ul><p><strong>Historia y sede:</strong> Fundada en <strong>1578</strong>, es una de las cofradías más antiguas y queridas de León. Tiene su sede en la <strong>Capilla de Santa Nonia</strong> y es una referencia imprescindible del centro histórico y de la Procesión del Santo Entierro.<br/><strong>Cómo reconocerla:</strong> destaca por su <strong>túnica negra</strong>, caperuza negra y la sobriedad de su hábito penitencial.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/angustias-y-soledad/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-dulce-nombre-jesus-nazareno"><summary>
 <span class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulcenombre.jpg"/></span>
 <span>Dulce Nombre de Jesús Nazareno</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 4 de febrero de 1611</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 4.487</li><li><strong>👕 Hábito:</strong> Túnica de tablón de sarga negra con cintas de raso negro (cuello, bocamangas y vivos). Capillo negro con cinta en el borde inferior. Cíngulo negro con caída a la izquierda.</li><li><strong>🎺 Procesiones:</strong> Procesión de las Palmas (Domingo de Ramos), Procesión de la Pasión (Lunes Santo) y Ronda/Procesión de los Pasos (Viernes Santo).</li></ul><p><strong>Historia y sede:</strong> Nacida en <strong>1611</strong>, es el gran corazón popular del <strong>Viernes Santo leonés</strong>. Desde la <strong>Capilla de Santa Nonia</strong> organiza actos tan conocidos como <em>La Ronda</em> y la multitudinaria <em>Procesión de los Pasos</em>.<br><strong>Cómo reconocerla:</strong> viste <strong>túnica y capillo negros</strong>, con un hábito muy reconocible en las madrugadas y desfiles más emblemáticos de la ciudad.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/dulce-nombre-2/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 4 de febrero de 1611</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 4.487</li><li><strong>👕 Hábito:</strong> Túnica de tablón de sarga negra con cintas de raso negro (cuello, bocamangas y vivos). Capillo negro con cinta en el borde inferior. Cíngulo negro con caída a la izquierda.</li><li><strong>🎺 Procesiones:</strong> Procesión de las Palmas (Domingo de Ramos), Procesión de la Pasión (Lunes Santo) y Ronda/Procesión de los Pasos (Viernes Santo).</li></ul><p><strong>Historia y sede:</strong> Nacida en <strong>1611</strong>, es el gran corazón popular del <strong>Viernes Santo leonés</strong>. Desde la <strong>Capilla de Santa Nonia</strong> organiza actos tan conocidos como <em>La Ronda</em> y la multitudinaria <em>Procesión de los Pasos</em>.<br/><strong>Cómo reconocerla:</strong> viste <strong>túnica y capillo negros</strong>, con un hábito muy reconocible en las madrugadas y desfiles más emblemáticos de la ciudad.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/dulce-nombre-2/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-minerva-veracruz"><summary>
 <span class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/emblemaminerva.jpg"/></span>
 <span>Minerva y Veracruz</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo con bocamangas de terciopelo morado. Camisa blanca; guantes, pantalón, calcetines y zapatos negros. (Gobierno/abades: capirote de terciopelo morado).</li><li><strong>🎺 Procesiones:</strong> Cofradía histórica con presencia destacada en varios actos y procesiones de la Semana Santa de León.</li></ul><p><strong>Historia y sede:</strong> Sus orígenes están documentados desde <strong>1513</strong>, lo que la convierte en una de las hermandades históricas de León. Está ligada al entorno del <strong>Convento de San Francisco</strong> y a algunos de los actos más solemnes del calendario penitencial.<br><strong>Cómo reconocerla:</strong> su hábito combina <strong>túnica negra</strong> con detalles morados, un aspecto clásico de la Semana Santa leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo con bocamangas de terciopelo morado. Camisa blanca; guantes, pantalón, calcetines y zapatos negros. (Gobierno/abades: capirote de terciopelo morado).</li><li><strong>🎺 Procesiones:</strong> Cofradía histórica con presencia destacada en varios actos y procesiones de la Semana Santa de León.</li></ul><p><strong>Historia y sede:</strong> Sus orígenes están documentados desde <strong>1513</strong>, lo que la convierte en una de las hermandades históricas de León. Está ligada al entorno del <strong>Convento de San Francisco</strong> y a algunos de los actos más solemnes del calendario penitencial.<br/><strong>Cómo reconocerla:</strong> su hábito combina <strong>túnica negra</strong> con detalles morados, un aspecto clásico de la Semana Santa leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-santa-marta"><summary>
 <span class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santamarta.jpg"/></span>
 <span>Santa Marta</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1945</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.000</li><li><strong>👕 Hábito:</strong> Túnica de lana blanca con cuellos, bocamangas y botones en terciopelo rojo sangre. Fajín rojo sangre. Capirote alto rojo sangre (braceros: capillo bajo). Guantes blancos; calcetín y zapatos negros; camisa blanca, corbata negra y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vinculada a la Sagrada Cena y a actos centrales del calendario leonés.</li></ul><p><strong>Historia:</strong> La Hermandad de Santa Marta fue constituida el 11 de diciembre de 1945 por decreto del obispo de León, aunque su gestación arranca en 1941 en el Sindicato de Hostelería y Similares. Desde 1950 organiza la Procesión de la Sagrada Cena (Jueves Santo) y con el tiempo incorporó nuevos pasos.</p><p><strong>Dato práctico:</strong> Desde el 5 de marzo de 1995 pasa a denominarse Hermandad de Santa Marta y de la Sagrada Cena, y cuenta con la sección de “Las Samaritanas” (1982).</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/hermandad-de-santa-marta-y-sagrada-cena/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1945</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.000</li><li><strong>👕 Hábito:</strong> Túnica de lana blanca con cuellos, bocamangas y botones en terciopelo rojo sangre. Fajín rojo sangre. Capirote alto rojo sangre (braceros: capillo bajo). Guantes blancos; calcetín y zapatos negros; camisa blanca, corbata negra y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vinculada a la Sagrada Cena y a actos centrales del calendario leonés.</li></ul><p><strong>Historia:</strong> La Hermandad de Santa Marta fue constituida el 11 de diciembre de 1945 por decreto del obispo de León, aunque su gestación arranca en 1941 en el Sindicato de Hostelería y Similares. Desde 1950 organiza la Procesión de la Sagrada Cena (Jueves Santo) y con el tiempo incorporó nuevos pasos.</p><p><strong>Dato práctico:</strong> Desde el 5 de marzo de 1995 pasa a denominarse Hermandad de Santa Marta y de la Sagrada Cena, y cuenta con la sección de “Las Samaritanas” (1982).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/hermandad-de-santa-marta-y-sagrada-cena/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-jesus-divino-obrero"><summary>
 <span class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/divinoobrero-1.jpg"/></span>
 <span>Jesús Divino Obrero</span>
@@ -1847,7 +2104,7 @@ body{padding-bottom:78px}
 <details class="card" id="cof-siete-palabras"><summary>
 <span class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete.jpg"/></span>
 <span>Siete Palabras</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1962</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.350</li><li><strong>👕 Hábito:</strong> Túnica de terciopelo rojo sangre (estilo monacal) con bocamangas anchas. Capirote alto blanco; capa de raso negro con vistas blancas. Cíngulo negro doble con borlas a la izquierda. Guantes y calcetines blancos; zapato negro y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vía Crucis (madrugada del Miércoles al Jueves Santo), Pregón a caballo (Jueves Santo) y Sermón/Procesión de las Siete Palabras (Viernes Santo).</li></ul><p><strong>Historia y sede:</strong> La Cofradía de las Siete Palabras de Jesús en la Cruz fue fundada el 22 de septiembre de 1962 y tiene su sede en la iglesia de San Marcelo. Desfiló por primera vez en 1963 (procesión del Pregón) y ese mismo Viernes Santo organizó su primera procesión propia.</p><p><strong>Rasgo distintivo:</strong> En sus estatutos se contempla la promesa del silencio, siendo la primera penitencial de León en hacerlo según reseñas históricas de la cofradía.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-las-siete-palabras-de-jesus-en-la-cruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1962</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.350</li><li><strong>👕 Hábito:</strong> Túnica de terciopelo rojo sangre (estilo monacal) con bocamangas anchas. Capirote alto blanco; capa de raso negro con vistas blancas. Cíngulo negro doble con borlas a la izquierda. Guantes y calcetines blancos; zapato negro y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vía Crucis (madrugada del Miércoles al Jueves Santo), Pregón a caballo (Jueves Santo) y Sermón/Procesión de las Siete Palabras (Viernes Santo).</li></ul><p><strong>Historia y sede:</strong> La Cofradía de las Siete Palabras de Jesús en la Cruz fue fundada el 22 de septiembre de 1962 y tiene su sede en la iglesia de San Marcelo. Desfiló por primera vez en 1963 (procesión del Pregón) y ese mismo Viernes Santo organizó su primera procesión propia.</p><p><strong>Rasgo distintivo:</strong> En sus estatutos se contempla la promesa del silencio, siendo la primera penitencial de León en hacerlo según reseñas históricas de la cofradía.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-las-siete-palabras-de-jesus-en-la-cruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-cristo-del-perdon"><summary>
 <span class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/perdon.jpg"/></span>
 <span>Cristo del Perdón</span>
@@ -1859,15 +2116,15 @@ body{padding-bottom:78px}
 <details class="card" id="cof-cristo-de-la-expiracion"><summary>
 <span class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/silencio.jpg"/></span>
 <span>Cristo de la Expiración</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Convento de San Francisco</li><li><strong>👥 Hermanos:</strong> ≈ 100</li><li><strong>👕 Hábito:</strong> Túnica morada penitencial (tipo “Medinaceli”) con pequeños botones blancos. Cíngulo blanco a la derecha (tres nudos). Capirote blanco de raso.</li><li><strong>🎺 Procesiones:</strong> Cofradía de carácter solemne y recogido, muy ligada a los ambientes de silencio.</li></ul><p><strong>Historia y sede:</strong> La Cofradía del Santísimo Cristo de la Expiración y del Silencio fue fundada en 1991 y tiene su sede en el Convento de San Francisco. Nació para sostener y dar forma a cortejos vinculados a la tradición franciscana en León, destacando por su austeridad y seriedad.</p><p><strong>Actos destacados:</strong> Organiza la Procesión del Silencio (Miércoles Santo) y participa en la Procesión del Dainos (Domingo de Ramos), además de un Vía Crucis cantado el Martes Santo.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-santisimo-cristo-de-la-expiracion-y-del-silencio/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Convento de San Francisco</li><li><strong>👥 Hermanos:</strong> ≈ 100</li><li><strong>👕 Hábito:</strong> Túnica morada penitencial (tipo “Medinaceli”) con pequeños botones blancos. Cíngulo blanco a la derecha (tres nudos). Capirote blanco de raso.</li><li><strong>🎺 Procesiones:</strong> Cofradía de carácter solemne y recogido, muy ligada a los ambientes de silencio.</li></ul><p><strong>Historia y sede:</strong> La Cofradía del Santísimo Cristo de la Expiración y del Silencio fue fundada en 1991 y tiene su sede en el Convento de San Francisco. Nació para sostener y dar forma a cortejos vinculados a la tradición franciscana en León, destacando por su austeridad y seriedad.</p><p><strong>Actos destacados:</strong> Organiza la Procesión del Silencio (Miércoles Santo) y participa en la Procesión del Dainos (Domingo de Ramos), además de un Vía Crucis cantado el Martes Santo.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-santisimo-cristo-de-la-expiracion-y-del-silencio/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-maria-del-dulce-nombre"><summary>
 <span class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/mariadulce.jpg"/></span>
 <span>María del Dulce Nombre</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.400</li><li><strong>👕 Hábito:</strong> Túnica negra de tablón sencillo con capillo, bocamangas y cíngulo verdes. Camisa blanca; pantalón, guantes, calcetín y zapato negro. (Junta de Seises: capa de raso negro con vistas en terciopelo verde).</li><li><strong>🎺 Procesiones:</strong> Devoción mariana con participación activa en el calendario procesional.</li></ul><p><strong>Historia y sede:</strong> La Cofradía de María del Dulce Nombre se impulsó en 1991 (comisión gestora en enero y aprobación de estatutos en mayo) en el entorno del Convento de las Madres Benedictinas Carbajalas. Nació con una idea muy clara: favorecer una participación más activa de la mujer en la Semana Santa leonesa.</p><p><strong>Tradición propia:</strong> Desde 1995 celebran el aniversario de la Aparición de la Virgen del Camino con una Procesión-Romería desde la Basílica al Humilladero, portando a hombros a la titular.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-maria-del-dulce-nombre/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.400</li><li><strong>👕 Hábito:</strong> Túnica negra de tablón sencillo con capillo, bocamangas y cíngulo verdes. Camisa blanca; pantalón, guantes, calcetín y zapato negro. (Junta de Seises: capa de raso negro con vistas en terciopelo verde).</li><li><strong>🎺 Procesiones:</strong> Devoción mariana con participación activa en el calendario procesional.</li></ul><p><strong>Historia y sede:</strong> La Cofradía de María del Dulce Nombre se impulsó en 1991 (comisión gestora en enero y aprobación de estatutos en mayo) en el entorno del Convento de las Madres Benedictinas Carbajalas. Nació con una idea muy clara: favorecer una participación más activa de la mujer en la Semana Santa leonesa.</p><p><strong>Tradición propia:</strong> Desde 1995 celebran el aniversario de la Aparición de la Virgen del Camino con una Procesión-Romería desde la Basílica al Humilladero, portando a hombros a la titular.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-maria-del-dulce-nombre/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-santisimo-sacramento"><summary>
 <span class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/sacramentado.jpg"/></span>
 <span>Santísimo Sacramento</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Misma cofradía que Minerva y Vera Cruz (nombre completo). Túnica negra con bocamangas de terciopelo morado; indumentaria negra y camisa blanca.</li><li><strong>🎺 Procesiones:</strong> Participación destacada en actos eucarísticos y en procesiones históricas.</li></ul><p><strong>Historia y sede:</strong> Sus orígenes están documentados desde <strong>1513</strong>, lo que la convierte en una de las hermandades históricas de León. Está ligada al entorno del <strong>Convento de San Francisco</strong> y a algunos de los actos más solemnes del calendario penitencial.<br><strong>Cómo reconocerla:</strong> su hábito combina <strong>túnica negra</strong> con detalles morados, un aspecto clásico de la Semana Santa leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Misma cofradía que Minerva y Vera Cruz (nombre completo). Túnica negra con bocamangas de terciopelo morado; indumentaria negra y camisa blanca.</li><li><strong>🎺 Procesiones:</strong> Participación destacada en actos eucarísticos y en procesiones históricas.</li></ul><p><strong>Historia y sede:</strong> Sus orígenes están documentados desde <strong>1513</strong>, lo que la convierte en una de las hermandades históricas de León. Está ligada al entorno del <strong>Convento de San Francisco</strong> y a algunos de los actos más solemnes del calendario penitencial.<br/><strong>Cómo reconocerla:</strong> su hábito combina <strong>túnica negra</strong> con detalles morados, un aspecto clásico de la Semana Santa leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-jesus-de-la-misericordia"><summary>
 <span class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/bienaventuranza.jpg"/></span>
 <span>Jesús de la Misericordia</span>
@@ -1875,19 +2132,19 @@ body{padding-bottom:78px}
 <details class="card" id="cof-santo-sepulcro"><summary>
 <span class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/sepulcro.jpg"/></span>
 <span>Santo Sepulcro</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Froilán</li><li><strong>👕 Hábito:</strong> Túnica negra y capillo/capirote alto blanco con babero y cola; cíngulo, camisa y guantes blancos. Calzado e indumentaria inferior en negro. (Junta: capa blanca).</li><li><strong>🎺 Procesiones:</strong> Lunes Santo (Adoración Procesional de las Llagas de Cristo) y Sábado Santo (Procesión Camino de la Luz).</li></ul><p><strong>Historia y sentido:</strong> La Cofradía del Santo Sepulcro Esperanza de la Vida se gestó en 1991 y se aprobó al año siguiente, con el Santo Sepulcro como titular, para poner el foco en la Vigilia Pascual. Mantiene una línea marcada por la oración por los difuntos y la labor social.</p><p><strong>Hábito (cómo reconocerla):</strong> Túnica negra, capirote alto blanco con cola y babero (con el emblema), cíngulo blanco y guantes; pantalón, calzado y complementos en negro.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://www.semanasantaleon.org/cofradia-santo-sepulcro-esperanza-de-vida" rel="nofollow noopener noreferrer" target="_blank">www.semanasantaleon.org</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Froilán</li><li><strong>👕 Hábito:</strong> Túnica negra y capillo/capirote alto blanco con babero y cola; cíngulo, camisa y guantes blancos. Calzado e indumentaria inferior en negro. (Junta: capa blanca).</li><li><strong>🎺 Procesiones:</strong> Lunes Santo (Adoración Procesional de las Llagas de Cristo) y Sábado Santo (Procesión Camino de la Luz).</li></ul><p><strong>Historia y sentido:</strong> La Cofradía del Santo Sepulcro Esperanza de la Vida se gestó en 1991 y se aprobó al año siguiente, con el Santo Sepulcro como titular, para poner el foco en la Vigilia Pascual. Mantiene una línea marcada por la oración por los difuntos y la labor social.</p><p><strong>Hábito (cómo reconocerla):</strong> Túnica negra, capirote alto blanco con cola y babero (con el emblema), cíngulo blanco y guantes; pantalón, calzado y complementos en negro.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://www.semanasantaleon.org/cofradia-santo-sepulcro-esperanza-de-vida" rel="nofollow noopener noreferrer" target="_blank">www.semanasantaleon.org</a></p></details>
 <details class="card" id="cof-agonia-de-nuestro-senor"><summary>
 <span class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia.jpg"/></span>
 <span>Agonía de Nuestro Señor</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1993</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 200</li><li><strong>👕 Hábito:</strong> Túnica morada con bocamangas doradas. Capillo y cíngulo dorados. Guantes, calcetines y zapatos negros. (Junta de Seises: capa morada con ribetes dorados).</li><li><strong>🎺 Procesiones:</strong> Cofradía penitencial con actos de gran recogimiento.</li></ul><p><strong>Historia y sede:</strong> Fundada el 4 de octubre de 1993, con sede en la parroquia de Santa Marina la Real. Nació por iniciativa de siete hermanas y no procesionó hasta 1996 (los primeros años salió a modo de representación).</p><p><strong>Seña de identidad:</strong> Su titular es “Jesús del Vía Crucis”, una imagen vinculada al sentido penitencial del camino al Calvario, y sus colores (morado y dorado) se explican como símbolos de preparación y penitencia, además de gloria y triunfo sobre la muerte.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-agonia-de-nuestro-senor/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1993</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 200</li><li><strong>👕 Hábito:</strong> Túnica morada con bocamangas doradas. Capillo y cíngulo dorados. Guantes, calcetines y zapatos negros. (Junta de Seises: capa morada con ribetes dorados).</li><li><strong>🎺 Procesiones:</strong> Cofradía penitencial con actos de gran recogimiento.</li></ul><p><strong>Historia y sede:</strong> Fundada el 4 de octubre de 1993, con sede en la parroquia de Santa Marina la Real. Nació por iniciativa de siete hermanas y no procesionó hasta 1996 (los primeros años salió a modo de representación).</p><p><strong>Seña de identidad:</strong> Su titular es “Jesús del Vía Crucis”, una imagen vinculada al sentido penitencial del camino al Calvario, y sus colores (morado y dorado) se explican como símbolos de preparación y penitencia, además de gloria y triunfo sobre la muerte.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-agonia-de-nuestro-senor/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-cristo-del-gran-poder"><summary>
 <span class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/granpoder.jpg"/></span>
 <span>Cristo del Gran Poder</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1994</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Lorenzo</li><li><strong>👥 Hermanos:</strong> ≈ 1.080</li><li><strong>👕 Hábito:</strong> Túnica negra sencilla con emblema al lado del corazón. Capillo negro. Bocamangas y cíngulo plateados (ribeteados con cordón plateado). Indumentaria negra y camisa blanca; guantes negros.</li><li><strong>🎺 Procesiones:</strong> Cofradía de fuerte carácter penitencial, integrada en el calendario tradicional leonés.</li></ul><p><strong>Historia y sede:</strong> La Cofradía del Cristo del Gran Poder nació el Domingo de Ramos de 1993 y sus estatutos se firmaron el 9 de septiembre de 1994. La primera procesión de la cofradía tuvo lugar en 1995, y en 1996 se incorporaron a la procesión imágenes de apóstoles relacionadas con el retablo del altar mayor de la Catedral de León.</p><p><strong>Hábito (según ficha de cofradías):</strong> Túnica negra sencilla con el emblema característico en el pecho.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-cristo-del-gran-poder/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1994</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Lorenzo</li><li><strong>👥 Hermanos:</strong> ≈ 1.080</li><li><strong>👕 Hábito:</strong> Túnica negra sencilla con emblema al lado del corazón. Capillo negro. Bocamangas y cíngulo plateados (ribeteados con cordón plateado). Indumentaria negra y camisa blanca; guantes negros.</li><li><strong>🎺 Procesiones:</strong> Cofradía de fuerte carácter penitencial, integrada en el calendario tradicional leonés.</li></ul><p><strong>Historia y sede:</strong> La Cofradía del Cristo del Gran Poder nació el Domingo de Ramos de 1993 y sus estatutos se firmaron el 9 de septiembre de 1994. La primera procesión de la cofradía tuvo lugar en 1995, y en 1996 se incorporaron a la procesión imágenes de apóstoles relacionadas con el retablo del altar mayor de la Catedral de León.</p><p><strong>Hábito (según ficha de cofradías):</strong> Túnica negra sencilla con el emblema característico en el pecho.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-cristo-del-gran-poder/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 <details class="card" id="cof-desenclavo"><summary>
 <span class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.jpg"/></span>
 <span>Desenclavo</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 500</li><li><strong>👕 Hábito:</strong> Túnica de sarga púrpura lisa con bocamangas y capirote negros; cíngulo negro con caídas a la izquierda. Emblema en el babero. Camisa blanca y guantes; pantalón, calcetines y zapato bajo negros.</li><li><strong>🎺 Procesiones:</strong> Procesión de la Pasión (Lunes Santo), Procesión del Dolor de Nuestra Madre (Martes Santo) y Procesión Oficial del Santo Entierro (Viernes Santo, años pares).</li></ul><p><strong>Origen:</strong> La Cofradía del Santo Cristo del Desenclavo nace el 31 de julio de 1992, fecha en la que el Obispado aprueba sus estatutos. Desde el inicio quiso ser una cofradía participativa, solidaria y democrática, y también dar un papel igualitario a la mujer en la Semana Santa.</p><p><strong>Raíz leonesa:</strong> Se erige canónicamente en la parroquia de Santa Marina la Real con la intención explícita de recuperar el sabor tradicional antiguo de la tierra leonesa.</p></p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-desenclavo/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
+</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 500</li><li><strong>👕 Hábito:</strong> Túnica de sarga púrpura lisa con bocamangas y capirote negros; cíngulo negro con caídas a la izquierda. Emblema en el babero. Camisa blanca y guantes; pantalón, calcetines y zapato bajo negros.</li><li><strong>🎺 Procesiones:</strong> Procesión de la Pasión (Lunes Santo), Procesión del Dolor de Nuestra Madre (Martes Santo) y Procesión Oficial del Santo Entierro (Viernes Santo, años pares).</li></ul><p><strong>Origen:</strong> La Cofradía del Santo Cristo del Desenclavo nace el 31 de julio de 1992, fecha en la que el Obispado aprueba sus estatutos. Desde el inicio quiso ser una cofradía participativa, solidaria y democrática, y también dar un papel igualitario a la mujer en la Semana Santa.</p><p><strong>Raíz leonesa:</strong> Se erige canónicamente en la parroquia de Santa Marina la Real con la intención explícita de recuperar el sabor tradicional antiguo de la tierra leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-desenclavo/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
 </div>
 </div>
 <!-- VISTAS: MONUMENTOS (con horarios/precios) -->
@@ -2051,7 +2308,7 @@ body{padding-bottom:78px}
 </article>
 </div>
 </main>
-<a href="/" aria-label="Volver al menú" class="back-float" onclick="event.preventDefault(); showView('home')">← Volver a la guía</a>
+<a aria-label="Volver al menú" class="back-float" href="/" onclick="event.preventDefault(); showView('home')">← Volver a la guía</a>
 <div aria-label="Aviso de cookies" aria-live="polite" id="cookie-banner" role="dialog">
 <div class="cookie-text">
     🍪 Usamos cookies técnicas para que la web funcione correctamente. Solo activaremos cookies de análisis si las aceptas.
@@ -2066,7 +2323,7 @@ body{padding-bottom:78px}
 <p><strong>Come en León</strong> · Guía local independiente.</p>
 <p class="hint">Última actualización del contenido: <strong>marzo 2026</strong>.</p>
 <p class="hint">© 2026 · Contacto: <a href="mailto:contacto.comeenleon@gmail.com">contacto.comeenleon@gmail.com</a></p>
-<div class="footer-links" aria-label="Enlaces legales y de transparencia">
+<div aria-label="Enlaces legales y de transparencia" class="footer-links">
 <a href="/aviso-legal.html">Aviso legal</a>
 <a href="/privacidad.html">Privacidad</a>
 <a href="/cookies.html">Cookies</a>
@@ -2453,7 +2710,6 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
   if (p && typeof p.catch === 'function') p.catch(() => {});
 })();
 </script>
-
 <script>
 function loadYouTube(videoId, targetId){
   const target = document.getElementById(targetId);
@@ -2474,15 +2730,12 @@ function loadYouTube(videoId, targetId){
   target.appendChild(iframe);
 }
 </script>
-
-
 <!-- Barra sticky móvil (acceso directo a secciones clave) -->
-<nav class="mnav" aria-label="Navegación rápida móvil">
-  <a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Tapas</a>
-  <a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">Semana</a>
-  <a class="mnav-hot" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Dormir</a>
-  <a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda</a>
+<nav aria-label="Navegación rápida móvil" class="mnav">
+<a href="/#sec-como-llegar" onclick="event.preventDefault(); scrollToSection('sec-como-llegar')">Llegar</a>
+<a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">Tapas</a>
+<a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">Ver</a>
+<a class="mnav-hot" href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Dormir</a>
 </nav>
-
 </body>
 </html>
