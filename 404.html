@@ -10,6 +10,15 @@
     .box{max-width:640px;padding:32px;text-align:center;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
     a{display:inline-block;margin-top:16px;color:#fff;background:#e11d48;text-decoration:none;padding:12px 18px;border-radius:10px}
   </style>
+  <script>
+    (function(){
+      var valid = new Set(['tapas','romantico','cocido','autor','modernos','ferias','mejor-tapa','conciertos','mercados','teatro','semanasanta','procesiones','listacofradias','catedral','sanisidoro','botines','sanmarcos','musac','cookies']);
+      var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+      if (valid.has(path)) {
+        window.location.replace('/#' + path);
+      }
+    })();
+  </script>
 </head>
 <body>
   <main class="box">

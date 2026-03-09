@@ -1604,6 +1604,36 @@ body{padding-bottom:78px}
   </p>
 </div>
 <!-- VISTAS: SEMANA SANTA -->
+<div class="view-section" id="semanasanta">
+<h2 style="color:var(--purple)">🟣 Semana Santa León 2026</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs">
+<a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
+<span aria-current="page" class="current">Semana Santa León 2026</span>
+</nav>
+<p>La <strong>Semana Santa de León 2026</strong> es uno de los momentos más importantes del año en la ciudad. Aquí tienes un acceso rápido a lo esencial: guía práctica, procesiones, cofradías y recursos oficiales para organizar la visita.</p>
+<div class="related">
+<div class="chips">
+<a href="/procesiones" onclick="event.preventDefault(); showView('procesiones')">🕯️ Ver guía y procesiones</a>
+<a href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
+<a href="assets/folleto-semana-santa-2026.pdf" rel="noopener noreferrer" target="_blank">📘 Folleto oficial PDF</a>
+<a href="https://www.semanasantaleon.org/" rel="noopener noreferrer" target="_blank">🌐 Web oficial</a>
+</div>
+</div>
+<div class="grid cols-2" style="margin-top:18px">
+<article class="card">
+<h3>Qué vas a encontrar</h3>
+<ul style="margin-top:8px;display:grid;gap:8px;list-style:disc;padding-left:18px">
+<li>Resumen práctico para turistas y locales.</li>
+<li>Acceso rápido a <strong>procesiones</strong> y <strong>cofradías</strong>.</li>
+<li>Ideas para combinar la visita con <strong>tapas</strong> y paseo por el centro histórico.</li>
+</ul>
+</article>
+<article class="card">
+<h3>Consejo útil</h3>
+<p>Si vienes solo un día, combina una procesión destacada con paseo por el <a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Barrio Húmedo</a> o por el <a href="/romantico" onclick="event.preventDefault(); showView('romantico')">Barrio Romántico</a>.</p>
+</article>
+</div>
+</div>
 <div class="view-section" id="procesiones">
 <h2 style="color:var(--purple)">🟣 Semana Santa: guía rápida</h2>
 <div aria-label="Semana Santa 2026: cartel, folleto y guía rápida" class="ss-hero">
@@ -2024,6 +2054,91 @@ function rejectCookies(fromSettings){
   if(fromSettings){ showView('home'); }
 }
 
+const META_BY_VIEW = {
+  home: {
+    title: 'Guía de León 2026: Tapas, Qué Ver, Hoteles y Semana Santa',
+    description: 'Guía de León 2026 para organizar tu visita: tapas en el Barrio Húmedo y Romántico, monumentos, hoteles céntricos, agenda y Semana Santa.'
+  },
+  semanasanta: {
+    title: 'Semana Santa León 2026 | Come en León',
+    description: 'Guía rápida de Semana Santa León 2026 con acceso a procesiones, cofradías, tradiciones y recursos oficiales.'
+  },
+  procesiones: {
+    title: 'Procesiones y guía rápida de Semana Santa León 2026 | Come en León',
+    description: 'Guía práctica de Semana Santa en León con procesiones, tradiciones, Genarín y recursos oficiales para organizar la visita.'
+  },
+  listacofradias: {
+    title: 'Cofradías de la Semana Santa de León | Come en León',
+    description: 'Listado de cofradías de la Semana Santa de León con datos útiles para orientarte durante tu visita.'
+  },
+  tapas: {
+    title: 'Tapas en el Barrio Húmedo de León | Come en León',
+    description: 'Dónde ir de tapas en León: plan rápido por el Barrio Húmedo, zonas recomendadas y consejos para comer bien.'
+  },
+  romantico: {
+    title: 'Tapas en el Barrio Romántico de León | Come en León',
+    description: 'Ruta por el Barrio Romántico de León con bares, tapas y consejos para disfrutar la zona con calma.'
+  },
+  cocido: {
+    title: 'Cocina tradicional en León | Come en León',
+    description: 'Restaurantes de cocina tradicional en León para probar platos típicos y comer con calma.'
+  },
+  autor: {
+    title: 'Cocina de autor y Michelin en León | Come en León',
+    description: 'Selección de cocina de autor y restaurantes Michelin en León para una comida especial.'
+  },
+  modernos: {
+    title: 'Restaurantes modernos en León | Come en León',
+    description: 'Ideas para comer en restaurantes modernos de León con propuestas actuales y ambiente cuidado.'
+  },
+  conciertos: {
+    title: 'Conciertos en León | Come en León',
+    description: 'Agenda rápida de conciertos en León para completar tu visita o escapada.'
+  },
+  ferias: {
+    title: 'Ferias y planes en León | Come en León',
+    description: 'Ferias y eventos en León para organizar un plan local con antelación.'
+  },
+  mercados: {
+    title: 'Mercados y mercadillos en León | Come en León',
+    description: 'Mercados y mercadillos en León y provincia para comprar, pasear y completar tu ruta.'
+  },
+  teatro: {
+    title: 'Teatro y cultura en León | Come en León',
+    description: 'Agenda de teatro y cultura en León para combinar con tapas, monumentos y escapadas urbanas.'
+  }
+};
+
+function updateMetaForView(viewId){
+  const view = viewId || 'home';
+  const meta = META_BY_VIEW[view] || META_BY_VIEW.home;
+  const cleanView = (view === 'home') ? '' : view + '/';
+  const url = 'https://comeenleon.es/' + cleanView;
+
+  document.title = meta.title;
+
+  const desc = document.querySelector('meta[name="description"]');
+  if(desc) desc.setAttribute('content', meta.description);
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if(canonical) canonical.setAttribute('href', url);
+
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if(ogTitle) ogTitle.setAttribute('content', meta.title);
+
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  if(ogDescription) ogDescription.setAttribute('content', meta.description);
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if(ogUrl) ogUrl.setAttribute('content', url);
+
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  if(twTitle) twTitle.setAttribute('content', meta.title);
+
+  const twDescription = document.querySelector('meta[name="twitter:description"]');
+  if(twDescription) twDescription.setAttribute('content', meta.description);
+}
+
 function _showViewInternal(id){
   document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
   const target = document.getElementById(id);
@@ -2038,6 +2153,7 @@ function _showViewInternal(id){
     const h2 = target.querySelector('h2');
     if(h2){ h2.setAttribute('tabindex','-1'); h2.focus(); }
     updateBreadcrumbJsonLd(id);
+    updateMetaForView(id);
   }
 }
 
@@ -2051,6 +2167,7 @@ function updateBreadcrumbJsonLd(viewId){
     cocido: ["Inicio","Tapas y comer","Cocina tradicional"],
     autor: ["Inicio","Tapas y comer","Cocina Michelin"],
     modernos: ["Inicio","Tapas y comer","Restaurantes modernos"],
+    semanasanta: ["Inicio","Semana Santa León 2026"],
     procesiones: ["Inicio","Semana Santa León 2026","Procesiones"],
     listacofradias: ["Inicio","Semana Santa León 2026","Cofradías"],
     catedral: ["Inicio","Monumentos y cultura","Catedral de León"],
