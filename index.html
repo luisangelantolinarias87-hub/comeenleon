@@ -2338,10 +2338,10 @@ function bindCofradiaGrid(){
   
   const cleanPath = () => window.location.pathname.replace(/^\/+|\/+$/g, '');
 
-function getQueryView() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('view') || '';
-}
+  function getQueryView() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('view') || '';
+  }
 
 const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "semanasanta", "tapas", "teatro"]);
 
