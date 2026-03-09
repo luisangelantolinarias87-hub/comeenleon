@@ -3,7 +3,6 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<base href="/" />
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="Guía de León 2026 para organizar tu visita: tapas en el Barrio Húmedo y Romántico, monumentos, hoteles céntricos, agenda y Semana Santa." name="description"/>
 <meta content="index, follow" name="robots"/>
@@ -2035,11 +2034,6 @@ function _showViewInternal(id){
   }
   if(target){
     target.classList.add('active');
-    // Mantén una URL útil (hash) sin romper la SPA
-    const nextHash = (id && id !== 'home') ? ('#' + id) : '#';
-    if(window.location.hash !== nextHash){
-      history.replaceState(null, '', nextHash);
-    }
     window.scrollTo({ top: 0, behavior: 'auto' }); // 'instant' no es estándar
     const h2 = target.querySelector('h2');
     if(h2){ h2.setAttribute('tabindex','-1'); h2.focus(); }
@@ -2133,15 +2127,24 @@ window.addEventListener('load', () => {
   if(!consent){
     setTimeout(() => document.getElementById('cookie-banner').classList.add('show'), 1200);
   }
-// Deep-link por hash (#catedral, #tapas, etc.)
+
   const hash = (window.location.hash || '').replace('#','').trim();
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+
+  // Si ya estamos en una ruta limpia (/tapas, /musac, etc.), no reinyectar hash-routing.
+  if(path){
+    updateBreadcrumbJsonLd(path);
+    return;
+  }
+
+  // Deep-link legacy por hash (#catedral, #tapas, etc.) solo para compatibilidad.
   if(hash){
     const target = document.getElementById(hash);
     if(target && target.classList.contains('view-section')){
-      showView(hash);
+      showView(hash, false);
     }else{
       // Si es un ancla de sección dentro de HOME
-      showView('home');
+      showView('home', false);
       setTimeout(() => {
         const el = document.getElementById(hash);
         if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2218,7 +2221,7 @@ function bindCofradiaGrid(){
   
   const cleanPath = () => window.location.pathname.replace(/^\/+|\/+$/g, '');
 
-const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "tapas", "teatro"]);
+const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "semanasanta", "tapas", "teatro"]);
 
   function normalizeView(raw) {
     const v = (raw || '').toLowerCase().trim();
