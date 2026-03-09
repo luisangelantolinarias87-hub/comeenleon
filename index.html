@@ -261,6 +261,9 @@
       background:transparent;border:1px solid rgba(255,255,255,.35)
     }
 footer{text-align:center;padding:3.5rem 0;color:var(--muted);border-top:1px solid var(--border);margin-top:4rem;background:#fff}
+    .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:14px 0 4px}
+    .footer-links a{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:800;color:var(--text)}
+    .footer-links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
     .hint{font-size:.95rem;color:var(--muted)}
 
 section h2{
@@ -999,6 +1002,7 @@ body{padding-bottom:78px}
 <a class="platform-btn btn-booking" href="https://www.booking.com/city/es/leon.es.html" rel="noopener noreferrer sponsored" target="_blank">Booking.com</a>
 <a class="platform-btn btn-airbnb" href="https://www.airbnb.es/s/León--España/homes" rel="noopener noreferrer sponsored" target="_blank">Airbnb</a>
 </div>
+<p class="hint" style="margin-top:14px">Transparencia: los enlaces a Booking, Airbnb u otras plataformas llevan a sitios de terceros. Si en el futuro Come en León activa programas de afiliación, se indicará de forma clara en el <a href="/afiliacion.html">aviso de afiliación</a>.</p>
 <h3 style="margin-top:2.2rem;font-size:1.35rem;font-weight:900">⭐ Más alojamientos recomendados</h3>
 <div class="grid" style="margin-top:1rem">
 <article class="card">
@@ -2062,7 +2066,13 @@ body{padding-bottom:78px}
 <p><strong>Come en León</strong> · Guía local independiente.</p>
 <p class="hint">Última actualización del contenido: <strong>marzo 2026</strong>.</p>
 <p class="hint">© 2026 · Contacto: <a href="mailto:contacto.comeenleon@gmail.com">contacto.comeenleon@gmail.com</a></p>
-<p class="hint"><a href="#cookies" onclick="event.preventDefault(); showView(\'cookies\')">Política de cookies</a></p>
+<div class="footer-links" aria-label="Enlaces legales y de transparencia">
+<a href="/aviso-legal.html">Aviso legal</a>
+<a href="/privacidad.html">Privacidad</a>
+<a href="/cookies.html">Cookies</a>
+<a href="/afiliacion.html">Afiliación</a>
+</div>
+<p class="hint">Proyecto informativo independiente sobre León, gastronomía, rutas, monumentos, hoteles y Semana Santa.</p>
 </footer>
 <script>
     
