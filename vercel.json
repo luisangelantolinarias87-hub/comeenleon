@@ -1,9 +1,61 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/", "destination": "/index.html" },
+
+    { "source": "/tapas", "destination": "/index.html" },
+    { "source": "/tapas/", "destination": "/index.html" },
+
+    { "source": "/romantico", "destination": "/index.html" },
+    { "source": "/romantico/", "destination": "/index.html" },
+
+    { "source": "/cocido", "destination": "/index.html" },
+    { "source": "/cocido/", "destination": "/index.html" },
+
+    { "source": "/autor", "destination": "/index.html" },
+    { "source": "/autor/", "destination": "/index.html" },
+
+    { "source": "/modernos", "destination": "/index.html" },
+    { "source": "/modernos/", "destination": "/index.html" },
+
+    { "source": "/semanasanta", "destination": "/index.html" },
+    { "source": "/semanasanta/", "destination": "/index.html" },
+
+    { "source": "/procesiones", "destination": "/index.html" },
+    { "source": "/procesiones/", "destination": "/index.html" },
+
+    { "source": "/listacofradias", "destination": "/index.html" },
+    { "source": "/listacofradias/", "destination": "/index.html" },
+
+    { "source": "/catedral", "destination": "/index.html" },
+    { "source": "/catedral/", "destination": "/index.html" },
+
+    { "source": "/sanisidoro", "destination": "/index.html" },
+    { "source": "/sanisidoro/", "destination": "/index.html" },
+
+    { "source": "/botines", "destination": "/index.html" },
+    { "source": "/botines/", "destination": "/index.html" },
+
+    { "source": "/sanmarcos", "destination": "/index.html" },
+    { "source": "/sanmarcos/", "destination": "/index.html" },
+
+    { "source": "/musac", "destination": "/index.html" },
+    { "source": "/musac/", "destination": "/index.html" },
+
+    { "source": "/mejor-tapa", "destination": "/index.html" },
+    { "source": "/mejor-tapa/", "destination": "/index.html" },
+
+    { "source": "/conciertos", "destination": "/index.html" },
+    { "source": "/conciertos/", "destination": "/index.html" },
+
+    { "source": "/teatro", "destination": "/index.html" },
+    { "source": "/teatro/", "destination": "/index.html" },
+
+    { "source": "/ferias", "destination": "/index.html" },
+    { "source": "/ferias/", "destination": "/index.html" },
+
+    { "source": "/mercados", "destination": "/index.html" },
+    { "source": "/mercados/", "destination": "/index.html" }
   ]
 }
