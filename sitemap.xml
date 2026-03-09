@@ -4,10 +4,6 @@
     <loc>https://comeenleon.es/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
-  <url>
-    <loc>https://comeenleon.es/itinerarios-semana-santa-leon-2026/</loc>
-    <lastmod>2026-03-09</lastmod>
-  </url>
 
   <url>
     <loc>https://comeenleon.es/semanasanta/</loc>
@@ -20,6 +16,18 @@
   </url>
   <url>
     <loc>https://comeenleon.es/cocido/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://comeenleon.es/romantico/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://comeenleon.es/autor/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://comeenleon.es/mejor-tapa/</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
   <url>
@@ -65,5 +73,14 @@
   <url>
     <loc>https://comeenleon.es/mercados/</loc>
     <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://comeenleon.es/teatro/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comeenleon.es/itinerarios-semana-santa-leon-2026/</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
 </urlset>
