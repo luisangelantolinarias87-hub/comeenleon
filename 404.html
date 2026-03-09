@@ -32,9 +32,9 @@
       ]);
 
       if (validRoutes.has(path)) {
-        window.location.replace('/?view=' + encodeURIComponent(path));
+        window.location.href = '/?view=' + encodeURIComponent(path);
       } else {
-        window.location.replace('/');
+        window.location.href = '/';
       }
     })();
   </script>
