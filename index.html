@@ -2338,11 +2338,22 @@ function bindCofradiaGrid(){
   
   const cleanPath = () => window.location.pathname.replace(/^\/+|\/+$/g, '');
 
+function getQueryView() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('view') || '';
+}
+
 const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "cookies", "ferias", "home", "listacofradias", "mejor-tapa", "mercados", "modernos", "musac", "procesiones", "romantico", "sanisidoro", "sanmarcos", "semanasanta", "tapas", "teatro"]);
 
   function normalizeView(raw) {
-    const v = (raw || '').toLowerCase().trim();
-    if (!v || v === 'index.html') return 'home';
+    const v = (raw || '')
+      .toLowerCase()
+      .trim()
+      .replace(/^\/+|\/+$/g, '')
+      .replace(/^#/, '')
+      .replace(/\.html$/, '');
+
+    if (!v || v === 'index') return 'home';
     return VIEWS.has(v) ? v : 'home';
   }
 
@@ -2380,9 +2391,13 @@ const VIEWS = new Set(["autor", "botines", "catedral", "cocido", "conciertos", "
 
   // On initial load: support direct /ruta and legacy #ruta
   document.addEventListener('DOMContentLoaded', () => {
+    const queryView = normalizeView(getQueryView());
     const pathView = normalizeView(cleanPath());
     const hashView = normalizeView(window.location.hash.replace(/^#/, ''));
-    const initial = (pathView !== 'home') ? pathView : (hashView !== 'home' ? hashView : 'home');
+    const initial =
+      (queryView !== 'home') ? queryView :
+      (pathView !== 'home') ? pathView :
+      (hashView !== 'home') ? hashView : 'home';
 
     // Set initial state so Back works nicely
     const initialPath = (initial === 'home') ? '/' : '/' + initial;
