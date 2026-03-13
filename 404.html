@@ -28,11 +28,13 @@
         "mercados",
         "cookies",
         "mejor-tapa",
-        "semanasanta"
+        "semanasanta",
+        "humedo"
       ]);
 
+      var alias = path === 'humedo' ? 'tapas' : path;
       if (validRoutes.has(path)) {
-        window.location.replace('/?view=' + encodeURIComponent(path));
+        window.location.replace('/?view=' + encodeURIComponent(alias));
       } else {
         window.location.replace('/');
       }
