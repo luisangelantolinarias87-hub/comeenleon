@@ -33,6 +33,11 @@
     .card h2,.card h3{margin:0 0 10px}.muted{color:var(--muted)}
     .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.badge{background:rgba(255,255,255,.12);padding:8px 12px;border-radius:999px;font-size:.93rem}
     .section{margin-top:24px}.list{padding-left:18px}.list li+li{margin-top:8px}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.96rem}
+    th{background:#f8fafc;font-weight:900;color:var(--text)}
+    tr:last-child td{border-bottom:none}
+    .table-wrap{overflow-x:auto;margin-top:16px}
     footer{margin:34px 0 22px;color:var(--muted);font-size:.95rem}
   </style>
   <script type="application/ld+json">
@@ -78,51 +83,73 @@
 
     <section class="grid section" aria-label="Bloques de agenda">
       <article class="card" id="conciertos">
-        <h2>Conciertos en León</h2>
-        <p class="muted">Ideal para conciertos en León, festivales, directos y programación musical útil para visitantes y locales.</p>
-        <ul class="list">
-          <li>Consulta la selección principal desde la portada.</li>
-          <li>Útil para enlazar desde eventos, redes o guías temporales.</li>
-          <li>Acceso directo a la vista musical actual.</li>
-        </ul>
-        <p style="margin-top:14px"><a class="btn" href="/conciertos">Abrir conciertos</a></p>
+        <h2>Conciertos de abril</h2>
+        <p class="muted">Tabla útil con los conciertos y festivales mejor posicionados del mes para que la agenda deje de ser solo un acceso y sirva de verdad.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th><th>Hora</th></tr></thead>
+          <tbody>
+            <tr><td>11 Abr</td><td><strong>OBK — Vértigo Tour</strong></td><td>Palacio de Congresos y Exposiciones</td><td>22:30 h</td></tr>
+            <tr><td>11 Abr</td><td><strong>ABBA The New Experience</strong></td><td>Auditorio Ciudad de León</td><td>21:00 h</td></tr>
+            <tr><td>15 Abr</td><td><strong>Concerto 1700 · XXIII C. de Músicas Históricas</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+            <tr><td>25 Abr</td><td><strong>Vibra Mahou Fest</strong></td><td>Palacio de Exposiciones y Congresos</td><td><span class="muted">Consultar</span></td></tr>
+            <tr><td>25 Abr</td><td><strong>Formula V</strong></td><td>Auditorio Ciudad de León</td><td>20:00 h</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:14px"><a class="btn" href="/conciertos">Abrir vista interna</a></p>
       </article>
 
       <article class="card" id="ferias">
-        <h2>Ferias gastronómicas</h2>
-        <p class="muted">Bloque para ferias de producto local, citas gastronómicas y escapadas con comida y ambiente en León.</p>
-        <ul class="list">
-          <li>Sirve para búsquedas estacionales ligadas a gastronomía.</li>
-          <li>Refuerza la parte más turística y de ocio de la guía.</li>
-          <li>Se puede actualizar sin tocar el resto de páginas pilar.</li>
-        </ul>
-        <p style="margin-top:14px"><a class="btn" href="/ferias">Abrir ferias</a></p>
+        <h2>Ferias y planes de abril</h2>
+        <p class="muted">Aquí entran las ferias, tradiciones y exposiciones que ayudan a completar una escapada a León sin perder el hilo de la agenda.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Fecha</th><th>Plan</th><th>Lugar</th><th>Tipo</th></tr></thead>
+          <tbody>
+            <tr><td>9–13 Abr</td><td><strong>VI Feria de Editores Emergentes (FEE)</strong></td><td>Ateneo Cultural El Albéitar</td><td>Feria cultural</td></tr>
+            <tr><td>Todo abril</td><td><strong>Yoko Ono. Insound and Instructure</strong></td><td>MUSAC</td><td>Exposición</td></tr>
+            <tr><td>27 Mar–13 Sep</td><td><strong>Carlos Saura, fotógrafo. Una vida tras la cámara</strong></td><td>El Palacín</td><td>Exposición</td></tr>
+            <tr><td>26 Abr · 12:00</td><td><strong>Las Cabezadas</strong></td><td>Real Basílica de San Isidoro</td><td>Tradición leonesa</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:14px"><a class="btn" href="/ferias">Abrir vista interna</a></p>
       </article>
 
       <article class="card" id="mercadillos">
         <h2>Mercadillos y mercados</h2>
-        <p class="muted">Perfecto para búsquedas tipo mercadillos en León, mercados especiales, vintage y planes de fin de semana.</p>
-        <ul class="list">
-          <li>Une compras, paseo y ocio local.</li>
-          <li>Encaja bien con agenda de sábado y domingo.</li>
-          <li>Sirve como apoyo para guías por temporadas.</li>
-        </ul>
-        <p style="margin-top:14px"><a class="btn" href="/mercados">Abrir mercadillos</a></p>
+        <p class="muted">Mantengo la parte útil de mercados semanales para que la página siga sirviendo tanto a visitantes como a gente de León.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Día</th><th>Lugares habituales</th></tr></thead>
+          <tbody>
+            <tr><td>Lunes</td><td>Boñar, Valderas, Villamañán</td></tr>
+            <tr><td>Martes</td><td>Astorga, Bembibre, Laguna de Negrillos</td></tr>
+            <tr><td>Miércoles</td><td>León (Plaza Mayor), Sahagún, Valencia de Don Juan</td></tr>
+            <tr><td>Jueves</td><td>Benavides, Cistierna, Santa María del Páramo</td></tr>
+            <tr><td>Viernes</td><td>León (Papalaguinda), Mansilla de las Mulas</td></tr>
+            <tr><td>Sábado</td><td>León (Plaza Mayor), La Bañeza, Ponferrada</td></tr>
+            <tr><td>Domingo</td><td>El Rastro (León), Santa María del Páramo</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:14px"><a class="btn" href="/mercados">Abrir vista interna</a></p>
       </article>
 
       <article class="card" id="teatro">
         <h2>Teatro y cultura</h2>
-        <p class="muted">Reservamos también un acceso directo a teatro y programación cultural para no dispersar la información en varias URLs pequeñas.</p>
-        <ul class="list">
-          <li>Útil para agenda cultural en León.</li>
-          <li>Apoya búsquedas de ocio bajo techo y fines de semana.</li>
-          <li>Completa la parte más urbana de la guía.</li>
-        </ul>
-        <p style="margin-top:14px"><a class="btn" href="/teatro">Abrir teatro</a></p>
+        <p class="muted">Abril viene cargado en el Auditorio, así que la tabla deja a mano los montajes principales sin tener que entrar y salir de varias páginas.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th><th>Hora</th></tr></thead>
+          <tbody>
+            <tr><td>8–9 Abr</td><td><strong>Seis personajes en busca de autor</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+            <tr><td>10 Abr</td><td><strong>Wilbur — Fuego Salvaje</strong></td><td>Auditorio Ciudad de León</td><td>20:00 h</td></tr>
+            <tr><td>17 Abr</td><td><strong>El barbero de Picasso</strong></td><td>Auditorio Ciudad de León</td><td>16:00 h</td></tr>
+            <tr><td>18 Abr</td><td><strong>Noche de Chicas</strong></td><td>Auditorio Ciudad de León</td><td>20:00 h</td></tr>
+            <tr><td>19 Abr</td><td><strong>A la gloria con Gloria Fuertes</strong></td><td>Auditorio Ciudad de León</td><td>18:00 h</td></tr>
+            <tr><td>22 Abr</td><td><strong>The room where it happens</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+            <tr><td>27 Abr</td><td><strong>Coreógrafos del siglo XXI</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:14px"><a class="btn" href="/teatro">Abrir vista interna</a></p>
       </article>
     </section>
-
-    <section class="card section">
+<section class="card section">
       <h2>Qué hemos hecho aquí</h2>
       <p>En lugar de perder contenido, esta página sirve como <strong>hub de agenda</strong>. Mantienes las rutas que ya usabas y además ganas una URL más clara para enlazar desde la portada, Search Console o futuras campañas estacionales.</p>
       <p>La estructura pilar queda más ordenada: <strong>comer</strong>, <strong>qué ver</strong>, <strong>Semana Santa</strong> y ahora también <strong>agenda</strong>.</p>

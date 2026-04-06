@@ -244,6 +244,12 @@
       background:#fff;font-weight:800;box-shadow:var(--shadow)
     }
 
+
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;font-size:.96rem}
+    th{background:#f8fafc;font-weight:900;color:var(--text)}
+    tr:last-child td{border-bottom:none}
+    .table-responsive{overflow-x:auto;margin-top:16px}
     .section-lead{max-width:850px;color:var(--muted);font-size:1.05rem}
     .hint{color:var(--muted);font-size:.97rem}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:.9rem}
@@ -515,7 +521,7 @@ html{scroll-padding-top:88px}
 <p class="hero-tagline">Tu guía local para comer, visitar y planificar León en 2026.</p>
 <p class="hero-subtagline">Monumentos, tapas, Semana Santa, agenda, excursiones y recursos para llevar en el móvil, sin perderte lo importante.</p>
 <div class="hero-ctas">
-<a class="cta cta-primary" href="/#sec-postal" onclick="event.preventDefault(); scrollToSection('sec-postal')">📮 Ver postal e itinerario</a>
+<a class="cta cta-primary" href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🗓️ Ver agenda de abril</a>
 <a class="cta cta-secondary" href="/#sec-itinerarios" onclick="event.preventDefault(); scrollToSection('sec-itinerarios')">🧭 Ver itinerarios</a>
 </div>
 <div class="hero-chips" aria-label="Accesos destacados del hero">
@@ -529,7 +535,7 @@ html{scroll-padding-top:88px}
 <main class="wrap" id="main">
 <!-- HOME -->
 <div class="view-section active" id="home">
-<section class="card" id="sec-postal" style="margin-top:16px">
+<section class="card" id="sec-postal" style="margin-top:16px; display:none;">
 <h3 style="margin:0 0 8px">📦 Empieza por aquí: postal e itinerario</h3>
 <p class="hint" style="margin:0 0 16px">Dos recursos rápidos para abrir León desde el móvil antes de meterte en la guía: la postal con QR y el itinerario de Semana Santa 2026.</p>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
@@ -574,7 +580,7 @@ html{scroll-padding-top:88px}
 <li>En festivos y Semana Santa: reserva con margen (alojamiento y visitas).</li>
 </ul>
 <div aria-label="Accesos rápidos" class="quick-links" role="group"><a href="/#sec-como-llegar" onclick="event.preventDefault(); scrollToSection('sec-como-llegar')">🚆 Cómo llegar a León</a><a href="/#sec-aparcar" onclick="event.preventDefault(); scrollToSection('sec-aparcar')">🚗 Dónde aparcar en León</a><a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">🏛️ Monumentos y cultura</a><a href="/#sec-itinerarios" onclick="event.preventDefault(); scrollToSection('sec-itinerarios')">🧭 Itinerarios y recursos</a><a href="/#sec-comer" onclick="event.preventDefault(); scrollToSection('sec-comer')">🍽️ Tapas y rutas gastronómicas</a><a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">🟣 Semana Santa León 2026</a><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">🗓️ Agenda de León</a><a href="/#sec-excursiones" onclick="event.preventDefault(); scrollToSection('sec-excursiones')">⛰️ Excursiones desde León</a><a href="/#sec-fiestas" onclick="event.preventDefault(); scrollToSection('sec-fiestas')">🎉 Cuándo ir y fiestas</a><a href="/#sec-miradores-fotos" onclick="event.preventDefault(); scrollToSection('sec-miradores-fotos')">📸 Mejores fotos</a><a href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">🛏️ Dónde dormir</a></div>
-<p class="hint" style="margin-top:12px">Última revisión editorial: <strong>marzo 2026</strong>.</p>
+<p class="hint" style="margin-top:12px">Última revisión editorial: <strong>abril 2026</strong>.</p>
 </section><section aria-label="Hub de navegación" class="hub-nav" id="sec-hub-navegacion">
 <div class="hub-grid">
 <article class="hub-card hub-card--accent">
@@ -802,44 +808,64 @@ html{scroll-padding-top:88px}
 </a>
 </div>
 </section><section id="sec-agenda">
-<h2>🎉 Agenda rápida</h2>
-<p class="section-lead">Concursos, conciertos, teatro, ferias y mercadillos para completar tu visita con planes culturales y gastronómicos.</p>
+<h2>🎉 Agenda rápida de abril</h2>
+<p class="section-lead">Abril viene con conciertos, teatro, exposiciones, tradiciones y planes culturales bien repartidos por León. Mantengo la portada limpia, pero aquí ya queda mejor expuesto con destacados y una tabla resumen.</p>
 <div aria-label="Accesos a la agenda" class="quick-links" role="group" style="margin-top:12px">
-<a href="/agenda-leon/">🗓️ Abrir agenda completa</a>
-<a href="/agenda-leon/#conciertos">🎸 Conciertos</a>
-<a href="/agenda-leon/#ferias">🥘 Ferias</a>
-<a href="/agenda-leon/#mercadillos">🧺 Mercadillos</a>
-<a href="/agenda-leon/#teatro">🎭 Teatro</a>
+<a href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">🗓️ Ver agenda de abril</a>
+<a href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">🎸 Conciertos</a>
+<a href="/teatro" onclick="event.preventDefault(); showView('teatro')">🎭 Teatro</a>
+<a href="/ferias" onclick="event.preventDefault(); showView('ferias')">📚 Ferias y planes</a>
+<a href="/mercados" onclick="event.preventDefault(); showView('mercados')">🧺 Mercadillos</a>
 </div>
 <div class="grid">
-<a class="card" data-view="mejor-tapa" href="/mejor-tapa" onclick="event.preventDefault(); showView('mejor-tapa')">
-<h3>🏆 Marzo: Concurso “La Mejor Tapa de León”</h3>
-<p>Qué es, cómo funciona y cómo aprovecharlo para una ruta por el Húmedo y el Romántico.</p>
-<span class="card-btn">Ver guía →</span>
-</a>
-<a class="card" href="/agenda-leon/#conciertos">
-<h3>🎸 Conciertos</h3>
-<p>Música en directo (ejemplos). Actualiza cuando quieras.</p>
+<a class="card" href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">
+<h3>🎸 11 abril: OBK</h3>
+<p>El “Vértigo Tour” pasa por el Palacio de Congresos y Exposiciones, uno de los conciertos destacados del mes.</p>
 <span class="card-btn">Ver tabla →</span>
 </a>
-<a class="card" href="/agenda-leon/#teatro">
-<h3>🎭 Teatro y Cultura</h3>
-<p>Obras, circo, cine y espectáculos de sala para el trimestre.</p>
+<a class="card" href="/teatro" onclick="event.preventDefault(); showView('teatro')">
+<h3>🎭 8–10 abril: Auditorio</h3>
+<p>“Seis personajes en busca de autor” y Wilbur abren la programación escénica fuerte de abril.</p>
 <span class="card-btn">Ver cartelera →</span>
 </a>
-<a class="card" href="/agenda-leon/#ferias">
-<h3>🥘 Ferias</h3>
-<p>Botillo, agroalimentaria, etc.</p>
+<a class="card" href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">
+<h3>🍺 25 abril: Vibra Mahou Fest</h3>
+<p>Festival de primavera en el Palacio de Exposiciones para arrancar el último fin de semana fuerte del mes.</p>
 <span class="card-btn">Ver tabla →</span>
 </a>
-<a class="card" href="/agenda-leon/#mercadillos">
-<h3>🧺 Mercadillos</h3>
-<p>Qué hay cada día por la provincia.</p>
-<span class="card-btn">Ver tabla →</span>
+<a class="card" href="/ferias" onclick="event.preventDefault(); showView('ferias')">
+<h3>📚 9–13 abril: FEE</h3>
+<p>La Feria de Editores Emergentes mete programación cultural y ambiente de ciudad durante varios días.</p>
+<span class="card-btn">Ver planes →</span>
+</a>
+<a class="card" href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">
+<h3>⛪ 26 abril: Las Cabezadas</h3>
+<p>Tradición leonesa del “Foro u Oferta” en San Isidoro, uno de los actos más propios del calendario local.</p>
+<span class="card-btn">Ver tradición →</span>
+</a>
+<a class="card" href="/musac" onclick="event.preventDefault(); showView('musac')">
+<h3>🖼️ Abril cultural</h3>
+<p>Yoko Ono en el MUSAC y otras exposiciones para completar el viaje con un plan interior si hace falta.</p>
+<span class="card-btn">Ver museos →</span>
 </a>
 </div>
-<p class="hint" style="margin-top:14px">La portada mantiene un resumen rápido, pero la URL fuerte para conciertos, ferias, mercadillos y teatro pasa a ser <strong><a href="/agenda-leon/">/agenda-leon/</a></strong>.</p>
-</section><section id="sec-excursiones">
+<div class="table-responsive">
+<table>
+<thead>
+<tr><th>Fecha</th><th>Evento</th><th>Tipo</th><th>Lugar</th><th>Abrir</th></tr>
+</thead>
+<tbody>
+<tr><td>9–13 Abr</td><td>VI Feria de Editores Emergentes (FEE)</td><td>Feria cultural</td><td>Ateneo Cultural El Albéitar</td><td><a href="/ferias" onclick="event.preventDefault(); showView('ferias')">Ver planes</a></td></tr>
+<tr><td>11 Abr · 22:30</td><td>OBK — Vértigo Tour</td><td>Concierto</td><td>Palacio de Congresos y Exposiciones</td><td><a href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">Ver tabla</a></td></tr>
+<tr><td>17 Abr · 16:00</td><td>El barbero de Picasso</td><td>Teatro</td><td>Auditorio Ciudad de León</td><td><a href="/teatro" onclick="event.preventDefault(); showView('teatro')">Ver cartelera</a></td></tr>
+<tr><td>25 Abr</td><td>Vibra Mahou Fest</td><td>Festival</td><td>Palacio de Exposiciones y Congresos</td><td><a href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">Ver tabla</a></td></tr>
+<tr><td>26 Abr · 12:00</td><td>Las Cabezadas</td><td>Tradición leonesa</td><td>Real Basílica de San Isidoro</td><td><a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">Ver San Isidoro</a></td></tr>
+<tr><td>Todo abril</td><td>Yoko Ono. Insound and Instructure</td><td>Exposición</td><td>MUSAC</td><td><a href="/musac" onclick="event.preventDefault(); showView('musac')">Ver MUSAC</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="hint" style="margin-top:14px">La portada mantiene el resumen de abril, pero debajo ya queda una tabla útil para ver rápido qué cae cada semana sin perder el resto de contenido de la guía.</p>
+</section></section><section id="sec-excursiones">
 <h2>⛰️ Más allá de la capital: excursiones y contrastes de la provincia</h2>
 <p class="section-lead">León capital funciona muy bien como <strong>campo base</strong> para una escapada de varios días. Desde aquí puedes montar planes de patrimonio, montaña, pueblos con encanto y gastronomía sin perder demasiado tiempo en carretera.</p>
 <div class="grid">
@@ -986,7 +1012,7 @@ html{scroll-padding-top:88px}
 <div class="faq">
 <details>
 <summary>¿Cuándo es el Concurso de La Mejor Tapa de León?</summary>
-<p>Suele celebrarse durante <strong>marzo</strong>. Te hemos preparado una mini guía con ruta recomendada por el Barrio Romántico y el Barrio Húmedo para aprovecharlo sin colas.</p>
+<p>Suele celebrarse durante <strong>marzo</strong>. La mini guía se mantiene como referencia útil para organizar una ruta por el Barrio Romántico y el Barrio Húmedo cuando vuelva a celebrarse.</p>
 </details>
 <details>
 <summary>¿Qué es el Barrio Romántico de León y dónde está?</summary>
@@ -1349,7 +1375,7 @@ html{scroll-padding-top:88px}
 </div>
 </div>
 <div class="view-section" id="mejor-tapa">
-<h2>🏆 Concurso “La Mejor Tapa de León” — Marzo 2026</h2>
+<h2>🏆 Concurso “La Mejor Tapa de León”</h2>
 <nav aria-label="Ruta de navegación" class="breadcrumbs">
 <a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
 <a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span>
@@ -1358,10 +1384,9 @@ html{scroll-padding-top:88px}
 <div class="seo-box" style="margin-top:14px">
 <h2 style="margin-bottom:.6rem">Qué es y por qué merece la pena</h2>
 <p>
-      Durante <strong>marzo</strong>, bares de toda la ciudad suelen participar con una tapa “especial” dentro del
-      concurso <strong>La Mejor Tapa de León</strong>. Es el mejor momento para probar novedades y montar una ruta
-      por zonas: <strong>Barrio Húmedo</strong> (ambiente más animado) y <strong>Barrio Romántico</strong>
-      (alternativa más tranquila junto a San Isidoro).
+      Este concurso suele celebrarse durante <strong>marzo</strong>, cuando bares de toda la ciudad participan con una tapa “especial”.
+      Aquí dejamos la guía como referencia útil para cuando vuelva: es un plan muy bueno para probar novedades y montar una ruta
+      por zonas entre el <strong>Barrio Húmedo</strong> y el <strong>Barrio Romántico</strong>.
     </p>
 <ul>
 <li><strong>Plan perfecto:</strong> elige 4–6 paradas y ve andando (centro histórico).</li>
@@ -1409,474 +1434,76 @@ html{scroll-padding-top:88px}
 </div>
 <!-- VISTAS: AGENDA -->
 <div class="view-section" id="ferias">
-<h2>🥘 Ferias gastronómicas</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Ferias</span></nav>
-<table>
-<thead>
-<tr><th>Fecha</th><th>Evento</th><th>Lugar</th></tr>
-</thead>
+<h2>📚 Ferias y planes de abril 2026</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Ferias y planes</span></nav>
+<p class="hint">Una tabla para dejar mejor expuestos los planes de abril sin perder la lógica de agenda útil y rápida.</p>
+<div class="table-responsive"><table>
+<thead><tr><th>Fecha</th><th>Plan / evento</th><th>Lugar</th><th>Apunte útil</th></tr></thead>
 <tbody>
-<tr><td>19–21 Feb</td><td>Feria de Febrero (Maquinaria Agrícola)</td><td>Valencia de Don Juan</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>27 Feb–1 Mar</td><td>Feria del Stock de Invierno</td><td>Valencia de Don Juan</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>7–8 Mar</td><td>Feria de Gallos de Pluma y Mosca Artificial</td><td>La Vecilla</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>7–8 Mar</td><td>Feria de Perros de Caza</td><td>Camponaraya</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>21–22 Mar</td><td>REINATUR (Caza, Pesca y Naturaleza)</td><td>Boca de Huérgano</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>21–22 Mar</td><td>Feria de Stocks del Comercio</td><td>La Bañeza</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Mar (todo el mes)</td><td>Concurso La Mejor Tapa de León</td><td>Bares de León</td><td><span class="muted">Consultar</span></td></tr>
+<tr><td>9–13 Abr</td><td><strong>VI Feria de Editores Emergentes (FEE)</strong></td><td>Ateneo Cultural El Albéitar</td><td>Feria cultural y programación repartida por varios espacios.</td></tr>
+<tr><td>Todo abril</td><td><strong>Yoko Ono. Insound and Instructure</strong></td><td>MUSAC</td><td>Exposición temporal para combinar con monumentos y lluvia.</td></tr>
+<tr><td>27 Mar–13 Sep</td><td><strong>Carlos Saura, fotógrafo. Una vida tras la cámara</strong></td><td>El Palacín</td><td>Exposición ya abierta y disponible durante todo abril.</td></tr>
+<tr><td>26 Abr · 12:00</td><td><strong>Las Cabezadas</strong></td><td>Real Basílica de San Isidoro</td><td>Tradición leonesa del “Foro u Oferta”, muy recomendable si coincide tu visita.</td></tr>
 </tbody>
-</table>
-<p class="hint" style="margin-top:12px">Tip: cuando tengas fechas oficiales, actualiza esta tabla y listo.</p>
-</div>
-<div class="view-section" id="conciertos">
-<h2>🎸 Conciertos</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Conciertos</span></nav>
-<p class="hint">Selección rápida de conciertos destacados en León para marzo de 2026. Si un evento aún no tiene enlace oficial, lo dejamos marcado como “Consultar” para evitar información confusa.</p>
-<div class="table-responsive" style="overflow-x:auto;">
-<table>
-<thead>
-<tr><th>Fecha</th><th>Artista / Evento</th><th>Lugar</th><th>Hora</th><th>Entradas</th></tr>
-</thead>
-<tbody>
-<tr><td>6 Mar</td><td><strong>Arco</strong> (Gira 10º Aniversario)</td><td>Espacio Vías</td><td>20:30 h</td><td><a href="https://entradas.crashmusic.es/event/concierto-arco-leon-espacio-vias-viernes-6-de-marzo" rel="noopener noreferrer" style="color: var(--accent); font-weight: 700;" target="_blank">Comprar →</a></td></tr>
-<tr><td>12 Mar</td><td><strong>Tenda</strong></td><td>El Gran Café</td><td>21:00 h aprox.</td><td><span class="muted">Consultar sala</span></td></tr>
-<tr><td>13 Mar</td><td><strong>Gilipojazz</strong></td><td>Espacio Vías</td><td>21:00 h aprox.</td><td><span class="muted">Próximamente</span></td></tr>
-<tr><td>19 Mar</td><td><strong>Rubén Pozo</strong></td><td>El Gran Café</td><td>21:00 h aprox.</td><td><span class="muted">Consultar sala</span></td></tr>
-<tr><td>20 Mar</td><td><strong>Los Invaders</strong></td><td>El Gran Café</td><td>21:00 h aprox.</td><td><span class="muted">Consultar sala</span></td></tr>
-<tr><td>21 Mar</td><td><strong>🤘 León Primavera Rock Fest</strong> — Sôber, Saurom, Dry River…</td><td>Plaza de Toros</td><td>17:00 h</td><td><a href="https://woutick.com/es/entradas/primavera-rock-fest" rel="noopener noreferrer" style="color: var(--accent); font-weight: 700;" target="_blank">Desde 22€ →</a></td></tr>
-<tr><td>21 Mar</td><td><strong>Rufus T. Firefly</strong></td><td>Espacio Vías</td><td>21:00 h aprox.</td><td><span class="muted">Próximamente</span></td></tr>
-<tr><td>26 Mar</td><td><strong>Süne</strong></td><td>El Gran Café</td><td>21:00 h aprox.</td><td><span class="muted">Consultar sala</span></td></tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="view-section" id="mercados">
-<h2>🧺 Mercadillos</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Mercadillos</span></nav>
-<table>
-<thead><tr><th>Día</th><th>Lugares</th></tr></thead>
-<tbody>
-<tr><td>Lunes</td><td>Boñar, Valderas, Villamañán</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Martes</td><td>Astorga, Bembibre, Laguna de Negrillos</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Miércoles</td><td>León (Plaza Mayor), Sahagún, Valencia de Don Juan</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Jueves</td><td>Benavides, Cistierna, Santa María del Páramo</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Viernes</td><td>León (Papalaguinda), Mansilla de las Mulas</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Sábado</td><td>León (Plaza Mayor), La Bañeza, Ponferrada</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>Domingo</td><td>El Rastro (León), Santa María del Páramo</td><td><span class="muted">Consultar</span></td></tr>
-</tbody>
-</table>
-</div>
-<div class="view-section" id="teatro">
-<h2>🎭 Teatro y Cultura — Feb/Mar 2026</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs">
-<a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
-<a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span>
-<span aria-current="page" class="current">Teatro y Cultura</span>
-</nav>
-<table>
-<thead>
-<tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th><th>Precio</th></tr>
-</thead>
-<tbody>
-<tr><td>20 Feb</td><td>'La desconquista' (teatro musical)</td><td>Teatro Bergidum, Ponferrada</td><td>15 €</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>21 Feb</td><td>'La doncella guerrera'</td><td>Teatro San Francisco</td><td>7 €</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>21 Feb</td><td>'El espejo y sus reflejos'</td><td>Teatro El Albéitar (ULE)</td><td>10 €</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>22 Feb</td><td>'La maestra' (teatro títeres familiar)</td><td>Auditorio Ciudad León</td><td>6 €</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>22 Feb</td><td>'Incipit' — Circo (taquilla inversa)</td><td>Fac. Filosofía y Letras</td><td>Libre</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>24 Feb</td><td>'El cielo de Berlín' (Wim Wenders)</td><td>Teatro San Francisco</td><td>4 €</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>25 Feb</td><td>'Mar, o cómo sobrevivir a un tsunami'</td><td>Auditorio Ciudad León</td><td>6 €</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td>26 Feb</td><td>'La Barraca'</td><td>Auditorio de León</td><td>22 / 15,40 €</td><td><span class="muted">Consultar</span></td></tr>
-</tbody>
-</table>
-<div class="related">
-<div class="chips">
+</table></div>
+<div class="related"><div class="chips">
 <a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Volver a Agenda rápida</a>
 <a href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">Conciertos</a>
-<a href="/ferias" onclick="event.preventDefault(); showView('ferias')">Ferias</a>
-</div>
-</div>
-<p class="hint" style="margin-top:12px">
-<strong>Especial:</strong> el <strong>León Primavera Rock Fest</strong> (21 Mar) es la primera edición en la Plaza de Toros con Sôber, Saurom y Dry River, entre otros.
-    En <strong>marzo</strong> también se celebra el <strong>Concurso La Mejor Tapa de León</strong> por bares de toda la ciudad: perfecto para combinar con la sección <strong>Comer</strong>.
-  </p>
-</div>
-<!-- VISTAS: SEMANA SANTA -->
-<div class="view-section" id="procesiones">
-<h2 style="color:var(--purple)">🟣 Semana Santa: guía rápida</h2>
-<div aria-label="Semana Santa 2026: cartel, folleto y guía rápida" class="ss-hero">
-<div>
-<div class="ss-badges">
-<span class="badge purple">🟣 Interés Turístico Internacional</span>
-</div>
-<h3 style="margin-bottom:8px">Semana Santa de León 2026: guía práctica</h3>
-<p class="hint">
-            Entre el <strong>Viernes de Dolores</strong> y el <strong>Domingo de Resurrección</strong>, León vive días intensos de tradición cofrade,
-            patrimonio artístico e imaginería, y mucho ambiente en la calle.
-          </p>
-<div class="chips" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:10px">
-<a href="itinerarios-semana-santa-leon-2026/">📍 Itinerarios 2026</a>
-<a href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener noreferrer" target="_blank">🗺️ Abrir itinerario</a>
-<a download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">⬇️ Descargar itinerario</a>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-<a class="card-btn" href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
-<a class="card-btn" href="assets/folleto-semana-santa-2026.pdf" rel="noopener noreferrer" target="_blank">📘 Descargar folleto oficial (PDF)</a>
-<a class="card-btn" href="https://www.semanasantaleon.org/" rel="noopener noreferrer" target="_blank">🌐 Web oficial</a>
-</div>
-<p class="source-line">
-            Fuente institucional: Junta Mayor de Cofradías y Hermandades de León (folleto y contenidos oficiales).
-          </p>
-</div>
-<div>
-<img alt="Cartel oficial de la Semana Santa de León 2026" decoding="async" height="1600" loading="lazy" src="assets/cartel-semana-santa-2026.jpg" width="1200"/>
-<p class="hint" style="margin-top:10px">
-            Nota: añade créditos del cartel (autor/a y año) cuando lo confirmes desde la fuente oficial.
-          </p>
-</div>
-</div>
-<div class="ss-split">
-<div class="ss-note">
-<h3>🔥 Qué no perderse</h3>
-<ul style="margin-top:8px;display:grid;gap:8px;list-style:disc;padding-left:18px">
-<li><strong>Genarín</strong> (Jueves Santo): tradición única y muy leonesa.</li>
-<li><strong>Ambiente papón</strong>: túnicas, bandas y pasos a hombros.</li>
-<li><strong>Limonada leonesa</strong> + tapeo: plan perfecto antes o después.</li>
-<li>Si vas justo de tiempo: mira una procesión y remata con <a href="/tapas" onclick="event.preventDefault(); showView(\'tapas\')">ruta de tapas</a>.</li>
-</ul>
-</div>
-<div class="ss-video" id="ss-video">
-<div class="ss-video-inner" id="ss-video-inner">
-<button onclick="loadYouTube('__tEsce9QgY','ss-video-inner')" type="button">
-<div style="font-size:1.15rem;font-weight:900">▶ Ver vídeo</div>
-<span>Cargar YouTube (modo privacidad)</span>
-</button>
-</div>
-<small>Al reproducir se cargan recursos de YouTube. Usamos <strong>youtube-nocookie</strong> y solo se carga al clicar.</small>
-</div>
-</div>
-<div class="ss-split" style="margin-top:18px">
-<div class="ss-note">
-<h3>🍷 Limonada leonesa en Semana Santa</h3>
-<p>En León, la <strong>limonada leonesa</strong> es una bebida tradicional de Semana Santa elaborada a base de vino, cítricos y azúcar. Es parte del ambiente del <strong>Barrio Húmedo</strong> y del <strong>Barrio Romántico</strong>, y suele acompañar el tapeo y las reuniones entre amigos durante esos días.</p>
-<p>En algunos contextos escucharás expresiones populares muy locales para referirse a salir a tomar limonada. En la guía la tratamos siempre como lo que es hoy: una <strong>tradición gastronómica leonesa</strong> ligada al ambiente de Semana Santa.</p>
-</div>
-<div class="card" style="border-color:#f59e0b">
-<h3 style="display:flex;align-items:center;gap:8px"><span>🎭</span> El Entierro de Genarín</h3>
-<p>En la noche del <strong>Jueves Santo</strong>, León vive una de sus tradiciones más singulares: <strong>El Entierro de Genarín</strong>, una celebración popular y laica en memoria de Genaro Blanco, personaje mítico de la ciudad fallecido en 1929.</p>
-<ul style="list-style:disc;margin:10px 0 10px 20px;color:var(--muted);font-size:.95rem;">
-<li><strong>El ambiente:</strong> mezcla humor, tradición oral y una enorme afluencia de gente por el casco antiguo.</li>
-<li><strong>El recorrido:</strong> suele asociarse a lugares muy reconocibles como la Plaza del Grano, la Plaza de San Martín, la calle La Sal y la zona de la muralla.</li>
-<li><strong>La ofrenda:</strong> en el momento más simbólico se recuerdan elementos tradicionales como el orujo, el queso o la naranja.</li>
-</ul>
-<p class="hint">Si vienes en Semana Santa, es uno de esos actos que ayudan a entender la personalidad popular de León más allá de las procesiones estrictamente religiosas.</p>
-</div>
-</div>
-<div class="ss-note" style="margin-top:18px">
-<h3>📜 Un poco de historia (resumen)</h3>
-<p>
-          La Semana Santa de León hunde sus raíces en el <strong>siglo XVI</strong> y hoy reúne <strong>16 cofradías</strong>,
-          más de <strong>30 actos procesionales</strong> y cerca de un centenar de pasos en la calle. (Resumen adaptado del folleto institucional.)
-        </p>
-</div>
-<div class="card" style="margin-top:18px">
-<h3 style="color:var(--purple)">🎺 Procesiones destacadas</h3>
-<p class="hint">
-          Dentro de las procesiones de Semana Santa de León hay dos que destacan: <strong>La Ronda</strong> y la <strong>Procesión de los Pasos</strong>,
-          con mención especial en la Declaración de Interés Turístico Internacional.
-        </p>
-<div class="grid" style="margin-top:14px">
-<div class="card" style="border-color:var(--purple-light)">
-<h3>La Ronda</h3>
-<p>Ambiente nocturno y tradición en el casco histórico. Ideal para vivir la ciudad “a pie” y con tiempo.</p>
-</div>
-<div class="card" style="border-color:var(--purple-light)">
-<h3>Procesión de los Pasos</h3>
-<p>Una de las más emblemáticas: pasos, papones y un recorrido que concentra lo esencial de la Semana Santa leonesa.</p>
-</div>
-</div>
-<p class="hint" style="margin-top:10px">
-          Nota: cuando salgan horarios oficiales 2026, añadimos fecha y hora aquí para dejarlo definitivo.
-        </p>
-</div>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">Semana Santa</a><span class="sep">›</span><span aria-current="page" class="current">Procesiones</span></nav>
-<div class="card" style="margin-top:16px;border-color:var(--purple-light)">
-<h3 style="color:var(--purple)">🗺️ Itinerario Semana Santa 2026</h3>
-<p class="hint">Aquí tienes el itinerario ampliado para consultar recorridos, procesiones y llevarlo en el móvil o descargarlo.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-<a class="card-btn" href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener noreferrer" target="_blank">👀 Abrir itinerario</a>
-<a class="card-btn" download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">🗺️ Descargar itinerario</a>
-<a class="card-btn" href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
-</div>
-<div aria-label="Enlaces relacionados" class="related" style="margin-top:14px">
-<h3>Relacionado</h3>
-<div class="chips">
-<a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">Volver a Semana Santa</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
-<a href="/romantico" onclick="event.preventDefault(); showView('romantico')">Barrio Romántico</a>
-</div>
-</div>
-</div>
-<div class="card" style="margin-top:18px">
-<h3>📌 Consejo práctico</h3>
-<p>Llega con tiempo al centro (Tráfico + gente). Si vienes con peques, mejor ver una procesión “tranquila” y luego tapeo.</p>
-</div>
-</div>
-<div class="view-section" id="semanasanta">
-<h2 style="color:var(--purple)">🟣 Semana Santa León 2026</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs">
-<a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
-<span aria-current="page" class="current">Semana Santa León 2026</span>
-</nav>
-<p>La <strong>Semana Santa de León 2026</strong> es uno de los momentos más importantes del año en la ciudad. Aquí tienes un acceso rápido a lo esencial: guía práctica, procesiones, cofradías y recursos oficiales para organizar la visita.</p>
-<div class="related">
-<div class="chips">
-<a href="/procesiones" onclick="event.preventDefault(); showView('procesiones')">🕯️ Ver guía y procesiones</a>
-<a href="/listacofradias" onclick="event.preventDefault(); showView('listacofradias')">🛐 Ver cofradías</a>
-<a href="itinerarios-semana-santa-leon-2026/">📍 Itinerarios 2026</a>
-<a href="assets/guia/itinerario-semana-santa-leon-2026.html" rel="noopener noreferrer" target="_blank">🗺️ Abrir itinerario</a>
-<a download="" href="assets/guia/itinerario-semana-santa-leon-2026.html">⬇️ Descargar itinerario</a>
-<a href="assets/folleto-semana-santa-2026.pdf" rel="noopener noreferrer" target="_blank">📘 Folleto oficial PDF</a>
-<a href="https://www.semanasantaleon.org/" rel="noopener noreferrer" target="_blank">🌐 Web oficial</a>
-</div>
-</div>
-<div class="grid cols-2" style="margin-top:18px">
-<article class="card">
-<h3>Qué vas a encontrar</h3>
-<ul style="margin-top:8px;display:grid;gap:8px;list-style:disc;padding-left:18px">
-<li>Resumen práctico para turistas y locales.</li>
-<li>Acceso rápido a <strong>procesiones</strong>, <strong>cofradías</strong> e <strong>itinerario 2026</strong>.</li>
-<li>Ideas para combinar la visita con <strong>tapas</strong> y paseo por el centro histórico.</li>
-</ul>
-</article>
-<article class="card">
-<h3>Consejo útil</h3>
-<p>Si vienes solo un día, combina una procesión destacada con paseo por el <a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Barrio Húmedo</a> o por el <a href="/romantico" onclick="event.preventDefault(); showView('romantico')">Barrio Romántico</a>.</p>
-</article>
-</div>
-</div>
-<div class="view-section" id="listacofradias">
-<h2 style="color:var(--purple)">🛐 Cofradías de la Semana Santa de León</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs">
-<a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
-<a href="/#sec-semana" onclick="event.preventDefault(); scrollToSection('sec-semana')">Semana Santa</a><span class="sep">›</span>
-<span aria-current="page" class="current">Cofradías</span>
-</nav>
-<p class="hint">
-    Selección y estructura propia (sin copiar textos extensos). Si quieres contrastar detalles, dejamos la <strong>fuente opcional</strong> en cada ficha.
-  </p>
-<!-- GRID: clicable -> abre su ficha en el acordeón -->
-<div aria-label="Cofradías (clic para abrir ficha)" class="cof-grid">
-<button class="card" data-cof="angustias-soledad" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias.jpg"/></div><div><h3 style="margin:0">Angustias y Soledad</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="dulce-nombre-jesus-nazareno" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulcenombre.jpg"/></div><div><h3 style="margin:0">Dulce Nombre de Jesús Nazareno</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="minerva-veracruz" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/emblemaminerva.jpg"/></div><div><h3 style="margin:0">Minerva y Veracruz</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="santa-marta" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santamarta.jpg"/></div><div><h3 style="margin:0">Santa Marta</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="jesus-divino-obrero" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/divinoobrero-1.jpg"/></div><div><h3 style="margin:0">Jesús Divino Obrero</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="siete-palabras" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete.jpg"/></div><div><h3 style="margin:0">Siete Palabras</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="cristo-del-perdon" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/perdon.jpg"/></div><div><h3 style="margin:0">Cristo del Perdón</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="jesus-de-la-redencion" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Jesús de la Redención" decoding="async" loading="lazy" src="assets/cofradias/redencion.jpg"/></div><div><h3 style="margin:0">Jesús de la Redención</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="cristo-de-la-expiracion" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/silencio.jpg"/></div><div><h3 style="margin:0">Cristo de la Expiración</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="maria-del-dulce-nombre" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/mariadulce.jpg"/></div><div><h3 style="margin:0">María del Dulce Nombre</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="santisimo-sacramento" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/sacramentado.jpg"/></div><div><h3 style="margin:0">Santísimo Sacramento</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="jesus-de-la-misericordia" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/bienaventuranza.jpg"/></div><div><h3 style="margin:0">Jesús de la Misericordia</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="santo-sepulcro" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/sepulcro.jpg"/></div><div><h3 style="margin:0">Santo Sepulcro</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="agonia-de-nuestro-senor" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia.jpg"/></div><div><h3 style="margin:0">Agonía de Nuestro Señor</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="cristo-del-gran-poder" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/granpoder.jpg"/></div><div><h3 style="margin:0">Cristo del Gran Poder</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-<button class="card" data-cof="desenclavo" type="button"><div class="cof-item"><div class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.jpg"/></div><div><h3 style="margin:0">Desenclavo</h3><div class="cof-meta">Pulsa para ver ficha</div></div></div></button>
-</div>
-<h3 style="margin-top:34px">📜 Historia y datos (acordeón)</h3>
-<div aria-label="Fichas de cofradías" class="cofradia-accordion">
-<details class="card" id="cof-angustias-soledad"><summary>
-<span class="cof-logo"><img alt="Escudo Angustias y Soledad" decoding="async" loading="lazy" src="assets/cofradias/angustias.jpg"/></span>
-<span>Angustias y Soledad</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> Siglo XVI</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 3.600</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo; capillo, guantes, cíngulo y zapatos negros. Bocamangas con cordón amarillo; camisa blanca, corbata, pantalón y calcetines negros.</li><li><strong>🎺 Procesiones:</strong> Participa en el corazón de la Semana Santa leonesa con desfiles penitenciales por el centro histórico.</li></ul><p><strong>Historia y sede:</strong> Fundada en <strong>1578</strong>, es una de las cofradías más antiguas y queridas de León. Tiene su sede en la <strong>Capilla de Santa Nonia</strong> y es una referencia imprescindible del centro histórico y de la Procesión del Santo Entierro.<br/><strong>Cómo reconocerla:</strong> destaca por su <strong>túnica negra</strong>, caperuza negra y la sobriedad de su hábito penitencial.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/angustias-y-soledad/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-dulce-nombre-jesus-nazareno"><summary>
-<span class="cof-logo"><img alt="Escudo Dulce Nombre de Jesús Nazareno" decoding="async" loading="lazy" src="assets/cofradias/dulcenombre.jpg"/></span>
-<span>Dulce Nombre de Jesús Nazareno</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 4 de febrero de 1611</li><li><strong>📍 Sede/Templo:</strong> Capilla de Santa Nonia</li><li><strong>👥 Hermanos:</strong> ≈ 4.487</li><li><strong>👕 Hábito:</strong> Túnica de tablón de sarga negra con cintas de raso negro (cuello, bocamangas y vivos). Capillo negro con cinta en el borde inferior. Cíngulo negro con caída a la izquierda.</li><li><strong>🎺 Procesiones:</strong> Procesión de las Palmas (Domingo de Ramos), Procesión de la Pasión (Lunes Santo) y Ronda/Procesión de los Pasos (Viernes Santo).</li></ul><p><strong>Historia y sede:</strong> Nacida en <strong>1611</strong>, es el gran corazón popular del <strong>Viernes Santo leonés</strong>. Desde la <strong>Capilla de Santa Nonia</strong> organiza actos tan conocidos como <em>La Ronda</em> y la multitudinaria <em>Procesión de los Pasos</em>.<br/><strong>Cómo reconocerla:</strong> viste <strong>túnica y capillo negros</strong>, con un hábito muy reconocible en las madrugadas y desfiles más emblemáticos de la ciudad.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/dulce-nombre-2/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-minerva-veracruz"><summary>
-<span class="cof-logo"><img alt="Escudo Minerva y Veracruz" decoding="async" loading="lazy" src="assets/cofradias/emblemaminerva.jpg"/></span>
-<span>Minerva y Veracruz</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Túnica negra lisa de tablón sencillo con bocamangas de terciopelo morado. Camisa blanca; guantes, pantalón, calcetines y zapatos negros. (Gobierno/abades: capirote de terciopelo morado).</li><li><strong>🎺 Procesiones:</strong> Cofradía histórica con presencia destacada en varios actos y procesiones de la Semana Santa de León.</li></ul><p><strong>Historia y sede:</strong> Sus orígenes están documentados desde <strong>1513</strong>, lo que la convierte en una de las hermandades históricas de León. Está ligada al entorno del <strong>Convento de San Francisco</strong> y a algunos de los actos más solemnes del calendario penitencial.<br/><strong>Cómo reconocerla:</strong> su hábito combina <strong>túnica negra</strong> con detalles morados, un aspecto clásico de la Semana Santa leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-santa-marta"><summary>
-<span class="cof-logo"><img alt="Escudo Santa Marta" decoding="async" loading="lazy" src="assets/cofradias/santamarta.jpg"/></span>
-<span>Santa Marta</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1945</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.000</li><li><strong>👕 Hábito:</strong> Túnica de lana blanca con cuellos, bocamangas y botones en terciopelo rojo sangre. Fajín rojo sangre. Capirote alto rojo sangre (braceros: capillo bajo). Guantes blancos; calcetín y zapatos negros; camisa blanca, corbata negra y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vinculada a la Sagrada Cena y a actos centrales del calendario leonés.</li></ul><p><strong>Historia:</strong> La Hermandad de Santa Marta fue constituida el 11 de diciembre de 1945 por decreto del obispo de León, aunque su gestación arranca en 1941 en el Sindicato de Hostelería y Similares. Desde 1950 organiza la Procesión de la Sagrada Cena (Jueves Santo) y con el tiempo incorporó nuevos pasos.</p><p><strong>Dato práctico:</strong> Desde el 5 de marzo de 1995 pasa a denominarse Hermandad de Santa Marta y de la Sagrada Cena, y cuenta con la sección de “Las Samaritanas” (1982).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/hermandad-de-santa-marta-y-sagrada-cena/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-jesus-divino-obrero"><summary>
-<span class="cof-logo"><img alt="Escudo Jesús Divino Obrero" decoding="async" loading="lazy" src="assets/cofradias/divinoobrero-1.jpg"/></span>
-<span>Jesús Divino Obrero</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1955</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Jesús Divino Obrero</li><li><strong>👥 Hermanos:</strong> ≈ 1.200</li><li><strong>👕 Hábito:</strong> Túnica blanco‑hueso; ceñidor y cordón (blanco‑hueso y morado entrelazados). Bocamangas y botonadura en terciopelo morado. Capa de raso morado con vistas del color de la túnica. Guantes blancos; camisa blanca, corbata negra; pantalón oscuro y calzado negro. (Braceros: capillo morado; pueden ir sin capa).</li><li><strong>🎺 Procesiones:</strong> Procesión de Hermandad (Sábado de Dolores, cada 2 años), Procesión de la Soledad (Sábado Santo) y Procesión del Encuentro (Domingo de Resurrección).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/real-hermandad-de-jesus-divino-obrero/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-siete-palabras"><summary>
-<span class="cof-logo"><img alt="Escudo Siete Palabras" decoding="async" loading="lazy" src="assets/cofradias/siete.jpg"/></span>
-<span>Siete Palabras</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1962</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Marcelo</li><li><strong>👥 Hermanos:</strong> ≈ 1.350</li><li><strong>👕 Hábito:</strong> Túnica de terciopelo rojo sangre (estilo monacal) con bocamangas anchas. Capirote alto blanco; capa de raso negro con vistas blancas. Cíngulo negro doble con borlas a la izquierda. Guantes y calcetines blancos; zapato negro y pantalón oscuro.</li><li><strong>🎺 Procesiones:</strong> Vía Crucis (madrugada del Miércoles al Jueves Santo), Pregón a caballo (Jueves Santo) y Sermón/Procesión de las Siete Palabras (Viernes Santo).</li></ul><p><strong>Historia y sede:</strong> La Cofradía de las Siete Palabras de Jesús en la Cruz fue fundada el 22 de septiembre de 1962 y tiene su sede en la iglesia de San Marcelo. Desfiló por primera vez en 1963 (procesión del Pregón) y ese mismo Viernes Santo organizó su primera procesión propia.</p><p><strong>Rasgo distintivo:</strong> En sus estatutos se contempla la promesa del silencio, siendo la primera penitencial de León en hacerlo según reseñas históricas de la cofradía.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-las-siete-palabras-de-jesus-en-la-cruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-cristo-del-perdon"><summary>
-<span class="cof-logo"><img alt="Escudo Cristo del Perdón" decoding="async" loading="lazy" src="assets/cofradias/perdon.jpg"/></span>
-<span>Cristo del Perdón</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1964</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Francisco de la Vega</li><li><strong>👥 Hermanos:</strong> ≈ 900</li><li><strong>👕 Hábito:</strong> Hábito marrón de sarga de lana, con tablilla delantera y trasera. Fajín de lana blanca anudado al lado derecho. Capirote alto (45 cm) del mismo tejido. (Completa con indumentaria oscura y calzado negro).</li><li><strong>🎺 Procesiones:</strong> Cofradía penitencial con presencia destacada en el calendario leonés.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-perdon/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-jesus-de-la-redencion"><summary>
-<span class="cof-logo"><img alt="Escudo Jesús de la Redención" decoding="async" loading="lazy" src="assets/cofradias/redencion.jpg"/></span>
-<span>Jesús de la Redención</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 600</li><li><strong>👕 Hábito:</strong> Túnica negra sencilla. Emblema rojo cosido a la altura del corazón (lado izquierdo). Bocamangas y capillo rojos. Cíngulo rojo sin borlas. Guantes, calcetines y zapatos negros; pantalón oscuro, camisa blanca y corbata negra.</li><li><strong>🎺 Procesiones:</strong> Besapié (Sábado de Pasión), Procesión de la Redención (Domingo de Ramos) y Vía Crucis (Lunes Santo).</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-nuestro-senor-jesus-de-la-redencion/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-cristo-de-la-expiracion"><summary>
-<span class="cof-logo"><img alt="Escudo Cristo de la Expiración" decoding="async" loading="lazy" src="assets/cofradias/silencio.jpg"/></span>
-<span>Cristo de la Expiración</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Convento de San Francisco</li><li><strong>👥 Hermanos:</strong> ≈ 100</li><li><strong>👕 Hábito:</strong> Túnica morada penitencial (tipo “Medinaceli”) con pequeños botones blancos. Cíngulo blanco a la derecha (tres nudos). Capirote blanco de raso.</li><li><strong>🎺 Procesiones:</strong> Cofradía de carácter solemne y recogido, muy ligada a los ambientes de silencio.</li></ul><p><strong>Historia y sede:</strong> La Cofradía del Santísimo Cristo de la Expiración y del Silencio fue fundada en 1991 y tiene su sede en el Convento de San Francisco. Nació para sostener y dar forma a cortejos vinculados a la tradición franciscana en León, destacando por su austeridad y seriedad.</p><p><strong>Actos destacados:</strong> Organiza la Procesión del Silencio (Miércoles Santo) y participa en la Procesión del Dainos (Domingo de Ramos), además de un Vía Crucis cantado el Martes Santo.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-santisimo-cristo-de-la-expiracion-y-del-silencio/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-maria-del-dulce-nombre"><summary>
-<span class="cof-logo"><img alt="Escudo María del Dulce Nombre" decoding="async" loading="lazy" src="assets/cofradias/mariadulce.jpg"/></span>
-<span>María del Dulce Nombre</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1991</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.400</li><li><strong>👕 Hábito:</strong> Túnica negra de tablón sencillo con capillo, bocamangas y cíngulo verdes. Camisa blanca; pantalón, guantes, calcetín y zapato negro. (Junta de Seises: capa de raso negro con vistas en terciopelo verde).</li><li><strong>🎺 Procesiones:</strong> Devoción mariana con participación activa en el calendario procesional.</li></ul><p><strong>Historia y sede:</strong> La Cofradía de María del Dulce Nombre se impulsó en 1991 (comisión gestora en enero y aprobación de estatutos en mayo) en el entorno del Convento de las Madres Benedictinas Carbajalas. Nació con una idea muy clara: favorecer una participación más activa de la mujer en la Semana Santa leonesa.</p><p><strong>Tradición propia:</strong> Desde 1995 celebran el aniversario de la Aparición de la Virgen del Camino con una Procesión-Romería desde la Basílica al Humilladero, portando a hombros a la titular.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-de-maria-del-dulce-nombre/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-santisimo-sacramento"><summary>
-<span class="cof-logo"><img alt="Escudo Santísimo Sacramento" decoding="async" loading="lazy" src="assets/cofradias/sacramentado.jpg"/></span>
-<span>Santísimo Sacramento</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1612</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Martín</li><li><strong>👥 Hermanos:</strong> ≈ 1.800</li><li><strong>👕 Hábito:</strong> Misma cofradía que Minerva y Vera Cruz (nombre completo). Túnica negra con bocamangas de terciopelo morado; indumentaria negra y camisa blanca.</li><li><strong>🎺 Procesiones:</strong> Participación destacada en actos eucarísticos y en procesiones históricas.</li></ul><p><strong>Historia y sede:</strong> Sus orígenes están documentados desde <strong>1513</strong>, lo que la convierte en una de las hermandades históricas de León. Está ligada al entorno del <strong>Convento de San Francisco</strong> y a algunos de los actos más solemnes del calendario penitencial.<br/><strong>Cómo reconocerla:</strong> su hábito combina <strong>túnica negra</strong> con detalles morados, un aspecto clásico de la Semana Santa leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/minerva-y-veracruz/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-jesus-de-la-misericordia"><summary>
-<span class="cof-logo"><img alt="Escudo Jesús de la Misericordia" decoding="async" loading="lazy" src="assets/cofradias/bienaventuranza.jpg"/></span>
-<span>Jesús de la Misericordia</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> —</li><li><strong>📍 Sede/Templo:</strong> Vinculado a la Cofradía de Nuestro Señor Jesús de la Redención</li><li><strong>👕 Hábito:</strong> Los papones de la Redención visten túnica negra con capillo, bocamangas y cíngulo rojos.</li><li><strong>🎺 Procesiones:</strong> Imagen de Ntro. Padre Jesús de la Misericordia (atrib. Pedro de Mena, s. XVII), presente en los actos de la Cofradía de la Redención.</li></ul><p class="hint">Resumen propio: lo esencial para orientarte rápido (historia, sede y cómo reconocer el hábito).</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-nuestro-senor-jesus-de-la-redencion/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-santo-sepulcro"><summary>
-<span class="cof-logo"><img alt="Escudo Santo Sepulcro" decoding="async" loading="lazy" src="assets/cofradias/sepulcro.jpg"/></span>
-<span>Santo Sepulcro</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Froilán</li><li><strong>👕 Hábito:</strong> Túnica negra y capillo/capirote alto blanco con babero y cola; cíngulo, camisa y guantes blancos. Calzado e indumentaria inferior en negro. (Junta: capa blanca).</li><li><strong>🎺 Procesiones:</strong> Lunes Santo (Adoración Procesional de las Llagas de Cristo) y Sábado Santo (Procesión Camino de la Luz).</li></ul><p><strong>Historia y sentido:</strong> La Cofradía del Santo Sepulcro Esperanza de la Vida se gestó en 1991 y se aprobó al año siguiente, con el Santo Sepulcro como titular, para poner el foco en la Vigilia Pascual. Mantiene una línea marcada por la oración por los difuntos y la labor social.</p><p><strong>Hábito (cómo reconocerla):</strong> Túnica negra, capirote alto blanco con cola y babero (con el emblema), cíngulo blanco y guantes; pantalón, calzado y complementos en negro.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://www.semanasantaleon.org/cofradia-santo-sepulcro-esperanza-de-vida" rel="nofollow noopener noreferrer" target="_blank">www.semanasantaleon.org</a></p></details>
-<details class="card" id="cof-agonia-de-nuestro-senor"><summary>
-<span class="cof-logo"><img alt="Escudo Agonía de Nuestro Señor" decoding="async" loading="lazy" src="assets/cofradias/agonia.jpg"/></span>
-<span>Agonía de Nuestro Señor</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1993</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 200</li><li><strong>👕 Hábito:</strong> Túnica morada con bocamangas doradas. Capillo y cíngulo dorados. Guantes, calcetines y zapatos negros. (Junta de Seises: capa morada con ribetes dorados).</li><li><strong>🎺 Procesiones:</strong> Cofradía penitencial con actos de gran recogimiento.</li></ul><p><strong>Historia y sede:</strong> Fundada el 4 de octubre de 1993, con sede en la parroquia de Santa Marina la Real. Nació por iniciativa de siete hermanas y no procesionó hasta 1996 (los primeros años salió a modo de representación).</p><p><strong>Seña de identidad:</strong> Su titular es “Jesús del Vía Crucis”, una imagen vinculada al sentido penitencial del camino al Calvario, y sus colores (morado y dorado) se explican como símbolos de preparación y penitencia, además de gloria y triunfo sobre la muerte.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-agonia-de-nuestro-senor/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-cristo-del-gran-poder"><summary>
-<span class="cof-logo"><img alt="Escudo Cristo del Gran Poder" decoding="async" loading="lazy" src="assets/cofradias/granpoder.jpg"/></span>
-<span>Cristo del Gran Poder</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1994</li><li><strong>📍 Sede/Templo:</strong> Parroquia de San Lorenzo</li><li><strong>👥 Hermanos:</strong> ≈ 1.080</li><li><strong>👕 Hábito:</strong> Túnica negra sencilla con emblema al lado del corazón. Capillo negro. Bocamangas y cíngulo plateados (ribeteados con cordón plateado). Indumentaria negra y camisa blanca; guantes negros.</li><li><strong>🎺 Procesiones:</strong> Cofradía de fuerte carácter penitencial, integrada en el calendario tradicional leonés.</li></ul><p><strong>Historia y sede:</strong> La Cofradía del Cristo del Gran Poder nació el Domingo de Ramos de 1993 y sus estatutos se firmaron el 9 de septiembre de 1994. La primera procesión de la cofradía tuvo lugar en 1995, y en 1996 se incorporaron a la procesión imágenes de apóstoles relacionadas con el retablo del altar mayor de la Catedral de León.</p><p><strong>Hábito (según ficha de cofradías):</strong> Túnica negra sencilla con el emblema característico en el pecho.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-del-cristo-del-gran-poder/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-<details class="card" id="cof-desenclavo"><summary>
-<span class="cof-logo"><img alt="Escudo Desenclavo" decoding="async" loading="lazy" src="assets/cofradias/desenclavo.jpg"/></span>
-<span>Desenclavo</span>
-</summary><ul class="cof-facts"><li><strong>📅 Fundación:</strong> 1992</li><li><strong>📍 Sede/Templo:</strong> Parroquia de Santa Marina la Real</li><li><strong>👥 Hermanos:</strong> ≈ 500</li><li><strong>👕 Hábito:</strong> Túnica de sarga púrpura lisa con bocamangas y capirote negros; cíngulo negro con caídas a la izquierda. Emblema en el babero. Camisa blanca y guantes; pantalón, calcetines y zapato bajo negros.</li><li><strong>🎺 Procesiones:</strong> Procesión de la Pasión (Lunes Santo), Procesión del Dolor de Nuestra Madre (Martes Santo) y Procesión Oficial del Santo Entierro (Viernes Santo, años pares).</li></ul><p><strong>Origen:</strong> La Cofradía del Santo Cristo del Desenclavo nace el 31 de julio de 1992, fecha en la que el Obispado aprueba sus estatutos. Desde el inicio quiso ser una cofradía participativa, solidaria y democrática, y también dar un papel igualitario a la mujer en la Semana Santa.</p><p><strong>Raíz leonesa:</strong> Se erige canónicamente en la parroquia de Santa Marina la Real con la intención explícita de recuperar el sabor tradicional antiguo de la tierra leonesa.</p><p class="hint" style="margin-top:10px">Fuente (opcional): <a href="https://semanasantadeleon.com/Nuevo/semanasanta/cofradia-santo-cristo-del-desenclavo/" rel="nofollow noopener noreferrer" target="_blank">semanasantadeleon.com</a></p></details>
-</div>
-</div>
-<!-- VISTAS: MONUMENTOS -->
-<div class="view-section" id="catedral">
-<h2>⛪ Catedral de León</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">Monumentos y cultura</a><span class="sep">›</span><span aria-current="page" class="current">Catedral de León</span></nav>
-<article class="card" style="max-width:900px;margin:0 auto">
-<img alt="Catedral de León" decoding="async" height="800" loading="lazy" src="assets/catedral1.jpg" width="1200"/>
-<h3>La Pulchra Leonina</h3>
-<p>Una de las catedrales góticas más impresionantes de España, famosa por sus vidrieras.</p>
-<table aria-label="Horarios y precios de la Catedral de León">
-<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-<tbody>
-<tr><td><strong>Horarios</strong></td><td>Los horarios cambian por temporada. Consulta la web oficial para el horario actualizado.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Entradas</strong></td><td>Los precios varían por tipo de entrada (general/reducida). Consulta la web oficial para tarifas actualizadas.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/Catedral+de+Leon" rel="noopener noreferrer" target="_blank">📍 Ver en Google Maps</a></td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Web oficial</strong></td><td><a class="card-btn" href="https://www.catedraldeleon.org/" rel="noopener noreferrer" target="_blank">Ir a catedraldeleon.org</a></td><td><span class="muted">Consultar</span></td></tr>
-</tbody>
-</table>
-<p class="hint" style="margin-top:10px">Consejo: compra online si vas en festivos.</p>
-</article>
-<div aria-label="Enlaces relacionados" class="related">
-<h3>Relacionado</h3>
-<div class="chips">
-<a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">San Isidoro</a>
-<a href="/botines" onclick="event.preventDefault(); showView('botines')">Casa Botines</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
-<a href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Dónde dormir</a>
-</div>
-</div>
-</div>
-<div class="view-section" id="sanisidoro">
-<h2>🕯️ Basílica y Museo de San Isidoro</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">Monumentos y cultura</a><span class="sep">›</span><span aria-current="page" class="current">San Isidoro</span></nav>
-<article class="card" style="max-width:900px;margin:0 auto">
-<img alt="San Isidoro en León" decoding="async" height="800" loading="lazy" src="assets/sanisidoro1.jpg" width="1200"/>
-<h3>Panteón Real</h3>
-<p>El conjunto románico más emblemático de León. El Panteón Real es conocido como la “Capilla Sixtina del románico”.</p>
-<table aria-label="Horarios y precios de San Isidoro">
-<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-<tbody>
-<tr><td><strong>Horarios</strong></td><td>Varían por temporada. Recomendación: confirmar antes de ir.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Entradas</strong></td><td>Tarifas según visita y descuentos. Confirmar en su web oficial.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/Colegiata+San+Isidoro+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver en Google Maps</a></td><td><span class="muted">Consultar</span></td></tr>
-</tbody>
-</table>
-<p class="hint" style="margin-top:10px">Si te interesa el románico, reserva con margen: se disfruta mucho con visita guiada.</p>
-</article>
-<div aria-label="Enlaces relacionados" class="related">
-<h3>Relacionado</h3>
-<div class="chips">
-<a href="/catedral" onclick="event.preventDefault(); showView('catedral')">Catedral</a>
-<a href="/botines" onclick="event.preventDefault(); showView('botines')">Casa Botines</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
-<a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a>
-</div>
-</div>
-</div>
-<div class="view-section" id="botines">
-<h2>🏛️ Museo Casa Botines Gaudí</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">Monumentos y cultura</a><span class="sep">›</span><span aria-current="page" class="current">Casa Botines</span></nav>
-<article class="card" style="max-width:900px;margin:0 auto">
-<img alt="Casa Botines de Gaudí en León" decoding="async" height="800" loading="lazy" src="assets/botines1.jpg" width="1200"/>
-<h3>Gaudí en León</h3>
-<p>Edificio modernista único. Dentro: museo, exposiciones y tienda.</p>
-<table aria-label="Horarios y precios de Casa Botines">
-<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
-<tbody>
-<tr><td><strong>Horario</strong></td><td>Miércoles a lunes (martes cerrado). Consulta temporada y pases en la web oficial.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Tarifas orientativas</strong></td><td>Entrada general y reducida. Ver tarifas y actividades en la web oficial.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/Casa+Botines+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Google Maps</a></td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Web oficial</strong></td><td><a class="card-btn" href="https://www.casabotines.es/visitar/" rel="noopener noreferrer" target="_blank">Ir a casabotines.es</a></td><td><span class="muted">Consultar</span></td></tr>
-</tbody>
-</table>
-</article>
-<div aria-label="Enlaces relacionados" class="related">
-<h3>Relacionado</h3>
-<div class="chips">
-<a href="/catedral" onclick="event.preventDefault(); showView('catedral')">Catedral</a>
-<a href="/sanisidoro" onclick="event.preventDefault(); showView('sanisidoro')">San Isidoro</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
+<a href="/teatro" onclick="event.preventDefault(); showView('teatro')">Teatro</a>
 <a href="/musac" onclick="event.preventDefault(); showView('musac')">MUSAC</a>
-</div>
-</div>
-</div>
-<div class="view-section" id="sanmarcos">
-<h2>🏰 San Marcos</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">Monumentos y cultura</a><span class="sep">›</span><span aria-current="page" class="current">San Marcos</span></nav>
-<article class="card" style="max-width:900px;margin:0 auto">
-<img alt="San Marcos en León" decoding="async" height="800" loading="lazy" src="assets/sanmarcos1.jpg" width="1200"/>
-<h3>Icono de la ciudad</h3>
-<p>Una de las fachadas más reconocibles de León. Paseo perfecto por la zona del río.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-<a class="card-btn" href="https://www.google.com/maps/search/Parador+San+Marcos+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Ver en Maps</a>
-<a class="card-btn" href="https://paradores.es/es/parador-de-leon" rel="noopener noreferrer" target="_blank">Web Parador</a>
-</div>
-<p class="hint" style="margin-top:10px">Si solo quieres ver exterior, es gratis. Para servicios del Parador, consulta disponibilidad.</p>
-</article>
-</div>
-<div class="view-section" id="musac">
-<h2>🧩 MUSAC</h2>
-<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-visitar" onclick="event.preventDefault(); scrollToSection('sec-visitar')">Monumentos y cultura</a><span class="sep">›</span><span aria-current="page" class="current">MUSAC</span></nav>
-<article class="card" style="max-width:900px;margin:0 auto">
-<img alt="MUSAC León" decoding="async" height="800" loading="lazy" src="assets/musac1.jpg" width="1200"/>
-<h3>Arte contemporáneo</h3>
-<p>Ideal para un plan diferente. Exposiciones temporales + colección.</p>
-<table aria-label="Horarios y precios de MUSAC">
-<thead><tr><th>Información</th><th>Detalle</th></tr></thead>
+</div></div>
+</div><div class="view-section" id="conciertos">
+<h2>🎸 Conciertos de abril 2026</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Conciertos</span></nav>
+<p class="hint">Selección rápida de conciertos y festivales destacados en León durante abril de 2026.</p>
+<div class="table-responsive"><table>
+<thead><tr><th>Fecha</th><th>Artista / evento</th><th>Lugar</th><th>Hora</th><th>Apunte</th></tr></thead>
 <tbody>
-<tr><td><strong>Horarios</strong></td><td>Varían por temporada. Consulta antes de ir.</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Entrada</strong></td><td>General 3€ / Reducida 2€ (según información pública; puede cambiar).</td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Mapa</strong></td><td><a class="card-btn" href="https://www.google.com/maps/search/MUSAC+Le%C3%B3n" rel="noopener noreferrer" target="_blank">📍 Google Maps</a></td><td><span class="muted">Consultar</span></td></tr>
-<tr><td><strong>Web</strong></td><td><a class="card-btn" href="https://musac.es/" rel="noopener noreferrer" target="_blank">Ir a musac.es</a></td><td><span class="muted">Consultar</span></td></tr>
+<tr><td>11 Abr</td><td><strong>OBK — Vértigo Tour</strong></td><td>Palacio de Congresos y Exposiciones</td><td>22:30 h</td><td>Concierto confirmado en la agenda oficial de Turismo de León.</td></tr>
+<tr><td>11 Abr</td><td><strong>ABBA The New Experience</strong></td><td>Auditorio Ciudad de León</td><td>21:00 h</td><td>Plan musical de sala para esa misma noche.</td></tr>
+<tr><td>15 Abr</td><td><strong>Concerto 1700 · XXIII C. de Músicas Históricas</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td><td>Opción de perfil clásico para mitad de mes.</td></tr>
+<tr><td>25 Abr</td><td><strong>Vibra Mahou Fest</strong></td><td>Palacio de Exposiciones y Congresos</td><td><span class="muted">Consultar</span></td><td>Uno de los grandes planes musicales de abril en León.</td></tr>
+<tr><td>25 Abr</td><td><strong>Formula V</strong></td><td>Auditorio Ciudad de León</td><td>20:00 h</td><td>Otro concierto fuerte del último fin de semana del mes.</td></tr>
 </tbody>
-</table>
-<p class="hint" style="margin-top:10px">Suele haber franjas gratuitas algunos días/horas según programación.</p>
-</article>
-<div aria-label="Enlaces relacionados" class="related">
-<h3>Relacionado</h3>
-<div class="chips">
-<a href="/#sec-itinerarios" onclick="event.preventDefault(); scrollToSection('sec-itinerarios')">Plan 2 días</a>
-<a href="/sanmarcos" onclick="event.preventDefault(); showView('sanmarcos')">San Marcos</a>
-<a href="/tapas" onclick="event.preventDefault(); showView('tapas')">Tapas</a>
-<a href="/#sec-dormir" onclick="event.preventDefault(); scrollToSection('sec-dormir')">Dónde dormir</a>
-</div>
-</div>
-</div>
-<!-- LEGALES / OTROS -->
-<div class="view-section" id="cookies">
+</table></div>
+</div><div class="view-section" id="mercados">
+<h2>🧺 Mercadillos y mercados semanales</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Mercadillos</span></nav>
+<p class="hint">Mantengo la tabla de mercados semanales porque sigue siendo útil para planificar escapadas y mañanas de compras por León y provincia. Conviene confirmar antes de ir.</p>
+<div class="table-responsive"><table>
+<thead><tr><th>Día</th><th>Lugares habituales</th><th>Nota</th></tr></thead>
+<tbody>
+<tr><td>Lunes</td><td>Boñar, Valderas, Villamañán</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+<tr><td>Martes</td><td>Astorga, Bembibre, Laguna de Negrillos</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+<tr><td>Miércoles</td><td>León (Plaza Mayor), Sahagún, Valencia de Don Juan</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+<tr><td>Jueves</td><td>Benavides, Cistierna, Santa María del Páramo</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+<tr><td>Viernes</td><td>León (Papalaguinda), Mansilla de las Mulas</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+<tr><td>Sábado</td><td>León (Plaza Mayor), La Bañeza, Ponferrada</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+<tr><td>Domingo</td><td>El Rastro (León), Santa María del Páramo</td><td><span class="muted">Confirmar antes de ir</span></td></tr>
+</tbody>
+</table></div>
+</div><div class="view-section" id="teatro">
+<h2>🎭 Teatro y cultura — abril 2026</h2>
+<nav aria-label="Ruta de navegación" class="breadcrumbs"><a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span><a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Agenda rápida</a><span class="sep">›</span><span aria-current="page" class="current">Teatro y Cultura</span></nav>
+<p class="hint">Tabla rápida con la programación escénica más visible del Auditorio durante abril.</p>
+<div class="table-responsive"><table>
+<thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th><th>Hora</th></tr></thead>
+<tbody>
+<tr><td>8–9 Abr</td><td><strong>Seis personajes en busca de autor</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+<tr><td>10 Abr</td><td><strong>Wilbur — Fuego Salvaje</strong></td><td>Auditorio Ciudad de León</td><td>20:00 h</td></tr>
+<tr><td>17 Abr</td><td><strong>El barbero de Picasso</strong></td><td>Auditorio Ciudad de León</td><td>16:00 h</td></tr>
+<tr><td>18 Abr</td><td><strong>Noche de Chicas</strong></td><td>Auditorio Ciudad de León</td><td>20:00 h</td></tr>
+<tr><td>19 Abr</td><td><strong>A la gloria con Gloria Fuertes</strong></td><td>Auditorio Ciudad de León</td><td>18:00 h</td></tr>
+<tr><td>22 Abr</td><td><strong>The room where it happens</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+<tr><td>27 Abr</td><td><strong>Coreógrafos del siglo XXI</strong></td><td>Auditorio Ciudad de León</td><td>20:30 h</td></tr>
+</tbody>
+</table></div>
+<div class="related"><div class="chips">
+<a href="/#sec-agenda" onclick="event.preventDefault(); scrollToSection('sec-agenda')">Volver a Agenda rápida</a>
+<a href="/conciertos" onclick="event.preventDefault(); showView('conciertos')">Conciertos</a>
+<a href="/ferias" onclick="event.preventDefault(); showView('ferias')">Ferias y planes</a>
+</div></div>
+</div><div class="view-section" id="cookies">
 <h2>🍪 Política de cookies</h2>
 <nav aria-label="Ruta de navegación" class="breadcrumbs">
 <a href="/" onclick="event.preventDefault(); showView('home')">Inicio</a><span class="sep">›</span>
